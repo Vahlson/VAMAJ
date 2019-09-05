@@ -1,15 +1,15 @@
 # Meeting Agenda
 
-Group:
-Date:
+Group: VAMAJ (14)
+Date: 2019-09-05
 Chair: 
-Participants:
+Participants: Alla och handledare
 
 
 ## Objectives (5 min) 
-
 - Resolve any issues preventing the team to continue.
 - Short clear descriptions.
+
 
 
 ## Reports (15 min) from previous meeting
@@ -23,6 +23,34 @@ Participants:
 - Discuss the identified issues, and possibly new or more general issues (very
   short notes and/or keywords).
 
+bra idé, verkar gå att bygga ut.
+skapa en klar grund, user stories.
+kom igång med grundläggningen.
+får ha en klar koncetuell bild av projektet innan vi börjar utvecka user-stories.
+
+Mindmap
+idéer:
+kalkulator där användaren kan beräkna ekonomisk aspekt (kostnad/sparande) utav att byta fast el till solpaneler.
+är det lönsamt för användaren att byta till solkraft?
+hur långt tid tar det innan användaren tjänar pengar?
+
+datainsamling:
+vad skall vi hämta från api/sdk?
+vad skall vi hämta från användaren?
+måste ha ett interface mot eventuella api/sdk som används.
+måste hitta ett sätta att representera given data som objekt (ex: solceller, hushåll)
+
+maven bör användas under hela utvecklingsprocessen
+detaljerade mötesprotokoll under varje möte.
+
+ ungefär 2 veckorssprints
+ testdrivet, skriv test innan kod.
+ 
+ vi ska skriva kontrakt.
+ viktiga punkter: hur sköter vi möten, sen?, mötesprotokoll, någon som håller i möten?, hantera konflikter, 
+ använd kommunikation, dokumentation, diagram, testning o.s.v respektera kringarbetet.
+ 
+ 
 
 ## Outcomes and assignments (5 min)
 
@@ -33,5 +61,10 @@ Participants:
 
 ## Wrap up
 
-- Write down any unresolved issues for next meeting. 
-- Decide a time and location for next meeting.
+Nästa möte = nästa torsdag kl 1.
+Mål till nästa möte:
+ha userstories, domänmodell klar också. Läs på om domänmodell och utveckla på vår existerande. Fler koncept till domänmodellen.
+GUI skiss, möjligen i samband till userstories (i RAD). Kolla också SSD dokument. När domänmodellen känss utvecklad kan vi (om vi får tid över) börja översätta detta till ett UML.
+
+Prototypen för VECKA 3 kan vara otroligt barebones, behöver dock maven lite tester och git.
+protip: jobba mycket som grupp, d.v.s. på plats.
