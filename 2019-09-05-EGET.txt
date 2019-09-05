@@ -1,37 +1,40 @@
 # Meeting Agenda
 
-Group:
-Date:
-Chair: 
-Participants:
+Group: VAMAJ 
+Date: 2019-09-05  
+Chair: Mohamad Melhem
+Participants: Samtliga Medlemmar
 
 
 ## Objectives (5 min) 
 
-- Resolve any issues preventing the team to continue.
-- Short clear descriptions.
+-Skriva gruppkontrakt.
+- Bestämma uppgifter för kommande veckan och nästa möte
 
 
 ## Reports (15 min) from previous meeting
 
-- Each group member reports outcome of assigned issues, see also 'outcomes and
-  assignments'.
-
+- Vi har nu kommit fram till en idé som handlar om att skapa en solcellsapp som kalkylerar kostnad och vinst av att skaffa solceller.
 
 ## Discussion items (35 min)
 
 - Discuss the identified issues, and possibly new or more general issues (very
   short notes and/or keywords).
-
+  
+  Idén fick bra mottagning av handledare och kommer att spånas vidare på kommande vecka för att skapa en grund.
 
 ## Outcomes and assignments (5 min)
 
-- Outcomes from discussion items. Write down what's decided and why it was 
-  decided. Sync with other documentation (add terms to wordbook).
-- (re)Assign to each group member which issues to solve.
+Gruppen ska formalisera idén i ett dokument samt göra en domänmodell som täcker programmets grundliga funktion. Detta kommer att göras på måndag möte.
 
+vi ska bestämma konventioner för programmering som gruppen bör följa, detta kommer innefatta både Java, css och xml (scenebuilder) och kommer att sammanställas i ett dokument. Detta kommer att göras på nästa möte.
+
+Alla medlemmar ska fundera på User Stories till nästa möte (måndag).
 
 ## Wrap up
 
 - Write down any unresolved issues for next meeting. 
 - Decide a time and location for next meeting.
+
+
+Nästa möte, Måndag eftermiddag.
