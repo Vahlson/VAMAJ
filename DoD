@@ -1,0 +1,4 @@
+1. Alla av user storyns "acceptance criterias" är uppfyllda.
+2. All kod som hör till userstoryn är kommenterad
+3. All kod som hör till userstoryn har rimliga tester skrivna som körs utan fel.
+4. All kod som hör till userstoryn ska vara commitad och pushad till master-branchen och masterbranchen ska köra utan fel.
