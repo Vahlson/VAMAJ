@@ -1,7 +1,7 @@
-Syftet med detta program är att skapa ett program där en användare kan få hjälp att se olika aspekter hos eventuell solkraft till sitt hushåll. 
+Syftet med detta projekt är att skapa ett program där en användare kan få hjälp att se olika aspekter hos eventuell solkraft till sitt hushåll. 
 Användaren ska kunna se ifall det vore lönsamt och följdaktligen om det vore lönsamt med ett sådant energialternativ.
 Vidare kan användaren se när solcellsenergin eventuellt skulle börja generera inkomst.
 Programmet ska underlätta för användaren att besluta om ifall solcellsenergi är ett ekonomiskt bra alternativ till deras nuvarande energiförsörjning.
-Förutom den ekonomiska aspekten av selcellsenergi ska även miljöpåverkan belysas i programmet. Detta innebär bland annat användaren får återkoppling
+Förutom den ekonomiska aspekten av solcellsenergi ska även miljöpåverkan belysas i programmet. Detta innebär bland annat att användaren får återkoppling
 om dess ekologiska fotavtryck.
 Användaren ska även kunna jämföra olika typer av solceller för att kunna komma fram till en bra balans mellan miljöpåverkan och kostnad som passar just dem.
