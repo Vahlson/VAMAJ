@@ -1,0 +1,33 @@
+# User story 
+
+Story Identifier: STK001
+Story Name: Customer Order
+
+
+## Description
+
+As a Customer, I need to place an order so that I can have food delivered to my house.
+
+
+## Confirmation
+
+### Functional
+
+- Can I save my order and come back to it later?
+- Can I change my order before I pay for it?
+- Can I see a running total of the cost of what I have chosen so far?
+
+### Non-functional: 
+
+Availability:
+
+- Can I place an order at any time (24 hours per day or 24/7/365)?
+- Can I view the order at any time (24 hours per day or 24/7/365) up to and including delivery?
+
+Security:
+
+- Are unauthorised persons and other customers prevented from viewing my order?
+
+
+
+(src: https://www.agilebusiness.org/content/requirements-and-user-stories)
