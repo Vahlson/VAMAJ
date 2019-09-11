@@ -1,0 +1,4 @@
+1-	As a single mom, I want to be able to choose between different types of electricity and see which one is cheaper to save money
+2-	As an environmentalist I want to compare between solar panels generated electricity and other regular types to determine which on contribute less to the global warming in order to save the planet.
+3-	As a businessman, I want to check if solar panel generated electricity is profitable on the long run so I can sell some of it.
+4-	As a random person, I want to spontaneously and out of curiosity compare between various types of electricity and get some insight into some statistics and details to determine which one is the best from environmental and financial perspective.
