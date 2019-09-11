@@ -1,37 +1,40 @@
 # Meeting Agenda
 
-Group:
-Date:
-Chair: 
-Participants:
+Group: VAMAJ
+Date:  11-09-2019
+Chair: Vegard
+Participants: Gruppen - Jamal
 
 
 ## Objectives (5 min) 
 
-- Resolve any issues preventing the team to continue.
-- Short clear descriptions.
+- Domänmodell
+- Estimera tid för user stories
+- Acceptance criterias för user stories
 
 
 ## Reports (15 min) from previous meeting
 
-- Each group member reports outcome of assigned issues, see also 'outcomes and
-  assignments'.
+- Inget individuellt arbete har gjorts sedan tidigare möte
 
 
 ## Discussion items (35 min)
 
-- Discuss the identified issues, and possibly new or more general issues (very
-  short notes and/or keywords).
+DOMÄNMODELL
+- Egenskaper för användare. Property? konsumerande/icke-konsumerande?
+- Diskussion runt hur de olika objekten ska vara strukturerade
 
+- viss data kan vara svår att komma åt
+- Utformar kriterier för att user stories ska vara färdiga
 
 ## Outcomes and assignments (5 min)
 
-- Outcomes from discussion items. Write down what's decided and why it was 
-  decided. Sync with other documentation (add terms to wordbook).
-- (re)Assign to each group member which issues to solve.
+- Har gjort en grov domänmodell, förbättringar planerade
+- sketchat GUI
+- Estimerat tid och skrivit acceptanskriterier för user stories
 
 
 ## Wrap up
 
-- Write down any unresolved issues for next meeting. 
-- Decide a time and location for next meeting.
+- Break out the user stories into tasks
+- Finish the tasks from user stories
