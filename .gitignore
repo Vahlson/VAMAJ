@@ -55,6 +55,9 @@ cmake-build-*/
 # IntelliJ
 out/
 
+# Travis
+.travis.yml
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
