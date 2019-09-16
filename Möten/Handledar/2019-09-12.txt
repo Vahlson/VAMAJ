@@ -1,0 +1,55 @@
+# Meeting Agenda
+
+Group: VAMAJ - Grupp 14
+Date: 2019-09-12
+Chair: Alexander Larnemo Ask
+Participants: Alla
+
+## Objectives (5 min)
+
+- Stämma av med handledaren och identifiera uppgifter som behöve göras.
+- Kontrollera att våra user stories är dugliga.
+- Visa preliminär domän-model för handledare.
+
+## Reports (15 min) from previous meeting
+
+- Inget individuellt arbete har gjorts sedan tidigare möten.
+
+## Discussion items (35 min)
+
+- Discuss the identified issues, and possibly new or more general issues (very
+  short notes and/or keywords).
+
+1. Mötena skall inte användas för att göra jobb som inte bidrar till mötet (ex: user stories).
+2. Kan dela user story 1 till två mindre user stories. En user stroy för utvecklarna (oss).
+3. User stories skall vara så korta och specifika som möjligt.
+4. Dela in user stories i olika kategorier, baserat på vad syftet med dem är.
+5. För tillfället är våra user stories nästa lika stora som epics, så det kanske
+   skulle vara bra att bryta ner dem lite i mindre stories som kan hanteras under en sprint.
+
+Kan lägga till förklarande text i våran domänmodell.
+
+I domänmodellen skall objektet vara tydliga och hjälpa de som inte kan programmera
+att förstå strukturen i vårat program.
+
+Vi borde har runt 10-15 klasser i kärnan av våran modell.
+
+Energy provider kan vara av två typer: fast kostnad samt rörlig kostnad.
+UML skall vara relativt simpel, högst några få variabelnamn och metoder.
+
+
+## Outcomes and assignments (5 min)
+
+- No assignments from this meeting.
+
+## Wrap up
+
+- Write down any unresolved issues for next meeting. 
+- Decide a time and location for next meeting.
+
+- Utveckla domänmodellen.
+- Förbättra (specificera) user stories.
+- Börja bryta ner våran domänmodell till ett grovt UML.
+- Pappersprototyp.
+- Förbättra mötesstruktuern.
+

@@ -1,0 +1,12 @@
+Group: VAMAJ - Grupp 14
+Date: 
+Chair: 
+Participants: 
+
+1. Vad gör vi på detta möte.
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+2.2 Projektstatus
+3. Diskussionsrunda.
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+5. Planera nästkommande möte, boka också.
