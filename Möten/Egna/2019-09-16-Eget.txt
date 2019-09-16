@@ -1,0 +1,40 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-09-16
+Chair: Alexander LV	
+Participants: Alla (Förutom Jamal)
+
+1. Vad gör vi på detta möte.
+Diskutera vad som skall göras inför seminariet och inför nästa handledarmöte.
+Förbättra mötesstrukturen.
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+
+2.2 Projektstatus
+Alex LV har skissat en preliminär pappersprototyp.
+J. Bunis har kollat över våra user stories och delat in vissa i mindre beståndsdelar då de var för stora.
+Alex Ask. har kollat upp hur man använder dynamiska fxml komponenter. Han har också satt upp ett intellij projekt och pushat till git.
+Mohammed har också jobbat med user stories där han har brutit ner vissa och bidragit med 
+utvecklarinriktade user stories.
+
+3. Diskussionsrunda.
+Vegard tycker det känns stressigt och vill sätta egna deadlines. (Gruppen kommer överrens om att detta
+är något som kommer att göras så fort arbetet börjar "på riktigt")
+Mohammed tycker att det är viktigt att vi börjar på RAD och SDD dokumentet i god tid.
+Gruppen beslutar om att en punkt läggs till mötet som handlar om dokumentstatus.
+
+
+4. Målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+I detta fall planerar vi inför seminariet på tisdag den 17:e
+Vi ska:
+	- Ha en "färdig" domänmodell med UML-notation.
+
+Inför nästa möte på tisdag den 17:e (10.00 till 12.00):
+	- förbättra user stories.
+	- Brytit ner en del till tasks
+
+Inför nästa handledarmöte den 19:e:
+	-Någon sorts fungerande prototyp.
+
+5. Planera nästkommande möte, boka också.
+Nästa möte hålls på tisdag den 17:e (10.00 till 12.00)
+Mohammed bokar grupprum
