@@ -13,13 +13,13 @@ Förbättra mötesstrukturen.
 Alex LV har skissat en preliminär pappersprototyp.
 J. Bunis har kollat över våra user stories och delat in vissa i mindre beståndsdelar då de var för stora.
 Alex Ask. har kollat upp hur man använder dynamiska fxml komponenter. Han har också satt upp ett intellij projekt och pushat till git.
-Mohammed har också jobbat med user stories där han har brutit ner vissa och bidragit med 
+Mohammad har också jobbat med user stories där han har brutit ner vissa och bidragit med 
 utvecklarinriktade user stories.
 
 3. Diskussionsrunda.
 Vegard tycker det känns stressigt och vill sätta egna deadlines. (Gruppen kommer överrens om att detta
 är något som kommer att göras så fort arbetet börjar "på riktigt")
-Mohammed tycker att det är viktigt att vi börjar på RAD och SDD dokumentet i god tid.
+Mohammad tycker att det är viktigt att vi börjar på RAD och SDD dokumentet i god tid.
 Gruppen beslutar om att en punkt läggs till mötet som handlar om dokumentstatus.
 
 
