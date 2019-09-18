@@ -1,0 +1,37 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-09-18
+Chair: Vegard Landrö
+Participants: Samtliga medlemmar
+
+1. Vad gör vi på detta möte.
+- Planera inför handledarmötet
+- tidsplanera för att bli färdiga med med iteration 1 innan slutet på veckan
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+- Vi ska sätta upp dokument i LateX
+
+2.2 Projektstatus
+- Skrev om domänmodellen efter presentation på seminarium
+
+3. Diskussionsrunda.
+- Viktigt att tänka på att user stories är vertikala och independent så att det blir lättare att dela upp arbete
+- Planerar att ha uniform kod stil
+- Planerar code reviews för möten. Lägger till det i DoD(Definition of Done) dokument.
+- LateX för RAD och STD dokument.
+
+- Tar upp hur vi ska hantera kritik mot andra och mot sig själv, skriver till i dokument.
+  * Gruppen är öppen till att ta kritik så länge det är tydligt riktat mot problemet och inte personen.
+  * Personen får beskriva hur den har tänkt och var problemet kom från
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+- Gruppmöte
+  * Travis funkar för alla
+  * Skriva fler tasks
+  * Mohammad sätter upp LateX för RAD och STD
+
+-Handledarmöte
+  * Fungarande protoyp
+
+5. Planera nästkommande möte, boka också.
+- Möte måndag 8-10 EG-5207
