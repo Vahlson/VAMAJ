@@ -1,22 +1,25 @@
 Gruppkontrakt:
 
-Punkter att diskutera VARJE möte:
-1. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+Punkter att diskutera VARJE mÃ¶te:
+1. Status: ta reda pÃ¥ vad folk gÃ¶r och vad folk har gjort och gÃ¥ igenom vÃ¥r scrumboard.
 2. Diskussionsrunda.
-3. målsättning inför nästa möte och inför slut på sprint.
-4. Planera nästkommande möten (hur ska vi sköta möten).
+3. mÃ¥lsÃ¤ttning infÃ¶r nÃ¤sta mÃ¶te och infÃ¶r slut pÃ¥ sprint.
+4. Planera nÃ¤stkommande mÃ¶ten (hur ska vi skÃ¶ta mÃ¶ten).
 
-Hur för vi möten?
-	* vi bestämmer på plats vem som för protokoll
-* Protokollföraren bokar i slutet av möte grupprum för nästa möte och eventuella grupprumsbokningar som behövs.
-*Rimlig tid för ett möte är 1 timme
-*tid och plats för nästa möte bestäms vid varje möte
-* Mötesrutinen ändra rullande.
+Hur fÃ¶r vi mÃ¶ten?
+* vi bestÃ¤mmer pÃ¥ plats vem som fÃ¶r protokoll
+* ProtokollfÃ¶raren bokar i slutet av mÃ¶te grupprum fÃ¶r nÃ¤sta mÃ¶te och eventuella grupprumsbokningar som behÃ¶vs.
+*Rimlig tid fÃ¶r ett mÃ¶te Ã¤r 1 timme
+*tid och plats fÃ¶r nÃ¤sta mÃ¶te bestÃ¤ms vid varje mÃ¶te
+* MÃ¶tesrutinen Ã¤ndra rullande.
 
-Rutiner kring närvaron. 
-Att man måste skriva på förhand ifall man kommer sent till mötet.
+Rutiner kring nÃ¤rvaron. 
+Att man mÃ¥ste skriva pÃ¥ fÃ¶rhand ifall man kommer sent till mÃ¶tet.
 
 Hur vi ska hantera konflikter
- 	(om vi inte kan löser konflikten på egenhand ska vi ta det med handledaren.
+ 	(om vi inte kan lÃ¶ser konflikten pÃ¥ egenhand ska vi ta det med handledaren.
 Kommunikation:
-	Vi skriver om projektet i vår slack (främst general) inte på snapchat.
+	Vi skriver om projektet i vÃ¥r slack (frÃ¤mst general) inte pÃ¥ snapchat.
+	
+Kritik:
+	Samtliga gruppmedlemmar tycker att code review hade varit positivt. Gruppen Ã¤r ok med kritik sÃ¥ lÃ¤nge det Ã¤r konstruktivt samt att personen fÃ¶rklarar varfÃ¶r det Ã¤r fel och den som reviewas fÃ¥r chans att fÃ¶rklara hur han har tÃ¤nkt.
