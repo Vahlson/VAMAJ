@@ -22,7 +22,7 @@ diskutera processen kring hur vi flyttar user stories till tasks till to do osv.
 
 4. Målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
 
-Inför nästa möte på tisdag den 17:e (10.00 till 12.00):
+Inför nästa möte på onsdag den 17:e (10.00 till 12.00):
 	- (IDEA, travis och Mavin) ska funka för alla inför nästa möte.
 	- Se till att vi har brytit ner nog med tasks och att tasks uppfyller "SMART" kriterier.
 
