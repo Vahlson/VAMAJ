@@ -1,0 +1,39 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-09-19
+Chair: Jonatan Bunis
+Participants: Samtliga medlemmar
+
+1. Vad gör vi på detta möte.
+	Tar upp domänmodellen och ändringaran vi gjorde, stämmer av om det är på rätt väg. 
+	Påbörjar UML-diagrammet.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+	Gruppen har gemensamt ändrat domänmodellen med hänsyn till den feedback som gavs under seminariet. 
+	Gruppen har gjort en första version av UML-diagrammet och specifierat vissa user stories.
+
+2.1 Dokumentstatus
+	Oförändrad
+
+2.2 Projektstatus
+	Domänmodell klar, uml-diagram på god väg och samtliga medlemmar har alla nödvändiga verktyg fungerande.
+
+3. Diskussionsrunda.
+	Borde lägga fokus på att komma igång med arbetet (börja koda och ha tillräckligt bra tasks) och förbättra arbetsstrukturen efterhand.
+	Viktigt att påbörja snarast för att ligga i fas med projektet och undvika stress.	
+	
+4. Målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+	Mål inför nästa möte:
+	1. UML-diagram klart tills fredag (20/9-19)
+	2. Ha klart en första version av RAD. 
+	3. Ha påbörjad kod som alla bidragit lika mycket till.
+
+	Generella saker att sträva efter:
+	-Ha tillräckligt bra tasks så arbetet kan påbörjas (sker parallelt med ovanstående punkter).
+	-Allt som ligger i main ska alltid vara körbart. 
+	-Ny feature görs i en ny branch. 
+	-Försök att hålla antalet branches lågt, generellt en per user story. 
+	Finns riktlinjer att kolla upp hur branches bäst ska hanteras.
+
+5. Planera nästkommande möte, boka också.
+
+	Nästa möte är preliminärt onsdag kl 10-11 (2019-09-25).
