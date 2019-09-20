@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1922.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="728.0" prefWidth="702.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="219.0" prefWidth="650.0" styleClass="h1" text="Vad skulle du tjäna på solkraft?" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="96.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="105.0" prefWidth="702.0" styleClass="h3" text="Svara på några enkla frågor om dig och ditt hushåll och få svar direkt!" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="706.0" prefWidth="82.0" />
+            <VBox prefHeight="706.0" prefWidth="694.0" spacing="10.0">
+               <children>
+                  <AnchorPane prefHeight="182.0" prefWidth="502.0" style="-fx-background-color: -fx-white;" />
+                  <AnchorPane prefHeight="182.0" prefWidth="588.0" style="-fx-background-color: -fx-white;" />
+                  <AnchorPane prefHeight="182.0" prefWidth="588.0" style="-fx-background-color: -fx-white;" />
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="109.0" prefWidth="263.0" styleClass="ghostButton" text="Beräkna">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="100.0" top="100.0" />
+         </padding>
+      </HBox>
+   </center>
+   <top>
+      <HBox alignment="BOTTOM_LEFT" prefHeight="174.0" prefWidth="2072.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="581.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="134.0" prefWidth="524.0" styleClass="h2" text="Solkraftskalkylatorn" textFill="WHITE" HBox.hgrow="SOMETIMES">
+                     <graphic>
+                        <ImageView fitHeight="98.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/icons/white/icons8_sun_512px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="174.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button alignment="CENTER" graphicTextGap="15.0" mnemonicParsing="false" styleClass="h4" text="Menu Item" textFill="WHITE" HBox.hgrow="NEVER">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/icons/white/icons8_ios_application_placeholder_512px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" graphicTextGap="15.0" mnemonicParsing="false" styleClass="h4" text="Menu Item" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/icons/white/icons8_ios_application_placeholder_512px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="50.0" right="50.0" />
+         </padding>
+      </HBox>
+   </top>
+   <right>
+      <AnchorPane prefHeight="828.0" prefWidth="198.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <AnchorPane prefHeight="828.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

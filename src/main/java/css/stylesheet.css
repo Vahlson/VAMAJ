@@ -1,0 +1,208 @@
+/*
+Välkommen till programmets huvud-stylesheet.
+Försök hålla allt strukturerat och fint.
+
+Första sektionen är dedikerat ändringar på FXMLs befintliga komponenter (ex. .button, .label, .text-field)
+
+Använd dig av programmets standardfärger som är definerade i början. Finns inte en färg? Lägg då möjligen till denna
+som en färgvariabel om du tror den kommer användas fler gånger. Vi försöker hålla oss till ett fåtal färger,
+detta inkluderar ett fåtal grå/svart/vit-färger.
+HELSVART OCH HELVIT TEXT ÄR OK ATT SÄTTA DIREKT I SCENEBUILDER OM MAN VILL.
+
+i "*{}" sektionen defineras det som ska gälla på allt, däribland de variabler som används.
+UTNYTTJA VARIABLERNA!!!!
+
+
+När du sedan i scenebuilder vill sätta textstorlek på något kan du använda någon av p eller h-klasserna.
+På detta sätt får vi uniforma storlekar på vår text.
+
+
+När du bygger i scenebuilder, försök bygga så att saker blir lätt att ändra. EX på detta, notera de tomma anchorpanesen
+som finns på olika ställen. Detta är för att man lätt ska kunna justera marginaler.
+*/
+
+/*
+@font-face {
+    src: url("../resources/fonts/Montserrat-Regular.ttf") ;
+
+}
+@font-face {
+    src: url("../resources/fonts/Roboto-Regular.ttf") ;
+
+}
+*/
+
+*{
+    /*https://99designs.com/logo-design/psychology-of-color*/
+
+    -fx-base1:#000000;
+    -fx-base2:#000000;
+    -fx-base3:#000000;
+    -fx-base4:#000000;
+
+    -fx-white:white;
+    -fx-gray:#CAD1D5;
+    -fx-lightGray:#EDF3F7;
+
+
+}
+
+
+/*DEFAULT KOMPONENTER*/
+/*.body{
+    -fx-background-color: -fx-base1;
+}*/
+
+
+.button{
+    -fx-background-color: transparent;
+
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-cursor: hand;
+}
+
+.button:hover{
+    -fx-effect: innershadow( gaussian, rgba( 255, 255, 255, 0.10), 100, 1, 0, 0 );
+}
+.button:pressed{
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.15), 2, 2, 2, 2 );
+}
+
+.label{
+     -fx-font-family: "Segoe UI", sans-serif;
+     /*-fx-font-family: 'Roboto', sans-serif;*/
+     /*-fx-font-family: 'Montserrat', sans-serif;*/
+     /*-fx-text-fill: red;*/
+ }
+
+.text{
+    -fx-font-family: "Segoe UI", sans-serif;
+    /*-fx-font-family: 'Roboto', sans-serif;*/
+    /*-fx-font-family: 'Montserrat', sans-serif;*/
+    /*-fx-text-fill: red;*/
+}
+
+.list-view{
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-cursor: hand;
+}
+
+.check-box{
+    -fx-font-family: -fx-baseFont, sans-serif;
+}
+
+.check-box .box{
+    -fx-background-color: -fx-gray;
+    -fx-border-width: 1px;
+    -fx-border-color: -fx-base2;
+}
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+.check-box:selected .box {
+    -fx-background-color: -fx-base4;
+
+}
+
+.combo-box{
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.text-field{
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    /* 3:, 4: */
+    -fx-background-color: -fx-base4;
+    -fx-text-fill: white; /* 5 */
+}
+.combo-box .list-cell:selected:focused, .combo-box .list-cell:filled:selected{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-base4; /* 5 */
+}
+
+.combo-box .arrow {
+    -fx-background-color: -fx-base4;
+}
+
+.list-cell { -fx-text-fill: -fx-base1; /* 5 */ }
+.list-cell:odd { -fx-background-color: white; /* 1 */ }
+.list-cell:even { -fx-background-color: white; /* for information */ }
+.list-cell:filled:hover {
+    -fx-background-color: -fx-gray; /* 2 */
+    -fx-text-fill: -fx-base1; /* 5 */
+}
+
+
+
+
+/*FONTSTORLEKAR*/
+
+.p1{
+    -fx-font-size: 56pt;
+}
+
+.p2{
+    -fx-font-size: 28pt;
+}
+
+.p3{
+    -fx-font-size: 20pt;
+}
+.p4{
+    -fx-font-size: 14pt;
+}
+
+.h1{
+    /*Only applied here for performance reasons*/
+    -fx-font-smoothing-type: gray;
+    -fx-font-size: 56pt;
+    -fx-font-weight: bold;
+}
+.h2{
+    -fx-font-smoothing-type: gray;
+    -fx-font-size: 28pt;
+    -fx-font-weight: bold;
+}
+
+.h3{
+    -fx-font-smoothing-type: gray;
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+}
+.h4{
+    -fx-font-smoothing-type: gray;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+/*EGNA KLASSER*/
+
+.backdrop{
+    -fx-background-color: -fx-base1;
+}
+
+
+.ghostButton{
+   /* -fx-background-color: transparent;*/
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 1 1 1 1;
+}
+
+
+/*
+EXEMPEL PÅ BYTA IKON VID HOVER
+
+
+.emptyButton{
+    -fx-graphic: url("../resources/icons/MainBlue/waste_32px.png");
+
+}
+.emptyButton:hover{
+    -fx-graphic: url("../resources/icons/White/waste_32px.png");
+
+}
+*/
