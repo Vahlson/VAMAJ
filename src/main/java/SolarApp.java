@@ -1,7 +1,9 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -11,13 +13,12 @@ public class SolarApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        // Creating the group (temp)
-        Group group;
-        group = new Group();
+        // Temporary GUI
+        Parent p = FXMLLoader.load(getClass().getResource("View/fxml/main.fxml"));
 
         // Creating the scene (temp)
         Scene scene;
-        scene = new Scene(group, 500, 500);
+        scene = new Scene(p);
 
         // Creating the stage (temp)
         stage.setScene(scene);
