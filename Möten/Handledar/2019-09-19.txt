@@ -29,7 +29,7 @@ Participants: Samtliga medlemmar
 
 	Generella saker att sträva efter:
 	-Ha tillräckligt bra tasks så arbetet kan påbörjas (sker parallelt med ovanstående punkter).
-	-Allt som ligger i main ska alltid vara körbart. 
+	-Allt som ligger i main branch ska alltid vara körbart. 
 	-Ny feature görs i en ny branch. 
 	-Försök att hålla antalet branches lågt, generellt en per user story. 
 	Finns riktlinjer att kolla upp hur branches bäst ska hanteras.
