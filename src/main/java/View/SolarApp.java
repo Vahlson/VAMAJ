@@ -1,4 +1,4 @@
-package main.java;
+package main.java.View;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,7 @@ public class SolarApp extends Application {
     public void start(Stage stage) throws Exception {
 
         // Temporary GUI
-        Parent p = FXMLLoader.load(getClass().getResource("View/fxml/main.fxml"));
+        Parent p = FXMLLoader.load(getClass().getResource("fxml/main.fxml"));
 
         // Creating the scene (temp)
         Scene scene;

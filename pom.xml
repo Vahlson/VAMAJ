@@ -32,6 +32,16 @@
 <build>
 <plugins>
 
+        <plugin>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>0.0.3</version>
+            <configuration>
+                <mainClass>Main</mainClass>
+            </configuration>
+        </plugin>
+
+
 	<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-jar-plugin</artifactId>
@@ -44,6 +54,8 @@
 			</archive>
 		</configuration>
 	</plugin>
+
+
 
 	<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
