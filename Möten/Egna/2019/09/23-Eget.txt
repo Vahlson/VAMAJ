@@ -1,0 +1,45 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-09-23
+Chair: Mhd Jamal Basal
+Participants: Samtliga medlemmar
+
+1. Vad gör vi på detta möte.
+- Planera inför handledarmötet
+- Hur ska vi gå genom prototypen
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+-	Utveckla en simpel algoritm med dummyvärden// Jamal, Vegard
+-	Create classes and associate them// Alexander, Alexander
+-	Create a basic GUI with some welcoming text and a dummy input control// Mohamad, Jonatan
+
+
+2.1 Dokumentstatus
+- Vi ska sätta upp dokument i LateX ( Mohamad har gjort)
+
+2.2 Projektstatus
+- Skrev om domänmodellen efter presentation på seminarium ( Vi har fixad)
+
+3. Diskussionsrunda.
+- Viktigt att testa alla tasks.
+- Kontrollen: Med interface class.
+- Hur kan vi calculate från användare.
+- Mohammad hittat fel med strukturen.
+- Träffas en dag för att programmera(Torsdagar efter kl:13.00).
+- Vegard har gjort en google kalender för möter.
+
+- Tar upp hur vi ska hantera kritik mot andra och mot sig själv, skriver till i dokument.
+  * Gruppen är öppen till att ta kritik så länge det är tydligt riktat mot problemet och inte personen.
+  * Personen får beskriva hur den har tänkt och var problemet kom från
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+- Gruppmöte
+  *Alexander jobbar med att fixa TRAVIS
+  * Skriva fler tasks
+  * Ska alla välja task och börja med till nästa möte
+
+-Handledarmöte
+  * Fungarande protoyp
+
+5. Planera nästkommande möte, boka också.
+- Möte onsdag 10-11 EG-5306
+- Möte torsdag 13-15 EG-5306
