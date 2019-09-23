@@ -1,8 +1,8 @@
 language: java
 
 notifications:
-  email: never
+  email: false
   slack: vamaj:Os2nOIs3WgaZyP47m6eHW86e
 
 jdk:
-- openjdk8
+- oraclejdk8
