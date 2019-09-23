@@ -3,3 +3,6 @@ language: java
 notifications:
   email: never
   slack: vamaj:Os2nOIs3WgaZyP47m6eHW86e
+
+jdk:
+- openjdk8
