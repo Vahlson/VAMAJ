@@ -5,4 +5,4 @@ notifications:
   slack: vamaj:Os2nOIs3WgaZyP47m6eHW86e
 
 jdk:
-- oraclejdk8
+- openjdk8
