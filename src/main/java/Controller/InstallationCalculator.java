@@ -40,8 +40,8 @@ public class InstallationCalculator implements Initializable {
         // Initializing button functionality
         calculateButton.setOnAction(event -> {
 
-            double area = Double.parseDouble(solarAreaField.getText());
-            double cost = Double.parseDouble(costField.getText());
+            double area = solarAreaField.getText().isEmpty() ? 0 : Double.parseDouble(solarAreaField.getText());
+            double cost = costField.getText().isEmpty() ? 0 : Double.parseDouble(costField.getText());
 
             resultText.setText("Kostnad: " + mockResult(area, cost) + " kr");
         });
