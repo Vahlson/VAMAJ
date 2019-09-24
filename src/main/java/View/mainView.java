@@ -26,6 +26,9 @@ public class mainView extends AnchorPane implements Initializable {
     @FXML
     AnchorPane otherViewPane;  //temporarily  name, to be changed then
 
+    @FXML
+    private Button installationButton; // Button that leads to installation screen
+
     public mainView( /*A controller to be added here*/) {
 
     }
@@ -34,6 +37,10 @@ public class mainView extends AnchorPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        // Temporary add to get mock functionality
+        installationButton.setOnAction(event -> {
+            SceneSwitcher.getInstance().setScene("/main/java/View/resources/fxml/installation.fxml");
+        });
 
     }
 
