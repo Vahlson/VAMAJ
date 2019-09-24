@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.View.Question2View">
+   <children>
+      <Label layoutX="204.0" layoutY="73.0" styleClass="p2" text="typ av egendom" />
+      <ProgressBar fx:id="progressBar" layoutX="61.0" layoutY="20.0" prefHeight="23.0" prefWidth="620.0" progress="0.125" />
+      <RadioButton fx:id="consumingRB" layoutX="49.0" layoutY="154.0" mnemonicParsing="false" styleClass="p3" text="Consuming" />
+      <RadioButton fx:id="nonConsumingRB" layoutX="49.0" layoutY="228.0" mnemonicParsing="false" styleClass="p3" text="Non-Consuming" />
+   </children>
+</AnchorPane>
