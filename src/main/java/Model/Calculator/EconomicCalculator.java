@@ -2,20 +2,23 @@ package main.java.Model.Calculator;
 
 public class EconomicCalculator {
 
+    // TODO: move all input variables to Calculator, call methods directly with values
+
     private double installationCost = 30000;
     private int installationLifetime = 25;
     private double installationAnnualKwhProduction = 9000;
+    private double contractKwhCost = 1;
+
     private double installationCostPerKwh = 0.5;
 
     private double annualSavings = 3;
-    private double contractKwhCost = 1;
-
     private int yearsToBreakEven = 3;
 
     // Constructor (empty)
     EconomicCalculator() {
     }
 
+    // Updates all calculations
     public void update(){
         calculateInstallationCostPerKwh();
         calculateYearsToBreakEven();
@@ -23,24 +26,24 @@ public class EconomicCalculator {
     }
 
     // Getters
-    double getAnnualSavings() {
+    public double getAnnualSavings() {
         return annualSavings;
     }
-    double getYearsToBreakEven(){
+    public int getYearsToBreakEven(){
         return yearsToBreakEven;
     }
 
     // Setters
-    void setInstallationCost(double installationCost) {
+    public void setInstallationCost(double installationCost) {
         this.installationCost = installationCost;
     }
-    void setInstallationLifetime(int installationLifetime) {
+    public void setInstallationLifetime(int installationLifetime) {
         this.installationLifetime = installationLifetime;
     }
-    void setInstallationAnnualKwhProduction(double installationAnnualKwhProduction) {
+    public void setInstallationAnnualKwhProduction(double installationAnnualKwhProduction) {
         this.installationAnnualKwhProduction = installationAnnualKwhProduction;
     }
-    void setContractKwhCost(double contractKwhCost) {
+    public void setContractKwhCost(double contractKwhCost) {
         this.contractKwhCost = contractKwhCost;
     }
 
@@ -51,13 +54,14 @@ public class EconomicCalculator {
     }
 
     // Calculates years to break even on installation cost based on avoided grid electricity payments
-    private void calculateYearsToBreakEven(){
+    public void calculateYearsToBreakEven(){
         double avoidedEnergyPayments = contractKwhCost * installationAnnualKwhProduction;
         yearsToBreakEven = (int)(installationCost / avoidedEnergyPayments);
     }
 
     // Calculates annual savings of installation based on calculated per Kwh cost of installation
-    private void calculateAnnualSavings(){
+    public void calculateAnnualSavings(){
+        calculateInstallationCostPerKwh();
         annualSavings = installationAnnualKwhProduction*(contractKwhCost - installationCostPerKwh);
     }
 
