@@ -6,12 +6,16 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.java.Controller.SceneSwitcher;
 
 public class SolarApp extends Application {
 
     // JavaFX start method
     @Override
     public void start(Stage stage) throws Exception {
+
+        // Sets the stage in scene switcher class
+        SceneSwitcher.getInstance().setStage(stage);
 
         // Temporary GUI
         Parent p = FXMLLoader.load(getClass().getResource("/main/java/View/resources/fxml/main.fxml"));

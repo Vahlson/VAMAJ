@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import main.java.Controller.SceneSwitcher;
 
 
 import java.io.IOException;
@@ -43,12 +44,11 @@ public class resultView extends AnchorPane implements Initializable {
 
     @FXML
     private void toMainView(ActionEvent event) throws IOException {
+        // AnchorPane pane = FXMLLoader.load(getClass().getResource("/main/java/View/resources/fxml/main.fxml"));
+        // resultViewRoot.getChildren().setAll(pane);
 
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/main/java/View/resources/fxml/main.fxml"));
-        resultViewRoot.getChildren().setAll(pane);
-
+        SceneSwitcher.getInstance().setScene("/main/java/View/resources/fxml/main.fxml");
     }
-
 }
 
 
