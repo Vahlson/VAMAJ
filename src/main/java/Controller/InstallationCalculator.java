@@ -11,6 +11,9 @@ import javafx.scene.text.Text;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//TODO HELA DENNA KLASS SKA LIGGA I CALCULATOR PAKETET INTE I CONTROLER!!!!!!!!
+//TODO Hur har du tänkt här gällande vart informationen hamnar o.s.v. ?? Tanken är väl att inputen för propertyns egenskaper ska hamna i Propertyt
+//TODO för att sedan göras kalkylationer på.
 public class InstallationCalculator implements Initializable {
 
     // Components in parent FXML-file
@@ -38,6 +41,7 @@ public class InstallationCalculator implements Initializable {
         onlyNumbers(costField);
 
         // Initializing button functionality
+        //TODO varför använder vi helt plötsligt en action här istället för en fxml funktion?
         calculateButton.setOnAction(event -> {
 
             double area = solarAreaField.getText().isEmpty() ? 0 : Double.parseDouble(solarAreaField.getText());
