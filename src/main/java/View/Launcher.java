@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.Controller.SceneSwitcher;
 
-public class SolarApp extends Application {
+public class Launcher extends Application {
 
     // JavaFX start method
     @Override
