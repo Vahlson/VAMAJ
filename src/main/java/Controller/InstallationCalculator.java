@@ -24,6 +24,9 @@ public class InstallationCalculator implements Initializable {
     @FXML
     private Text resultText;
 
+    @FXML
+    private Button backButton;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -35,6 +38,11 @@ public class InstallationCalculator implements Initializable {
             double cost = Double.parseDouble(costField.getText());
 
             resultText.setText("Kostnad: " + mockResult(area, cost));
+        });
+
+        // Initializing back button functionality
+        backButton.setOnAction(event -> {
+            SceneSwitcher.getInstance().setScene("/main/java/View/resources/fxml/main.fxml");
         });
     }
 

@@ -58,5 +58,10 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Button fx:id="backButton" layoutX="102.0" layoutY="45.0" mnemonicParsing="false" text="Tillbaka">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
