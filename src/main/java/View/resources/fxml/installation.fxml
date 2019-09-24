@@ -48,7 +48,7 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <Text layoutX="513.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kostnad: ">
+      <Text fx:id="resultText" layoutX="513.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kostnad: ">
          <font>
             <Font size="36.0" />
          </font>
