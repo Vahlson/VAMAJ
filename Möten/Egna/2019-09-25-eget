@@ -1,0 +1,45 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-09-25
+Chair: Alexander LV
+Participants: Jonatan, Alexander Ask, Vegard, Alexander LV
+
+1. Vad gör vi på detta möte.
+Vi ska kolla lite hur det har gått med tasksen o.s.v.
+tisplanera
+diskutera kring gruppens arbetsfördelning/konflikter.
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+*Alexander LV har börjat jobba på RAD dokumentet.
+  -Han har skrivit lite och satt upp struktur och bilder så att det fort ska gå att fylla med text
+
+2.2 Projektstatus
+*Jonatan har skrivit några tasks och lagt till atribut i en del klasser.
+*Alex Ask har gjort en preliminär fxml fil för en del av programmet samt en klass för att enkelt byta mellan scener.
+*Vegard har skrivit ett par uträkningar i ecnonomic calculator, i allmänhet fortsatt med kalkylatorn. Han har även skrivit tester och
+krånglat med maven som inte vill köra testerna.
+*Mohammad är frånvarande vid mötet men har jobbat en del på GUIt
+*Jamal är inte på mötet och verkar inte ha gjort något. Jamal har inte heller kommunicerat med Vegard vilket han sa att han skulle göra.
+
+3. Diskussionsrunda.
+* Alexander LV och resten av gruppen tycker att det är viktigt att vi tänker på att faktiskt göra tasks innan vi programmerar.
+* VIKTIGT MED SMÅ OCH VÄLDEFINERADE TASKS!!!!!!!!!!! ASSIGNA DIG TILL DET DU FAKTISKT GÖR!
+* Vi måste prata med Jamal och se varför han inte gör det han säger att han ska göra.
+* Ask tycker att man i toppen av varje klass ska skriva tasken kopplad till klassen och vem man är som utför tasken.
+* BARA EN PERSON PER TASK!!!
+* Ask tycker att vi är för tidiga med GUI:t, Alex och jonatan håller med Vegard tycker att GUIt hjälper att förstå programmet.
+* Ask tycker att vi ska dela in i pararbeten med userstorys så att man kan sätta sig in i ett område av programmet.
+* Vegard undrar om det är ok med tasks utan userstorys. Frågar på handledarmötet
+
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+Designmodellen ska vara betydligt mer bearbetad "klar" inför måndag. D.v.s innehålla view, services och controller samt en smart lösning för 
+kommunikation med services.
+
+Inför mötet på torsdag (imorgon) ska vi ha fler tasks som är mer koncisa.
+
+Inför slutet på sprinten d.v.s. slutet på LV 6 skall programmets modell vara i stort sätt färdigt.
+
+5. Planera nästkommande möte, boka också.
+
+nästa möte är på torsdag den 26 kl 13.00 i Eg-3503.
+Nästa möte kommer vara kort. Sedan håller vi code review, efter det så jobbar vi med UML, designmodell.
