@@ -1,6 +1,6 @@
-package main.java.Model.Calculator;
+package main.java.model.Calculator;
 
-import main.java.Model.Calculator.EconomicCalculator;
+import main.java.model.Calculator.EconomicCalculator;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

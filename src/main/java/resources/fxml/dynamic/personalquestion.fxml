@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.dynamiccomponents.PersonalQuestionViewController">
+   <children>
+      <TextField fx:id="firstnameField" layoutX="163.0" layoutY="195.0" />
+      <TextField fx:id="mailField" layoutX="480.0" layoutY="297.0" />
+      <TextField fx:id="lastNameField" layoutX="163.0" layoutY="297.0" />
+      <Label layoutX="204.0" layoutY="73.0" styleClass="p2" text="Personliga upgifter" />
+      <ProgressBar fx:id="progressBar" layoutX="61.0" layoutY="20.0" prefHeight="23.0" prefWidth="620.0" progress="0.0" />
+      <TextField fx:id="phoneField" layoutX="480.0" layoutY="195.0" />
+      <Label layoutX="371.0" layoutY="193.0" styleClass="p3" text="Telefon :" />
+      <Label layoutX="395.0" layoutY="295.0" styleClass="p3" text="Email :" />
+      <Label layoutX="16.0" layoutY="295.0" styleClass="p3" text="Efternamn :" />
+      <Label layoutX="32.0" layoutY="193.0" styleClass="p3" text="Förnamn :" />
+   </children>
+</AnchorPane>
