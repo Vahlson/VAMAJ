@@ -1,0 +1,40 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-09-25
+Chair: Mohamad Melhem
+Participants: Samtliga
+
+1. Vad gör vi på detta möte.
+tisplanera hur vi lägger upp RAD och börja med SDD
+Gå över git-workflow
+tidsplanera kodningen.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+inga ändringar sedan sista mötet. Handledaren tyckte om RAD.
+
+
+2.2 Projektstatus
+Vegard har planerat strukturen för calculator:n.
+
+
+
+
+3. Diskussionsrunda.
+Alexander Ask tycker att alla ska jobba på sin egen del på gui:n när vi programmerar.
+Alexander LV vill göra en mockup gui design.
+Jamal tycker att vi bör ha en tydlig programm prototyp.
+
+
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+betydligt bättre UML. refaktorerad kod, folk uppdelade i programmerings-grupper.
+varje programmeringsgrupp ska ha gjort någonting inför nästa möte.
+Skriva mer i RAD( personen ska skriva om userstorien som den jobbar med i RAD).
+Man ska ha jobbat 6 timmar på projektet inför nästa handledaremöte, f.o.m nästa måndag(2t/d).
+
+
+
+Inför slutet på sprinten d.v.s. slutet på LV 6 skall programmets modell vara i stort sätt färdigt.
+
+5. Planera nästkommande möte, boka också.
+Vegard bokar. Måndag den 30/9, 9:00-12:00 EG-3503.

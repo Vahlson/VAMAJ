@@ -1,0 +1,44 @@
+  
+Group: VAMAJ - Grupp 14
+Date: 2019-09-25
+Chair: Vegard Landrö
+Participants: Alla förutom Mohammad Melhem
+
+1. Vad gör vi på detta möte.
+	kolla på designmodell och diskutera hur vi ska använda designprinciper, ramverk mm.
+	
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+	Har börjat jobba på view och modell. Finns en körbar prototyp
+	Har börjat skriva testklass för fortsatt utveckling
+
+2.1 Dokumentstatus
+	RAD bra framsteg sedan tidigare möte
+
+2.2 Projektstatus
+	UML diagram nästan klart, bra nog för att börja med seriös implementering
+
+3. Diskussionsrunda
+	Diskuterar interface för olika typer av data
+	Tänka ut exakt vad våra service ska göra, vilken data ska den ta imot vilken data ska den skicka tillbaka
+	Calculator kanske ska ha property direkt istället för en user, facade
+	Tänka på skillnaden mellan composition och aggregation	
+	Viktigt att tänka på ungefär lika mycket kodning från alla i gruppen
+
+	Main i "core" i desingmodellen kan vara en facade
+	Döpte om core till Model
+	Undvik -"handler" oklart namn
+	Controller ska ha en instansvariabel av entry point till modellen 
+
+	Hålla varje branch kopplad till en User Story
+	Diskuterar Maven som inte hittar test filer
+	Classresponsibiltiy i RAD ska vara text-baserad
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+	Första iterationen av RAD ska vara klar
+	User Stories acceptance kriterier ska vara i RAD
+	Börja med SDD
+	Gå över Git workflow
+
+5. Planera nästkommande möte, boka också.
+	Möte 13.00 samma sal
+	
