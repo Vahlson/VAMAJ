@@ -10,9 +10,18 @@ public class Property {
     private double availableSpace;
     private int orientation;
     private int angle;
+    private double latitude;
 
     // Constructor (empty)
     public Property() {
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     // Getters
