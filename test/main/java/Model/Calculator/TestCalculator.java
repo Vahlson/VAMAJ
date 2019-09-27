@@ -1,6 +1,7 @@
-package main.java.model.Calculator;
+package main.java.Model.Calculator;
 
-import main.java.model.Calculator.EconomicCalculator;
+import main.java.model.Calculator.*;
+import main.java.model.Property.Property;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -8,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class TestCalculator {
 
-    @Test
+    /*@Test
     public void testYearsToBreakEven(){
         EconomicCalculator ECalc = new EconomicCalculator();
 
@@ -38,5 +39,19 @@ public class TestCalculator {
 
         assertTrue(answer == 400);
 
+    }*/
+
+    @Test
+    public void testAnnualElectricityProduction(){
+        AnnualElectricityProduction AE = new AnnualElectricityProduction();
+        Property p = new Property();
+
+        p.setLatitude(60);
+        p.setInstallationSpace(20);
+
+        String s = AE.apply(p);
+        System.out.println(s);
+
+        assertTrue(s.equals("37960"));
     }
 }

@@ -12,7 +12,7 @@ public class AnnualElectricityProduction  implements Function<Property, String> 
 
         double KWhPerSqMeterPerDay = insolation(latitude);
         double KWhPerSqMeterPerYear = KWhPerSqMeterPerDay * 365;
-        return solarArea * KWhPerSqMeterPerYear + "";
+        return (int)(solarArea * KWhPerSqMeterPerYear + 1) + "";
     }
 
     private double insolation(double latitude){
