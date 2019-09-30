@@ -8,6 +8,7 @@ public class ServiceFacade {
     private ILocationCreator locationCreator;
     private IContractCreator contractCreator;
 
+    // Getters
     Contract getContract() {
         return contractCreator.createContract();
     }
@@ -16,4 +17,12 @@ public class ServiceFacade {
         return locationCreator.createLocation();
     }
 
+    // Setters
+    void setLocationCreator(ILocationCreator creator) {
+        this.locationCreator = creator;
+    }
+
+    void setContractCreator(IContractCreator creator) {
+        this.contractCreator = creator;
+    }
 }
