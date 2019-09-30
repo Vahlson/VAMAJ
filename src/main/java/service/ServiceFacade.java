@@ -5,8 +5,8 @@ import main.java.model.Property.Location;
 
 public class ServiceFacade {
 
-    private ILocationCreator locationCreator;
-    private IContractCreator contractCreator;
+    private ILocationCreator locationCreator = new MockLocationCreator(); // Initialized to mock class for now
+    private IContractCreator contractCreator = new MockContractCreator(); // Initialized to mock class for now
 
     // Getters
     Contract getContract() {
