@@ -1,7 +1,7 @@
 package main.java.model.Calculator;
 
 import main.java.model.Property.Property;
-import main.java.model.User;
+import main.java.model.user.User;
 
 public class Calculator {
 

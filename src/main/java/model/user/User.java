@@ -1,4 +1,4 @@
-package main.java.model;
+package main.java.model.user;
 
 import main.java.model.Property.Property;
 
