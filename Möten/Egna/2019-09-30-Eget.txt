@@ -1,0 +1,30 @@
+Group: VAMAJ - Grupp 14
+Date:			2019-09-30
+Chair:			Alexander Larnemo Ask
+Participants:		Alla förutom Jonatan Bunis & Mhd Jamal
+
+1. Vad gör vi på detta möte.
+	Stämmer av med gruppen.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+	Vegard: börjat implementera nya idéer.
+	Mohamad: jobbade med solara installation och property. Kollat lite på GUI.
+	Alexander Ask: tänkt lite kring service paketet.
+	Alexander LV: gjort en mockup GUI. Jobbat med service paketet.
+
+2.1 Dokumentstatus
+	Alexander LV har skrivit lite i RAD. Dokumenten går frammåt.
+
+2.2 Projektstatus
+	UML är uppdaterat och nästan klart.
+	se ovan, vad folk har gjort.
+
+3. Diskussionsrunda.
+	Tänka om lite kring solar installation och hur relaterade klasser hänger ihop.
+
+4. Målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+	SDD skall vara påbörjad. Vi skall ha programmerat minst 6 timmar.
+	
+
+5. Planera nästkommande möte, boka också.
+	Nästa möte 2019-10-2 - Kl 10:00 - 12:00.
