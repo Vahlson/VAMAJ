@@ -2,7 +2,7 @@ package main.java.viewcontroller;
 
 import main.java.model.ModelFacade;
 import main.java.model.Property.Location;
-import main.java.service.ServiceFacade;
+import main.java.services.ServiceFacade;
 
 // (3.1) Alexander Ask
 public class PrimaryController {

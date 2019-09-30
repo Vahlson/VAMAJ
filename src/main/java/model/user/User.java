@@ -17,9 +17,9 @@ public class User {
     }
 
     // Getters (do we really want to expose the property to other classes? Maybe it is better to expose its getters/setters)
-    // public Property getActiveProperty() {
-    //     return activeProperty;
-    // }
+    public Property getActiveProperty() {
+        return activeProperty;
+    }
 
     // Setters
     public void setLocation(Location l) {
