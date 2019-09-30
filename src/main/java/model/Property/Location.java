@@ -9,6 +9,14 @@ public class Location {
         return solarHours;
     }
 
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public int getSolarPower() {
+        return solarPower;
+    }
+
     public void setSolarHours(int solarHours) {
         this.solarHours = solarHours;
     }
