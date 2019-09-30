@@ -1,5 +1,6 @@
 package main.java.model.user;
 
+import main.java.model.Property.Location;
 import main.java.model.Property.Property;
 
 import java.util.ArrayList;
@@ -15,8 +16,13 @@ public class User {
     public User() {
     }
 
-    // Getters
-    public Property getActiveProperty() {
-        return activeProperty;
+    // Getters (do we really want to expose the property to other classes? Maybe it is better to expose its getters/setters)
+    // public Property getActiveProperty() {
+    //     return activeProperty;
+    // }
+
+    // Setters
+    public void setLocation(Location l) {
+        activeProperty.setLocation(l);
     }
 }

@@ -24,16 +24,32 @@ public class Property {
         return contract;
     }
 
-    public double getInstallationSpace() { return availableSpace; }
+    public double getInstallationSpace() {
+        return availableSpace;
+    }
 
-    public int getOrientation() { return orientation; }
+    public int getOrientation() {
+        return orientation;
+    }
 
-    public int getPanelAngle() { return angle; }
+    public int getPanelAngle() {
+        return angle;
+    }
 
     // Setters
-    public void setInstallationSpace(double installationSpace) { this.availableSpace = installationSpace; }
+    public void setLocation(Location l) {
+        this.location = l;
+    }
 
-    public void setOrientation(int orientation) { this.orientation = orientation; }
+    public void setInstallationSpace(double installationSpace) {
+        this.availableSpace = installationSpace;
+    }
 
-    public void setPanelAngle(int panelAngle) { this.angle = panelAngle; }
+    public void setOrientation(int orientation) {
+        this.orientation = orientation;
+    }
+
+    public void setPanelAngle(int panelAngle) {
+        this.angle = panelAngle;
+    }
 }
