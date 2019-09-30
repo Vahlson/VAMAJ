@@ -2,7 +2,7 @@ package main.java.service;
 
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
-
+//(3.1) Alex LV och Alex Ask
 public class ServiceFacade {
 
     private ILocationCreator locationCreator = new MockLocationCreator(); // Initialized to mock class for now
