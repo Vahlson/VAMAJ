@@ -1,6 +1,7 @@
 package main.java.viewcontroller;
 
 import main.java.model.ModelFacade;
+import main.java.model.Property.Location;
 import main.java.service.ServiceFacade;
 
 // (3.1) Alexander Ask
@@ -21,6 +22,12 @@ public class PrimaryController {
     private ServiceFacade serviceFacade;
     private ModelFacade modelFacade;
 
+    // Setters
+    void setLocation() {
+        Location l;
+        l = serviceFacade.getLocation();
 
+        modelFacade.setLocation(l);
+    }
 
 }

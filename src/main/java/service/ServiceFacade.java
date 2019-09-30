@@ -9,11 +9,11 @@ public class ServiceFacade {
     private IContractCreator contractCreator = new MockContractCreator(); // Initialized to mock class for now
 
     // Getters
-    Contract getContract() {
+    public Contract getContract() {
         return contractCreator.createContract();
     }
 
-    Location getLocation() {
+    public Location getLocation() {
         return locationCreator.createLocation();
     }
 
