@@ -1,10 +1,10 @@
 package test.java;
 
-import main.java.model.Calculator.AnnualElectricityProduction;
+import main.java.model.Calculator.AnnualSolarElectricity;
+import main.java.model.Calculator.AnnualSolarElectricityInput;
+import main.java.model.Calculator.AnnualSolarElectricityOutput;
 import main.java.model.Property.Property;
 
-import main.java.model.Calculator.*;
-import main.java.model.Property.Property;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,15 +13,19 @@ import static org.junit.Assert.*;
 public class TestCalculator {
     @Test
     public void testAnnualElectricityProduction(){
-        AnnualElectricityProduction AE = new AnnualElectricityProduction();
-        Property p = new Property();
+        AnnualSolarElectricity AE = new AnnualSolarElectricity();
+        AnnualSolarElectricityOutput output;
 
-        p.setLatitude(60);
-        p.setInstallationSpace(20);
+        double latitude = 23;
+        double solarArea = 5;
+        double efficiency = 22;
 
-        String s = AE.apply(p);
-        System.out.println(s);
+        AnnualSolarElectricityInput input = new AnnualSolarElectricityInput(latitude, solarArea, efficiency);
 
-        assertTrue(s.equals("37960"));
+        output = AE.calculate(input);
+        double result = output.getAnnualElectricityProduction();
+        System.out.println(result);
+
+        assertTrue((int)result == 3276);
     }
 }
