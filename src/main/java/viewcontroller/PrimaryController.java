@@ -24,10 +24,10 @@ public class PrimaryController {
 
     // Setters
     void setLocation() {
-        Location l;
-        l = serviceFacade.getLocation();
-
-        modelFacade.setLocation(l);
+        modelFacade.setLocation(serviceFacade.getLocation());
     }
 
+    void setContract() {
+        modelFacade.setContract(serviceFacade.getContract());
+    }
 }

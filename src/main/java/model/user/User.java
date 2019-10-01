@@ -1,5 +1,6 @@
 package main.java.model.user;
 
+import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 import main.java.model.Property.Property;
 
@@ -24,5 +25,9 @@ public class User {
     // Setters
     public void setLocation(Location l) {
         activeProperty.setLocation(l);
+    }
+
+    public void setContract(Contract c) {
+        activeProperty.setContract(c);
     }
 }

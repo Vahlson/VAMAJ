@@ -52,4 +52,8 @@ public class Property {
     public void setPanelAngle(int panelAngle) {
         this.angle = panelAngle;
     }
+
+    public void setContract(Contract c) {
+        this.contract = c;
+    }
 }
