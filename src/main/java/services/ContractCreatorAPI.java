@@ -8,6 +8,11 @@ public class ContractCreatorAPI implements IContractCreator{
 
     @Override
     public Contract createContract() {
-        return null;
+
+        MockContractAPI api = new MockContractAPI();
+        Contract c = new Contract();
+        c.setCost(api.getCost());
+
+        return c;
     }
 }
