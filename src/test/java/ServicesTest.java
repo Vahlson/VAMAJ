@@ -1,3 +1,5 @@
+package test.java;
+
 import junit.framework.TestCase;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;

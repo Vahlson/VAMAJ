@@ -1,3 +1,4 @@
+package test.java;
 
 import junit.framework.TestCase;
 import main.java.services.ServiceFacade;
