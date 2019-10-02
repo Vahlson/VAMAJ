@@ -94,7 +94,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         switch (state) {
             case 0:
-                p = FXMLLoader.load(getClass().getResource("/main/java/resources/fxml/dynamic/propertyquestion.fxml"));
+                p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
                 break;
