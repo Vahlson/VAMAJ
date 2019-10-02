@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class Window extends Application {
 
     // JavaFX start method
@@ -16,7 +18,7 @@ public class Window extends Application {
         SceneSwitcher.getInstance().setStage(stage);
 
         // Temporary GUI
-        Parent p = FXMLLoader.load(getClass().getResource("/main/java/resources/fxml/mainscene.fxml"));
+        Parent p = FXMLLoader.load(getClass().getResource("/fxml/mainscene.fxml"));
 
         // Creating the scene (temp)
         Scene scene;

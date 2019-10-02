@@ -43,7 +43,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         // Temporary add to get mock functionality
         installationButton.setOnAction(event -> {
-            SceneSwitcher.getInstance().setScene("/main/java/resources/fxml/installationscene.fxml");
+            SceneSwitcher.getInstance().setScene("/fxml/installationscene.fxml");
         });
 
     }
@@ -54,7 +54,7 @@ public class MainViewController extends AnchorPane implements Initializable {
         // mainViewRoot.getChildren().setAll(pane);
 
         Parent p;
-        p = FXMLLoader.load(getClass().getResource("/main/java/resources/fxml/resultscene.fxml"));
+        p = FXMLLoader.load(getClass().getResource("/fxml/resultscene.fxml"));
         SceneSwitcher.getInstance().setScene(p);
     }
     @FXML
@@ -62,7 +62,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
 
 
-        p = FXMLLoader.load(getClass().getResource("/main/java/resources/fxml/dynamic/personalquestion.fxml"));
+        p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/personalquestion.fxml"));
 
         questionsAnchor.getChildren().add(p);
     }
@@ -74,7 +74,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         switch (state){
             case 0:
-                p = FXMLLoader.load(getClass().getResource("/main/java/resources/fxml/dynamic/personalquestion.fxml"));
+                p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/personalquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
                 break;

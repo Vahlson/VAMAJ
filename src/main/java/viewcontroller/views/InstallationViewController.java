@@ -46,7 +46,7 @@ public class InstallationViewController implements Initializable {
         });
 
         // Initializing back button functionality
-        backButton.setOnAction(event -> SceneSwitcher.getInstance().setScene("/main/java/resources/fxml/mainscene.fxml"));
+        backButton.setOnAction(event -> SceneSwitcher.getInstance().setScene("/fxml/mainscene.fxml"));
     }
 
     // Just temporary helper method to calculate the costs, in future this will be done in calculator classes
