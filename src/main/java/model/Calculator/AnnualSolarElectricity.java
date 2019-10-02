@@ -15,9 +15,7 @@ public class AnnualSolarElectricity implements Calculator<AnnualSolarElectricity
         double kWhPerSqMeterPerYear     = kWhPerSqMeterPerDay * 365;
         double kWhPerYearTotal          = solarArea * kWhPerSqMeterPerYear;
 
-        AnnualSolarElectricityOutput output = new AnnualSolarElectricityOutput();
-        output.setAnnualElectricityProduction(kWhPerYearTotal);
-        return output;
+        return new AnnualSolarElectricityOutput(kWhPerYearTotal);
     }
 
     private double Insolation(double latitude){
