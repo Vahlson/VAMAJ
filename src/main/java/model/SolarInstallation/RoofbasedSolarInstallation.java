@@ -15,9 +15,7 @@ public class RoofbasedSolarInstallation extends SolarInstallation {
         return roofUnit;
     }
 
-    public void setRoofUnit(double roofUnit) {
-        this.roofUnit = roofUnit;
-    }
+
 
 
 

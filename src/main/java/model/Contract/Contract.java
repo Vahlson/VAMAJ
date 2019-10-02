@@ -20,30 +20,21 @@ public class Contract {
         return contractProvider;
     }
 
-    public void setContractProvider(String contractProvider) {
-        this.contractProvider = contractProvider;
-    }
 
     public String getContractCity() {
         return contractCity;
     }
 
-    public void setContractCity(String contractCity) {
-        this.contractCity = contractCity;
-    }
+
 
     public double getTariff() {
         return tariff;
     }
 
-    public void setTariff(double tariff) {
-        this.tariff = tariff;
-    }
+
     public double getContractDuration() {
         return contractDuration;
     }
 
-    public void setContractDuration(double contractDuration) {
-        this.contractDuration = contractDuration;
-    }
+
 }

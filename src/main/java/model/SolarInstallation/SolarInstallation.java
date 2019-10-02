@@ -38,9 +38,6 @@ public class SolarInstallation {
         return efficiency;
     }
 
-    public void setEfficiency(double efficiency) {
-        this.efficiency = efficiency;
-    }
 
     public double getInstallationsCost() {
         return InstallationsCost;
@@ -50,13 +47,7 @@ public class SolarInstallation {
         return spaceRequired;
     }
 
-    public void setSpaceRequired(double spaceRequired) {
-        this.spaceRequired = spaceRequired;
-    }
 
-    public void setInstallationsCost(double installationsCost) {
-        this.InstallationsCost = installationsCost;
-    }
 
 
 }
