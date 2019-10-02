@@ -1,0 +1,46 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-02
+Chair: Alex LV
+Participants: Alla förutom Jamal. 
+
+1. Vad gör vi på detta möte.
+Diskutera hur vi ska börja med SDD.
+Se till att specifiera mål, User Stories.
+Tänka på frågor inför handledarmötet.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+Ingen har skrivit på dokumenten trots att vi kommit överrens om att alla ska skriva om sitt arbetsområde. Vi gör det tills nästa gång.
+
+2.2 Projektstatus
+Vegard har jobbat mer på kalkylatorn.
+Jonte har kollat på hur andra har skrivit user stories i RAD. Han har också funderat på vad han ska jobba med framöver.
+Han kommer hitta en user story ASAP.
+Alex och Alex har färdiggjort service packetet enligt user story (3.1), kvar är lite tester.
+Mohammad har jobbat med att sätta kött på benen i contract packetet.
+
+
+3. Diskussionsrunda.
+Vegard tycker att vi ska implementera sparande av användarens data i en fil. Han kollar om det är en user story, annars gör han en user story av det.
+han undrar även om man ska behöva skriva in allt för att få beräkna. Gruppen tycker att man ska kunna beräkna först på viktiga värden
+d.v.s. utan att all information är inmatad men att man kan fortsätta mata in för att få mer exakta beräkningar.
+Alex Ask vill att vi ska fixa maven. Resten av gruppen inser att detta är extremt viktigt.
+han vill även att vi ska höra med handledaren om vi har gjort servicepaketet på ett bra sätt med chain of responsibility, det blir många beroenden.
+
+
+Sidenote: progressbaren ska delvis också vara att hela sidan blir till dag. ("Det hade varit asfräckt!", "Fränt!!!!")
+
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+Varje medlem ska ha gjort en User Story som dom enskilt jobbar på och har kommit uppskattningsvis hälvten på 
+tills nästa måndag den 7:e okt (d.s.v) början på nästa sprint.
+SDD:n ska vara påbörjat tills imorgon, handledarmötet. 
+
+
+Frågor till handledaren:
+  - har vi gjort servicepaketet på ett bra sätt med chain of responsibility, det blir många beroenden?
+  - fristående tasks?
+
+5. Planera nästkommande möte, boka också.
+vi träffas och programmerar på torsdag den 3:e kl 14:00 till 16:00 i F4054
+Nästa möte är på måndag den 7:e kl 09:00 i Eg-2515
