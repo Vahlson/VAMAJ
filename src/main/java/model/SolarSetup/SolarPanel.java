@@ -1,4 +1,4 @@
-package main.java.model.SolarInstallation;
+package main.java.model.SolarSetup;
 
 public class SolarPanel {
     private double requiredSpace;
