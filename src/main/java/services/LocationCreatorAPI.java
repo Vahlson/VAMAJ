@@ -3,7 +3,7 @@ package main.java.services;
 import main.java.model.Property.Location;
 
 //(3.1) Alex LV och Alex Ask
-// Mock class, this will be API/File implementation later on
+// Implementation of ILocationCreator that creates location objects based on input from an API.
 public class LocationCreatorAPI implements ILocationCreator{
 
 

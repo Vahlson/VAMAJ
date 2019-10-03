@@ -3,12 +3,16 @@ package main.java.services;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 //(3.1) Alex LV och Alex Ask
+//The service package facade, meaning interface that exposes wanted functionality outward from the service package.
 public class ServiceFacade {
 
+    // Creation of data grabbers, defaults to getting data from APIs.
     private ILocationCreator locationCreator = new LocationCreatorAPI(); // Initialized to mock class for now
     private IContractCreator contractCreator = new ContractCreatorAPI(); // Initialized to mock class for now
 
     // Getters
+    // Returns a Contract or Location respectively by the method decided by the dynamic class of the
+    // location/contractCreator
     public Contract getContract() {
         return contractCreator.createContract();
     }
