@@ -1,0 +1,52 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-03
+Chair: Jonatan Bunis
+Participants: Samtliga förutom Jamal
+
+1. Vad gör vi på detta möte.
+Kollar och diskutera hur situationen ligger till med gruppen och dess olika medlemmar, och det arbete som gjorts.
+
+Tar upp frågor:
+
+1.1. Service-paketet, om strukturen är bra.
+-Eventuellt gå direkt fårn facaden till location, så länge det räcker för användaren att hålla/ha location. 
+-Kedjan från sevice-paketet nödvändig (en väg från service controllern), den inom modellen inte lika självklar. 
+-Eventuellt ändra Location-klassen
+-Viktigast att kunna motivera sina val och inte att det är den perfekta lösningen.
+
+1.2.Input vid skapandet av contract, Hur ska contracten skapas via input jämnfört med om de hämtas.
+-Att servicen är beroende på modellen är okej/bra. 
+-Om contracten inte är via APIer behöver de inte ligga i service-paketet utan kan vara direkt i modellen. Data direkt från controllern till facaden.
+
+1.3. Hur viktigt det är att calculatern är fristående från programmet
+-Vegards planerade design låter bra.
+-Paketinternt sammarbete är okej. Undvik cirkulära beroenden. Direkta beroenden på data ska inte hindra expendability. (ska vara lätt att bygga ut)
+
+1.4. Hur vyn och model-facaden fungerar, information från modellen till vyn bland annat. (finns utrymme för observer-pattern t.ex.)
+-Observer nog inte nödvändigt. Är alltid controllern som initierar förändring.
+-Kan ändra så att window direkt kan kalla på scene-switcher.
+-Kolla upp (googla) när singeltons ska användas, ska kunna motiveras varför det används eller inte.
+
+1.5 Är tasks utan UserStorys okej?
+-Ja det är helt okej om de inte är tydligt kopplade till någon specifik UserStory.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+-Oförändrat sen förra mötet.
+
+2.1 Dokumentstatus
+
+Både RAD och SDD har har uppdaterats och utvidgats.
+
+UML-diagrammet är tydligt, bra balans på storlek och detaljer (inget överflödigt).
+
+2.2 Projektstatus
+-Oförändrat sedan mötet igår
+
+3. Diskussionsrunda.
+-Inget
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+-Samma som förra mötet
+
+5. Planera nästkommande möte, boka också.
+-Måndag 10-12
