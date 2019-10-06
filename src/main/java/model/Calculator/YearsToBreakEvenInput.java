@@ -1,43 +1,35 @@
 package main.java.model.Calculator;
 
+//(1.1) Vegard
+//Class to contain input values of annualElectricityProduction calculation
+
 public class YearsToBreakEvenInput {
     private double installationCost;
-    private double annualOperationCost;
+    private double annualOperationCost = 0; //Default value that can be changed with setter
     private double annualProduction;
-    private double annualConsumption;
     private double electricityPricePerKWh;
 
-    public YearsToBreakEvenInput(double installationCost, double annualProduction, double annualConsumption, double electricityPricePerKWh,  double annualOperationCost) {
+    public YearsToBreakEvenInput(double installationCost, double annualProduction, double electricityPricePerKWh) {
         this.installationCost = installationCost;
         this.annualProduction = annualProduction;
-        this.annualConsumption = annualConsumption;
         this.electricityPricePerKWh = electricityPricePerKWh;
+    }
+
+    //Setter for annualOperationCost since it's optional for calculation
+    public void setAnnualOperationCost(double annualOperationCost) {
         this.annualOperationCost = annualOperationCost;
-    }
-
-    public YearsToBreakEvenInput(double installationCost, double annualProduction, double annualConsumption, double electricityPricePerKWh) {
-        this.installationCost = installationCost;
-        this.annualProduction = annualProduction;
-        this.annualConsumption = annualConsumption;
-        this.electricityPricePerKWh = electricityPricePerKWh;
-        this.annualOperationCost = 0;
-
-    }
-
-    double getInstallationCost() {
-        return installationCost;
     }
 
     double getAnnualOperationCost() {
         return annualOperationCost;
     }
 
-    double getAnnualProduction() {
-        return annualProduction;
+    double getInstallationCost() {
+        return installationCost;
     }
 
-    double getAnnualConsumption() {
-        return annualConsumption;
+    double getAnnualProduction() {
+        return annualProduction;
     }
 
     double getElectricityPricePerKWh() {
