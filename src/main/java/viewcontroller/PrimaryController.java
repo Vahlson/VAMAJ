@@ -1,8 +1,8 @@
 package main.java.viewcontroller;
 
 import main.java.model.ModelFacade;
-import main.java.model.Property.Location;
 import main.java.services.ServiceFacade;
+import main.java.viewcontroller.SceneSwitcher;
 
 // (3.1) Alexander Ask
 public class PrimaryController {

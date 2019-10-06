@@ -15,12 +15,33 @@ public class ModelAggregate {
     private List<User> users;
     private Property property;
 
-
-    void setLocation(Location l) {
+    // Setters in property
+    void setPropertyLocation(Location l) {
         property.setLocation(l);
     }
 
+    void setPropertyLatitude(double latitude) {
+        property.setLatitude(latitude);
+    }
+
+    void setPropertyPanelAngle(int panelAngle) {
+        property.setPanelAngle(panelAngle);
+    }
+
+    void setPropertyOrientation(int orientation) {
+        property.setOrientation(orientation);
+    }
+
+    void setPropertyInstallationSpace(double installationSpace) {
+        property.setInstallationSpace(installationSpace);
+    }
+
+    // Setters in contract
     void setContract(Contract c) {
         property.setContract(c);
+    }
+
+    void setContractCost(int cost) {
+        property.getContract().setCost(cost);
     }
 }
