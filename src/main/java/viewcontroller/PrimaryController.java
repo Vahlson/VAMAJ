@@ -30,4 +30,9 @@ public class PrimaryController {
     void setContract() {
         modelFacade.setContract(serviceFacade.getContract());
     }
+
+    // Example
+    void setPropertyInstallationSpace(double installationSpace) {
+        modelFacade.getModelAggregate().setPropertyInstallationSpace(installationSpace);
+    }
 }

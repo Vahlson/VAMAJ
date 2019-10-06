@@ -16,32 +16,32 @@ public class ModelAggregate {
     private Property property;
 
     // Setters in property
-    void setPropertyLocation(Location l) {
+    public void setPropertyLocation(Location l) {
         property.setLocation(l);
     }
 
-    void setPropertyLatitude(double latitude) {
+    public void setPropertyLatitude(double latitude) {
         property.setLatitude(latitude);
     }
 
-    void setPropertyPanelAngle(int panelAngle) {
+    public void setPropertyPanelAngle(int panelAngle) {
         property.setPanelAngle(panelAngle);
     }
 
-    void setPropertyOrientation(int orientation) {
+    public void setPropertyOrientation(int orientation) {
         property.setOrientation(orientation);
     }
 
-    void setPropertyInstallationSpace(double installationSpace) {
+    public void setPropertyInstallationSpace(double installationSpace) {
         property.setInstallationSpace(installationSpace);
     }
 
     // Setters in contract
-    void setContract(Contract c) {
+    public void setContract(Contract c) {
         property.setContract(c);
     }
 
-    void setContractCost(int cost) {
+    public void setContractCost(int cost) {
         property.getContract().setCost(cost);
     }
 }
