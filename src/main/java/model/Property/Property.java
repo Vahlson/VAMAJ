@@ -1,6 +1,7 @@
 package main.java.model.Property;
 
 import main.java.model.Contract.Contract;
+import main.java.model.Property.Location;
 
 public class Property {
 

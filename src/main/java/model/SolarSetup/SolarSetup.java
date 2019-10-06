@@ -1,9 +1,9 @@
-package main.java.model.SolarInstallation;
+package main.java.model.SolarSetup;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolarInstallation {
+public class SolarSetup {
 
     // Member variables
     private List <SolarPanel> solarPanels = new ArrayList <>();
@@ -16,7 +16,7 @@ public class SolarInstallation {
 
 
 
-    public SolarInstallation(List <SolarPanel> solarPanels, double efficiency, double cost, double spaceRequired) {
+    public SolarSetup(List <SolarPanel> solarPanels, double efficiency, double cost, double spaceRequired) {
         this.solarPanels = solarPanels;
 
         this.efficiency = efficiency;
