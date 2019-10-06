@@ -33,12 +33,12 @@ public class TestCalculator {
     @Test
     public void testLevelizedCostOfElectricity(){
 
-        LevelizedCostOfElectricityInput input = new LevelizedCostOfElectricityInput(30, 1000, 100, 30000);
+        LevelizedCostOfElectricityInput input = new LevelizedCostOfElectricityInput(30, 1000, 30000);
+        input.setAnnualOperationCost(100);
         Calculator<LevelizedCostOfElectricityInput, LevelizedCostOfElectricityOutput> LC = new LevelizedCostOfElectricity();
         LevelizedCostOfElectricityOutput output = LC.calculate(input);
 
         double result = output.getlCOE();
-        System.out.println(result);
 
         assertTrue(Math.abs(result-0.90909) < 0.05);
     }
@@ -46,12 +46,12 @@ public class TestCalculator {
     @Test
     public void testYearsToBreakEven(){
 
-        YearsToBreakEvenInput input = new YearsToBreakEvenInput(30000, 1500, 10000, 1, 100);
+        YearsToBreakEvenInput input = new YearsToBreakEvenInput(30000, 1500,  1);
+        input.setAnnualOperationCost(100);
         Calculator<YearsToBreakEvenInput, YearsToBreakEvenOutput> LC = new YearsToBreakEven();
         YearsToBreakEvenOutput output = LC.calculate(input);
 
         double result = output.getYears();
-        System.out.println("Years" + result);
 
         assertTrue(Math.abs(result-21.0) < 0.1);
     }
