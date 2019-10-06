@@ -1,4 +1,4 @@
-package main.java.services;
+package main.java.services.ContractCreator;
 
 import main.java.model.Contract.Contract;
 

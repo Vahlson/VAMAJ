@@ -12,10 +12,9 @@ public class ServicesTest extends TestCase {
     public void testLocationCreationFromAPI(){
         ServiceFacade sf = new ServiceFacade();
         Location l = sf.getLocation();
-        assertEquals(l.getSolarHours(), 5);
-        assertEquals(l.getCoordinate().getX(), 10.5);
-        assertEquals(l.getCoordinate().getY(), 25.3);
-        assertEquals(l.getSolarPower(),1001);
+        assertEquals(l.getCoordinate().getLatitude(), 63.825848);
+        assertEquals(l.getCoordinate().getLongitude(), 20.263035);
+
 
     }
     @Test

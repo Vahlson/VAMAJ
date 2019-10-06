@@ -1,4 +1,4 @@
-package main.java.services;
+package main.java.services.LocationCreator;
 
 import main.java.model.Property.Location;
 

@@ -1,4 +1,4 @@
-package main.java.services;
+package main.java.services.ContractCreator;
 
 //(3.1) Alex LV
 //Mockup API to test services functionality.
