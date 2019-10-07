@@ -28,11 +28,16 @@ public class ServiceFacade {
     }
 
     // Setters
-    void setLocationCreator(ILocationCreator creator) {
+    public void setLocationCreator(ILocationCreator creator) {
         this.locationCreator = creator;
     }
 
-    void setContractCreator(IContractCreator creator) {
+    public void setContractCreator(IContractCreator creator) {
         this.contractCreator = creator;
+    }
+
+    public void setLocationCreatorCoordinates(double latitude, double longitude){
+        locationCreator.setLatitude(latitude);
+        locationCreator.setLongitude(longitude);
     }
 }

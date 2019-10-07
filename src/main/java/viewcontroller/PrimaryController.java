@@ -23,7 +23,8 @@ public class PrimaryController {
     private ModelFacade modelFacade;
 
     // Setters
-    void setLocation() {
+    void setLocation(double latitude, double longitude) {
+        serviceFacade.setLocationCreatorCoordinates(latitude,longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
