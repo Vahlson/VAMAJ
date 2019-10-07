@@ -1,14 +1,15 @@
 package main.java.model.Calculator;
 
+// Class to contain input values of InstallationCost calculation
 public class InstallationCostInput {
 
     private double availableSpace;
-    private double requiredSpace;
+    private double requiredPanelSpace;
     private double panelPrice;
 
     public InstallationCostInput(double availableSpace, double requiredSpace, double panelPrice) {
         this.availableSpace = availableSpace;
-        this.requiredSpace = requiredSpace;
+        this.requiredPanelSpace = requiredSpace;
         this.panelPrice = panelPrice;
     }
 
@@ -18,7 +19,7 @@ public class InstallationCostInput {
     }
 
     public double getRequiredSpace() {
-        return requiredSpace;
+        return requiredPanelSpace;
     }
 
     public double getPanelPrice() {
