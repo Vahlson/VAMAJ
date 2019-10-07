@@ -52,23 +52,23 @@ public class ModelAggregate {
     }
 
     // Setters in property
-    public void setPropertyLocation(Location l) {
+    void setPropertyLocation(Location l) {
         property.setLocation(l);
     }
 
-    public void setPropertyLatitude(double latitude) {
+    void setPropertyLatitude(double latitude) {
         property.setLatitude(latitude);
     }
 
-    public void setPropertyPanelAngle(int panelAngle) {
+    void setPropertyPanelAngle(int panelAngle) {
         property.setPanelAngle(panelAngle);
     }
 
-    public void setPropertyOrientation(int orientation) {
+    void setPropertyOrientation(int orientation) {
         property.setOrientation(orientation);
     }
 
-    public void setPropertyInstallationSpace(double installationSpace) {
+    void setPropertyInstallationSpace(double installationSpace) {
         property.setInstallationSpace(installationSpace);
     }
 

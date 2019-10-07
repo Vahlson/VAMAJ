@@ -24,7 +24,7 @@ public class PrimaryController {
 
     // Setters
     void setLocation(double latitude, double longitude) {
-        serviceFacade.setLocationCreatorCoordinates(latitude,longitude);
+        serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
@@ -34,6 +34,6 @@ public class PrimaryController {
 
     // Example
     void setPropertyInstallationSpace(double installationSpace) {
-        modelFacade.getModelAggregate().setPropertyInstallationSpace(installationSpace);
+        modelFacade.setPropertyInstallationSpace(installationSpace);
     }
 }
