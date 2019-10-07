@@ -1,5 +1,6 @@
 package main.java.viewcontroller;
 
+import javafx.stage.Stage;
 import main.java.model.ModelFacade;
 import main.java.services.ServiceFacade;
 import main.java.viewcontroller.SceneSwitcher;
@@ -19,12 +20,13 @@ public class PrimaryController {
 
     // Member variables
     private SceneSwitcher sceneSwitcher = SceneSwitcher.getInstance();
-    private ServiceFacade serviceFacade;
+    private ServiceFacade serviceFacade = new ServiceFacade();
     private ModelFacade modelFacade;
+    private Stage stage;
 
-    // Setters
+    // Setters (for API)
     void setLocation(double latitude, double longitude) {
-        serviceFacade.setLocationCreatorCoordinates(latitude,longitude);
+        serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
@@ -32,8 +34,25 @@ public class PrimaryController {
         modelFacade.setContract(serviceFacade.getContract());
     }
 
-    // Example
-    void setPropertyInstallationSpace(double installationSpace) {
-        modelFacade.getModelAggregate().setPropertyInstallationSpace(installationSpace);
+    // Setters
+    public void setServiceFacade(ServiceFacade facade) {
+        this.serviceFacade = facade;
+    }
+
+    public void setModelFacade(ModelFacade facade) {
+        this.modelFacade = facade;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    // Getters
+    public ModelFacade getModelFacade() {
+        return modelFacade;
+    }
+
+    public SceneSwitcher getSceneSwitcher() {
+        return sceneSwitcher;
     }
 }
