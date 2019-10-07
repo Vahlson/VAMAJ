@@ -1,8 +1,10 @@
 package main.java.model.Calculator;
 
+//(4.2) Vegard
+
 public class LevelizedCostOfElectricity implements Calculator<LevelizedCostOfElectricityInput, LevelizedCostOfElectricityOutput>{
 
-    @Override
+    //Returns approximate cost of each kWh produced by a electricity generation setup
     public LevelizedCostOfElectricityOutput calculate(LevelizedCostOfElectricityInput input) {
 
         final int lifetime = input.getExpectedLifetime();

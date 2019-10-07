@@ -1,8 +1,8 @@
 package main.java.viewcontroller;
 
 import main.java.model.ModelFacade;
-import main.java.model.Property.Location;
 import main.java.services.ServiceFacade;
+import main.java.viewcontroller.SceneSwitcher;
 
 // (3.1) Alexander Ask
 public class PrimaryController {
@@ -23,11 +23,17 @@ public class PrimaryController {
     private ModelFacade modelFacade;
 
     // Setters
-    void setLocation() {
+    void setLocation(double latitude, double longitude) {
+        serviceFacade.setLocationCreatorCoordinates(latitude,longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
     void setContract() {
         modelFacade.setContract(serviceFacade.getContract());
+    }
+
+    // Example
+    void setPropertyInstallationSpace(double installationSpace) {
+        modelFacade.getModelAggregate().setPropertyInstallationSpace(installationSpace);
     }
 }

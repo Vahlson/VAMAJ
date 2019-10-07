@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import main.java.model.Calculator.Calculator;
+import main.java.model.ModelAggregate;
+import main.java.model.ModelFacade;
 import main.java.model.SolarSetup.SolarPanel;
 import main.java.viewcontroller.PrimaryController;
 
@@ -55,8 +57,7 @@ public class SolarPanelQuestionViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        SolarPanel premiumSolarPanel = new SolarPanel(1, 2, 10, 10000, 300, "Premium SolcellPaket", "XXXXX");
-        SolarPanel standardSolarPanel = new SolarPanel(1, 1.5, 7, 7000, 250, "Standard SolcellPaket", "XXXXX");
+
 
         ToggleGroup tg = new ToggleGroup();
         premiumRadio.setToggleGroup(tg);
@@ -74,7 +75,6 @@ public class SolarPanelQuestionViewController implements Initializable {
                     RadioButton selected = (RadioButton) tg.getSelectedToggle();
 
                     if (selected.equals(premiumRadio)){
-
 
                     }
                     else

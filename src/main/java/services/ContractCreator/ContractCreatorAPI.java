@@ -1,4 +1,4 @@
-package main.java.services;
+package main.java.services.ContractCreator;
 
 import main.java.model.Contract.Contract;
 
@@ -6,6 +6,7 @@ import main.java.model.Contract.Contract;
 // Mock class, this will be API/File implementation later on
 public class ContractCreatorAPI implements IContractCreator{
 
+    //Creates a contract from data gathered from an api.
     @Override
     public Contract createContract() {
 

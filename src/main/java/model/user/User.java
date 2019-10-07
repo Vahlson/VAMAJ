@@ -21,13 +21,4 @@ public class User {
     public Property getActiveProperty() {
         return activeProperty;
     }
-
-    // Setters
-    public void setLocation(Location l) {
-        activeProperty.setLocation(l);
-    }
-
-    public void setContract(Contract c) {
-        activeProperty.setContract(c);
-    }
 }
