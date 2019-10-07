@@ -26,6 +26,19 @@ public class ModelAggregate {
         calculationResults.put("annualElectricity", annualElectricityOutput);
     }
 
+    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc){
+        double lat = property.getLatitude();
+        double area = property.getInstallationSpace();
+        double efficiency = 20;
+
+        //Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
+        AnnualSolarElectricityInput in = new AnnualSolarElectricityInput(lat, area, efficiency);
+        AnnualSolarElectricityOutput out = calc.calculate(in);
+        return out.getAnnualElectricityProduction();
+    }
+
+
+
     // Getter for results of calculation(s)
     public HashMap<String, Object> getCalculationResults() {
         return calculationResults;
