@@ -1,0 +1,41 @@
+Group: VAMAJ - Grupp 14
+Date: 20191007
+Chair: Alexander LV
+Participants: Alla
+
+1. Vad gör vi på detta möte.
+Vi ska reviewa sprinten.
+Kolla status på projektet, prata om hur det funkat med detta arbetssätt.
+Efter mötet ska vi ha:
+Code Review
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+
+
+2.1 Dokumentstatus
+Mohamad har skrivit i Rad om sin User story (berörda klasser), han har också lagt till en tabell och strukturerat upp det litegrann.
+Alex Ask har skrivit lite SDD.
+Jonatan har inte skrivit något
+inte jamal heller.
+Vegard har inte heller men han ska.
+Alex LV har inte heller men ska.
+2.2 Projektstatus
+Mohamad har jobbat på sin user story. Han har inte skrivit tasks dock. Han blir nog klar idag.
+Ask har jobbat med några user storys men har fått problem och behöver hjälp av gruppen. Han blir nog inte riktigt klar idag.
+Jonatan har också jobbat med sina user storys, "god chans att bli klar idag". Han har inte heller gjort tasks.
+Jamal har påbörjat en user story.
+Vegard har gjort klart en user story. Vegard ska börja på sin andra user story. Han kommer börja med sin andra task idag.
+Alex LV har gjort sin user story nästan klar. Han lär bli klar idag.
+
+3. Diskussionsrunda.
+Mohamad tyckte att calculator var lite oklar. Han undrar också om vi i Solarpanel och solar setup klasserna ska ta bort lite attributes.
+Alex Ask vill jobba med APIer och kommer göra en user story för det.
+Jamal tycker vi ska börja jobbet på GUI:t.
+Vegard tycker kodstrukturen är lite luddig.
+
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+Inför handledarmötet och peer review ska vi skrivit mycket mer på dokumenten. Limmat ihop allas delar, vara klar med alla nuvarande User Storys
+och ha ett basic fungerande GUI.
+
+5. Planera nästkommande möte, boka också.
+Nästa möte 9- 12 imorgon tisdag den 8:e.
