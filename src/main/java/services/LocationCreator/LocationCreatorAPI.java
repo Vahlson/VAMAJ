@@ -8,6 +8,7 @@ import java.util.*;
 import main.java.services.ApiJSONParser;
 import main.java.services.ApiParser;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 //(3.1) Alex LV och Alex Ask
@@ -41,18 +42,23 @@ public class LocationCreatorAPI implements ILocationCreator{
         ApiParser<JSONObject> parser = new ApiJSONParser();
 
         //Getting the jsonObject from the API.
-        JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate="+(currentYear - dataAccuracyInYears - 1)+"&endDate="+(currentYear -1)+"&lat="+latitude+"&lon="+longitude+"&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous\n");
+        try {
+            JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous\n");
 
-        //access the data values within the json data response
-        // Very specific to the API.
-        JSONArray features = (JSONArray) root.get("features");
-        JSONObject properties = (JSONObject) features.get(0);
-        properties = properties.getJSONObject("properties");
-        JSONObject parameter = (JSONObject)properties.get("parameter");
-        JSONObject allSkyInsolationIncident =   (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
+            //access the data values within the json data response
+            // Very specific to the API.
+            JSONArray features = (JSONArray) root.get("features");
+            JSONObject properties = (JSONObject) features.get(0);
+            properties = properties.getJSONObject("properties");
+            JSONObject parameter = (JSONObject) properties.get("parameter");
+            JSONObject allSkyInsolationIncident = (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
 
+            return getAverageInsolation(allSkyInsolationIncident,dataAccuracyInYears);
 
-        return getAverageInsolation(allSkyInsolationIncident,dataAccuracyInYears);
+        }catch (NullPointerException e){
+            return -1;
+        }
+
 
     }
 
