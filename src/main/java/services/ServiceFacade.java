@@ -2,6 +2,11 @@ package main.java.services;
 
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
+import main.java.services.ContractCreator.ContractCreatorAPI;
+import main.java.services.ContractCreator.IContractCreator;
+import main.java.services.LocationCreator.ILocationCreator;
+import main.java.services.LocationCreator.LocationCreatorAPI;
+
 //(3.1) Alex LV och Alex Ask
 //The service package facade, meaning interface that exposes wanted functionality outward from the service package.
 public class ServiceFacade {
@@ -18,6 +23,7 @@ public class ServiceFacade {
     }
 
     public Location getLocation() {
+        //TODO LÄgg till att den hämtar existerande lat och long?
         return locationCreator.createLocation();
     }
 

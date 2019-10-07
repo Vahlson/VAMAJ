@@ -1,4 +1,4 @@
-package main.java.services;
+package main.java.services.LocationCreator;
 
 import main.java.model.Property.Location;
 
@@ -7,4 +7,6 @@ import main.java.model.Property.Location;
 public interface ILocationCreator {
 
     Location createLocation();
+    void setLatitude(double latitude);
+    void setLongitude(double longitude);
 }
