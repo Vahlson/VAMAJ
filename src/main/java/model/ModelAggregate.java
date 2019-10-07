@@ -48,7 +48,7 @@ public class ModelAggregate {
     }
 
     // Getter for results of calculation(s)
-    HashMap<String, Object> getCalculationResults() {
+    public HashMap<String, Object> getCalculationResults() {
         return calculationResults;
     }
 
