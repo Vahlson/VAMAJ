@@ -1,7 +1,9 @@
 package test.java;
-
 import main.java.model.Calculator.*;
+import main.java.model.Property.*;
+import main.java.model.*;
 import java.lang.Math.*;
+import java.util.HashMap;
 
 import org.junit.Test;
 
@@ -9,6 +11,22 @@ import static org.junit.Assert.*;
 
 
 public class TestCalculator {
+
+    @Test
+    public void testCalcRunner(){
+        ModelAggregate ag = new ModelAggregate();
+        Property p = new Property();
+
+        ag.setProperty(p);
+        ag.setPropertyInstallationSpace(5);
+        ag.setPropertyLatitude(23);
+
+        ag.runCalculators();
+        HashMap hm = ag.getCalculationResults();
+
+        double result = (double)hm.get("annualElectricity");
+        assertTrue((int)result == 3276);
+    }
 
     @Test
     public void testAnnualElectricityProduction(){
@@ -25,8 +43,6 @@ public class TestCalculator {
 
         output = AE.calculate(input);
         double result = output.getAnnualElectricityProduction();
-        System.out.println(result);
-
         assertTrue((int)result == 3276);
     }
 

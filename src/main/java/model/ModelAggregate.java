@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class ModelAggregate {
 
-    private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
+    private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal = new AnnualSolarElectricity();
 
     private User currentUser;
     private List<User> users;
@@ -33,7 +33,7 @@ public class ModelAggregate {
     private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p){
         double lat = p.getLatitude();
         double area = p.getInstallationSpace();
-        double efficiency = 20;
+        double efficiency = 22;
 
         //Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
         AnnualSolarElectricityInput in = new AnnualSolarElectricityInput(lat, area, efficiency);
@@ -41,7 +41,10 @@ public class ModelAggregate {
         return out.getAnnualElectricityProduction();
     }
 
-
+    //Temporary setter for testing purposes
+    public void setProperty(Property property) {
+        this.property = property;
+    }
 
     // Getter for results of calculation(s)
     public HashMap<String, Object> getCalculationResults() {
