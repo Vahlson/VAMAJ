@@ -1,5 +1,8 @@
 package main.java.model.Calculator;
 
+//(3) Vegard
+//Class to contain return values of annualElectricityProduction calculation
+
 public class AnnualSolarElectricityOutput {
     private double annualElectricityProduction;
 

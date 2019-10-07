@@ -1,5 +1,8 @@
 package main.java.model.Calculator;
 
+//(3) Vegard
+//Class to contain input values of annualElectricityProduction calculation
+
 public class AnnualSolarElectricityInput {
     private double latitude;
     private double solarPVPArea;
