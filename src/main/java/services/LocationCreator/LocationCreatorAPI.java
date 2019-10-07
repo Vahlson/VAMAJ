@@ -16,7 +16,6 @@ public class LocationCreatorAPI implements ILocationCreator{
 
     //Current year and month
     private int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-    private int currentMonth = Calendar.getInstance().get(Calendar.MONTH);
 
     //Variables needed for dataCollection
     private double latitude = 63.825848;
@@ -25,7 +24,6 @@ public class LocationCreatorAPI implements ILocationCreator{
 
 
     //Creates a location from an API
-    //TODO use a real API.
     @Override
     public Location createLocation() {
 
@@ -54,13 +52,13 @@ public class LocationCreatorAPI implements ILocationCreator{
         JSONObject allSkyInsolationIncident =   (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
 
 
-        return getYearlyAverageInsolation(allSkyInsolationIncident,dataAccuracyInYears);
+        return getAverageInsolation(allSkyInsolationIncident,dataAccuracyInYears);
 
     }
 
     //returns the average kW-hr/m^2/day taking into account specified amount of years.
     //"years" must not exceed the amount of years from which data was gathered.
-    private double getYearlyAverageInsolation(JSONObject dataSource, int yearsBack){
+    private double getAverageInsolation(JSONObject dataSource, int yearsBack){
         double average = 0;
         double sum = 0;
         int months = 0;
@@ -84,6 +82,11 @@ public class LocationCreatorAPI implements ILocationCreator{
         return average;
     }
 
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
 
-
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 }

@@ -7,4 +7,6 @@ import main.java.model.Property.Location;
 public interface ILocationCreator {
 
     Location createLocation();
+    void setLatitude(double latitude);
+    void setLongitude(double longitude);
 }

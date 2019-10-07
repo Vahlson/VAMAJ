@@ -23,6 +23,7 @@ public class ServiceFacade {
     }
 
     public Location getLocation() {
+        //TODO LÄgg till att den hämtar existerande lat och long?
         return locationCreator.createLocation();
     }
 
