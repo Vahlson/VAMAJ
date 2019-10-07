@@ -27,11 +27,16 @@ Vegard har gjort klart en user story. Vegard ska börja på sin andra user story
 Alex LV har gjort sin user story nästan klar. Han lär bli klar idag.
 
 3. Diskussionsrunda.
+
 Mohamad tyckte att calculator var lite oklar. Han undrar också om vi i Solarpanel och solar setup klasserna ska ta bort lite attributes.
 Alex Ask vill jobba med APIer och kommer göra en user story för det.
 Jamal tycker vi ska börja jobbet på GUI:t.
 Vegard tycker kodstrukturen är lite luddig.
 
+Review av sprint:
+Vi inser att vi har designat väldigt mycket men att det kanske har varit bra. Nu när vi kommit igång ordentligt
+med programmeringen inser vi fördelarna med en bra design.
+Handledaren tycker att vi ligger i fas så det gör vi med. Det känns lagomt stressigt och vi tror att vi kommer hinna i denna fart.
 
 4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
 Inför handledarmötet och peer review ska vi skrivit mycket mer på dokumenten. Limmat ihop allas delar, vara klar med alla nuvarande User Storys
