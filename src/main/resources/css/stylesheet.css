@@ -145,7 +145,7 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 /*FONTSTORLEKAR*/
 
 .p1{
-    -fx-font-size: 56pt;
+    -fx-font-size: 100pt;
 }
 
 .p2{
@@ -153,32 +153,32 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 }
 
 .p3{
-    -fx-font-size: 20pt;
+    -fx-font-size: 16pt;
 }
 .p4{
-    -fx-font-size: 14pt;
+    -fx-font-size: 10pt;
 }
 
 .h1{
     /*Only applied here for performance reasons*/
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 56pt;
+    -fx-font-size: 72pt;
     -fx-font-weight: bold;
 }
 .h2{
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 28pt;
+    -fx-font-size: 32pt;
     -fx-font-weight: bold;
 }
 
 .h3{
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 20pt;
+    -fx-font-size: 16pt;
     -fx-font-weight: bold;
 }
 .h4{
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 14pt;
+    -fx-font-size: 10pt;
     -fx-font-weight: bold;
 }
 
