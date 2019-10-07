@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainViewController extends AnchorPane implements Initializable {
-    private int state = 0;
+
     Parent p;
 
     @FXML
@@ -32,6 +32,10 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     @FXML
     private Button installationButton; // Button that leads to installation screen
+    @FXML
+    Button nextButton;
+    @FXML
+    Button backButton;
 
     public MainViewController( /*A controller to be added here*/) {
 
@@ -40,6 +44,9 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        nextButton.setDisable(true);
+        backButton.setDisable(true);
 
         // Temporary add to get mock functionality
         installationButton.setOnAction(event -> {
@@ -57,54 +64,69 @@ public class MainViewController extends AnchorPane implements Initializable {
         p = FXMLLoader.load(getClass().getResource("/fxml/resultscene.fxml"));
         SceneSwitcher.getInstance().setScene(p);
     }
+
     @FXML
     private void startTest(ActionEvent event) throws IOException {
-
 
 
         p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/personalquestion.fxml"));
 
         questionsAnchor.getChildren().add(p);
+        nextButton.setDisable(false);
+        nextButton.setText("egendom");
     }
 
-    //control back button navigation(to be completed and moved to more structured controller or maybe mutual interface)
+
+    //controls next button navigation(to be completed and moved to more structured controller or maybe mutual interface)
+    @FXML
+
+    public void nextNavigation() throws IOException {
+        String buttonName = nextButton.getText();
+        switch (buttonName) {
+            case "egendom":
+                p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
+
+                questionsAnchor.getChildren().add(p);
+                backButton.setDisable(false);
+                backButton.setText("personliga info");
+                nextButton.setText("Solceller");
+                break;
+            case "Solceller":
+                p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/SolarPanelQuestion.fxml"));
+
+                questionsAnchor.getChildren().add(p);
+                backButton.setText("egendom");
+                break;
+
+
+        }
+
+    }
+
+    //controls back button navigation(to be completed and moved to more structured controller or maybe mutual interface)
     @FXML
 
     public void backNavigation() throws IOException {
 
-        switch (state){
-            case 0:
+        String buttonName = backButton.getText();
+        switch (buttonName) {
+            case "personliga info":
                 p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/personalquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
+                backButton.setDisable(true);
+                nextButton.setText("egendom");
                 break;
-            case 1:
-
-
-
-
-        }
-
-
-    }
-    //control back button navigation(to be completed and moved to more structured controller or maybe mutual interface)
-    @FXML
-
-    public void nextNavigation() throws IOException {
-
-        switch (state) {
-            case 0:
+            case "egendom":
                 p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
-                break;
-            case 1:
-                break;
-
+                backButton.setText("personliga info");
+                nextButton.setText("Solceller");
 
 
         }
 
-    }
 
+    }
 }
