@@ -1,5 +1,8 @@
 package main.java.model;
 
+import main.java.model.Calculator.AnnualSolarElectricity;
+import main.java.model.Calculator.AnnualSolarElectricityInput;
+import main.java.model.Calculator.AnnualSolarElectricityOutput;
 import main.java.model.Property.Property;
 import main.java.model.Calculator.Calculator;
 import main.java.model.Contract.Contract;
@@ -7,13 +10,26 @@ import main.java.model.Property.Location;
 import main.java.model.user.User;
 
 import java.util.List;
+import java.util.HashMap;
 
 public class ModelAggregate {
 
-    private Calculator calculator;
+    private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
+
     private User currentUser;
     private List<User> users;
     private Property property;
+    private HashMap<String, Object> calculationResults = new HashMap<>();
+
+    public void runCalculators(){
+        double annualElectricityOutput = annualElectricityOutput(AnnualCal);
+        calculationResults.put("annualElectricity", annualElectricityOutput);
+    }
+
+    // Getter for results of calculation(s)
+    public HashMap<String, Object> getCalculationResults() {
+        return calculationResults;
+    }
 
     // Setters in property
     public void setPropertyLocation(Location l) {
