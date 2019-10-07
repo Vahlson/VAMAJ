@@ -9,6 +9,7 @@ import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 import main.java.model.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 
@@ -19,12 +20,12 @@ public class ModelAggregate {
     private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal = new AnnualSolarElectricity();
 
     private User currentUser;
-    private List<User> users;
-    private Property property;
+    private List<User> users = new ArrayList<>();
+    private Property property = new Property();
     private HashMap<String, Object> calculationResults = new HashMap<>(); //HashMap containing results with a string as key
 
     //Calls calculators and sets results to above HashMap
-    public void runCalculators() {
+    void runCalculators() {
         double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
         calculationResults.put("annualElectricity", annualElectricityOutput);
     }
@@ -47,7 +48,7 @@ public class ModelAggregate {
     }
 
     // Getter for results of calculation(s)
-    public HashMap<String, Object> getCalculationResults() {
+    HashMap<String, Object> getCalculationResults() {
         return calculationResults;
     }
 
