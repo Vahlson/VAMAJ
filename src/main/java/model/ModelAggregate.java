@@ -12,6 +12,8 @@ import main.java.model.user.User;
 import java.util.List;
 import java.util.HashMap;
 
+//(2)Vegard
+
 public class ModelAggregate {
 
     private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
@@ -19,16 +21,18 @@ public class ModelAggregate {
     private User currentUser;
     private List<User> users;
     private Property property;
-    private HashMap<String, Object> calculationResults = new HashMap<>();
+    private HashMap<String, Object> calculationResults = new HashMap<>(); //HashMap containing results with a string as key
 
+    //Calls calculators and sets results to above HashMap
     public void runCalculators(){
-        double annualElectricityOutput = annualElectricityOutput(AnnualCal);
+        double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
         calculationResults.put("annualElectricity", annualElectricityOutput);
     }
 
-    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc){
-        double lat = property.getLatitude();
-        double area = property.getInstallationSpace();
+    //Sends values from property as calculation parameters, returns result of the calculation
+    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p){
+        double lat = p.getLatitude();
+        double area = p.getInstallationSpace();
         double efficiency = 20;
 
         //Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
