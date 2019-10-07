@@ -22,9 +22,6 @@ public class ServicesTest extends TestCase {
         l = sf.getLocation();
         assertNotNull(l);
 
-        sf.setLocationCreatorCoordinates(-9999,-9999);
-        l = sf.getLocation();
-        assertEquals(l.getSolarInsolation(),0.0);
 
     }
     @Test

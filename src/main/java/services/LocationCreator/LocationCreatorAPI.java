@@ -8,7 +8,7 @@ import java.util.*;
 import main.java.services.ApiJSONParser;
 import main.java.services.ApiParser;
 import org.json.JSONArray;
-import org.json.JSONException;
+//import org.json.JSONException;
 import org.json.JSONObject;
 
 //(3.1) Alex LV och Alex Ask
@@ -73,7 +73,8 @@ public class LocationCreatorAPI implements ILocationCreator{
             JSONObject parameter = (JSONObject) properties.get("parameter");
             return  (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
 
-        }catch (JSONException e){
+            //TODO ÄNDRA TILL JSONEXCEPTION
+        }catch (Exception e){
             //If object does'nt follow above structure, the api provides an error message.
             //Here we try to get the error message and throw it as a new error.
             try {
@@ -83,8 +84,8 @@ public class LocationCreatorAPI implements ILocationCreator{
                 alert = alert.getJSONObject("Alert");
                 JSONObject description = (JSONObject) alert.get("Description");
                 throw new ApiCallNotCorrectException(description.getString("Issue"));
-
-            }catch(JSONException e2){
+            //TODO ÄNDRA TILL JSONEXCEPTION
+            }catch(Exception e2){
                 //If collection of the error message fails.
                 System.out.println("Error message collection failed");
                 e.printStackTrace();
