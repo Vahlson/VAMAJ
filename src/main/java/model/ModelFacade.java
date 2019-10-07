@@ -2,11 +2,15 @@ package main.java.model;
 
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
-import main.java.model.ModelAggregate;
 
 public class ModelFacade {
 
     private ModelAggregate modelAggregate;
+
+    // Constructor
+    ModelFacade(){
+
+    }
 
     // Location setters
     public void setLocation(Location location) {

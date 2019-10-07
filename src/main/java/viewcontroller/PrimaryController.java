@@ -22,7 +22,7 @@ public class PrimaryController {
     private ServiceFacade serviceFacade;
     private ModelFacade modelFacade;
 
-    // Setters
+    // Setters (for API)
     void setLocation(double latitude, double longitude) {
         serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
@@ -32,8 +32,12 @@ public class PrimaryController {
         modelFacade.setContract(serviceFacade.getContract());
     }
 
-    // Example
-    void setPropertyInstallationSpace(double installationSpace) {
-        modelFacade.setPropertyInstallationSpace(installationSpace);
+    // Getters
+    public ModelFacade getModelFacade() {
+        return modelFacade;
+    }
+
+    public SceneSwitcher getSceneSwitcher() {
+        return sceneSwitcher;
     }
 }

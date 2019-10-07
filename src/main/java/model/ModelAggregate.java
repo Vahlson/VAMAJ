@@ -24,13 +24,13 @@ public class ModelAggregate {
     private HashMap<String, Object> calculationResults = new HashMap<>(); //HashMap containing results with a string as key
 
     //Calls calculators and sets results to above HashMap
-    public void runCalculators(){
+    public void runCalculators() {
         double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
         calculationResults.put("annualElectricity", annualElectricityOutput);
     }
 
     //Sends values from property as calculation parameters, returns result of the calculation
-    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p){
+    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p) {
         double lat = p.getLatitude();
         double area = p.getInstallationSpace();
         double efficiency = 22;
@@ -73,11 +73,11 @@ public class ModelAggregate {
     }
 
     // Setters in contract
-    public void setContract(Contract c) {
+    void setContract(Contract c) {
         property.setContract(c);
     }
 
-    public void setContractCost(int cost) {
+    void setContractCost(int cost) {
         property.getContract().setCost(cost);
     }
 }
