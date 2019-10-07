@@ -2,13 +2,16 @@ package main.java.model;
 
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
+import main.java.model.Property.Property;
+
+import java.util.HashMap;
 
 public class ModelFacade {
 
-    private ModelAggregate modelAggregate;
+    private ModelAggregate modelAggregate = new ModelAggregate();
 
     // Constructor
-    ModelFacade(){
+    public ModelFacade() {
 
     }
 
@@ -27,6 +30,10 @@ public class ModelFacade {
     }
 
     // Property setters
+    public void setProperty(Property property) {
+        modelAggregate.setProperty(property);
+    }
+
     public void setPropertyLocation(Location location) {
         modelAggregate.setPropertyLocation(location);
     }
@@ -56,4 +63,9 @@ public class ModelFacade {
     public ModelAggregate getModelAggregate() {
         return modelAggregate;
     }
+
+    public HashMap<String, Object> getCalculationResults() {
+        return modelAggregate.getCalculationResults();
+    }
+
 }
