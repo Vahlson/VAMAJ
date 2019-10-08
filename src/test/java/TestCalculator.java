@@ -1,3 +1,4 @@
+package test.java;
 import main.java.model.Calculator.*;
 import main.java.model.Property.*;
 import main.java.model.*;
@@ -13,15 +14,16 @@ public class TestCalculator {
 
     @Test
     public void testCalcRunner(){
-        ModelAggregate ag = new ModelAggregate();
+
+        ModelFacade mf = new ModelFacade();
         Property p = new Property();
 
-        ag.setProperty(p);
-        ag.setPropertyInstallationSpace(5);
-        ag.setPropertyLatitude(23);
+        mf.setProperty(p);
+        mf.setPropertyInstallationSpace(5);
+        mf.setPropertyLatitude(23);
 
-        ag.runCalculators();
-        HashMap hm = ag.getCalculationResults();
+        mf.runCalculators();
+        HashMap hm = mf.getCalculationResults();
 
         double result = (double)hm.get("annualElectricity");
         assertTrue((int)result == 3276);

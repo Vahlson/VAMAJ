@@ -9,6 +9,7 @@ import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 import main.java.model.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 
@@ -19,18 +20,18 @@ public class ModelAggregate {
     private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal = new AnnualSolarElectricity();
 
     private User currentUser;
-    private List<User> users;
-    private Property property;
+    private List<User> users = new ArrayList<>();
+    private Property property = new Property();
     private HashMap<String, Object> calculationResults = new HashMap<>(); //HashMap containing results with a string as key
 
     //Calls calculators and sets results to above HashMap
-    public void runCalculators(){
+    void runCalculators() {
         double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
         calculationResults.put("annualElectricity", annualElectricityOutput);
     }
 
     //Sends values from property as calculation parameters, returns result of the calculation
-    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p){
+    private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p) {
         double lat = p.getLatitude();
         double area = p.getInstallationSpace();
         double efficiency = 22;
@@ -52,32 +53,32 @@ public class ModelAggregate {
     }
 
     // Setters in property
-    public void setPropertyLocation(Location l) {
+    void setPropertyLocation(Location l) {
         property.setLocation(l);
     }
 
-    public void setPropertyLatitude(double latitude) {
+    void setPropertyLatitude(double latitude) {
         property.setLatitude(latitude);
     }
 
-    public void setPropertyPanelAngle(int panelAngle) {
+    void setPropertyPanelAngle(int panelAngle) {
         property.setPanelAngle(panelAngle);
     }
 
-    public void setPropertyOrientation(int orientation) {
+    void setPropertyOrientation(int orientation) {
         property.setOrientation(orientation);
     }
 
-    public void setPropertyInstallationSpace(double installationSpace) {
+    void setPropertyInstallationSpace(double installationSpace) {
         property.setInstallationSpace(installationSpace);
     }
 
     // Setters in contract
-    public void setContract(Contract c) {
+    void setContract(Contract c) {
         property.setContract(c);
     }
 
-    public void setContractCost(int cost) {
+    void setContractCost(int cost) {
         property.getContract().setCost(cost);
     }
 }

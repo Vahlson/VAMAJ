@@ -35,14 +35,24 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 *{
     /*https://99designs.com/logo-design/psychology-of-color*/
 
-    -fx-base1:#000000;
-    -fx-base2:#000000;
-    -fx-base3:#000000;
-    -fx-base4:#000000;
+    -fx-main1:#0329FA;
+    -fx-main2:#FEFE06;
+    -fx-main3:#9007FA;
 
-    -fx-white:white;
-    -fx-gray:#CAD1D5;
-    -fx-lightGray:#EDF3F7;
+    -fx-main1-darker:#021E73;
+    -fx-main1-dark:#0424D9;
+
+    -fx-main1-light:#0554F2;
+    -fx-main1-lighter:#056CF2;
+
+    -fx-darkColoredText: #001657;
+    -fx-bodyText:#505565;
+    -fx-weakText:#8B90A0;
+
+    -fx-white:#FAFAFC;
+    -fx-lightGray:#F0F1F3;
+    -fx-gray:#D3D4D8;
+    -fx-darkGray:#A1A4B1;
 
 
 }
@@ -92,19 +102,19 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 }
 
 .check-box{
-    -fx-font-family: -fx-baseFont, sans-serif;
+    -fx-font-family: "Segoe UI", sans-serif;
 }
 
 .check-box .box{
     -fx-background-color: -fx-gray;
     -fx-border-width: 1px;
-    -fx-border-color: -fx-base2;
+    -fx-border-color: -fx-darkGray;
 }
 .check-box:selected .mark {
     -fx-background-color: white;
 }
 .check-box:selected .box {
-    -fx-background-color: -fx-base4;
+    -fx-background-color: -fx-main1;
 
 }
 
@@ -119,16 +129,16 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
     /* 3:, 4: */
-    -fx-background-color: -fx-base4;
+    -fx-background-color: -fx-main1;
     -fx-text-fill: white; /* 5 */
 }
 .combo-box .list-cell:selected:focused, .combo-box .list-cell:filled:selected{
-    -fx-background-color: white;
-    -fx-text-fill: -fx-base4; /* 5 */
+    -fx-background-color: -fx-white;
+    -fx-text-fill: -fx-main1; /* 5 */
 }
 
 .combo-box .arrow {
-    -fx-background-color: -fx-base4;
+    -fx-background-color: -fx-main1;
 }
 
 .list-cell { -fx-text-fill: -fx-base1; /* 5 */ }
@@ -136,7 +146,7 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 .list-cell:even { -fx-background-color: white; /* for information */ }
 .list-cell:filled:hover {
     -fx-background-color: -fx-gray; /* 2 */
-    -fx-text-fill: -fx-base1; /* 5 */
+    -fx-text-fill: -fx-main1; /* 5 */
 }
 
 
@@ -145,7 +155,7 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 /*FONTSTORLEKAR*/
 
 .p1{
-    -fx-font-size: 56pt;
+    -fx-font-size: 100pt;
 }
 
 .p2{
@@ -156,18 +166,18 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
     -fx-font-size: 20pt;
 }
 .p4{
-    -fx-font-size: 14pt;
+    -fx-font-size: 10pt;
 }
 
 .h1{
     /*Only applied here for performance reasons*/
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 56pt;
+    -fx-font-size: 72pt;
     -fx-font-weight: bold;
 }
 .h2{
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 28pt;
+    -fx-font-size: 32pt;
     -fx-font-weight: bold;
 }
 
@@ -178,22 +188,24 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 }
 .h4{
     -fx-font-smoothing-type: gray;
-    -fx-font-size: 14pt;
+    -fx-font-size: 10pt;
     -fx-font-weight: bold;
 }
 
 /*EGNA KLASSER*/
 
 .backdrop{
-    -fx-background-color: -fx-base1;
+    -fx-background-color: -fx-main1-darker;
 }
 
 
 .ghostButton{
    /* -fx-background-color: transparent;*/
-    -fx-text-fill: white;
-    -fx-border-color: white;
-    -fx-border-width: 1 1 1 1;
+    -fx-text-fill: -fx-main2;
+    -fx-border-color: -fx-main2;
+    -fx-border-width: 3 3 3 3;
+    -fx-background-radius: 4;
+
 }
 .roundedButton {
     -fx-effect: dropshadow(two-pass-box, darkgray, 10, 0.0, 4, 5);
@@ -201,14 +213,19 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
     -fx-background-radius: 15 15 15 15;
     -fx-background-insets: 2 2 2 2;
 }
-.radio-button {
-    -fx-font-family: "Arial";
-    -fx-font-size: 14;
-    -fx-text-fill: rgba(34, 113, 250, 0.66);
-    -fx-effect: dropshadow(one-pass-box , rgba(0, 0, 0, 0.6), 0, 0.0 , 0 , 1 );
-    -fx-border-width: 0px;
-}
 
+.mountain{
+    -fx-background-size: stretch;
+    -fx-background-position: bottom;
+    -fx-background-image:url("../images/Mountainmountain.png");
+
+}
+.foreground{
+    -fx-background-size: stretch;
+    -fx-background-position: bottom;
+
+    -fx-background-image:url("../images/Foreground.png");
+}
 /*
 EXEMPEL PÅ BYTA IKON VID HOVER
 
