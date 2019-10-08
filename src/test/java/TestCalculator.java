@@ -1,7 +1,9 @@
 package test.java;
+
 import main.java.model.Calculator.*;
 import main.java.model.Property.*;
 import main.java.model.*;
+
 import java.lang.Math.*;
 import java.util.HashMap;
 
@@ -13,7 +15,7 @@ import static org.junit.Assert.*;
 public class TestCalculator {
 
     @Test
-    public void testCalcRunner(){
+    public void testCalcRunner() {
 
         ModelFacade mf = new ModelFacade();
         Property p = new Property();
@@ -25,12 +27,16 @@ public class TestCalculator {
         mf.runCalculators();
         HashMap hm = mf.getCalculationResults();
 
-        double result = (double)hm.get("annualElectricity");
-        assertTrue((int)result == 3276);
+        double result = (double) hm.get("annualElectricity");
+        assertTrue((int) result == 3276);
+
+        double panelProduction;
+        panelProduction = (double) hm.get("panelProduction");
+        assertTrue(panelProduction == 7.5);
     }
 
     @Test
-    public void testAnnualElectricityProduction(){
+    public void testAnnualElectricityProduction() {
 
         AnnualSolarElectricityOutput output;
 
@@ -44,11 +50,11 @@ public class TestCalculator {
 
         output = AE.calculate(input);
         double result = output.getAnnualElectricityProduction();
-        assertTrue((int)result == 3276);
+        assertTrue((int) result == 3276);
     }
 
     @Test
-    public void testLevelizedCostOfElectricity(){
+    public void testLevelizedCostOfElectricity() {
 
         LevelizedCostOfElectricityInput input = new LevelizedCostOfElectricityInput(30, 1000, 30000);
         input.setAnnualOperationCost(100);
@@ -57,19 +63,40 @@ public class TestCalculator {
 
         double result = output.getlCOE();
 
-        assertTrue(Math.abs(result-0.90909) < 0.05);
+        assertTrue(Math.abs(result - 0.90909) < 0.05);
     }
 
     @Test
-    public void testYearsToBreakEven(){
+    public void testYearsToBreakEven() {
 
-        YearsToBreakEvenInput input = new YearsToBreakEvenInput(30000, 1500,  1);
+        YearsToBreakEvenInput input = new YearsToBreakEvenInput(30000, 1500, 1);
         input.setAnnualOperationCost(100);
         Calculator<YearsToBreakEvenInput, YearsToBreakEvenOutput> LC = new YearsToBreakEven();
         YearsToBreakEvenOutput output = LC.calculate(input);
 
         double result = output.getYears();
 
-        assertTrue(Math.abs(result-21.0) < 0.1);
+        assertTrue(Math.abs(result - 21.0) < 0.1);
+    }
+
+    @Test
+    public void testPanelProduction() {
+
+        SolarPanelProductionInput input;
+        input = new SolarPanelProductionInput();
+        input.setPanelEfficiency(0.5);
+        input.setAverageSolarRadiation(2.5);
+        input.setPanelArea(100);
+        input.setPanelPerformanceRatio(0.75);
+
+        SolarPanelProduction calculator;
+        calculator = new SolarPanelProduction();
+
+        SolarPanelProductionOutput output;
+        output = calculator.calculate(input);
+
+        double result = output.getEnergy();
+
+        assertTrue(result == 93.75);
     }
 }

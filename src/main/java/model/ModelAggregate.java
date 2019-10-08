@@ -1,10 +1,7 @@
 package main.java.model;
 
-import main.java.model.Calculator.AnnualSolarElectricity;
-import main.java.model.Calculator.AnnualSolarElectricityInput;
-import main.java.model.Calculator.AnnualSolarElectricityOutput;
+import main.java.model.Calculator.*;
 import main.java.model.Property.Property;
-import main.java.model.Calculator.Calculator;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 import main.java.model.user.User;
@@ -27,8 +24,14 @@ public class ModelAggregate {
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
+
+        // Calculating annual electricity output
         double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
         calculationResults.put("annualElectricity", annualElectricityOutput);
+
+        // Calculating solar panel production
+        double solarPanelProduction = panelProductionOutput();
+        calculationResults.put("panelProduction", solarPanelProduction);
     }
 
     //Sends values from property as calculation parameters, returns result of the calculation
@@ -41,6 +44,31 @@ public class ModelAggregate {
         AnnualSolarElectricityInput in = new AnnualSolarElectricityInput(lat, area, efficiency);
         AnnualSolarElectricityOutput out = calc.calculate(in);
         return out.getAnnualElectricityProduction();
+    }
+
+    // Method calculating the production output of solar panel based on given values (kW/h)
+    private double panelProductionOutput() {
+
+        // Creating the input (hard coded values for now)
+        SolarPanelProductionInput input;
+        input = new SolarPanelProductionInput();
+        input.setPanelPerformanceRatio(0.75); // Default value
+        input.setAverageSolarRadiation(2.5);
+        input.setPanelEfficiency(0.4);
+        input.setPanelArea(10);
+
+        // property.getSolarSetup().getEfficiency()
+        // property.getSolarSetup().getSpaceRequired()
+
+        SolarPanelProduction calculator;
+        calculator = new SolarPanelProduction();
+
+        // Creating the output
+        SolarPanelProductionOutput output;
+        output = calculator.calculate(input);
+
+        // Returning the result
+        return output.getEnergy();
     }
 
     //Temporary setter for testing purposes
