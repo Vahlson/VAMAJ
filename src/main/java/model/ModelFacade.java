@@ -3,6 +3,7 @@ package main.java.model;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 import main.java.model.Property.Property;
+import main.java.model.SolarSetup.SolarSetup;
 
 import java.util.HashMap;
 
@@ -65,6 +66,10 @@ public class ModelFacade {
 
     public Property getProperty() {
         return modelAggregate.getProperty();
+    }
+
+    public SolarSetup getSolarSetup(){
+        return modelAggregate.getProperty().getSolarSetup();
     }
 
     // Run calculations

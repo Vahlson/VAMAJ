@@ -2,10 +2,12 @@ package main.java.model.Property;
 
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
+import main.java.model.SolarSetup.SolarSetup;
 
 public class Property {
 
     // Member variables
+    private SolarSetup solarSetup;
     private Location location;
     private Contract contract = new Contract();
     private double availableSpace;
@@ -47,6 +49,9 @@ public class Property {
         return consumption;
     }
 
+    public SolarSetup getSolarSetup() {
+        return solarSetup;
+    }
 
     // Setters
     public void setLocation(Location l) {
