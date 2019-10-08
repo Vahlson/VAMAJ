@@ -24,8 +24,14 @@ public class ModelAggregate {
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
+
+        // Calculating annual electricity output
         double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
         calculationResults.put("annualElectricity", annualElectricityOutput);
+
+        // Calculating solar panel production
+        double solarPanelProduction = panelProductionOutput();
+        calculationResults.put("panelProduction", solarPanelProduction);
     }
 
     //Sends values from property as calculation parameters, returns result of the calculation
@@ -47,7 +53,9 @@ public class ModelAggregate {
         SolarPanelProductionInput input;
         input = new SolarPanelProductionInput();
         input.setPanelPerformanceRatio(0.75); // Default value
-        // input.setPanelArea();
+        input.setAverageSolarRadiation(location.getSolarInsolation());          // Correct value?
+        input.setPanelEfficiency(property.getSolarSetup().getEfficiency());
+        input.setPanelArea(property.getSolarSetup().getSpaceRequired());        // Correct value?
 
         SolarPanelProduction calculator;
         calculator = new SolarPanelProduction();
