@@ -1,0 +1,38 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-08
+Chair: Mohamad Melhem
+Participants: Samtliga förutom Vegard
+
+1. Vad gör vi på detta möte.
+Kolla status på projektet, och lite tidsplanering.
+fundera på utvecklingmerieter.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+
+
+
+2.1 Dokumentstatus
+ALexander Vahlberg skrivit i RAD och SDD.
+
+2.2 Projektstatus
+Alex Ask jobbade vidare med sin Userstory.
+Jamal är nästan klar med sin task och kommer börja en ny snart.
+Alexander Vahlberg blev klar med sin userstorien och jobbade med main sidan på GUI:t.
+Jonatan är nästan klar med sin userstorien och håller på med tester.
+Mohamad jobbade vidare med sin userstory.
+
+3. Diskussionsrunda.
+
+ALex vill att man kör med maven i första hand och se att koden fungerar innan man pushar till master.
+Alexander vill att vi lägga till fler userstories. i.e för att assemblera programmet.
+gruppen diskuterar hur vi vill uppnå mutate-by-copy och immutability på bästa sätt.
+Jonatan diskuterar möjligheten att ta mer "code-heavy" userstories för att få jobba mer med code.
+gruppen diskuterar exceptions.
+
+
+4. målsättning inför hadnledaremötet och peer-review.
+Inför handledarmötet och peer review ska vi skrivit mycket mer på dokumenten. Limmat ihop allas delar, vara klar med alla nuvarande User Storys
+och ha ett basic fungerande GUI.
+
+5. Planera nästkommande möte, boka också.
+Nästa möte 9- 12 imorgon tisdag den 8:e.
