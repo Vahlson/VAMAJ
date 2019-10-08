@@ -16,7 +16,8 @@ import java.util.ResourceBundle;
 
 public class MainViewController extends AnchorPane implements Initializable {
 
-    Parent p;
+    private Parent p;
+    private int state;
 
     @FXML
     AnchorPane questionsAnchor;
@@ -73,7 +74,6 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         questionsAnchor.getChildren().add(p);
         nextButton.setDisable(false);
-        nextButton.setText("egendom");
     }
 
 
@@ -81,21 +81,21 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
 
     public void nextNavigation() throws IOException {
-        String buttonName = nextButton.getText();
-        switch (buttonName) {
-            case "egendom":
+        switch (state)  {
+            case 0:
+
+                state = 1;
                 p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
                 backButton.setDisable(false);
-                backButton.setText("personliga info");
-                nextButton.setText("Solceller");
-                break;
-            case "Solceller":
-                p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/SolarPanelQuestion.fxml"));
 
+
+                break;
+            case 1:
+                state = 2;
+                p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/SolarPanelQuestion.fxml"));
                 questionsAnchor.getChildren().add(p);
-                backButton.setText("egendom");
                 break;
 
 
@@ -108,21 +108,24 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     public void backNavigation() throws IOException {
 
-        String buttonName = backButton.getText();
-        switch (buttonName) {
-            case "personliga info":
+        switch (state) {
+            case 0:
+                break;
+
+            case 1:
+                state = 0;
                 p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/personalquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
                 backButton.setDisable(true);
-                nextButton.setText("egendom");
+
                 break;
-            case "egendom":
+            case 2:
+                state =1;
                 p = FXMLLoader.load(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
 
                 questionsAnchor.getChildren().add(p);
-                backButton.setText("personliga info");
-                nextButton.setText("Solceller");
+
 
 
         }
