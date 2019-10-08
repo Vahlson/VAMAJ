@@ -53,9 +53,12 @@ public class ModelAggregate {
         SolarPanelProductionInput input;
         input = new SolarPanelProductionInput();
         input.setPanelPerformanceRatio(0.75); // Default value
-        input.setAverageSolarRadiation(location.getSolarInsolation());          // Correct value?
-        input.setPanelEfficiency(property.getSolarSetup().getEfficiency());
-        input.setPanelArea(property.getSolarSetup().getSpaceRequired());        // Correct value?
+        input.setAverageSolarRadiation(location.getSolarInsolation());
+        input.setPanelEfficiency(0.4);
+        input.setPanelArea(10);
+
+        // property.getSolarSetup().getEfficiency()
+        // property.getSolarSetup().getSpaceRequired()
 
         SolarPanelProduction calculator;
         calculator = new SolarPanelProduction();
