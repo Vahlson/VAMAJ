@@ -58,6 +58,15 @@ public class ModelFacade {
         modelAggregate.getProperty().setInstallationSpace(installationSpace);
     }
 
+    // TEMPORARY GETTERS FOR TESTING
+    public Contract getContract() {
+        return modelAggregate.getContract();
+    }
+
+    public Property getProperty() {
+        return modelAggregate.getProperty();
+    }
+
     // Run calculations
     public void runCalculators() {
         modelAggregate.runCalculators();
