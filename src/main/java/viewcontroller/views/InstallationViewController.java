@@ -15,16 +15,13 @@ public class InstallationViewController implements Initializable {
 
     // Components in parent FXML-file
     @FXML
-    private TextField solarAreaField;
+    private TextField consumption;
 
     @FXML
-    private TextField costField;
+    private TextField cost;
 
     @FXML
     private Button calculateButton;
-
-    @FXML
-    private Text resultText;
 
     @FXML
     private Button backButton;
@@ -33,27 +30,21 @@ public class InstallationViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         // Initializing the text fields
-        onlyNumbers(solarAreaField);
-        onlyNumbers(costField);
+        onlyNumbers(consumption);
+        onlyNumbers(cost);
 
         // Initializing button functionality
         calculateButton.setOnAction(event -> {
 
-            double area = solarAreaField.getText().isEmpty() ? 0 : Double.parseDouble(solarAreaField.getText());
-            double cost = costField.getText().isEmpty() ? 0 : Double.parseDouble(costField.getText());
+            double electricityConsumption = consumption.getText().isEmpty() ? 0 : Double.parseDouble(consumption.getText());
+            double electricityCost = cost.getText().isEmpty() ? 0 : Double.parseDouble(cost.getText());
 
-            resultText.setText("Kostnad: " + mockResult(area, cost) + " kr");
+            PrimaryController.getInstance().getModelFacade().setContractCost((int) electricityCost);
+            PrimaryController.getInstance().getModelFacade().setPropertyConsumption(electricityConsumption);
         });
 
         // Initializing back button functionality
         backButton.setOnAction(event -> SceneSwitcher.getInstance().setScene("/fxml/mainscene.fxml"));
-    }
-
-    // Just temporary helper method to calculate the costs, in future this will be done in calculator classes
-    private double mockResult(double area, double cost) {
-
-        // Simplified calculations for now
-        return area * cost;
     }
 
     // Method that configures text field to only accept numbers

@@ -21,7 +21,7 @@ public class PrimaryController {
     // Member variables
     private SceneSwitcher sceneSwitcher = SceneSwitcher.getInstance();
     private ServiceFacade serviceFacade = new ServiceFacade();
-    private ModelFacade modelFacade;
+    private ModelFacade modelFacade = new ModelFacade();
     private Stage stage;
 
     // Setters (for API)

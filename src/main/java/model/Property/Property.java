@@ -2,27 +2,22 @@ package main.java.model.Property;
 
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
+import main.java.model.SolarSetup.SolarSetup;
 
 public class Property {
 
     // Member variables
+    private SolarSetup solarSetup;
     private Location location;
-    private Contract contract;
+    private Contract contract = new Contract();
     private double availableSpace;
     private int orientation;
     private int angle;
     private double latitude;
+    private double consumption;
 
     // Constructor (empty)
     public Property() {
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
     }
 
     // Getters
@@ -46,6 +41,18 @@ public class Property {
         return angle;
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getConsumption() {
+        return consumption;
+    }
+
+    public SolarSetup getSolarSetup() {
+        return solarSetup;
+    }
+
     // Setters
     public void setLocation(Location l) {
         this.location = l;
@@ -65,5 +72,13 @@ public class Property {
 
     public void setContract(Contract c) {
         this.contract = c;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setConsumption(double consumption) {
+        this.consumption = consumption;
     }
 }
