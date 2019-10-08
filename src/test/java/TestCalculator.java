@@ -78,4 +78,25 @@ public class TestCalculator {
 
         assertTrue(Math.abs(result - 21.0) < 0.1);
     }
+
+    @Test
+    public void testPanelProduction() {
+
+        SolarPanelProductionInput input;
+        input = new SolarPanelProductionInput();
+        input.setPanelEfficiency(0.5);
+        input.setAverageSolarRadiation(2.5);
+        input.setPanelArea(100);
+        input.setPanelPerformanceRatio(0.75);
+
+        SolarPanelProduction calculator;
+        calculator = new SolarPanelProduction();
+
+        SolarPanelProductionOutput output;
+        output = calculator.calculate(input);
+
+        double result = output.getEnergy();
+
+        assertTrue(result == 93.75);
+    }
 }
