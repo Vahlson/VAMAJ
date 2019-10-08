@@ -19,7 +19,7 @@ public class InstallationCost implements Calculator<InstallationCostInput, Insta
     // Calculates installationCost based on how many solar panels there's room for in the availableSpace of a property
     private double installationCost(double availableSpace, double requiredPanelSpace, double panelPrice){
 
-        double installationCost = Math.floorDiv((int) availableSpace, (int) requiredPanelSpace) * panelPrice;
+        double installationCost = Math.floor(availableSpace / requiredPanelSpace) * panelPrice;
 
         return installationCost;
     }
