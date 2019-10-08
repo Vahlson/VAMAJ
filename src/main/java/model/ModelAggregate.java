@@ -49,11 +49,11 @@ public class ModelAggregate {
     // Method calculating the production output of solar panel based on given values (kW/h)
     private double panelProductionOutput() {
 
-        // Creating the input
+        // Creating the input (hard coded values for now)
         SolarPanelProductionInput input;
         input = new SolarPanelProductionInput();
         input.setPanelPerformanceRatio(0.75); // Default value
-        input.setAverageSolarRadiation(location.getSolarInsolation());
+        input.setAverageSolarRadiation(2.5);
         input.setPanelEfficiency(0.4);
         input.setPanelArea(10);
 
