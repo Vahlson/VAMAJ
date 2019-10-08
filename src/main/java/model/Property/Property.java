@@ -7,7 +7,7 @@ public class Property {
 
     // Member variables
     private Location location;
-    private Contract contract;
+    private Contract contract = new Contract();
     private double availableSpace;
     private int orientation;
     private int angle;

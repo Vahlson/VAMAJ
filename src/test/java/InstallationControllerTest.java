@@ -19,7 +19,7 @@ public class InstallationControllerTest extends TestCase {
         modelFacade.setPropertyConsumption(10);
         modelFacade.setContractCost(100);
 
-        assertEquals(modelFacade.getProperty().getConsumption(), 10);
+        assertEquals(modelFacade.getProperty().getConsumption(), 10.0);
         assertEquals(modelFacade.getContract().getCost(), 100);
     }
 }
