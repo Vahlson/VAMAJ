@@ -20,7 +20,6 @@ import java.util.ResourceBundle;
 public class SolarPanelQuestionViewController implements Initializable {
 
 
-
     @FXML
     private ProgressBar progressBar;
 
@@ -54,9 +53,10 @@ public class SolarPanelQuestionViewController implements Initializable {
     @FXML
     private Label premiumWattage;
 
+    PrimaryController controller;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
 
         ToggleGroup tg = new ToggleGroup();
@@ -74,26 +74,18 @@ public class SolarPanelQuestionViewController implements Initializable {
                 if (tg.getSelectedToggle() != null) {
                     RadioButton selected = (RadioButton) tg.getSelectedToggle();
 
-                    if (selected.equals(premiumRadio)){
+                    if (selected.equals(premiumRadio)) {
 
-                    }
-                    else
-                            System.out.println(2);
+                        System.out.println(1);
+
+                    } else
+                        System.out.println(2);
                 }
             }
         });
 
 
-
-
-
-
     }
-
-
-
-
-
 
 
 }

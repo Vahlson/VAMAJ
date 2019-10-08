@@ -9,6 +9,11 @@ public class SolarPanel {
     private String panelName;
     private String panelManufacturer;
 
+    public SolarPanel()
+    {
+
+
+    }
 
     public SolarPanel(double requiredSpace, double productionPerHour, double lifeExpectancy, double retailPrice, double wattage, String panelName, String panelManufacturer) {
         this.requiredSpace = requiredSpace;

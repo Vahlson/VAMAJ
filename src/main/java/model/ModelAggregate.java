@@ -7,6 +7,7 @@ import main.java.model.Property.Property;
 import main.java.model.Calculator.Calculator;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
+import main.java.model.SolarSetup.SolarPanel;
 import main.java.model.user.User;
 
 import java.util.ArrayList;
