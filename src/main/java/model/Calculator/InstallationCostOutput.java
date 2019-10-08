@@ -20,7 +20,7 @@ public class InstallationCostOutput {
         return installationCost;
     }
 
-    public double getGovernmentSubvention() {
+    public double getSubventionAmount() {
         return governmentSubvention;
     }
 

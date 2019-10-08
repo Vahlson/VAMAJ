@@ -20,7 +20,7 @@ public class InstallationCostInput {
         return availableSpace;
     }
 
-    double getRequiredSpace() {
+    double getRequiredPanelSpace() {
         return requiredPanelSpace;
     }
 

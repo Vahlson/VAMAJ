@@ -4,7 +4,6 @@ import main.java.model.Calculator.*;
 import main.java.model.Property.*;
 import main.java.model.*;
 
-import java.lang.Math.*;
 import java.util.HashMap;
 
 import org.junit.Test;
@@ -98,5 +97,26 @@ public class TestCalculator {
         double result = output.getEnergy();
 
         assertTrue(result == 93.75);
+    }
+
+    @Test
+    public void testInstallationCost(){
+
+        InstallationCostInput input;
+        input = new InstallationCostInput(40, 2.3, 4600);
+
+        InstallationCost installationCalculator;
+        installationCalculator = new InstallationCost();
+
+        InstallationCostOutput output;
+        output = installationCalculator.calculate(input);
+
+        double resultCost                   = output.getInstallationCost();
+        double resultSubventedAmount        = output.getSubventionAmount();
+        double resultSubventedInstallation  = output.getSubventedCost();
+
+        assertTrue(resultCost == 78200);
+        assertTrue(resultSubventedAmount == 15640);
+        assertTrue(resultSubventedInstallation == 62560);
     }
 }

@@ -9,7 +9,7 @@ public class InstallationCost implements Calculator<InstallationCostInput, Insta
     @Override
     public InstallationCostOutput calculate(InstallationCostInput input) {
 
-        double installationCost         = installSetupCost(input.getAvailableSpace(), input.getRequiredSpace(), input.getPanelPrice());
+        double installationCost         = installationCost(input.getAvailableSpace(), input.getRequiredPanelSpace(), input.getPanelPrice());
         double governmentSubvention     = subventionAmount(installationCost);
         double subventedInstallationCost= subventedCost(installationCost);
 
@@ -17,7 +17,7 @@ public class InstallationCost implements Calculator<InstallationCostInput, Insta
     }
 
     // Calculates installationCost based on how many solar panels there's room for in the availableSpace of a property
-    private double installSetupCost(double availableSpace, double requiredPanelSpace, double panelPrice){
+    private double installationCost(double availableSpace, double requiredPanelSpace, double panelPrice){
 
         double installationCost = Math.floorDiv((int) availableSpace, (int) requiredPanelSpace) * panelPrice;
 
