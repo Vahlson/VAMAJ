@@ -64,10 +64,6 @@ public class ModelFacade {
     }
 
     // Getter(s)
-    public ModelAggregate getModelAggregate() {
-        return modelAggregate;
-    }
-
     public HashMap<String, Object> getCalculationResults() {
         return modelAggregate.getCalculationResults();
     }

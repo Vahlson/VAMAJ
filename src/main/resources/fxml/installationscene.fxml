@@ -8,19 +8,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: LIGHTBLUE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.InstallationViewController">
    <children>
       <HBox alignment="CENTER" layoutX="101.0" layoutY="173.0" prefWidth="1208.0" spacing="100.0">
          <children>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="554.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total solcellsyta">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Electricity consumption (kWh)">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="solarAreaField" promptText="Solcellsyta">
+                  <TextField fx:id="solarAreaField" promptText="Consumption">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -29,12 +28,12 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="554.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Installationskostnad per m2 ">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Electricity cost (kr/kWh)">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="costField" promptText="Kostnad/m2">
+                  <TextField fx:id="costField" promptText="Cost">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -43,16 +42,11 @@
             </VBox>
          </children>
       </HBox>
-      <Button fx:id="calculateButton" layoutX="106.0" layoutY="416.0" mnemonicParsing="false" text="Beräkna kostnad">
+      <Button fx:id="calculateButton" layoutX="106.0" layoutY="416.0" mnemonicParsing="false" text="Update information">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Text fx:id="resultText" layoutX="513.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kostnad: ">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
       <Text layoutX="103.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(DESIGN NOT FINALIZED)">
          <font>
             <Font size="18.0" />
