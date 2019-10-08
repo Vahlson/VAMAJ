@@ -11,26 +11,45 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainViewRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.MainViewController">
+<AnchorPane fx:id="mainViewRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1914.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.MainViewController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="834.0" prefWidth="1920.0" styleClass="mountain" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <AnchorPane layoutY="216.0" prefHeight="906.0" prefWidth="1914.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fitHeight="618.0" fitWidth="242.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="135.0">
+               <image>
+                  <Image url="@../images/HALO.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutY="80.0" prefHeight="796.0" prefWidth="1914.0" styleClass="mountain" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="110.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="80.0">
+                     <image>
+                        <Image url="@../images/Solceller.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
       <AnchorPane prefHeight="192.0" prefWidth="1920.0" styleClass="foreground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1596.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="TOP_RIGHT" fillHeight="false" minWidth="-Infinity" prefHeight="706.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                  <HBox alignment="TOP_RIGHT" fillHeight="false" minWidth="-Infinity" prefWidth="0.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <VBox prefHeight="706.0" prefWidth="0.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="580.0" prefWidth="447.0" HBox.hgrow="NEVER">
                            <children>
-                              <Label alignment="TOP_LEFT" prefHeight="379.0" prefWidth="532.0" styleClass="h1" text="Vad skulle du tjäna på solkraft?" textFill="WHITE" wrapText="true">
+                              <Label alignment="TOP_LEFT" prefHeight="321.0" prefWidth="447.0" styleClass="h1" text="Vad skulle du tjäna på solkraft?" textFill="WHITE" wrapText="true">
                                  <font>
                                     <Font size="96.0" />
                                  </font>
                               </Label>
-                              <Label alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="234.0" prefWidth="527.0" styleClass="p3" text="Ta reda på detta och mycket mer på under en minut med vår kalkylator. Svara bara på frågorna till vänster." textFill="WHITE" wrapText="true" />
+                              <Label alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="447.0" styleClass="p4" text="Ta reda på detta och mycket mer på under en minut med vår kalkylator. Svara bara på frågorna till vänster." textFill="#ffffffb2" wrapText="true" />
+                              <Line endX="280.0" startX="-100.0" stroke="WHITE" />
                            </children>
                         </VBox>
                      </children>
@@ -38,20 +57,26 @@
                         <Insets right="40.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" fillHeight="false" prefHeight="706.0" prefWidth="489.0" HBox.hgrow="NEVER">
+                  <HBox alignment="TOP_CENTER" fillHeight="false" prefHeight="736.0" prefWidth="547.0" HBox.hgrow="NEVER">
                      <children>
                         <VBox alignment="TOP_CENTER" prefHeight="598.0" prefWidth="445.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label styleClass="h3" text="Berätta om dig själv!" textFill="WHITE" />
-                              <Button fx:id="installationButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="334.0" text="Installation" />
-                              <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="382.0" prefWidth="445.0" styleClass="backdrop">
+                              <Label prefHeight="26.0" prefWidth="260.0" styleClass="h3" text="Berätta om dig själv!" textFill="WHITE" />
+                              <Label prefHeight="41.0" prefWidth="430.0" styleClass="p4" text="Vi behöver information att basera beräkningarna på." textFill="#ffffffb2" />
+                              <Button fx:id="installationButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="334.0" text="Installation" textFill="RED" />
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="382.0" prefWidth="445.0" styleClass="backdrop" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" styleClass="backdrop">
+                                    <FlowPane styleClass="backdrop" vgap="30.0">
                                        <children>
-                                          <FlowPane prefHeight="200.0" prefWidth="200.0" styleClass="backdrop" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <AnchorPane prefHeight="207.0" prefWidth="481.0" style="-fx-background-color: white;" />
+                                          <AnchorPane prefHeight="450.0" prefWidth="498.0" style="-fx-background-color: white;" />
+                                          <AnchorPane prefHeight="450.0" prefWidth="498.0" style="-fx-background-color: white;" />
                                        </children>
-                                    </AnchorPane>
+                                    </FlowPane>
                                 </content>
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
                               </ScrollPane>
                               <Button fx:id="click" alignment="CENTER" mnemonicParsing="false" onAction="#calculate" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="BERÄKNA" VBox.vgrow="NEVER">
                                  <VBox.margin>
@@ -60,7 +85,7 @@
                               </Button>
                            </children>
                         </VBox>
-                        <VBox alignment="TOP_CENTER" prefHeight="23.0" prefWidth="49.0" HBox.hgrow="NEVER">
+                        <VBox alignment="CENTER_RIGHT" prefHeight="574.0" prefWidth="60.0" HBox.hgrow="NEVER">
                            <children>
                               <Button fx:id="backButton" mnemonicParsing="false" onAction="#backNavigation" prefHeight="24.0" prefWidth="0.0">
                                  <graphic>
@@ -71,7 +96,10 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Label styleClass="p3" text="2/7" textFill="WHITE" />
+                              <Label styleClass="p3" text="2/7" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin></Label>
                               <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextNavigation" prefHeight="39.0" prefWidth="0.0">
                                  <graphic>
                                     <ImageView fitHeight="29.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
@@ -80,27 +108,33 @@
                                        </image>
                                     </ImageView>
                                  </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
                               </Button>
                            </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox fillHeight="false" prefHeight="706.0" HBox.hgrow="ALWAYS" />
+                  <HBox fillHeight="false" HBox.hgrow="ALWAYS" />
                </children>
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
                <padding>
-                  <Insets bottom="100.0" top="100.0" />
+                  <Insets bottom="100.0" top="70.0" />
                </padding>
             </HBox>
          </center>
          <top>
             <HBox alignment="BOTTOM_LEFT" prefHeight="174.0" prefWidth="2590.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="581.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="827.0">
                      <children>
-                        <Button graphicTextGap="20.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="634.0" styleClass="h2" text="Solkraftskalkylatorn" textFill="WHITE" HBox.hgrow="SOMETIMES">
+                        <Button graphicTextGap="20.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="602.0" styleClass="h2" text="Solkraftskalkylatorn" textFill="WHITE">
                            <graphic>
                               <ImageView fitHeight="70.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -109,9 +143,13 @@
                               </ImageView>
                            </graphic>
                         </Button>
+                        <Line endX="500.0" startX="-50.0" stroke="WHITE">
+                           <VBox.margin>
+                              <Insets left="130.0" />
+                           </VBox.margin>
+                        </Line>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="174.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  </VBox>
                </children>
                <BorderPane.margin>
                   <Insets />
@@ -121,12 +159,6 @@
                </padding>
             </HBox>
          </top>
-         <right>
-            <AnchorPane prefHeight="828.0" prefWidth="198.0" BorderPane.alignment="CENTER" />
-         </right>
-         <left>
-            <AnchorPane prefHeight="828.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
-         </left>
       </BorderPane>
    </children>
 </AnchorPane>
