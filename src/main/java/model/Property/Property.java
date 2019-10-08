@@ -12,17 +12,10 @@ public class Property {
     private int orientation;
     private int angle;
     private double latitude;
+    private double consumption;
 
     // Constructor (empty)
     public Property() {
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
     }
 
     // Getters
@@ -46,6 +39,14 @@ public class Property {
         return angle;
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getConsumption() {
+        return consumption;
+    }
+
     // Setters
     public void setLocation(Location l) {
         this.location = l;
@@ -65,5 +66,13 @@ public class Property {
 
     public void setContract(Contract c) {
         this.contract = c;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setConsumption(double consumption) {
+        this.consumption = consumption;
     }
 }
