@@ -87,7 +87,7 @@ public class LocationCreatorAPI implements ILocationCreator{
             //TODO ÄNDRA TILL JSONEXCEPTION
             }catch(Exception e2){
                 //If collection of the error message fails.
-                System.out.println("Error message collection failed");
+                System.err.println("Error message collection failed");
                 e.printStackTrace();
             }
 
