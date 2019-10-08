@@ -1,25 +1,30 @@
 package main.java.model.Calculator;
 
-public class InstallationCostOutput {
+// (3) Jonatan
+// Class to contain return values of InstallationCost calculation
 
-    // Class to contain return values of InstallationCost calculation
+public class InstallationCostOutput {
 
     private double installationCost;
     private double governmentSubvention;
     private double subventedCost;
 
-    public InstallationCostOutput(double installationCost, double governmentSubvention, double subventedCost) {
+    InstallationCostOutput(double installationCost, double governmentSubvention, double subventedCost) {
         this.installationCost = installationCost;
         this.governmentSubvention = governmentSubvention;
         this.subventedCost = subventedCost;
     }
 
-    //Getters
+    // Getters
     public double getInstallationCost() {
         return installationCost;
     }
 
-    public double getGovernmentSubvention() { return governmentSubvention; }
+    public double getGovernmentSubvention() {
+        return governmentSubvention;
+    }
 
-    public double getSubventedCost() { return subventedCost; }
+    public double getSubventedCost() {
+        return subventedCost;
+    }
 }

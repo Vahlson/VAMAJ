@@ -1,23 +1,22 @@
 package main.java.model.Calculator;
 
+    // (3) and (7) Jonatan
+    // Class that handles all calculations related to a property's installation cost of solar panels
+
 public class InstallationCost implements Calculator<InstallationCostInput, InstallationCostOutput>{
 
-    // Returns the installation cost of solar panels
+    // Returns the InstallationCost output consisting of installation cost, subvented amount and subvented installation cost
     @Override
     public InstallationCostOutput calculate(InstallationCostInput input) {
 
-        double availableSpace       = input.getAvailableSpace();
-        double requiredPanelSpace   = input.getRequiredSpace();
-        double panelPrice           = input.getPanelPrice();
-
-        double installationCost     = installSetupCost(input.getAvailableSpace(), input.getRequiredSpace(), input.getPanelPrice());
-        double governmentSubvention = subventionAmount(installationCost);
-        double subventedInstallationCost = subventedCost(installationCost);
+        double installationCost         = installSetupCost(input.getAvailableSpace(), input.getRequiredSpace(), input.getPanelPrice());
+        double governmentSubvention     = subventionAmount(installationCost);
+        double subventedInstallationCost= subventedCost(installationCost);
 
         return new InstallationCostOutput(installationCost, governmentSubvention, subventedInstallationCost);
     }
 
-    // Calculates installationCost based on how many solar panels fits in availableSpace
+    // Calculates installationCost based on how many solar panels there's room for in the availableSpace of a property
     private double installSetupCost(double availableSpace, double requiredPanelSpace, double panelPrice){
 
         double installationCost = Math.floorDiv((int) availableSpace, (int) requiredPanelSpace) * panelPrice;
