@@ -7,7 +7,7 @@ public class SolarPanelProductionOutput {
     private double energy;
 
     // Constructor
-    public SolarPanelProductionOutput(double energy) {
+    SolarPanelProductionOutput(double energy) {
         this.energy = energy;
     }
 

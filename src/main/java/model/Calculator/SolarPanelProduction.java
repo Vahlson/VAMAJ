@@ -8,10 +8,10 @@ public class SolarPanelProduction implements Calculator<SolarPanelProductionInpu
     public SolarPanelProductionOutput calculate(SolarPanelProductionInput input) {
 
         // Calculating the result
-        double energy = input.getArea() *
-                input.getPanelEfficiency() *
-                input.getAverageSolarRadiation() *
-                input.getPerformanceRatio();
+        double energy = input.getPanelArea()
+                * input.getPanelEfficiency()
+                * input.getAverageSolarRadiation()
+                * input.getPanelPerformanceRatio();
 
         // Returning the result
         return new SolarPanelProductionOutput(energy);

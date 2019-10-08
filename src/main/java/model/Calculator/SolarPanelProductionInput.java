@@ -5,10 +5,10 @@ package main.java.model.Calculator;
 public class SolarPanelProductionInput {
 
     // Member variables
-    private double area;
-    private double averageSolarRadiation;
-    private double panelEfficiency;
-    private double performanceRatio;
+    private double panelArea;               // Total solar panel area (m2)
+    private double averageSolarRadiation;   // Solar panel yield/efficiency (%)
+    private double panelEfficiency;         // Annual average solar radiation
+    private double panelPerformanceRatio;   // Performance ratio, default 0.75
 
     // Constructor (empty)
     public SolarPanelProductionInput() {
@@ -20,32 +20,32 @@ public class SolarPanelProductionInput {
         this.panelEfficiency = efficiency;
     }
 
-    public void setArea(double area) {
-        this.area = area;
+    public void setPanelArea(double panelArea) {
+        this.panelArea = panelArea;
     }
 
     public void setAverageSolarRadiation(double averageSolarRadiation) {
         this.averageSolarRadiation = averageSolarRadiation;
     }
 
-    public void setPerformanceRatio(double performanceRatio) {
-        this.performanceRatio = performanceRatio;
+    public void setPanelPerformanceRatio(double panelPerformanceRatio) {
+        this.panelPerformanceRatio = panelPerformanceRatio;
     }
 
     // Getters
-    public double getPanelEfficiency() {
+    double getPanelEfficiency() {
         return panelEfficiency;
     }
 
-    public double getArea() {
-        return area;
+    double getPanelArea() {
+        return panelArea;
     }
 
-    public double getAverageSolarRadiation() {
+    double getAverageSolarRadiation() {
         return averageSolarRadiation;
     }
 
-    public double getPerformanceRatio() {
-        return performanceRatio;
+    double getPanelPerformanceRatio() {
+        return panelPerformanceRatio;
     }
 }
