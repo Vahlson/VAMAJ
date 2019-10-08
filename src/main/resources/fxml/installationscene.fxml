@@ -19,7 +19,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="solarAreaField" promptText="Consumption">
+                  <TextField fx:id="consumption" promptText="Consumption">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -33,7 +33,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="costField" promptText="Cost">
+                  <TextField fx:id="cost" promptText="Cost">
                      <font>
                         <Font size="36.0" />
                      </font>
