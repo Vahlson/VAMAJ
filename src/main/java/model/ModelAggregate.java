@@ -22,6 +22,7 @@ public class ModelAggregate {
     private User currentUser;
     private List<User> users = new ArrayList<>();
     private Property property = new Property();
+    private Location location = new Location();
     private HashMap<String, Object> calculationResults = new HashMap<>(); //HashMap containing results with a string as key
 
     //Calls calculators and sets results to above HashMap
@@ -52,33 +53,16 @@ public class ModelAggregate {
         return calculationResults;
     }
 
-    // Setters in property
-    void setPropertyLocation(Location l) {
-        property.setLocation(l);
+    // Getters
+    public Location getLocation() {
+        return location;
     }
 
-    void setPropertyLatitude(double latitude) {
-        property.setLatitude(latitude);
+    public Property getProperty() {
+        return property;
     }
 
-    void setPropertyPanelAngle(int panelAngle) {
-        property.setPanelAngle(panelAngle);
-    }
-
-    void setPropertyOrientation(int orientation) {
-        property.setOrientation(orientation);
-    }
-
-    void setPropertyInstallationSpace(double installationSpace) {
-        property.setInstallationSpace(installationSpace);
-    }
-
-    // Setters in contract
-    void setContract(Contract c) {
-        property.setContract(c);
-    }
-
-    void setContractCost(int cost) {
-        property.getContract().setCost(cost);
+    public Contract getContract() {
+        return property.getContract();
     }
 }

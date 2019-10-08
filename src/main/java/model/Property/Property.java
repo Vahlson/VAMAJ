@@ -47,6 +47,7 @@ public class Property {
         return consumption;
     }
 
+
     // Setters
     public void setLocation(Location l) {
         this.location = l;
