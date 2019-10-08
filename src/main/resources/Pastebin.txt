@@ -1,0 +1,16 @@
+
+SKALA DYNAMISKA OBJEKT____________________________
+
+setLeftAnchor(this,0.0);
+        setRightAnchor(this,0.0);
+
+SCROLLA TILL POSITION_____________________________
+
+static void slowScrollToBottom(ScrollPane scrollPane) {
+    Animation animation = new Timeline(
+        new KeyFrame(Duration.seconds(2),
+            new KeyValue(scrollPane.vvalueProperty(), 1)));
+    animation.play();
+}
+
+_____________________________________________
