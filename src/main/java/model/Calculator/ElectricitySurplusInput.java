@@ -1,23 +1,24 @@
 package main.java.model.Calculator;
 
-// 4.1 Jonatan
+// (4.1) Jonatan
 
 public class ElectricitySurplusInput {
 
-    double consumedElectricity;
-    double producedElectricity;
+    private double timeUnitConsumedElectricity;
+    private double timeUnitProducedElectricity;
 
-    public ElectricitySurplusInput(double consumedElectricity, double producedElectricity) {
-        this.consumedElectricity = consumedElectricity;
-        this.producedElectricity = producedElectricity;
+    //Constructor
+    ElectricitySurplusInput(double timeUnitConsumedElectricity, double timeUnitProducedElectricity) {
+        this.timeUnitConsumedElectricity = timeUnitConsumedElectricity;
+        this.timeUnitProducedElectricity = timeUnitProducedElectricity;
     }
 
     // Getters
-    public double getConsumedElectricity() {
-        return consumedElectricity;
+    public double getTimeUnitConsumedElectricity() {
+        return timeUnitConsumedElectricity;
     }
 
-    public double getProducedElectricity() {
-        return producedElectricity;
+    public double getTimeUnitProducedElectricity() {
+        return timeUnitProducedElectricity;
     }
 }
