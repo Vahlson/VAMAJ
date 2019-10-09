@@ -61,21 +61,21 @@ public class MainViewController extends AnchorPane implements Initializable {
             SceneSwitcher.getInstance().setScene("/fxml/installationscene.fxml");
         });
 
-        calculateButton.setOnAction(event ->{
+        calculateButton.setOnAction(event -> {
             SceneSwitcher.getInstance().setScene("/fxml/resultscene.fxml");
 
         });
 
-        upNavigation.setOnAction(event ->{
-            if(state > 0) {
+        upNavigation.setOnAction(event -> {
+            if (state > 0) {
                 slowScrollToNode(--state);
             }
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         });
 
-        downNavigation.setOnAction(event ->{
-            if(state < questionList.getChildren().size() - 1) {
+        downNavigation.setOnAction(event -> {
+            if (state < questionList.getChildren().size() - 1) {
                 slowScrollToNode(++state);
             }
 
@@ -86,17 +86,20 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     }
 
-    private void slowScrollToNode(int node){
+    private void slowScrollToNode(int node) {
         double scrollPaneHeight = questionList.getHeight();
-        double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY();
+        double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + ((questionList.getChildren().get(node).getBoundsInParent().getMaxY() - questionList.getChildren().get(node).getBoundsInParent().getMinY()) / 2);
         System.out.println(relativeY);
+        System.out.println(questionList.getChildren().get(node));
 
-        double scrollProcent =  relativeY / scrollPaneHeight;
+        double scrollProcent = relativeY / scrollPaneHeight;
 
-        slowScrollToPosition(questionScrollPane, scrollProcent);
+            slowScrollToPosition(questionScrollPane, scrollProcent);
+
     }
 
-    private void slowScrollToPosition(ScrollPane scrollPane,double pos) {
+
+    private void slowScrollToPosition(ScrollPane scrollPane, double pos) {
 
         Animation animation = new Timeline(
                 new KeyFrame(Duration.seconds(0.2), new KeyValue(scrollPane.vvalueProperty(), pos, Interpolator.EASE_BOTH)));
