@@ -8,7 +8,7 @@ public class ElectricitySurplusInput {
     private double timeUnitProducedElectricity;
 
     //Constructor
-    ElectricitySurplusInput(double timeUnitConsumedElectricity, double timeUnitProducedElectricity) {
+    public ElectricitySurplusInput(double timeUnitConsumedElectricity, double timeUnitProducedElectricity) {
         this.timeUnitConsumedElectricity = timeUnitConsumedElectricity;
         this.timeUnitProducedElectricity = timeUnitProducedElectricity;
     }

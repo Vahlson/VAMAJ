@@ -119,4 +119,24 @@ public class TestCalculator {
         assertTrue(resultSubventedAmount == 15640);
         assertTrue(resultSubventedInstallation == 62560);
     }
+
+    @Test
+    public void testElectricitySurplus() {
+
+        double consumption = 100;
+
+        ElectricitySurplusInput lowProduction = new ElectricitySurplusInput(consumption, 20);
+        ElectricitySurplusInput highProduction = new ElectricitySurplusInput(consumption, 110);
+
+        ElectricitySurplus calculator = new ElectricitySurplus();
+
+        ElectricitySurplusOutput noSurplus;
+        ElectricitySurplusOutput surplus;
+
+        noSurplus = calculator.calculate(lowProduction);
+        surplus = calculator.calculate(highProduction);
+
+        assertTrue(noSurplus.getElectricitySurplus() == 0);
+        assertTrue(surplus.getElectricitySurplus() == 10);
+    }
 }
