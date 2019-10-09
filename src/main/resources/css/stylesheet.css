@@ -293,7 +293,8 @@ EXEMPEL PÅ BYTA IKON VID HOVER
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
     -fx-cursor: hand;
-    -fx-background-color :derive(-fx-main1,90.0%);
+    /*-fx-background-color :derive(-fx-main1,100.0%);*/
+    -fx-background-color: -fx-main1-lighter;
     -fx-background-insets : 2.0, 0.0, 0.0;
     -fx-background-radius : 2.0em;
 }
