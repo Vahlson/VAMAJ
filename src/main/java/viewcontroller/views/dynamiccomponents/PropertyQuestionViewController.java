@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import main.java.viewcontroller.views.MainViewController;
 
@@ -34,10 +35,10 @@ public class PropertyQuestionViewController extends AnchorPane {
 
         setLeftAnchor(this,0.0);
         setRightAnchor(this,0.0);
-         /* ToggleGroup group = new ToggleGroup();
+        ToggleGroup group = new ToggleGroup();
         consumingRB.setToggleGroup(group);
         nonConsumingRB.setToggleGroup(group);
-*/
+
 
     }
 }

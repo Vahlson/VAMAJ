@@ -3,21 +3,28 @@ package main.java.viewcontroller.views.dynamiccomponents;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import main.java.model.Calculator.Calculator;
 import main.java.model.ModelAggregate;
 import main.java.model.ModelFacade;
 import main.java.model.SolarSetup.SolarPanel;
 import main.java.viewcontroller.PrimaryController;
+import main.java.viewcontroller.views.MainViewController;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SolarPanelQuestionViewController implements Initializable {
+public class SolarPanelQuestionViewController extends AnchorPane {
+
+
+    MainViewController parentController;
 
 
     @FXML
@@ -55,10 +62,24 @@ public class SolarPanelQuestionViewController implements Initializable {
 
     PrimaryController controller;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public SolarPanelQuestionViewController(MainViewController parentController) {
 
 
+        this.parentController = parentController;
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/SolarPanelQuestion.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
+
+        setLeftAnchor(this, 0.0);
+        setRightAnchor(this, 0.0);
         ToggleGroup tg = new ToggleGroup();
         premiumRadio.setToggleGroup(tg);
         standardRadio.setToggleGroup(tg);
@@ -86,6 +107,4 @@ public class SolarPanelQuestionViewController implements Initializable {
 
 
     }
-
-
 }
