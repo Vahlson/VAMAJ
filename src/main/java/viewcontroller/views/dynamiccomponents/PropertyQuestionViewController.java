@@ -38,11 +38,11 @@ public class PropertyQuestionViewController extends AnchorPane implements Initia
                 RadioButton selected = (RadioButton) tg.getSelectedToggle();
 
                 if (selected.equals(consumingRB)){
-                    System.out.println(1);
+
 
                 }
                 else
-                    System.out.println(2);
+                    System.out.println(1);
             }
         });
     }
