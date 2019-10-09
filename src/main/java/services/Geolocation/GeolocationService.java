@@ -2,7 +2,9 @@ package services.Geolocation;
 
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
+import com.maxmind.geoip2.model.CityResponse;
 import com.maxmind.geoip2.model.DomainResponse;
+import com.maxmind.geoip2.record.Location;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class GeolocationService {
         dbReader = new DatabaseReader.Builder(database).build();
     }
 
-    public DomainResponse data(String ip) throws IOException, GeoIp2Exception {
+    public CityResponse getData(String ip) throws IOException, GeoIp2Exception {
 
         ip = "128.101.101.101";
 
@@ -34,11 +36,11 @@ public class GeolocationService {
         InetAddress ipAddress;
         ipAddress = InetAddress.getByName(ip);
 
-        // Getting the location data from the ip address
-        DomainResponse result;
-        result = dbReader.domain(ipAddress);
+        // Creating the CityResponse
+        CityResponse response;
+        response = dbReader.city(ipAddress);
 
         // Returning the result
-        return result;
+        return response;
     }
 }
