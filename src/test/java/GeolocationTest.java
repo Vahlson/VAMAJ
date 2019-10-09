@@ -1,23 +1,16 @@
-import com.maxmind.geoip2.exception.GeoIp2Exception;
-import com.maxmind.geoip2.model.CityResponse;
-import com.maxmind.geoip2.model.DomainResponse;
-import com.maxmind.geoip2.record.Location;
 import junit.framework.TestCase;
 import org.junit.Test;
-import services.Geolocation.GeolocationService;
+import services.Geolocation.Geolocation;
 
-import java.io.IOException;
 
 public class GeolocationTest extends TestCase {
 
     @Test
-    public void test() throws IOException, GeoIp2Exception {
-        GeolocationService service;
-        service = new GeolocationService();
+    public void testGeolocation() {
 
-        CityResponse data;
-        data = service.getData("");
+        Geolocation location;
+        location = new Geolocation();
 
-        System.out.println(data.getCity());
+        assertEquals(location.getCity(), "Gothenburg");
     }
 }
