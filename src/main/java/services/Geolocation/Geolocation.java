@@ -1,34 +1,57 @@
 package services.Geolocation;
 
+import com.maxmind.geoip2.exception.GeoIp2Exception;
+import com.maxmind.geoip2.model.CityResponse;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 // Class that holds our geolocation data
 public class Geolocation {
 
     // Member variables
+    private GeolocationService service;
     private String ipAddress;
     private String city;
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
 
     // Constructor (empty)
-    public Geolocation(){
+    public Geolocation() {
 
-    }
+        // Getting the ip address
+        String ip = null;
+        try {
+            ip = IPAddress.getIp();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-    // Setters
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
+        // Tries to load the database
+        try {
+            service = new GeolocationService();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+        // If service exists
+        if (service != null) {
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
+            // Getting the location data from the service
+            try {
+                CityResponse data;
+                data = service.getData(ip);
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+                // Fetching the data
+                this.city = data.getCity().getName();
+                this.latitude = data.getLocation().getLatitude();
+                this.longitude = data.getLocation().getLongitude();
+
+            } catch (IOException | GeoIp2Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // Getters
@@ -40,11 +63,11 @@ public class Geolocation {
         return city;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 }

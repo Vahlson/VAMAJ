@@ -13,13 +13,13 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 // Class that fetches geolocation data using our API:s
-public class GeolocationService {
+class GeolocationService {
 
     // Creating the database reader
     private DatabaseReader dbReader;
 
     // Constructor (empty)
-    public GeolocationService() throws IOException {
+    GeolocationService() throws IOException {
 
         try {
             URL res = getClass().getClassLoader().getResource("databases/geolocation/GeoLite2-City.mmdb");
@@ -35,9 +35,8 @@ public class GeolocationService {
         }
     }
 
-    public CityResponse getData(String ip) throws IOException, GeoIp2Exception {
-
-        ip = "129.16.168.189";
+    // Method that returns a CityResponse object based on given ip address
+    CityResponse getData(String ip) throws IOException, GeoIp2Exception {
 
         // Creating the ip address
         InetAddress ipAddress;
