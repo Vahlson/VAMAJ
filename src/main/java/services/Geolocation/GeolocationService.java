@@ -3,13 +3,10 @@ package services.Geolocation;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;
-import com.maxmind.geoip2.model.DomainResponse;
-import com.maxmind.geoip2.record.Location;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 // Class that fetches geolocation data using our API:s
 public class GeolocationService {
@@ -20,9 +17,13 @@ public class GeolocationService {
     // Constructor (empty)
     public GeolocationService() throws IOException {
 
+        // Creating the path as a string
+        String path;
+        path ="C:\\Users\\Alexander\\Documents\\VAMAJ\\src\\main\\resources\\databases\\geolocation\\GeoLite2-City.mmdb";
+
         // Loading the database
         File database;
-        database = new File("");
+        database = new File(path);
 
         // Instantiating the database reader
         dbReader = new DatabaseReader.Builder(database).build();
