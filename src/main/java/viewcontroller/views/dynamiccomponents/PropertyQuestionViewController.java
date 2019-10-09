@@ -1,21 +1,16 @@
 package main.java.viewcontroller.views.dynamiccomponents;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import main.java.viewcontroller.views.MainViewController;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
 
-public class PropertyQuestionViewController extends AnchorPane implements Initializable {
-    @FXML
-    private ProgressBar progressBar;
+public class PropertyQuestionViewController extends AnchorPane {
+    MainViewController parentController;
 
     @FXML
     private RadioButton consumingRB;
@@ -23,27 +18,26 @@ public class PropertyQuestionViewController extends AnchorPane implements Initia
     @FXML
     private RadioButton nonConsumingRB;
 
+    public PropertyQuestionViewController(MainViewController parentController){
+        this.parentController = parentController;
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ToggleGroup tg = new ToggleGroup();
-        consumingRB.setToggleGroup(tg);
-        nonConsumingRB.setToggleGroup(tg);
+        setLeftAnchor(this,0.0);
+        setRightAnchor(this,0.0);
+         /* ToggleGroup group = new ToggleGroup();
+        consumingRB.setToggleGroup(group);
+        nonConsumingRB.setToggleGroup(group);
+*/
 
-
-        tg.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-
-            if (tg.getSelectedToggle() != null) {
-                RadioButton selected = (RadioButton) tg.getSelectedToggle();
-
-                if (selected.equals(consumingRB)){
-
-
-                }
-                else
-                    System.out.println(1);
-            }
-        });
     }
 }

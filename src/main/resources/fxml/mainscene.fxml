@@ -8,13 +8,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainViewRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1914.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.MainViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1914.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.MainViewController">
    <children>
       <AnchorPane layoutY="216.0" prefHeight="906.0" prefWidth="1914.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -64,30 +63,34 @@
                               <Label prefHeight="26.0" prefWidth="260.0" styleClass="h3" text="Berätta om dig själv!" textFill="WHITE" />
                               <Label prefHeight="41.0" prefWidth="430.0" styleClass="p4" text="Vi behöver information att basera beräkningarna på." textFill="#ffffffb2" />
                               <Button fx:id="installationButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="334.0" text="Installation" textFill="RED" />
-                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="382.0" prefWidth="445.0" styleClass="backdrop" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
+                              <ScrollPane fx:id="questionScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="382.0" prefWidth="445.0" styleClass="backdrop" vbarPolicy="ALWAYS" VBox.vgrow="NEVER">
                                 <content>
-                                    <FlowPane styleClass="backdrop" vgap="30.0">
+                                    <AnchorPane prefHeight="374.0" prefWidth="462.0" styleClass="backdrop">
                                        <children>
-                                          <AnchorPane prefHeight="207.0" prefWidth="481.0" style="-fx-background-color: white;" />
-                                          <AnchorPane prefHeight="450.0" prefWidth="498.0" style="-fx-background-color: white;" />
-                                          <AnchorPane prefHeight="450.0" prefWidth="498.0" style="-fx-background-color: white;" />
+                                          <VBox fx:id="questionList" prefWidth="462.0" spacing="20.0" styleClass="backdrop" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane prefHeight="239.0" prefWidth="462.0" style="-fx-background-color: white;" VBox.vgrow="NEVER" />
+                                                <AnchorPane prefHeight="239.0" prefWidth="462.0" style="-fx-background-color: white;" />
+                                                <AnchorPane prefHeight="239.0" prefWidth="462.0" style="-fx-background-color: white;" />
+                                             </children>
+                                          </VBox>
                                        </children>
-                                    </FlowPane>
+                                    </AnchorPane>
                                 </content>
                                  <padding>
                                     <Insets right="10.0" />
                                  </padding>
                               </ScrollPane>
-                              <Button fx:id="click" alignment="CENTER" mnemonicParsing="false" onAction="#calculate" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="BERÄKNA" VBox.vgrow="NEVER">
+                              <Button fx:id="calculateButton" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="BERÄKNA" VBox.vgrow="NEVER">
                                  <VBox.margin>
                                     <Insets top="40.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER_RIGHT" prefHeight="574.0" prefWidth="60.0" HBox.hgrow="NEVER">
+                        <VBox alignment="CENTER" prefHeight="574.0" prefWidth="60.0" HBox.hgrow="NEVER">
                            <children>
-                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#backNavigation" prefHeight="24.0" prefWidth="0.0">
+                              <Button fx:id="upNavigation" mnemonicParsing="false" prefHeight="24.0" prefWidth="0.0">
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -96,11 +99,11 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Label styleClass="p3" text="2/7" textFill="WHITE">
+                              <Label fx:id="questionNumber" styleClass="p3" text="2/7" textFill="WHITE">
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin></Label>
-                              <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextNavigation" prefHeight="39.0" prefWidth="0.0">
+                              <Button fx:id="downNavigation" mnemonicParsing="false" prefHeight="39.0" prefWidth="0.0">
                                  <graphic>
                                     <ImageView fitHeight="29.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                        <image>
@@ -134,15 +137,16 @@
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="827.0">
                      <children>
-                        <Button graphicTextGap="20.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="602.0" styleClass="h2" text="Solkraftskalkylatorn" textFill="WHITE">
-                           <graphic>
-                              <ImageView fitHeight="70.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                        <AnchorPane>
+                           <children>
+                              <Label layoutX="125.0" layoutY="9.0" styleClass="h2" text="Solkraftskalkylatorn" textFill="WHITE" />
+                              <ImageView fitHeight="70.0" fitWidth="106.0" layoutX="43.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/Logo.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </Button>
+                           </children>
+                        </AnchorPane>
                         <Line endX="500.0" startX="-50.0" stroke="WHITE">
                            <VBox.margin>
                               <Insets left="130.0" />
