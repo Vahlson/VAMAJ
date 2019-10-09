@@ -4,21 +4,21 @@ package main.java.model.Calculator;
 
 public class ElectricitySurplusInput {
 
-    private double timeUnitConsumedElectricity;
-    private double timeUnitProducedElectricity;
+    private double consumedElectricityPerTimeUnit; // Name to be specified
+    private double producedElectricityPerTimeUnit; // Name to be specified
 
     //Constructor
-    public ElectricitySurplusInput(double timeUnitConsumedElectricity, double timeUnitProducedElectricity) {
-        this.timeUnitConsumedElectricity = timeUnitConsumedElectricity;
-        this.timeUnitProducedElectricity = timeUnitProducedElectricity;
+    public ElectricitySurplusInput(double consumedElectricityPerTimeUnit, double producedElectricityPerTimeUnit) {
+        this.consumedElectricityPerTimeUnit = consumedElectricityPerTimeUnit;
+        this.producedElectricityPerTimeUnit = producedElectricityPerTimeUnit;
     }
 
     // Getters
-    public double getTimeUnitConsumedElectricity() {
-        return timeUnitConsumedElectricity;
+    double getConsumedElectricityPerTimeUnit() {
+        return consumedElectricityPerTimeUnit;
     }
 
-    public double getTimeUnitProducedElectricity() {
-        return timeUnitProducedElectricity;
+    double getProducedElectricityPerTimeUnit() {
+        return producedElectricityPerTimeUnit;
     }
 }

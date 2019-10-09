@@ -11,8 +11,8 @@ public class ElectricitySurplus implements Calculator<ElectricitySurplusInput, E
 
         double surplus = 0;
 
-        if(input.getTimeUnitProducedElectricity() > input.getTimeUnitConsumedElectricity()){
-            surplus = input.getTimeUnitProducedElectricity() - input.getTimeUnitConsumedElectricity();
+        if(input.getProducedElectricityPerTimeUnit() > input.getConsumedElectricityPerTimeUnit()){
+            surplus = input.getProducedElectricityPerTimeUnit() - input.getConsumedElectricityPerTimeUnit();
         }
 
         return new ElectricitySurplusOutput(surplus);

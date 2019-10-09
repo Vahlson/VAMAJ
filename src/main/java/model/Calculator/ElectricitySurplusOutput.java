@@ -10,6 +10,7 @@ public class ElectricitySurplusOutput {
         this.electricitySurplus = electricitySurplus;
     }
 
+    // Getters
     public double getElectricitySurplus() {
         return electricitySurplus;
     }
