@@ -1,8 +1,7 @@
-package test.java;
 
-import main.java.model.Calculator.*;
-import main.java.model.Property.*;
-import main.java.model.*;
+import model.Calculator.*;
+import model.Property.*;
+import model.*;
 
 import java.util.HashMap;
 

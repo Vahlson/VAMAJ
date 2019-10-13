@@ -1,4 +1,4 @@
-package main.java.model.Calculator;
+package model.Calculator;
 
 // (3) Jonatan
 // Class to contain return values of InstallationCost calculation

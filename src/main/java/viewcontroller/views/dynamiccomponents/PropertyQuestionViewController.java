@@ -1,4 +1,4 @@
-package main.java.viewcontroller.views.dynamiccomponents;
+package viewcontroller.views.dynamiccomponents;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
-import main.java.viewcontroller.views.MainViewController;
+import viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 

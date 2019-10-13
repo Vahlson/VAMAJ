@@ -1,4 +1,4 @@
-package main.java.model.Calculator;
+package model.Calculator;
 
     // (3) and (7) Jonatan
     // Class that handles all calculations related to a property's installation cost of solar panels
@@ -6,7 +6,6 @@ package main.java.model.Calculator;
 public class InstallationCost implements Calculator<InstallationCostInput, InstallationCostOutput>{
 
     // Returns the InstallationCost output consisting of installation cost, subvented amount and subvented installation cost
-    @Override
     public InstallationCostOutput calculate(InstallationCostInput input) {
 
         double installationCost         = installationCost(input.getAvailableSpace(), input.getRequiredPanelSpace(), input.getPanelPrice());

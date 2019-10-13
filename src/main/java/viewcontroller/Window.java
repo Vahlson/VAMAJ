@@ -1,4 +1,4 @@
-package main.java.viewcontroller;
+package viewcontroller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Objects;
+//import java.util.Objects;
 
 public class Window extends Application {
 

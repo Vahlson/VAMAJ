@@ -1,6 +1,6 @@
 import junit.framework.TestCase;
 import org.junit.Test;
-//import services.Geolocation.GeoLocation;
+import services.Geolocation.Geolocation;
 
 
 public class GeolocationTest extends TestCase {
@@ -9,10 +9,8 @@ public class GeolocationTest extends TestCase {
     @Test
     public void testGeolocation() {
 
-      //  Geolocation location;
-        // location = new Geolocation();
-
-       // assertEquals(location.getCity(), "Gothenburg");
-        System.out.println("Geolocation class doesnt exist in Geolocation package");
+       Geolocation location;
+         location = new Geolocation();
+        assertEquals(location.getCity(), "Stockholm");
     }
 }

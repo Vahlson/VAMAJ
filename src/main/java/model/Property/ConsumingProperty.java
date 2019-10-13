@@ -1,4 +1,4 @@
-package main.java.model.Property;
+package model.Property;
 
 public class ConsumingProperty extends Property {
 }

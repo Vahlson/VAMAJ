@@ -1,11 +1,11 @@
-package main.java.services;
+package services;
 
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.services.ContractCreator.ContractCreatorAPI;
-import main.java.services.ContractCreator.IContractCreator;
-import main.java.services.LocationCreator.ILocationCreator;
-import main.java.services.LocationCreator.LocationCreatorAPI;
+import model.Contract.Contract;
+import model.Property.Location;
+import services.ContractCreator.ContractCreatorAPI;
+import services.ContractCreator.IContractCreator;
+import services.LocationCreator.ILocationCreator;
+import services.LocationCreator.LocationCreatorAPI;
 
 //(3.1) Alex LV och Alex Ask
 //The service package facade, meaning interface that exposes wanted functionality outward from the service package.

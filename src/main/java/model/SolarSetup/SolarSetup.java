@@ -1,4 +1,4 @@
-package main.java.model.SolarSetup;
+package model.SolarSetup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class SolarSetup {
 
     // Member variables
-    private List <SolarPanel> solarPanels = new ArrayList <>();
+    private List <SolarPanel> solarPanels = new ArrayList <SolarPanel>();
 
     private double efficiency;
     private double InstallationsCost;

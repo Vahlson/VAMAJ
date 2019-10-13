@@ -1,12 +1,12 @@
-package main.java.services.LocationCreator;
+package services.LocationCreator;
 
-import main.java.model.Property.Location;
+import model.Property.Location;
 
 import java.util.*;
 
 
-import main.java.services.ApiJSONParser;
-import main.java.services.ApiParser;
+import services.ApiJSONParser;
+import services.ApiParser;
 import org.json.JSONArray;
 //import org.json.JSONException;
 import org.json.JSONObject;

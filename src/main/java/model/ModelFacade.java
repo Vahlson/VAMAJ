@@ -1,10 +1,10 @@
-package main.java.model;
+package model;
 
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.model.Property.Property;
-import main.java.model.SolarSetup.SolarPanel;
-import main.java.model.SolarSetup.SolarSetup;
+import model.Contract.Contract;
+import model.Property.Location;
+import model.Property.Property;
+import model.SolarSetup.SolarPanel;
+import model.SolarSetup.SolarSetup;
 
 import java.util.HashMap;
 

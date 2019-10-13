@@ -1,4 +1,4 @@
-package main.java.model.Calculator;
+package model.Calculator;
 
 //(4.2) Vegard
 //Class to contain input values of LevelizedCostOfElectricity calculation

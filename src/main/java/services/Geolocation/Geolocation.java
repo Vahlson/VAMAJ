@@ -1,4 +1,4 @@
-package main.java.services.Geolocation;
+package services.Geolocation;
 
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;
@@ -46,7 +46,9 @@ public class Geolocation {
                 this.latitude = data.getLocation().getLatitude();
                 this.longitude = data.getLocation().getLongitude();
 
-            } catch (IOException | GeoIp2Exception e) {
+            } catch (IOException e) {
+                e.printStackTrace();
+            }catch (GeoIp2Exception e){
                 e.printStackTrace();
             }
         }

@@ -1,9 +1,8 @@
-package test.java;
 
 import junit.framework.TestCase;
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.services.ServiceFacade;
+import model.Contract.Contract;
+import model.Property.Location;
+import services.ServiceFacade;
 import org.junit.Test;
 
 public class ServicesTest extends TestCase {

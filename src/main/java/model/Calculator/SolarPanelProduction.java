@@ -1,10 +1,9 @@
-package main.java.model.Calculator;
+package model.Calculator;
 
 // (4.1) arcsak
 public class SolarPanelProduction implements Calculator<SolarPanelProductionInput, SolarPanelProductionOutput> {
 
     // Calculate method
-    @Override
     public SolarPanelProductionOutput calculate(SolarPanelProductionInput input) {
 
         // Calculating the result

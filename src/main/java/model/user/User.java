@@ -1,8 +1,8 @@
-package main.java.model.user;
+package model.user;
 
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.model.Property.Property;
+import model.Contract.Contract;
+import model.Property.Location;
+import model.Property.Property;
 
 import java.util.ArrayList;
 import java.util.List;

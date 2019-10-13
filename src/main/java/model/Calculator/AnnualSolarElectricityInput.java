@@ -1,4 +1,4 @@
-package main.java.model.Calculator;
+package model.Calculator;
 
 //(3) Vegard
 //Class to contain input values of annualElectricityProduction calculation

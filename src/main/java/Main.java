@@ -1,9 +1,8 @@
-package main.java;
 
 import javafx.application.Application;
-import main.java.model.ModelFacade;
-import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.Window;
+import model.ModelFacade;
+import viewcontroller.PrimaryController;
+import viewcontroller.Window;
 
 public class Main {
     public static void main(String[] args) {

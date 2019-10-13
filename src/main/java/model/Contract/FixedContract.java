@@ -1,4 +1,4 @@
-package main.java.model.Contract;
+package model.Contract;
 
 public class FixedContract extends Contract {
 

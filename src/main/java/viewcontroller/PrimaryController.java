@@ -1,9 +1,9 @@
-package main.java.viewcontroller;
+package viewcontroller;
 
 import javafx.stage.Stage;
-import main.java.model.ModelFacade;
-import main.java.services.ServiceFacade;
-import main.java.viewcontroller.SceneSwitcher;
+import model.ModelFacade;
+import services.ServiceFacade;
+import viewcontroller.SceneSwitcher;
 
 // (3.1) Alexander Ask
 public class PrimaryController {
