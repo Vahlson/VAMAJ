@@ -21,9 +21,18 @@
 
         <dependency>
             <groupId>org.openjfx</groupId>
-            <artifactId>javafx</artifactId>
-            <version>13</version>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>0.0.3</version>
+            <configuration>
+                <mainClass>Main</mainClass>
+            </configuration>
             <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>13</version>
         </dependency>
 
         <dependency>
@@ -95,9 +104,5 @@
 
 </plugins>
 </build>
-
-
-
-
-  
+    
 </project>
