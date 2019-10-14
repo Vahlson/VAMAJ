@@ -1,0 +1,34 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-14
+Chair: Jonatan
+Participants: Samtliga
+
+1. Vad gör vi på detta möte.
+ -Planera veckan, vad vi ska göra i projektet och när vi ska göra peer reviewen.
+
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+
+2.1 Dokumentstatus
+ -Mohamad har skrivit lite i SDD.
+
+2.2 Projektstatus
+ -Alex och Alex har funderat på sina UserStorys men inte skrivt någon kod sen sist
+ -Jonatan har fortsatt med sina UserStorys och funderat lite över hur Calkulatorns delar ska fungera tillsammans.
+ -Vegard har updaterat Calculator-klassen i UMLet
+ -Jamal har jobbat med sin UserStory.
+
+
+3. Diskussionsrunda.
+ -Ask tycker vi ser till att ha ett komplett och fungerande program med våra nuvarande målsatta features innan vi utökar med mer funktionalitet. Alla håller med.
+ Borde också ha i åtanke vilka design patterns som kan användas och vilka redan avnänds så designval kan motiveras.
+ -Jonatan tycker vi borde fundera lite extra på de olika Calculator-klassernas ansvarsområden så de sammspelar väl och följer design principles o.s.v. bättre.
+ -Alexander LV peer review när och vad som ska göras.
+ -Mohamad påminner om att vi behöver särskilja vad vi har i RAD och SDD (tabeller).
+
+ 
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+ -Till nästa möte på onsdag ska vi utöka dokumenten och fortsätta med våra UserStorys.
+
+5. Planera nästkommande möte, boka också.
+ -Onsdag 10-12 i EG-6209.
