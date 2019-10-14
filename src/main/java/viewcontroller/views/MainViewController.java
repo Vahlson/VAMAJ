@@ -133,4 +133,11 @@ public class MainViewController extends AnchorPane implements Initializable {
         animation.play();
     }
 
+    public void progressBarController(){
+
+
+
+
+    }
+
 }
