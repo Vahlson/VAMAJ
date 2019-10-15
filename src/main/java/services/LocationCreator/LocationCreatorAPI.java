@@ -40,24 +40,37 @@ public class LocationCreatorAPI implements ILocationCreator{
         dataAccuracyInYears -= 1;
 
         //Uses a parser to get the correct objects and collect data throught http.
-        ApiParser<JSONObject> parser = new ApiJSONParser();
 
-        //Getting the jsonObject from the API using the parser.
-        JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
+            ApiParser<JSONObject> parser = new ApiJSONParser();
 
+
+ //https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=2015&endDate=2018&lat=40&lon=10&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous
         //Try to read the data from the JsonObject and try to calculate average on it.
+            //Getting the jsonObject from the API using the parser.
         try {
-            JSONObject allSkyInsolationIncident = accessJsonData(root);
-            return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
+            JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
+            try {
+                JSONObject allSkyInsolationIncident = accessJsonData(root);
+                return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
 
-        }catch (ApiCallNotCorrectException e){
-            //Show API error.
+            }catch (ApiCallNotCorrectException e){
+                //Show API error.
+                e.printStackTrace();
+                return 0;
+
+            }
+
+        }catch (Exception e){
             e.printStackTrace();
+
+            return 0;
         }
 
 
 
-        return 0;
+
+
+
     }
 
     //Traverses the Json structure specific to the API (nasa) and returns the JSONobject that has the data directly.
@@ -94,7 +107,7 @@ public class LocationCreatorAPI implements ILocationCreator{
 
         }
 
-        return null;
+        return new JSONObject();
     }
 
     //returns the average kW-hr/m^2/day taking into account specified amount of years.

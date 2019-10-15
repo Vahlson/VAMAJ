@@ -11,7 +11,7 @@ public class ServicesTest extends TestCase {
     @Test
     public void testLocationCreationFromAPI(){
         ServiceFacade sf = new ServiceFacade();
-        sf.setLocationCreatorCoordinates(63.825848,20.263035);
+       // sf.setLocationCreatorCoordinates(63.825848,20.263035);
         Location l = sf.getLocation();
         assertNotNull(l);
         assertEquals(l.getCoordinate().getLatitude(), 63.825848);
