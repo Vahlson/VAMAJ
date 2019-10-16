@@ -25,7 +25,6 @@ import java.util.ResourceBundle;
 
 public class MainViewController extends AnchorPane implements Initializable {
     private int state = 0;
-    private double progress = 0.0;
 
     private PrimaryController primaryController;
 
@@ -84,10 +83,6 @@ public class MainViewController extends AnchorPane implements Initializable {
 
 
 
-
-
-
-
         });
 
         downNavigation.setOnAction(event -> {
@@ -96,19 +91,14 @@ public class MainViewController extends AnchorPane implements Initializable {
 
 
             }
+            System.out.println(state);
 
 
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
 
 
-
-
-
-
         });
-
-
 
 
     }
@@ -120,7 +110,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         double scrollProcent = relativeY / scrollPaneHeight;
 
-            slowScrollToPosition(questionScrollPane, scrollProcent);
+        slowScrollToPosition(questionScrollPane, scrollProcent);
 
     }
 
@@ -133,9 +123,7 @@ public class MainViewController extends AnchorPane implements Initializable {
         animation.play();
     }
 
-    public void progressBarController(){
-
-
+    public void progressBarController() {
 
 
     }
