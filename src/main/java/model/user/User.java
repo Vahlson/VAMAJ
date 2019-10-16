@@ -1,5 +1,6 @@
 package main.java.model.user;
 
+import main.java.model.property.ConsumingProperty;
 import main.java.model.property.Property;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class User {
     // Constructor (empty)
     public User() {
         properties = new ArrayList<>();
-        activeProperty = new Property();
+        activeProperty = new ConsumingProperty();
         properties.add(activeProperty);
     }
 
@@ -22,4 +23,5 @@ public class User {
     public Property getActiveProperty() {
         return activeProperty;
     }
+
 }

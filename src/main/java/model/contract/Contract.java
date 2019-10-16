@@ -32,7 +32,6 @@ public abstract class Contract {
     }
 
     // Setter
-    // TODO: mutate-by-copy setters for all
     public void setCost(int cost){
         this.cost = cost;
     }

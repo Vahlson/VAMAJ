@@ -5,6 +5,10 @@ public class Location {
     private double solarInsolation;
 
     // Constructor
+    public Location(){
+
+    }
+
     public Location(Coordinate coordinate, double solarInsolation) {
         this.coordinate = coordinate;
         this.solarInsolation = solarInsolation;

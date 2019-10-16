@@ -2,6 +2,7 @@ package main.java.viewcontroller;
 
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
+import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
 import main.java.viewcontroller.SceneSwitcher;
 
@@ -25,7 +26,8 @@ public class PrimaryController {
     private Stage stage;
 
     // Setters (for API)
-    void setLocation(double latitude, double longitude) {
+    void setLocationFromAPI(double latitude, double longitude) {
+        serviceFacade.setLocationCreator(new LocationCreatorAPI());
         serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
