@@ -49,7 +49,6 @@ public class MainViewController extends AnchorPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         questionList.getChildren().clear();
-        questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
         //questionList.getChildren().add(new PersonalQuestionViewController(this));
         //TESTAR
         questionList.getChildren().add(new PersonalQuestionViewController(this));
@@ -88,17 +87,12 @@ public class MainViewController extends AnchorPane implements Initializable {
     }
 
     private void slowScrollToNode(int node) {
-
         double scrollPaneHeight = questionList.getHeight();
-        double nodeHeight = questionList.getChildren().get(node).getLayoutBounds().getHeight();
-        double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + nodeHeight;
+        double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + ((questionList.getChildren().get(node).getBoundsInParent().getMaxY() - questionList.getChildren().get(node).getBoundsInParent().getMinY()) / 2);
         System.out.println(relativeY);
-        System.out.println("scrollpaneHeight: " + scrollPaneHeight);
         System.out.println(questionList.getChildren().get(node));
 
         double scrollProcent = relativeY / scrollPaneHeight;
-
-        System.out.println(scrollProcent);
 
             slowScrollToPosition(questionScrollPane, scrollProcent);
 
