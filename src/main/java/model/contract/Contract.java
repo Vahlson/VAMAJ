@@ -32,9 +32,7 @@ public abstract class Contract {
         return this.cost;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
+    public abstract Contract setCost(int cost);
 
 
     public double getContractDuration() {

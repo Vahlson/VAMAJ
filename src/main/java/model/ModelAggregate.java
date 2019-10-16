@@ -4,6 +4,7 @@ import main.java.model.calculator.*;
 import main.java.model.contract.Contract;
 import main.java.model.property.Location;
 import main.java.model.property.Property;
+import main.java.model.solarsetup.SolarSetup;
 import main.java.model.user.User;
 
 import java.util.ArrayList;
@@ -44,12 +45,12 @@ class ModelAggregate {
 
 
     // Getter for results of calculation(s)
-    public Double getCalculationResult(DataKey key) {
+    Double getCalculationResult(DataKey key) {
         return localData.getValue(key);
     }
 
     // Getters
-    Property getProperty() {
+    private Property getProperty() {
         return currentUser.getActiveProperty();
     }
 
@@ -59,5 +60,9 @@ class ModelAggregate {
 
     Contract getContract() {
         return getProperty().getContract();
+    }
+
+    SolarSetup getSolarSetup() {
+        return getProperty().getSolarSetup();
     }
 }
