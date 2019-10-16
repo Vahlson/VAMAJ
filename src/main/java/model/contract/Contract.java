@@ -1,6 +1,6 @@
 package main.java.model.contract;
 
-public class Contract {
+public abstract class Contract {
     private String contractProvider;
     private String contractCity;
     private double contractDuration;

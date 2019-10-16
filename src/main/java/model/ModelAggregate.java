@@ -12,21 +12,26 @@ import java.util.HashMap;
 
 //(2)Vegard
 
-public class ModelAggregate {
+class ModelAggregate {
 
     private Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal = new AnnualSolarElectricity();
 
     private User currentUser;
-    private List<User> users = new ArrayList<>();
-    private Property property = new Property();
-    private Location location = new Location();
-    private HashMap<String, Object> calculationResults = new HashMap<>(); //HashMap containing results with a string as key
+    private List<User> users;
+    private HashMap<String, Object> calculationResults; //HashMap containing results with a string as key
+
+    ModelAggregate() {
+        users = new ArrayList<>();
+        calculationResults = new HashMap<>();
+        currentUser = new User();
+        users.add(currentUser);
+    }
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
 
         // Calculating annual electricity output
-        double annualElectricityOutput = annualElectricityOutput(AnnualCal, property);
+        double annualElectricityOutput = annualElectricityOutput(AnnualCal, getProperty());
         calculationResults.put("annualElectricity", annualElectricityOutput);
 
         // Calculating solar panel production
@@ -37,7 +42,7 @@ public class ModelAggregate {
     //Sends values from property as calculation parameters, returns result of the calculation
     private double annualElectricityOutput(Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> calc, Property p) {
         double lat = p.getLatitude();
-        double area = p.getInstallationSpace();
+        double area = p.getAvailableRoofArea();
         double efficiency = 22;
 
         //Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AnnualCal;
@@ -71,26 +76,21 @@ public class ModelAggregate {
         return output.getEnergy();
     }
 
-    //Temporary setter for testing purposes
-    public void setProperty(Property property) {
-        this.property = property;
-    }
-
     // Getter for results of calculation(s)
-    public HashMap<String, Object> getCalculationResults() {
+    HashMap<String, Object> getCalculationResults() {
         return calculationResults;
     }
 
     // Getters
-    public Location getLocation() {
-        return location;
+    Property getProperty() {
+        return currentUser.getActiveProperty();
     }
 
-    public Property getProperty() {
-        return property;
+    Location getLocation() {
+        return getProperty().getLocation();
     }
 
-    public Contract getContract() {
-        return property.getContract();
+    Contract getContract() {
+        return getProperty().getContract();
     }
 }

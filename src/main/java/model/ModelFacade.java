@@ -16,47 +16,17 @@ public class ModelFacade {
         modelAggregate = new ModelAggregate();
     }
 
-    // Location setters
+    // Setters
     public void setLocation(Location location) {
         modelAggregate.getProperty().setLocation(location);
     }
 
-    // Contract setters
     public void setContract(Contract contract) {
         modelAggregate.getProperty().setContract(contract);
     }
 
-    public void setContractCost(int cost) {
-        modelAggregate.getProperty().getContract().setCost(cost);
-    }
-
-    // Property setters
-    public void setPropertyConsumption(double consumption) {
-        modelAggregate.getProperty().setConsumption(consumption);
-    }
-
-    public void setProperty(Property property) {
-        modelAggregate.setProperty(property);
-    }
-
-    public void setPropertyLocation(Location location) {
-        modelAggregate.getProperty().setLocation(location);
-    }
-
-    public void setPropertyLatitude(double latitude) {
-        modelAggregate.getProperty().setLatitude(latitude);
-    }
-
-    public void setPropertyPanelAngle(int panelAngle) {
-        modelAggregate.getProperty().setPanelAngle(panelAngle);
-    }
-
-    public void setPropertyOrientation(int orientation) {
-        modelAggregate.getProperty().setOrientation(orientation);
-    }
-
-    public void setPropertyInstallationSpace(double installationSpace) {
-        modelAggregate.getProperty().setInstallationSpace(installationSpace);
+    public void setSolarSetup(SolarSetup solarSetup) {
+        modelAggregate.getProperty().setSolarSetup(solarSetup);
     }
 
     // TEMPORARY GETTERS FOR TESTING
@@ -82,5 +52,4 @@ public class ModelFacade {
     public HashMap<String, Object> getCalculationResults() {
         return modelAggregate.getCalculationResults();
     }
-
 }

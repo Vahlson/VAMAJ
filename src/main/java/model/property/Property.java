@@ -8,11 +8,7 @@ public class Property {
     // Member variables
     private SolarSetup solarSetup;
     private Location location;
-    private Contract contract = new Contract();
-    private double availableSpace;
-    private int orientation;
-    private int angle;
-    private double latitude;
+    private Contract contract;
     private double consumption;
 
     // Constructor (empty)
@@ -28,28 +24,28 @@ public class Property {
         return contract;
     }
 
-    public double getInstallationSpace() {
-        return availableSpace;
+    public SolarSetup getSolarSetup() {
+        return solarSetup;
+    }
+
+    public double getAvailableRoofArea() {
+        return solarSetup.getAvailableRoofArea();
     }
 
     public int getOrientation() {
-        return orientation;
+        return solarSetup.getOrientation();
     }
 
     public int getPanelAngle() {
-        return angle;
+        return solarSetup.getPanelAngle();
     }
 
     public double getLatitude() {
-        return latitude;
+        return location.getCoordinate().getLatitude();
     }
 
     public double getConsumption() {
         return consumption;
-    }
-
-    public SolarSetup getSolarSetup() {
-        return solarSetup;
     }
 
     // Setters
@@ -57,27 +53,11 @@ public class Property {
         this.location = l;
     }
 
-    public void setInstallationSpace(double installationSpace) {
-        this.availableSpace = installationSpace;
-    }
-
-    public void setOrientation(int orientation) {
-        this.orientation = orientation;
-    }
-
-    public void setPanelAngle(int panelAngle) {
-        this.angle = panelAngle;
-    }
-
     public void setContract(Contract c) {
         this.contract = c;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public void setConsumption(double consumption) {
-        this.consumption = consumption;
+    public void setSolarSetup(SolarSetup solarSetup) {
+        this.solarSetup = solarSetup;
     }
 }

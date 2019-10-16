@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.SceneSwitcher;
 
 import java.io.IOException;
@@ -45,6 +46,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
         // resultViewRoot.getChildren().setAll(pane);
 
         SceneSwitcher.getInstance().setScene("/fxml/mainscene.fxml");
+
     }
 }
 
