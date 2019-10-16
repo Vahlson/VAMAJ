@@ -50,7 +50,7 @@ class ModelAggregate {
     }
 
     // Getters
-    private Property getProperty() {
+    Property getProperty() {
         return currentUser.getActiveProperty();
     }
 

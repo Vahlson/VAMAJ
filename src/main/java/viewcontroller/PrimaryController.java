@@ -47,9 +47,6 @@ public class PrimaryController {
         this.stage = stage;
     }
 
-    public void setContractCost(double cost) {
-        modelFacade.setContract(modelFacade.getContract().setCost(5));
-    }
 
     // Getters
     public ModelFacade getModelFacade() {

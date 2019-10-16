@@ -16,12 +16,19 @@ public class ModelFacade {
 
     // Setters
     public void setLocation(Location location) {
+        // TODO Implement
     }
 
     public void setContract(Contract contract) {
+        modelAggregate.getProperty().setContract(contract);
     }
 
     public void setSolarSetup(SolarSetup solarSetup) {
+        // TODO Implement
+    }
+
+    public void setContractCost(double cost) {
+        setContract(getContract().setCost(5));
     }
 
     // Getters
