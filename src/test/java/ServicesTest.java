@@ -1,8 +1,8 @@
 package test.java;
 
 import junit.framework.TestCase;
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
+import main.java.model.contract.Contract;
+import main.java.model.property.Location;
 import main.java.services.ServiceFacade;
 import org.junit.Test;
 
@@ -24,6 +24,9 @@ public class ServicesTest extends TestCase {
 
 
     }
+
+    /*
+
     @Test
     public void testContractCreationFromAPI(){
         ServiceFacade sf = new ServiceFacade();
@@ -33,4 +36,6 @@ public class ServicesTest extends TestCase {
 
     }
 
+
+     */
 }

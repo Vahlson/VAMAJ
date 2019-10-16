@@ -1,63 +1,31 @@
 package main.java.model;
 
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.model.Property.Property;
-import main.java.model.SolarSetup.SolarPanel;
-import main.java.model.SolarSetup.SolarSetup;
-
-import java.util.HashMap;
+import main.java.model.calculator.DataKey;
+import main.java.model.contract.Contract;
+import main.java.model.property.Location;
+import main.java.model.property.Property;
+import main.java.model.solarsetup.SolarSetup;
 
 public class ModelFacade {
 
-    private ModelAggregate modelAggregate = new ModelAggregate();
+    private ModelAggregate modelAggregate;
 
     // Constructor
     public ModelFacade() {
-
+        modelAggregate = new ModelAggregate();
     }
 
-    // Location setters
+    // Setters
     public void setLocation(Location location) {
         modelAggregate.getProperty().setLocation(location);
     }
 
-    // Contract setters
     public void setContract(Contract contract) {
         modelAggregate.getProperty().setContract(contract);
     }
 
-    public void setContractCost(int cost) {
-        modelAggregate.getProperty().getContract().setCost(cost);
-    }
-
-    // Property setters
-    public void setPropertyConsumption(double consumption) {
-        modelAggregate.getProperty().setConsumption(consumption);
-    }
-
-    public void setProperty(Property property) {
-        modelAggregate.setProperty(property);
-    }
-
-    public void setPropertyLocation(Location location) {
-        modelAggregate.getProperty().setLocation(location);
-    }
-
-    public void setPropertyLatitude(double latitude) {
-        modelAggregate.getProperty().setLatitude(latitude);
-    }
-
-    public void setPropertyPanelAngle(int panelAngle) {
-        modelAggregate.getProperty().setPanelAngle(panelAngle);
-    }
-
-    public void setPropertyOrientation(int orientation) {
-        modelAggregate.getProperty().setOrientation(orientation);
-    }
-
-    public void setPropertyInstallationSpace(double installationSpace) {
-        modelAggregate.getProperty().setInstallationSpace(installationSpace);
+    public void setSolarSetup(SolarSetup solarSetup) {
+        modelAggregate.getProperty().setSolarSetup(solarSetup);
     }
 
     // TEMPORARY GETTERS FOR TESTING
@@ -69,7 +37,7 @@ public class ModelFacade {
         return modelAggregate.getProperty();
     }
 
-    public SolarSetup getSolarSetup(){
+    public SolarSetup getSolarSetup() {
         return modelAggregate.getProperty().getSolarSetup();
     }
 
@@ -80,8 +48,7 @@ public class ModelFacade {
     }
 
     // Getter(s)
-    public HashMap<String, Object> getCalculationResults() {
-        return modelAggregate.getCalculationResults();
+    public Double getCalculationResults(DataKey key) {
+        return modelAggregate.getCalculationResult(key);
     }
-
 }

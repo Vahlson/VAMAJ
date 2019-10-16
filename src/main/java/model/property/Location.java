@@ -1,4 +1,4 @@
-package main.java.model.Property;
+package main.java.model.property;
 
 public class Location {
     //private int solarHours;
