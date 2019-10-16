@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 
 public class InstallationViewController implements Initializable {
 
+    PrimaryController primaryController;
+
     // Components in parent FXML-file
     @FXML
     private TextField consumption;
@@ -25,6 +27,12 @@ public class InstallationViewController implements Initializable {
 
     @FXML
     private Button backButton;
+
+
+    public InstallationViewController(PrimaryController primaryController){
+        this.primaryController = primaryController;
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,7 +52,7 @@ public class InstallationViewController implements Initializable {
         });
 
         // Initializing back button functionality
-        backButton.setOnAction(event -> SceneSwitcher.getInstance().setScene("/fxml/mainscene.fxml"));
+        backButton.setOnAction(event -> primaryController.getSceneSwitcher().setScene("/fxml/mainscene.fxml"));
     }
 
     // Method that configures text field to only accept numbers

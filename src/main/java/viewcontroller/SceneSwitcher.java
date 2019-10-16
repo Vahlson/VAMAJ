@@ -11,14 +11,10 @@ import java.io.IOException;
 // TODO
 // Ask (arcsak) will refactor
 public class SceneSwitcher {
-    private static SceneSwitcher ourInstance = new SceneSwitcher();
 
-    public static SceneSwitcher getInstance() {
-        return ourInstance;
-    }
 
     // Hidden constructor
-    private SceneSwitcher() {
+    public SceneSwitcher() {
     }
 
     // Parent stage

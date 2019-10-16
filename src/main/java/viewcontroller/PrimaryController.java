@@ -2,6 +2,7 @@ package main.java.viewcontroller;
 
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
+import main.java.services.ContractCreator.ContractCreatorAPI;
 import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
 import main.java.viewcontroller.SceneSwitcher;
@@ -9,21 +10,19 @@ import main.java.viewcontroller.SceneSwitcher;
 // (3.1) Alexander Ask
 public class PrimaryController {
 
-    private static PrimaryController ourInstance = new PrimaryController();
-
-    public static PrimaryController getInstance() {
-        return ourInstance;
-    }
+    // Member variables
+    private SceneSwitcher sceneSwitcher;
+    private ServiceFacade serviceFacade;
+    private ModelFacade modelFacade;
+    private Stage stage;
 
     // Hidden constructor
-    private PrimaryController() {
+    public PrimaryController() {
+        sceneSwitcher = new SceneSwitcher();
+        serviceFacade = new ServiceFacade();
     }
 
-    // Member variables
-    private SceneSwitcher sceneSwitcher = SceneSwitcher.getInstance();
-    private ServiceFacade serviceFacade = new ServiceFacade();
-    private ModelFacade modelFacade = new ModelFacade();
-    private Stage stage;
+
 
     // Setters (for API)
     void setLocationFromAPI(double latitude, double longitude) {
@@ -32,30 +31,28 @@ public class PrimaryController {
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
-    void setContract() {
+    void setContractFromAPI() {
+        serviceFacade.setContractCreator(new ContractCreatorAPI());
         modelFacade.setContract(serviceFacade.getContract());
     }
 
     // Setters
-    public void setServiceFacade(ServiceFacade facade) {
-        this.serviceFacade = facade;
-    }
-
     public void setModelFacade(ModelFacade facade) {
         this.modelFacade = facade;
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
+//    public void setStage(Stage stage) {
+//        this.stage = stage;
+//    }
 
 
     // Getters
-    public ModelFacade getModelFacade() {
+    ModelFacade getModelFacade() {
         return modelFacade;
     }
 
-    public SceneSwitcher getSceneSwitcher() {
-        return sceneSwitcher;
+    public SceneSwitcher getSceneSwitcher(){
+        return this.sceneSwitcher;
     }
+
 }

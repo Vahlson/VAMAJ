@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 
 public class ResultViewController extends AnchorPane implements Initializable {
 
+    PrimaryController primaryController;
+
     @FXML
     AnchorPane resultViewRoot;
 
@@ -31,21 +33,19 @@ public class ResultViewController extends AnchorPane implements Initializable {
     @FXML
     private Button exitButton;
 
-    public ResultViewController( /*A controller to be added here*/) {
-
+    public ResultViewController( PrimaryController primaryController) {
+        this.primaryController = primaryController;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        //textArea1.setText(primaryController.ge);
     }
 
     @FXML
-    private void toMainView(ActionEvent event) throws IOException {
-        // AnchorPane pane = FXMLLoader.load(getClass().getResource("/main/java/View/resources/fxml/mainscene.fxml"));
-        // resultViewRoot.getChildren().setAll(pane);
+    private void toMainView(ActionEvent event)  {
 
-        SceneSwitcher.getInstance().setScene("/fxml/mainscene.fxml");
+        primaryController.getSceneSwitcher().setScene("/fxml/mainscene.fxml");
 
     }
 }

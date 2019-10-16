@@ -41,8 +41,8 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private Button installationButton; // Button that leads to installation screen
 
-    public MainViewController() {
-
+    public MainViewController(PrimaryController primaryController) {
+        this.primaryController = primaryController;
     }
 
 
@@ -59,11 +59,11 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         // Temporary add to get mock functionality
         installationButton.setOnAction(event -> {
-            SceneSwitcher.getInstance().setScene("/fxml/installationscene.fxml");
+            primaryController.getSceneSwitcher().setScene("/fxml/installationscene.fxml");
         });
 
         calculateButton.setOnAction(event -> {
-            SceneSwitcher.getInstance().setScene("/fxml/resultscene.fxml");
+            primaryController.getSceneSwitcher().setScene("/fxml/resultscene.fxml");
 
         });
 
