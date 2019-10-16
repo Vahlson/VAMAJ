@@ -10,12 +10,12 @@ public class PrimaryController {
 
     // Member variables
     private static SceneSwitcher sceneSwitcher;
-    private ModelFacade modelFacade;
+    private static ModelFacade modelFacade;
     private ServiceFacade serviceFacade = new ServiceFacade();
 
     // Hidden constructor
     public PrimaryController(ModelFacade modelFacade, Stage stage) {
-        this.modelFacade = modelFacade;
+        PrimaryController.modelFacade = modelFacade;
         sceneSwitcher = new SceneSwitcher(stage);
     }
 
@@ -34,20 +34,9 @@ public class PrimaryController {
         this.serviceFacade = facade;
     }
 
-    public void setModelFacade(ModelFacade facade) {
-        this.modelFacade = facade;
-    }
-
-    public void setStage(Stage stage) {
-    }
-
     // Getters
-    public ModelFacade getModelFacade() {
+    public static ModelFacade getModelFacade() {
         return modelFacade;
-    }
-
-    public SceneSwitcher getSceneSwitcher() {
-        return sceneSwitcher;
     }
 
     public static void setScene(String url) {
