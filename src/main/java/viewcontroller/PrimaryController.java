@@ -9,7 +9,7 @@ import main.java.viewcontroller.SceneSwitcher;
 public class PrimaryController {
 
     // Member variables
-    private SceneSwitcher sceneSwitcher;
+    private static SceneSwitcher sceneSwitcher;
     private ModelFacade modelFacade;
     private ServiceFacade serviceFacade = new ServiceFacade();
 
@@ -50,7 +50,7 @@ public class PrimaryController {
         return sceneSwitcher;
     }
 
-    void setScene(String url){
+    public static void setScene(String url) {
         sceneSwitcher.setScene(url);
     }
 }

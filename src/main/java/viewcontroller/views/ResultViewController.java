@@ -45,8 +45,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
         // AnchorPane pane = FXMLLoader.load(getClass().getResource("/main/java/View/resources/fxml/mainscene.fxml"));
         // resultViewRoot.getChildren().setAll(pane);
 
-        SceneSwitcher.getInstance().setScene("/fxml/mainscene.fxml");
-
+        PrimaryController.setScene("/fxml/mainscene.fxml");
     }
 }
 

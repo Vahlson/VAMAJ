@@ -1,6 +1,5 @@
 package main.java.viewcontroller.views;
 
-
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,14 +36,12 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private Label questionNumber;
 
-
     @FXML
     private Button installationButton; // Button that leads to installation screen
 
     public MainViewController() {
 
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,12 +56,11 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         // Temporary add to get mock functionality
         installationButton.setOnAction(event -> {
-            SceneSwitcher.getInstance().setScene("/fxml/installationscene.fxml");
+            PrimaryController.setScene("/fxml/installationscene.fxml");
         });
 
         calculateButton.setOnAction(event -> {
-            SceneSwitcher.getInstance().setScene("/fxml/resultscene.fxml");
-
+            PrimaryController.setScene("/fxml/resultscene.fxml");
         });
 
         upNavigation.setOnAction(event -> {
@@ -84,7 +80,6 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         });
 
-
     }
 
     private void slowScrollToNode(int node) {
@@ -100,10 +95,9 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         System.out.println(scrollProcent);
 
-            slowScrollToPosition(questionScrollPane, scrollProcent);
+        slowScrollToPosition(questionScrollPane, scrollProcent);
 
     }
-
 
     private void slowScrollToPosition(ScrollPane scrollPane, double pos) {
 
