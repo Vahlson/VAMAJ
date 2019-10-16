@@ -1,0 +1,39 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-16
+Chair: Mohamad Melhem
+Participants: Samtliga
+
+1. Vad gör vi på detta möte.
+ - Jobba vidare med peer review och förtsätta med user stories
+
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+
+2.1 Dokumentstatus
+ALexande LV försökte med peer-review ,RAD och SSD.
+Vegard är nu mer färdig att jobba med dokumenten då han har bättre koll på sin kod.
+Jonatan har skrivit lite i RAD.
+ALex Ask skrev i en sheet om Geolocation och kommer lägga till den i RAD.
+Mohamad skrv i RAD, SDD och jobbade med peer review.
+Jamal har inte skrivit någonting.
+
+
+2.2 Projektstatus
+Alexander LV kollat att API:n kommer att fungera snart.
+Vegard har förbättrat och refaktorerat calculator package.
+Jamal jobbade vidare med sin user story.
+
+
+
+3. Diskussionsrunda.
+ALexander LV diskuterar tid gränserna på tasks och om huruvida de var rimliga (korta eller långa). Alexander vill också att vi ska jobbar vidare med koden till handledare möte så att vi har något bättre att visa.
+Alex Ask vill ha att API:n att oberoende av andra källor. Alex vill att fokuserar mer på den grundläggande delen av programmet och blir klar med det innan vi tänker på utveckling.
+Mohamad vill att folk ska restruktuera SDD och RAD och att folk jobbar med dem enligt DoD.
+ 
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+ha ett programm som fungerar bättre( Alla delar ska vara ihoppkopplade). Tänka på utvecklingsgrejer. Få klart alla beffentliga user stories.
+
+
+5. Planera nästkommande möte, boka också.
+Måndag 21/10 9:00-12:00 lokal: 3207
+
