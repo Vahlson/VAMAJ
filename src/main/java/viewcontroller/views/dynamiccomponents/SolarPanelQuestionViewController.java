@@ -26,10 +26,6 @@ public class SolarPanelQuestionViewController extends AnchorPane {
 
     MainViewController parentController;
 
-
-    @FXML
-    private ProgressBar progressBar;
-
     @FXML
     private RadioButton standardRadio;
 

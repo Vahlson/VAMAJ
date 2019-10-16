@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
-<fx:root prefHeight="251.0" prefWidth="433.0" style="-fx-background-color: grey;" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: #CDEAF3;" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="204.0" layoutY="45.0">
          <children>
             <Label styleClass="p2" text="typ av egendom" />
-            <RadioButton fx:id="consumingRB" mnemonicParsing="false" styleClass="p3" text="Consuming" />
-            <RadioButton fx:id="nonConsumingRB" mnemonicParsing="false" styleClass="p3" text="Non-Consuming" />
          </children>
-      </VBox>
+      </HBox>
+      <HBox layoutX="61.0" layoutY="163.0">
+         <children>
+            <RadioButton fx:id="consumingRB" mnemonicParsing="false" styleClass="p3" text="Consuming" />
+            <RadioButton fx:id="nonConsumingRB" mnemonicParsing="false" styleClass="p3" text="Non-Consuming">
+               <padding>
+                  <Insets left="144.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </HBox>
    </children>
 </fx:root>

@@ -2,10 +2,13 @@ package main.java.viewcontroller.views;
 
 
 import javafx.animation.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -22,6 +25,7 @@ import java.util.ResourceBundle;
 
 public class MainViewController extends AnchorPane implements Initializable {
     private int state = 0;
+
     private PrimaryController primaryController;
 
     @FXML
@@ -36,6 +40,8 @@ public class MainViewController extends AnchorPane implements Initializable {
     private ScrollPane questionScrollPane;
     @FXML
     private Label questionNumber;
+    @FXML
+    ProgressBar progressBar;
 
 
     @FXML
@@ -69,17 +75,28 @@ public class MainViewController extends AnchorPane implements Initializable {
         upNavigation.setOnAction(event -> {
             if (state > 0) {
                 slowScrollToNode(--state);
+
             }
+
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
+
+
+
 
         });
 
         downNavigation.setOnAction(event -> {
             if (state < questionList.getChildren().size() - 1) {
                 slowScrollToNode(++state);
+
+
             }
+            System.out.println(state);
+
 
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
+
+
 
         });
 
@@ -90,11 +107,10 @@ public class MainViewController extends AnchorPane implements Initializable {
         double scrollPaneHeight = questionList.getHeight();
         double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + ((questionList.getChildren().get(node).getBoundsInParent().getMaxY() - questionList.getChildren().get(node).getBoundsInParent().getMinY()) / 2);
         System.out.println(relativeY);
-        System.out.println(questionList.getChildren().get(node));
 
         double scrollProcent = relativeY / scrollPaneHeight;
 
-            slowScrollToPosition(questionScrollPane, scrollProcent);
+        slowScrollToPosition(questionScrollPane, scrollProcent);
 
     }
 
@@ -105,6 +121,11 @@ public class MainViewController extends AnchorPane implements Initializable {
                 new KeyFrame(Duration.seconds(0.2), new KeyValue(scrollPane.vvalueProperty(), pos, Interpolator.EASE_BOTH)));
 
         animation.play();
+    }
+
+    public void progressBarController() {
+
+
     }
 
 }
