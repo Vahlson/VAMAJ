@@ -1,6 +1,6 @@
 package main.java.model.user;
 
-import main.java.model.property.Property;
+import main.java.model.Property.Property;
 
 import java.util.ArrayList;
 import java.util.List;

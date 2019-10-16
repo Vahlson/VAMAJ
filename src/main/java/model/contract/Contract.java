@@ -1,4 +1,4 @@
-package main.java.model.contract;
+package main.java.model.Contract;
 
 public abstract class Contract {
     private String contractProvider;

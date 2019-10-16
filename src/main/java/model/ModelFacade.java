@@ -1,10 +1,10 @@
 package main.java.model;
 
-import main.java.model.calculator.DataKey;
-import main.java.model.contract.Contract;
-import main.java.model.property.Location;
-import main.java.model.property.Property;
-import main.java.model.solarsetup.SolarSetup;
+import main.java.model.Calculator.DataKey;
+import main.java.model.Contract.Contract;
+import main.java.model.Property.Location;
+import main.java.model.Property.Property;
+import main.java.model.SolarSetup.SolarSetup;
 
 public class ModelFacade {
 

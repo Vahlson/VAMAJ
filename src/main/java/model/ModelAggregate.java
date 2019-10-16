@@ -1,9 +1,9 @@
 package main.java.model;
 
-import main.java.model.calculator.*;
-import main.java.model.contract.Contract;
-import main.java.model.property.Location;
-import main.java.model.property.Property;
+import main.java.model.Calculator.*;
+import main.java.model.Contract.Contract;
+import main.java.model.Property.Location;
+import main.java.model.Property.Property;
 import main.java.model.user.User;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package main.java.services.LocationCreator;
 
-import main.java.model.property.Location;
+import main.java.model.Property.Location;
 
 import java.util.*;
 

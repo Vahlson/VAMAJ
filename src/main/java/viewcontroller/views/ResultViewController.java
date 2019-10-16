@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
-import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.SceneSwitcher;
 
 import java.io.IOException;
