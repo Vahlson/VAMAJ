@@ -14,6 +14,7 @@ import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.dynamiccomponents.PersonalQuestionViewController;
 import main.java.viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
 import main.java.viewcontroller.views.dynamiccomponents.SolarPanelQuestionViewController;
+import main.java.viewcontroller.views.dynamiccomponents.SpaceQuestionViewController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -54,6 +55,7 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionList.getChildren().add(new PropertyQuestionViewController(this));
         questionList.getChildren().add(new SolarPanelQuestionViewController(this));
         questionList.getChildren().add(new PropertyQuestionViewController(this));
+        questionList.getChildren().add(new SpaceQuestionViewController(this));
 
         // Temporary add to get mock functionality
         installationButton.setOnAction(event -> {
