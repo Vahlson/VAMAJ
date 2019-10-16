@@ -7,25 +7,41 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root prefHeight="200.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane">
+<fx:root prefHeight="200.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="200.0" prefWidth="462.0">
          <children>
             <HBox prefHeight="64.0" prefWidth="462.0">
                <children>
-                  <Label text="Hur stort utrymme har du för solpaneler?" />
+                  <Label styleClass="h3" text="Hur stor plats för solpaneler finns?" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></Label>
                </children>
-               <padding>
-                  <Insets left="130.0" top="10.0" />
-               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="18.0">
                <children>
-                  <TextField fx:id="availablespace" promptText="Tillgänglig yta" />
-                  <Label prefHeight="27.0" prefWidth="80.0" text="kvadratmeter" />
+                  <TextField fx:id="availablespace" prefHeight="45.0" prefWidth="159.0" promptText="Tillgänglig yta">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label prefHeight="33.0" prefWidth="178.0" styleClass="h4" text="kvadratmeter" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets top="14.0" />
+                     </HBox.margin></Label>
                </children>
                <padding>
-                  <Insets left="120.0" />
+                  <Insets left="100.0" />
                </padding>
             </HBox>
          </children>
