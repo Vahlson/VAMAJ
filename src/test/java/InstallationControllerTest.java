@@ -9,10 +9,10 @@ public class InstallationControllerTest extends TestCase {
     public void testDataFlow() {
 
         // Mock Controller
-        PrimaryController pc = PrimaryController.getInstance();
+        // PrimaryController pc = PrimaryController.getInstance();
 
         // Mock Model Facade
-        ModelFacade modelFacade = pc.getModelFacade();
+        // ModelFacade modelFacade = pc.getModelFacade();
 
         // Setting the data
         // modelFacade.setPropertyConsumption(10);

@@ -8,21 +8,16 @@ import main.java.viewcontroller.SceneSwitcher;
 // (3.1) Alexander Ask
 public class PrimaryController {
 
-    private static PrimaryController ourInstance = new PrimaryController();
-
-    public static PrimaryController getInstance() {
-        return ourInstance;
-    }
+    // Member variables
+    private SceneSwitcher sceneSwitcher;
+    private ModelFacade modelFacade;
+    private ServiceFacade serviceFacade = new ServiceFacade();
 
     // Hidden constructor
-    private PrimaryController() {
+    public PrimaryController(ModelFacade modelFacade, Stage stage) {
+        this.modelFacade = modelFacade;
+        sceneSwitcher = new SceneSwitcher(stage);
     }
-
-    // Member variables
-    private SceneSwitcher sceneSwitcher = SceneSwitcher.getInstance();
-    private ServiceFacade serviceFacade = new ServiceFacade();
-    private ModelFacade modelFacade = new ModelFacade();
-    private Stage stage;
 
     // Setters (for API)
     void setLocation(double latitude, double longitude) {
@@ -44,7 +39,6 @@ public class PrimaryController {
     }
 
     public void setStage(Stage stage) {
-        this.stage = stage;
     }
 
     // Getters
@@ -54,5 +48,9 @@ public class PrimaryController {
 
     public SceneSwitcher getSceneSwitcher() {
         return sceneSwitcher;
+    }
+
+    void setScene(String url){
+        sceneSwitcher.setScene(url);
     }
 }

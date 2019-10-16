@@ -7,25 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-// Singleton class
-// TODO
-// Ask (arcsak) will refactor
+// Scene switcher class
 public class SceneSwitcher {
-    private static SceneSwitcher ourInstance = new SceneSwitcher();
-
-    public static SceneSwitcher getInstance() {
-        return ourInstance;
-    }
-
-    // Hidden constructor
-    private SceneSwitcher() {
-    }
 
     // Parent stage
-    private Stage stage;
+    private final Stage stage;
 
-    // Sets the stage where scenes will be switched
-    public void setStage(Stage stage) {
+    // Constructor
+    SceneSwitcher(Stage stage) {
         this.stage = stage;
     }
 
@@ -49,7 +38,7 @@ public class SceneSwitcher {
         try {
             return FXMLLoader.load(getClass().getResource(url));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Failed to load resource in SceneSwitcher: " + e.getMessage());
             return null;
         }
     }
