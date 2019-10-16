@@ -1,20 +1,19 @@
 package main.java.model;
 
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.model.Property.Property;
-import main.java.model.SolarSetup.SolarPanel;
-import main.java.model.SolarSetup.SolarSetup;
+import main.java.model.contract.Contract;
+import main.java.model.property.Location;
+import main.java.model.property.Property;
+import main.java.model.solarsetup.SolarSetup;
 
 import java.util.HashMap;
 
 public class ModelFacade {
 
-    private ModelAggregate modelAggregate = new ModelAggregate();
+    private ModelAggregate modelAggregate;
 
     // Constructor
     public ModelFacade() {
-
+        modelAggregate = new ModelAggregate();
     }
 
     // Location setters
@@ -69,7 +68,7 @@ public class ModelFacade {
         return modelAggregate.getProperty();
     }
 
-    public SolarSetup getSolarSetup(){
+    public SolarSetup getSolarSetup() {
         return modelAggregate.getProperty().getSolarSetup();
     }
 

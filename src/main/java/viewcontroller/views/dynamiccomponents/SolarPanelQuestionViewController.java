@@ -4,22 +4,14 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import main.java.model.Calculator.Calculator;
-import main.java.model.ModelAggregate;
-import main.java.model.ModelFacade;
-import main.java.model.SolarSetup.SolarPanel;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class SolarPanelQuestionViewController extends AnchorPane {
 

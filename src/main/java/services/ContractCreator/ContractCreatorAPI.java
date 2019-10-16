@@ -1,6 +1,6 @@
 package main.java.services.ContractCreator;
 
-import main.java.model.Contract.Contract;
+import main.java.model.contract.Contract;
 
 //(3.1) Alex LV och Alex Ask
 // Mock class, this will be API/File implementation later on

@@ -1,5 +1,4 @@
 import junit.framework.TestCase;
-import main.java.model.Contract.Contract;
 import main.java.model.ModelFacade;
 import main.java.viewcontroller.PrimaryController;
 import org.junit.Test;
