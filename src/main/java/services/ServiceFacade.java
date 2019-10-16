@@ -1,7 +1,7 @@
 package main.java.services;
 
-import main.java.model.contract.Contract;
-import main.java.model.property.Location;
+import main.java.model.Contract.Contract;
+import main.java.model.Property.Location;
 import main.java.services.ContractCreator.ContractCreatorAPI;
 import main.java.services.ContractCreator.IContractCreator;
 import main.java.services.LocationCreator.ILocationCreator;

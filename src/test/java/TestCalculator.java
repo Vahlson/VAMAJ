@@ -1,14 +1,7 @@
 package test.java;
 
-import main.java.model.calculator.*;
-import main.java.model.property.*;
-import main.java.model.*;
-
-import java.util.HashMap;
-
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import main.java.model.Calculator.*;
+import main.java.model.Property.*;
 
 
 public class TestCalculator {

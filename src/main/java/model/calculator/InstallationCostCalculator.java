@@ -1,4 +1,4 @@
-package main.java.model.calculator;
+package main.java.model.Calculator;
 
     // (3) and (7) Jonatan
     // Class that handles all calculations related to a property's installation cost of solar panels
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static main.java.model.calculator.DataKey.*;
+import static main.java.model.Calculator.DataKey.*;
 
 public class InstallationCostCalculator implements Calculator{
 
