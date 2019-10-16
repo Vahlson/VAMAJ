@@ -22,6 +22,8 @@ public class PrimaryController {
         serviceFacade = new ServiceFacade();
     }
 
+    //TODO ADD MORE FUNCTIONS THAT COMMUNICATE WITH THE REST OF THE PROGRAM
+    //These are called from the separate view controllers.
 
 
     // Setters (for API)
@@ -36,6 +38,7 @@ public class PrimaryController {
         modelFacade.setContract(serviceFacade.getContract());
     }
 
+
     // Setters
     public void setModelFacade(ModelFacade facade) {
         this.modelFacade = facade;
@@ -47,7 +50,7 @@ public class PrimaryController {
 
 
     // Getters
-    ModelFacade getModelFacade() {
+    public ModelFacade getModelFacade() {
         return modelFacade;
     }
 
