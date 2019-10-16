@@ -1,4 +1,4 @@
-package main.java.model.Calculator;
+package main.java.model.calculator;
 
 // (4.1) Jonatan
 // Class for calculating surplus energy (consumed and produced). Unit of time to be specified
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static main.java.model.Calculator.DataKey.*;
+import static main.java.model.calculator.DataKey.*;
 
 class ElectricitySurplusCalculator implements Calculator{
 

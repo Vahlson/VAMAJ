@@ -1,9 +1,9 @@
 package main.java.model;
 
-import main.java.model.Calculator.*;
-import main.java.model.Property.Property;
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
+import main.java.model.calculator.*;
+import main.java.model.contract.Contract;
+import main.java.model.property.Location;
+import main.java.model.property.Property;
 import main.java.model.user.User;
 
 import java.util.ArrayList;
@@ -11,16 +11,19 @@ import java.util.List;
 
 //(2)Vegard
 
-public class ModelAggregate {
+class ModelAggregate {
 
     private User currentUser;
-    private List<User> users = new ArrayList<>();
-    private Property property = new Property();
-    private Location location = new Location();
+    private List<User> users;
     private Double result; //HashMap containing values with a ENUM as key
     private CalculatorRunner runner = new CalculatorRunner();
     private CalculatorData localData;
 
+    ModelAggregate() {
+        users = new ArrayList<>();
+        currentUser = new User();
+        users.add(currentUser);
+    }
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
@@ -40,26 +43,21 @@ public class ModelAggregate {
     }
 
 
-    //Temporary setter for testing purposes
-    public void setProperty(Property property) {
-        this.property = property;
-    }
-
     // Getter for results of calculation(s)
     public Double getCalculationResult(DataKey key) {
         return localData.getValue(key);
     }
 
     // Getters
-    public Location getLocation() {
-        return location;
+    Property getProperty() {
+        return currentUser.getActiveProperty();
     }
 
-    public Property getProperty() {
-        return property;
+    Location getLocation() {
+        return getProperty().getLocation();
     }
 
-    public Contract getContract() {
-        return property.getContract();
+    Contract getContract() {
+        return getProperty().getContract();
     }
 }

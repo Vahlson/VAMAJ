@@ -39,8 +39,8 @@ public class InstallationViewController implements Initializable {
             double electricityConsumption = consumption.getText().isEmpty() ? 0 : Double.parseDouble(consumption.getText());
             double electricityCost = cost.getText().isEmpty() ? 0 : Double.parseDouble(cost.getText());
 
-            PrimaryController.getInstance().getModelFacade().setContractCost((int) electricityCost);
-            PrimaryController.getInstance().getModelFacade().setPropertyConsumption(electricityConsumption);
+            // PrimaryController.getInstance().getModelFacade().setContractCost((int) electricityCost);
+            // PrimaryController.getInstance().getModelFacade().setPropertyConsumption(electricityConsumption);
         });
 
         // Initializing back button functionality

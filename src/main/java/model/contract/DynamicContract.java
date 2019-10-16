@@ -1,4 +1,4 @@
-package main.java.model.Contract;
+package main.java.model.contract;
 
 public class DynamicContract extends Contract {
     private final double extraFee = 1.2;
