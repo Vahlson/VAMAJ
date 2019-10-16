@@ -1,8 +1,8 @@
 package main.java.model.property;
 
 public class Location {
-    final private Coordinate coordinate;
-    final private double solarInsolation;
+    private Coordinate coordinate;
+    private double solarInsolation;
 
     // Constructor
     public Location(Coordinate coordinate, double solarInsolation) {
@@ -19,13 +19,13 @@ public class Location {
         return coordinate;
     }
 
-    // Setters (mutate by copy)
-    public Location setCoordinate(double latitude, double longitude) {
-        return new Location(new Coordinate(latitude, longitude), solarInsolation);
+    // Setters
+    public void setCoordinate(double latitude, double longitude) {
+        this.coordinate = new Coordinate(latitude,longitude);
     }
 
 
-    public Location setSolarInsolation(double solarInsolation) {
-        return new Location(coordinate, solarInsolation);
+    public void setSolarInsolation(double solarInsolation) {
+        this.solarInsolation = solarInsolation;
     }
 }

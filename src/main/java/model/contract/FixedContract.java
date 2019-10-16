@@ -6,11 +6,6 @@ public class FixedContract extends Contract {
         super(contractProvider, contractCity, cost, contractDuration);
     }
 
-    @Override
-    public Contract setCost(int cost) {
-        return new FixedContract(super.getContractProvider(), super.getContractCity(), cost, super.getContractDuration());
-    }
-
     public double fixedContractBonus() {
 
         double fixedBonus = 0.8;

@@ -1,7 +1,7 @@
 package main.java.model.solarsetup;
 
 public class SolarPanel {
-    private double requiredSpace;
+    private double size;
     private double productionPerHour;
     private double lifeExpectancy;
     private double retailPrice;
@@ -16,7 +16,7 @@ public class SolarPanel {
     }
 
     public SolarPanel(double requiredSpace, double productionPerHour, double lifeExpectancy, double retailPrice, double wattage, String panelName, String panelManufacturer) {
-        this.requiredSpace = requiredSpace;
+        this.size = requiredSpace;
         this.productionPerHour = productionPerHour;
         this.lifeExpectancy = lifeExpectancy;
         this.retailPrice = retailPrice;
@@ -25,8 +25,8 @@ public class SolarPanel {
         this.panelManufacturer = panelManufacturer;
     }
 
-    public double getRequiredSpace() {
-        return this.requiredSpace;
+    public double getSize() {
+        return this.size;
     }
 
 

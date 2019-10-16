@@ -6,11 +6,6 @@ public class DynamicContract extends Contract {
         super(contractProvider, contractCity, cost, contractDuration);
     }
 
-    @Override
-    public Contract setCost(int cost) {
-        return new DynamicContract(super.getContractProvider(), super.getContractCity(), cost, super.getContractDuration());
-    }
-
     public double extraTariffCost() {
 
         double extraFee = 1.2;

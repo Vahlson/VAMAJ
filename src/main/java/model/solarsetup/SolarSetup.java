@@ -6,48 +6,40 @@ import java.util.List;
 public class SolarSetup {
 
     // Member variables
-    private List<SolarPanel> solarPanels = new ArrayList<>();
-
-    private double efficiency;
-    private double InstallationsCost;
-    private double spaceRequired;
-    private double availableRoofArea;
+    private List<SolarPanel> solarPanels;
+    private double totalEfficiency;
+    private double installationCost;
+    private double squareMeters;
     private int orientation;
     private int angle;
 
 
-    public SolarSetup(List<SolarPanel> solarPanels, double efficiency, double cost, double spaceRequired) {
-        this.solarPanels = solarPanels;
-
-        this.efficiency = efficiency;
-        this.InstallationsCost = cost;
-        this.spaceRequired = spaceRequired;
+    public SolarSetup() {
+        this.solarPanels =  new ArrayList<>();
+        this.totalEfficiency = 0;
+        this.installationCost = 0;
+        this.squareMeters = 0;
+        this.orientation = 0;
+        this.angle = 0;
     }
 
+    //Getters
     public List<SolarPanel> getSolarPanels() {
         return this.solarPanels;
     }
-
-    public void setSolarPanels(List<SolarPanel> solarPanels) {
-        this.solarPanels = solarPanels;
+    public int getAngle() {
+        return angle;
+    }
+    public double getTotalEfficiency() {
+        return this.totalEfficiency;
     }
 
-
-    public double getEfficiency() {
-        return this.efficiency;
+    public double getInstallationCost() {
+        return this.installationCost;
     }
 
-
-    public double getInstallationsCost() {
-        return this.InstallationsCost;
-    }
-
-    public double getSpaceRequired() {
-        return this.spaceRequired;
-    }
-
-    public double getAvailableRoofArea() {
-        return availableRoofArea;
+    public double getSquareMeters() {
+        return squareMeters;
     }
 
     public int getOrientation() {
@@ -56,5 +48,32 @@ public class SolarSetup {
 
     public int getPanelAngle() {
         return angle;
+    }
+
+
+    //Setters
+    public void setSolarPanels(List<SolarPanel> solarPanels) {
+        this.solarPanels = solarPanels;
+    }
+
+
+    public void setTotalEfficiency(double totalEfficiency) {
+        this.totalEfficiency = totalEfficiency;
+    }
+
+    public void setInstallationCost(double installationCost) {
+        this.installationCost = installationCost;
+    }
+
+    public void setSquareMeters(double squareMeters) {
+        this.squareMeters = squareMeters;
+    }
+
+    public void setOrientation(int orientation) {
+        this.orientation = orientation;
+    }
+
+    public void setAngle(int angle) {
+        this.angle = angle;
     }
 }

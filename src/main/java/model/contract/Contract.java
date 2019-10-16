@@ -1,10 +1,10 @@
 package main.java.model.contract;
 
 public abstract class Contract {
-    final private String contractProvider;
-    final private String contractCity;
-    final private double contractDuration;
-    final private int cost;
+    private String contractProvider;
+    private String contractCity;
+    private double contractDuration;
+    private int cost;
 
     public Contract(String contractProvider, String contractCity, int cost, double contractDuration) {
         this.contractProvider = contractProvider;
@@ -33,5 +33,19 @@ public abstract class Contract {
 
     // Setter
     // TODO: mutate-by-copy setters for all
-    public abstract Contract setCost(int cost);
+    public void setCost(int cost){
+        this.cost = cost;
+    }
+
+    public void setContractProvider(String contractProvider) {
+        this.contractProvider = contractProvider;
+    }
+
+    public void setContractCity(String contractCity) {
+        this.contractCity = contractCity;
+    }
+
+    public void setContractDuration(double contractDuration) {
+        this.contractDuration = contractDuration;
+    }
 }
