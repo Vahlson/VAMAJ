@@ -1,15 +1,13 @@
 package main.java.model;
 
-import main.java.model.Calculators.*;
+import main.java.model.Calculator.*;
 import main.java.model.Property.Property;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
-import main.java.model.SolarSetup.SolarPanel;
 import main.java.model.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.HashMap;
 
 //(2)Vegard
 

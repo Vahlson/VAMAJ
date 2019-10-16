@@ -1,5 +1,6 @@
 package main.java.model;
 
+import main.java.model.Calculator.DataKey;
 import main.java.model.Contract.Contract;
 import main.java.model.Property.Location;
 import main.java.model.Property.Property;
@@ -80,8 +81,8 @@ public class ModelFacade {
     }
 
     // Getter(s)
-    public HashMap<String, Object> getCalculationResults() {
-        return modelAggregate.getCalculationResults();
+    public Double getCalculationResults(DataKey key) {
+        return modelAggregate.getCalculationResult(key);
     }
 
 }

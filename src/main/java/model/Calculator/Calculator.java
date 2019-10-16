@@ -1,4 +1,4 @@
-package main.java.model.Calculators;
+package main.java.model.Calculator;
 
 //Vegard
 //Common interface for all calculators in package
