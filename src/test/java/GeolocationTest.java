@@ -1,6 +1,6 @@
 import junit.framework.TestCase;
 import org.junit.Test;
-import main.java.services.Geolocation.Geolocation;
+import services.Geolocation.Geolocation;
 
 
 public class GeolocationTest extends TestCase {

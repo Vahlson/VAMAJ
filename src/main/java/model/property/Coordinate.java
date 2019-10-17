@@ -1,4 +1,4 @@
-package main.java.model.property;
+package model.property;
 
 public class Coordinate {
     private final Double latitude;

@@ -1,4 +1,4 @@
-package main.java.services.Geolocation;
+package services.Geolocation;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package main.java.viewcontroller.views.dynamiccomponents;
+package viewcontroller.views.dynamiccomponents;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -8,8 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.views.MainViewController;
+import viewcontroller.PrimaryController;
+import viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 

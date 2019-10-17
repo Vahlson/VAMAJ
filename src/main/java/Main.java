@@ -1,12 +1,11 @@
-package main.java;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.java.model.ModelFacade;
-import main.java.viewcontroller.PrimaryController;
+import model.ModelFacade;
+import viewcontroller.PrimaryController;
 
 public class Main extends Application {
     public static void main(String[] args) {

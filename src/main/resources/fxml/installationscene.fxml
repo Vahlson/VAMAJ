@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: LIGHTBLUE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.viewcontroller.views.InstallationViewController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: LIGHTBLUE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.views.InstallationViewController">
    <children>
       <HBox alignment="CENTER" layoutX="101.0" layoutY="173.0" prefWidth="1208.0" spacing="100.0">
          <children>

@@ -1,10 +1,10 @@
-package main.java.model.calculator;
+package model.calculator;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static main.java.model.calculator.DataKey.*;
+import static model.calculator.DataKey.*;
 
 // (4.1) arcsak
 public class SolarPanelProductionCalculator implements Calculator {

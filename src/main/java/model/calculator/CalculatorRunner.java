@@ -1,4 +1,4 @@
-package main.java.model.calculator;
+package model.calculator;
 
 import java.util.ArrayList;
 import java.util.Iterator;

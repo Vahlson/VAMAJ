@@ -1,6 +1,6 @@
-package main.java.services.LocationCreator;
+package services.LocationCreator;
 
-import main.java.model.property.Location;
+import model.property.Location;
 
 public class LocationCreatorFile implements ILocationCreator{
     @Override

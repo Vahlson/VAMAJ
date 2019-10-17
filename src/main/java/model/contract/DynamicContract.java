@@ -1,4 +1,4 @@
-package main.java.model.contract;
+package model.contract;
 
 public class DynamicContract extends Contract {
 

@@ -1,4 +1,4 @@
-package main.java.viewcontroller;
+package viewcontroller;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

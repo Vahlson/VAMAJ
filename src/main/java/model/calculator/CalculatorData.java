@@ -1,4 +1,4 @@
-package main.java.model.calculator;
+package model.calculator;
 
 import java.util.HashMap;
 import java.util.Objects;
