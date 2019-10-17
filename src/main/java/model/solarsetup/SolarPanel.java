@@ -1,4 +1,4 @@
-package main.java.model.SolarSetup;
+package main.java.model.solarsetup;
 
 public class SolarPanel {
     private double size;

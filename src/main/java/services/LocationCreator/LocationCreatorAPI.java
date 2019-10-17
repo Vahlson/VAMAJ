@@ -1,6 +1,6 @@
 package main.java.services.LocationCreator;
 
-import main.java.model.Property.Location;
+import main.java.model.property.Location;
 
 import java.util.*;
 
@@ -47,35 +47,29 @@ public class LocationCreatorAPI implements ILocationCreator{
  //https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=2015&endDate=2018&lat=40&lon=10&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous
         //Try to read the data from the JsonObject and try to calculate average on it.
             //Getting the jsonObject from the API using the parser.
-        try {
-            JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
-            try {
-                JSONObject allSkyInsolationIncident = accessJsonData(root);
-                return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
 
-            }catch (ApiCallNotCorrectException e){
-                //Show API error.
-                e.printStackTrace();
-                return 0;
+            JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
+
+            if(!root.isEmpty()) {
+                //the jsonobject is not empty
+                //Try to access JSONData
+                    JSONObject allSkyInsolationIncident = accessJsonData(root);
+
+                    if(!allSkyInsolationIncident.isEmpty()) {
+                        //Return average of data
+                        return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
+                    }
+
 
             }
 
-        }catch (Exception e){
-            e.printStackTrace();
-
-            return 0;
-        }
-
-
-
-
-
-
+        //Default returnvalue
+        return 0;
     }
 
     //Traverses the Json structure specific to the API (nasa) and returns the JSONobject that has the data directly.
     //This method belongs here and not in the ApiJSONParser since it is very specific to this API.
-    private JSONObject accessJsonData(JSONObject root) throws ApiCallNotCorrectException {
+    private JSONObject accessJsonData(JSONObject root) {
 
         //Try to traverse as expected
         try {
@@ -90,24 +84,21 @@ public class LocationCreatorAPI implements ILocationCreator{
         }catch (Exception e){
             //If object does'nt follow above structure, the api provides an error message.
             //Here we try to get the error message and throw it as a new error.
-            try {
+            //This should not need to be exception handled.
 
                 JSONArray messages = (JSONArray) root.get("messages");
                 JSONObject alert = (JSONObject) messages.get(0);
                 alert = alert.getJSONObject("Alert");
                 JSONObject description = (JSONObject) alert.get("Description");
-                throw new ApiCallNotCorrectException(description.getString("Issue"));
-            //TODO ÄNDRA TILL JSONEXCEPTION
-            }catch(Exception e2){
-                //If collection of the error message fails.
-                System.err.println("Error message collection failed");
-                e.printStackTrace();
-            }
+
+                System.out.println(description);
+
+                return new JSONObject();
 
 
         }
 
-        return new JSONObject();
+
     }
 
     //returns the average kW-hr/m^2/day taking into account specified amount of years.
@@ -144,11 +135,4 @@ public class LocationCreatorAPI implements ILocationCreator{
         this.longitude = longitude;
     }
 
-
-    public class ApiCallNotCorrectException extends Exception {
-
-        public ApiCallNotCorrectException(String message) {
-            super(message);
-        }
-    }
 }

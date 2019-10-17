@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import main.java.model.calculator.DataKey;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.SceneSwitcher;
 
@@ -33,13 +34,13 @@ public class ResultViewController extends AnchorPane implements Initializable {
     @FXML
     private Button exitButton;
 
-    public ResultViewController( PrimaryController primaryController) {
-        this.primaryController = primaryController;
+    public ResultViewController( ) {
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
+        //textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
     }
 
     @FXML

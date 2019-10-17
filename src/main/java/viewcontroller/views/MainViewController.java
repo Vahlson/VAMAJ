@@ -9,11 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.SceneSwitcher;
 import main.java.viewcontroller.views.dynamiccomponents.PersonalQuestionViewController;
 import main.java.viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
 import main.java.viewcontroller.views.dynamiccomponents.SolarPanelQuestionViewController;
@@ -27,30 +25,37 @@ public class MainViewController extends AnchorPane implements Initializable {
     private PrimaryController primaryController;
 
     @FXML
-    private Button calculateButton;
-    @FXML
-    private Button upNavigation;
-    @FXML
-    private Button downNavigation;
-    @FXML
-    private VBox questionList;
+    private Button installationButton;
+
     @FXML
     private ScrollPane questionScrollPane;
+
+    @FXML
+    private VBox questionList;
+
+    @FXML
+    private Button calculateButton;
+
+    @FXML
+    private Button upNavigation;
+
     @FXML
     private Label questionNumber;
-    @FXML
-    ProgressBar progressBar;
 
     @FXML
-    private Button installationButton; // Button that leads to installation screen
+    private Button downNavigation;
 
-    public MainViewController(PrimaryController primaryController) {
-        this.primaryController = primaryController;
+    @FXML
+    private ProgressBar progressBar;
+
+    public MainViewController() {
+
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         questionList.getChildren().clear();
         questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
         //questionList.getChildren().add(new PersonalQuestionViewController(this));
@@ -91,7 +96,6 @@ public class MainViewController extends AnchorPane implements Initializable {
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         });
-
 
     }
 

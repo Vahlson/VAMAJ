@@ -12,7 +12,7 @@ public class ApiJSONParser extends ApiParser<JSONObject> {
             return new JSONObject(jsonText);
         }catch (JSONException e){
             e.printStackTrace();
-            return null;
+            return new JSONObject();
         }
 
     }

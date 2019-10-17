@@ -27,8 +27,7 @@ public class InstallationViewController implements Initializable {
     private Button backButton;
 
 
-    public InstallationViewController(PrimaryController primaryController){
-        this.primaryController = primaryController;
+    public InstallationViewController(){
 
     }
 
