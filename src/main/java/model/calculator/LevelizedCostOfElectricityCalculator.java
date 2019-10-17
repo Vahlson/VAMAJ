@@ -1,4 +1,4 @@
-package main.java.model.Calculator;
+package main.java.model.calculator;
 
 //(4.2) Vegard
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static main.java.model.Calculator.DataKey.*;
+import static main.java.model.calculator.DataKey.*;
 
 class LevelizedCostOfElectricityCalculator implements Calculator{
 
