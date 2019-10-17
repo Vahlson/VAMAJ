@@ -1,45 +1,35 @@
 package main.java.model.Property;
 
 public class Location {
-    //private int solarHours;
-    //private int solarPower;
     private Coordinate coordinate;
-
     private double solarInsolation;
 
+    // Constructor
+    public Location(){
+
+    }
+
+    public Location(Coordinate coordinate, double solarInsolation) {
+        this.coordinate = coordinate;
+        this.solarInsolation = solarInsolation;
+    }
+
+    // Getters
+    public double getSolarInsolation() {
+        return solarInsolation;
+    }
 
     public Coordinate getCoordinate() {
         return coordinate;
     }
 
-
+    // Setters
     public void setCoordinate(double latitude, double longitude) {
-        Coordinate c = new Coordinate(latitude,longitude);
-        this.coordinate = c;
+        this.coordinate = new Coordinate(latitude,longitude);
     }
 
 
     public void setSolarInsolation(double solarInsolation) {
         this.solarInsolation = solarInsolation;
     }
-
-    public double getSolarInsolation() {
-        return solarInsolation;
-    }
-    //    public int getSolarPower() {
-//        return solarPower;
-//    }
-
-    //    public void setSolarPower(int solarPower) {
-//        this.solarPower = solarPower;
-//    }
-
-    //    public int getSolarHours() {
-//        return solarHours;
-//    }
-
-
-    //    public void setSolarHours(int solarHours) {
-//        this.solarHours = solarHours;
-//    }
 }

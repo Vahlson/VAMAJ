@@ -6,9 +6,12 @@ public class RoofBasedSolarSetup extends SolarSetup {
 
     private double roofUnit;
 
-    public RoofBasedSolarSetup(List <SolarPanel> solarPanels , double efficiency, double cost, double spaceRequired, double roofSpace) {
-        super(solarPanels,  efficiency, cost, spaceRequired);
-        this.roofUnit = roofSpace;
+    public RoofBasedSolarSetup(List <SolarPanel> solarPanels , double totalEfficiency, double installationCost, double spaceRequired, double squareMeters) {
+        super.setInstallationCost(installationCost);
+        super.setSolarPanels(solarPanels);
+        super.setSquareMeters(squareMeters);
+        super.setTotalEfficiency(totalEfficiency);
+
     }
 
     public double getRoofUnit() {

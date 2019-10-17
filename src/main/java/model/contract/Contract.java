@@ -6,11 +6,6 @@ public abstract class Contract {
     private double contractDuration;
     private int cost;
 
-
-    public Contract() {
-
-    }
-
     public Contract(String contractProvider, String contractCity, int cost, double contractDuration) {
         this.contractProvider = contractProvider;
         this.contractCity = contractCity;
@@ -18,10 +13,10 @@ public abstract class Contract {
         this.contractDuration = contractDuration;
     }
 
+    // Getters
     public String getContractProvider() {
         return this.contractProvider;
     }
-
 
     public String getContractCity() {
         return this.contractCity;
@@ -32,14 +27,24 @@ public abstract class Contract {
         return this.cost;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
-
-
     public double getContractDuration() {
         return this.contractDuration;
     }
 
+    // Setter
+    public void setCost(int cost){
+        this.cost = cost;
+    }
 
+    public void setContractProvider(String contractProvider) {
+        this.contractProvider = contractProvider;
+    }
+
+    public void setContractCity(String contractCity) {
+        this.contractCity = contractCity;
+    }
+
+    public void setContractDuration(double contractDuration) {
+        this.contractDuration = contractDuration;
+    }
 }

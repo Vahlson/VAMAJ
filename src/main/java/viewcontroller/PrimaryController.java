@@ -2,6 +2,8 @@ package main.java.viewcontroller;
 
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
+import main.java.services.ContractCreator.ContractCreatorAPI;
+import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
 
 // (3.1) Alexander Ask
@@ -9,32 +11,40 @@ public class PrimaryController {
 
     // Member variables
     private static SceneSwitcher sceneSwitcher;
-    private static ModelFacade modelFacade;
-    private ServiceFacade serviceFacade = new ServiceFacade();
+    private ModelFacade modelFacade;
+    private ServiceFacade serviceFacade;
 
     // Hidden constructor
     public PrimaryController(ModelFacade modelFacade, Stage stage) {
-        PrimaryController.modelFacade = modelFacade;
+        this.modelFacade = modelFacade;
         sceneSwitcher = new SceneSwitcher(stage);
+        serviceFacade = new ServiceFacade();
+
     }
 
+
+    //TODO ADD MORE FUNCTIONS THAT COMMUNICATE WITH THE REST OF THE PROGRAM
+    //These are called from the separate view controllers.
+
+
     // Setters (for API)
-    void setLocation(double latitude, double longitude) {
+    void setLocationFromAPI(double latitude, double longitude) {
+        serviceFacade.setLocationCreator(new LocationCreatorAPI());
         serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
-    void setContract() {
+    void setContractFromAPI() {
+        serviceFacade.setContractCreator(new ContractCreatorAPI());
         modelFacade.setContract(serviceFacade.getContract());
     }
 
     // Setters
-    public void setServiceFacade(ServiceFacade facade) {
-        this.serviceFacade = facade;
-    }
+
+
 
     // Getters
-    public static ModelFacade getModelFacade() {
+    public ModelFacade getModelFacade() {
         return modelFacade;
     }
 

@@ -21,8 +21,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 
         // Creating the model facade
-        ModelFacade modelFacade;
-        modelFacade = new ModelFacade();
+        ModelFacade modelFacade = new ModelFacade();
 
         // Creating the primary controller
         new PrimaryController(modelFacade, stage);

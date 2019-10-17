@@ -53,7 +53,7 @@ https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=
     * A sun tracker is an electromechanic component used for orienting a solar photovoltaic panel, concentrating solar reflector, or lens toward the sun.
     * Solar panels require a high degree of accuracy to ensure that the concentrated sunlight is directed precisely to the photovoltaic device.
     * solar tracking systems can substantially improve the amount of power produced by a system by enhancing morning and afternoon performance.
-    * For instance, the orientation of PV panels can increase the solar-electric energy conversion efficiency between 20% and 50% [73–77].
+    * For instance, the orientation of PV panels can increase the solar-electric energy conversion totalEfficiency between 20% and 50% [73–77].
     * A fixed system oriented to a fixed sun facing direction will have a relatively low annual
     * production because they do not move to track the sun which yields significant increase of incident irradiation.
     * An efficient sun tracking system should be capable of movement from north to south and from east to west as shown in Fig. 2.10.

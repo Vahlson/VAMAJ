@@ -1,10 +1,9 @@
 package main.java.model;
 
-import main.java.model.Calculator.DataKey;
-import main.java.model.Contract.Contract;
-import main.java.model.Property.Location;
-import main.java.model.Property.Property;
-import main.java.model.SolarSetup.SolarSetup;
+import main.java.model.calculator.DataKey;
+import main.java.model.contract.Contract;
+import main.java.model.property.Location;
+import main.java.model.solarsetup.SolarSetup;
 
 public class ModelFacade {
 
@@ -28,18 +27,19 @@ public class ModelFacade {
         modelAggregate.getProperty().setSolarSetup(solarSetup);
     }
 
-    // TEMPORARY GETTERS FOR TESTING
+    // Getters
     public Contract getContract() {
         return modelAggregate.getContract();
     }
 
-    public Property getProperty() {
-        return modelAggregate.getProperty();
+    public SolarSetup getSolarSetup() {
+        return modelAggregate.getSolarSetup();
     }
 
-    public SolarSetup getSolarSetup() {
-        return modelAggregate.getProperty().getSolarSetup();
+    public Location getLocation() {
+        return modelAggregate.getLocation();
     }
+
 
 
     // Run calculations

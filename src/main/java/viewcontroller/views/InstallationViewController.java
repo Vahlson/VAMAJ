@@ -11,6 +11,8 @@ import java.util.ResourceBundle;
 
 public class InstallationViewController implements Initializable {
 
+    PrimaryController primaryController;
+
     // Components in parent FXML-file
     @FXML
     private TextField consumption;
@@ -23,6 +25,12 @@ public class InstallationViewController implements Initializable {
 
     @FXML
     private Button backButton;
+
+
+    public InstallationViewController(PrimaryController primaryController){
+        this.primaryController = primaryController;
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -1,5 +1,6 @@
 package main.java.viewcontroller.views;
 
+
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,9 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import main.java.viewcontroller.PrimaryController;
+import main.java.viewcontroller.SceneSwitcher;
 import main.java.viewcontroller.views.dynamiccomponents.PersonalQuestionViewController;
 import main.java.viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
 import main.java.viewcontroller.views.dynamiccomponents.SolarPanelQuestionViewController;
@@ -21,7 +24,6 @@ import java.util.ResourceBundle;
 
 public class MainViewController extends AnchorPane implements Initializable {
     private int state = 0;
-
     private PrimaryController primaryController;
 
     @FXML
@@ -42,13 +44,15 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private Button installationButton; // Button that leads to installation screen
 
-    public MainViewController() {
-
+    public MainViewController(PrimaryController primaryController) {
+        this.primaryController = primaryController;
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         questionList.getChildren().clear();
+        questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
         //questionList.getChildren().add(new PersonalQuestionViewController(this));
         //TESTAR
         questionList.getChildren().add(new PersonalQuestionViewController(this));
@@ -75,39 +79,39 @@ public class MainViewController extends AnchorPane implements Initializable {
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
 
-
-
         });
 
         downNavigation.setOnAction(event -> {
             if (state < questionList.getChildren().size() - 1) {
                 slowScrollToNode(++state);
-
-
             }
             System.out.println(state);
 
 
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
-
-
         });
+
 
     }
 
     private void slowScrollToNode(int node) {
+
         double scrollPaneHeight = questionList.getHeight();
-        double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + ((questionList.getChildren().get(node).getBoundsInParent().getMaxY() - questionList.getChildren().get(node).getBoundsInParent().getMinY()) / 2);
+        double nodeHeight = questionList.getChildren().get(node).getLayoutBounds().getHeight();
+        double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + nodeHeight;
         System.out.println(relativeY);
+        System.out.println("scrollpaneHeight: " + scrollPaneHeight);
+        System.out.println(questionList.getChildren().get(node));
 
         double scrollProcent = relativeY / scrollPaneHeight;
 
         System.out.println(scrollProcent);
 
-        slowScrollToPosition(questionScrollPane, scrollProcent);
+            slowScrollToPosition(questionScrollPane, scrollProcent);
 
     }
+
 
     private void slowScrollToPosition(ScrollPane scrollPane, double pos) {
 

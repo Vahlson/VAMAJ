@@ -3,7 +3,7 @@ package main.java.model.Property;
 import main.java.model.Contract.Contract;
 import main.java.model.SolarSetup.SolarSetup;
 
-public class Property {
+public abstract class Property {
 
     // Member variables
     private SolarSetup solarSetup;
@@ -28,22 +28,6 @@ public class Property {
         return solarSetup;
     }
 
-    public double getAvailableRoofArea() {
-        return solarSetup.getAvailableRoofArea();
-    }
-
-    public int getOrientation() {
-        return solarSetup.getOrientation();
-    }
-
-    public int getPanelAngle() {
-        return solarSetup.getPanelAngle();
-    }
-
-    public double getLatitude() {
-        return location.getCoordinate().getLatitude();
-    }
-
     public double getConsumption() {
         return consumption;
     }
@@ -59,5 +43,9 @@ public class Property {
 
     public void setSolarSetup(SolarSetup solarSetup) {
         this.solarSetup = solarSetup;
+    }
+
+    public void setConsumption(double consumption) {
+        this.consumption = consumption;
     }
 }
