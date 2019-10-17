@@ -9,6 +9,7 @@ import java.util.Set;
 
 import static main.java.model.calculator.DataKey.*;
 
+
 public class InstallationCostCalculator implements Calculator{
 
     private final Set<DataKey> requiredInput = new HashSet<>(Arrays.asList(AVAILABLE_SPACE, REQUIRED_PANEL_SPACE, PANEL_PRICE));
