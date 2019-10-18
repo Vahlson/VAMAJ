@@ -39,4 +39,29 @@ public class InstallationCostResultViewController extends AnchorPane {
     }
 
 
+    // Methods to set label texts
+    public void setInstallationCostLabel(double cost){
+
+        installationCostLabel.setText(readableFormat(cost));
+    }
+
+    public void setSubventedAmountLabel(double amount){
+
+        subventedAmountLabel.setText(readableFormat(amount));
+    }
+
+    public void setSubventedCostLabel(double subventedCost) {
+
+        subventedCostLabel.setText(readableFormat(subventedCost));
+    }
+
+
+    // Returns a double in readable format
+    private String readableFormat(double unReadableDouble){
+
+        int unReadableInt = (int) unReadableDouble;
+        String readable = String.format("%,d", unReadableInt);
+
+        return readable;
+    }
 }
