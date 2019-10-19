@@ -1,4 +1,4 @@
-package model.solarsetup;
+package main.java.model.solarsetup;
 
 import java.util.ArrayList;
 import java.util.List;

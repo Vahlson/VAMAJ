@@ -1,4 +1,4 @@
-package viewcontroller.views;
+package main.java.viewcontroller.views;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,9 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
-import model.calculator.DataKey;
-import viewcontroller.PrimaryController;
-import viewcontroller.SceneSwitcher;
+import main.java.model.calculator.DataKey;
+import main.java.viewcontroller.PrimaryController;
+import main.java.viewcontroller.SceneSwitcher;
 
 import java.io.IOException;
 import java.net.URL;

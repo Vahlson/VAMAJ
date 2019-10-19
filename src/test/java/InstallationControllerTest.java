@@ -1,6 +1,6 @@
 import junit.framework.TestCase;
-import model.ModelFacade;
-import viewcontroller.PrimaryController;
+import main.java.model.ModelFacade;
+import main.java.viewcontroller.PrimaryController;
 import org.junit.Test;
 
 public class InstallationControllerTest extends TestCase {

@@ -1,4 +1,4 @@
-package model.calculator;
+package main.java.model.calculator;
 
 public enum DataKey {
     SOLAR_PANEL_EFFICIENY,

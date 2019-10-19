@@ -1,4 +1,4 @@
-package services.Geolocation;
+package main.java.services.Geolocation;
 
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;

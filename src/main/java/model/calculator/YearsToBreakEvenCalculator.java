@@ -1,4 +1,4 @@
-package model.calculator;
+package main.java.model.calculator;
 
 //(1.1) Vegard
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static model.calculator.DataKey.*;
+import static main.java.model.calculator.DataKey.*;
 
 public class YearsToBreakEvenCalculator implements Calculator{
 

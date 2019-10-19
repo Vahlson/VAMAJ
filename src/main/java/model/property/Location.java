@@ -1,4 +1,4 @@
-package model.property;
+package main.java.model.property;
 
 public class Location {
     private Coordinate coordinate;

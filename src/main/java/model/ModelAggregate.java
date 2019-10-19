@@ -1,11 +1,11 @@
-package model;
+package main.java.model;
 
-import model.calculator.*;
-import model.contract.Contract;
-import model.property.Location;
-import model.property.Property;
-import model.solarsetup.SolarSetup;
-import model.user.User;
+import main.java.model.calculator.*;
+import main.java.model.contract.Contract;
+import main.java.model.property.Location;
+import main.java.model.property.Property;
+import main.java.model.solarsetup.SolarSetup;
+import main.java.model.user.User;
 
 import java.util.ArrayList;
 import java.util.List;

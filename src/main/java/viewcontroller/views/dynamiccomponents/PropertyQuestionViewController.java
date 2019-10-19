@@ -1,11 +1,11 @@
-package viewcontroller.views.dynamiccomponents;
+package main.java.viewcontroller.views.dynamiccomponents;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
-import viewcontroller.views.MainViewController;
+import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 

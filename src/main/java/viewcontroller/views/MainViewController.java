@@ -1,4 +1,4 @@
-package viewcontroller.views;
+package main.java.viewcontroller.views;
 
 
 import javafx.animation.*;
@@ -11,11 +11,11 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import viewcontroller.PrimaryController;
-import viewcontroller.views.dynamiccomponents.PersonalQuestionViewController;
-import viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
-import viewcontroller.views.dynamiccomponents.SolarPanelQuestionViewController;
-import viewcontroller.views.dynamiccomponents.SpaceQuestionViewController;
+import main.java.viewcontroller.PrimaryController;
+import main.java.viewcontroller.views.dynamiccomponents.PersonalQuestionViewController;
+import main.java.viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
+import main.java.viewcontroller.views.dynamiccomponents.SolarPanelQuestionViewController;
+import main.java.viewcontroller.views.dynamiccomponents.SpaceQuestionViewController;
 
 import java.net.URL;
 import java.util.ResourceBundle;

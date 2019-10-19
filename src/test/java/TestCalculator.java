@@ -1,6 +1,6 @@
 
-import model.calculator.*;
-import model.property.*;
+import main.java.model.calculator.*;
+import main.java.model.property.*;
 
 
 public class TestCalculator {

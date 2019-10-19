@@ -1,7 +1,7 @@
-package model.property;
+package main.java.model.property;
 
-import model.contract.Contract;
-import model.solarsetup.SolarSetup;
+import main.java.model.contract.Contract;
+import main.java.model.solarsetup.SolarSetup;
 
 public abstract class Property {
 

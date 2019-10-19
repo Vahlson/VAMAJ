@@ -1,6 +1,6 @@
-package services.ContractCreator;
+package main.java.services.ContractCreator;
 
-import model.contract.Contract;
+import main.java.model.contract.Contract;
 
 //(3.1) Alex LV och Alex Ask
 //Interface defining a contract creator. Implementations create contracts with data from different places.

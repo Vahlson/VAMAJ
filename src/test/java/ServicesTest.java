@@ -1,7 +1,7 @@
 
 import junit.framework.TestCase;
-import model.property.Location;
-import services.ServiceFacade;
+import main.java.model.property.Location;
+import main.java.services.ServiceFacade;
 import org.junit.Test;
 
 public class ServicesTest extends TestCase {

@@ -1,10 +1,10 @@
-package viewcontroller;
+package main.java.viewcontroller;
 
 import javafx.stage.Stage;
-import model.ModelFacade;
-import services.ContractCreator.ContractCreatorAPI;
-import services.LocationCreator.LocationCreatorAPI;
-import services.ServiceFacade;
+import main.java.model.ModelFacade;
+import main.java.services.ContractCreator.ContractCreatorAPI;
+import main.java.services.LocationCreator.LocationCreatorAPI;
+import main.java.services.ServiceFacade;
 
 // (3.1) Alexander Ask
 public class PrimaryController {

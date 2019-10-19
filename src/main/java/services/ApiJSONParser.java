@@ -1,4 +1,4 @@
-package services;
+package main.java.services;
 
 import org.json.JSONException;
 import org.json.JSONObject;

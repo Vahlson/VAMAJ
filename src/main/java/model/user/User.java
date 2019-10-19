@@ -1,7 +1,7 @@
-package model.user;
+package main.java.model.user;
 
-import model.property.ConsumingProperty;
-import model.property.Property;
+import main.java.model.property.ConsumingProperty;
+import main.java.model.property.Property;
 
 import java.util.ArrayList;
 import java.util.List;
