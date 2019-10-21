@@ -1,134 +1,95 @@
 
+import main.java.model.ModelAggregate;
 import main.java.model.calculator.*;
+import static main.java.model.calculator.DataKey.*;
 import main.java.model.property.*;
+import org.junit.Test;
+import junit.framework.TestCase;
 
 
-public class TestCalculator {
-/*
-    @Test
-    public void testCalcRunner() {
+import java.util.HashMap;
 
-        ModelFacade mf = new ModelFacade();
-        Property p = new Property();
 
-        mf.setProperty(p);
-        mf.setPropertyInstallationSpace(5);
-        mf.setPropertyLatitude(23);
+public class TestCalculator extends TestCase{
 
-        mf.runCalculators();
-        HashMap hm = mf.getCalculationResults();
 
-        double result = (double) hm.get("annualElectricity");
-        assertTrue((int) result == 3276);
 
-        double panelProduction;
-        panelProduction = (double) hm.get("panelProduction");
-        assertTrue(panelProduction == 7.5);
-    }
 
     @Test
-    public void testAnnualElectricityProduction() {
+    public void testSolarElectricityProduction() {
 
-        AnnualSolarElectricityOutput output;
+        HashMap<DataKey, Double> data = new HashMap<>();
 
-        double latitude = 23;
-        double solarArea = 5;
-        double efficiency = 22;
+        data.put(SOLAR_PANEL_AREA, 6.0);
+        data.put(SOLAR_PANEL_EFFICIENCY, 6.0);
+        data.put(AVERAGE_SOLAR_RADIATION, 2.0);
+        data.put(PANEL_PERFORMANCE_RATIO, 2.0);
 
-        AnnualSolarElectricityInput input = new AnnualSolarElectricityInput(latitude, solarArea, efficiency);
+        data = CalculatorFacade.calculateAll(data);
+        System.out.println(data.get(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT));
 
-        Calculator<AnnualSolarElectricityInput, AnnualSolarElectricityOutput> AE = new AnnualSolarElectricity();
-
-        output = AE.calculate(input);
-        double result = output.getAnnualElectricityProduction();
-        assertTrue((int) result == 3276);
+        assertEquals(data.get(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT), 144.0);
     }
 
     @Test
     public void testLevelizedCostOfElectricity() {
 
-        LevelizedCostOfElectricityInput input = new LevelizedCostOfElectricityInput(30, 1000, 30000);
-        input.setAnnualOperationCost(100);
-        Calculator<LevelizedCostOfElectricityInput, LevelizedCostOfElectricityOutput> LC = new LevelizedCostOfElectricity();
-        LevelizedCostOfElectricityOutput output = LC.calculate(input);
+        HashMap<DataKey, Double> data = new HashMap<>();
 
-        double result = output.getlCOE();
+        data.put(EXPECTED_LIFESPAN, 30.0);
+        data.put(INSTALLATION_COST, 100000.0);
+        data.put(ANNUAL_ELECTRICITY_PRODUCTION, 30000.0);
+        data.put(ANNUAL_OPERATION_COST, 100.0);
 
-        assertTrue(Math.abs(result - 0.90909) < 0.05);
+        data = CalculatorFacade.calculateAll(data);
+
+        assertTrue(Math.abs(data.get(LEVELIZED_ELECTRICITY_COST) - 0.1144) < 0.05);
     }
 
     @Test
     public void testYearsToBreakEven() {
 
-        YearsToBreakEvenInput input = new YearsToBreakEvenInput(30000, 1500, 1);
-        input.setAnnualOperationCost(100);
-        Calculator<YearsToBreakEvenInput, YearsToBreakEvenOutput> LC = new YearsToBreakEven();
-        YearsToBreakEvenOutput output = LC.calculate(input);
+        HashMap<DataKey, Double> data = new HashMap<>();
 
-        double result = output.getYears();
 
-        assertTrue(Math.abs(result - 21.0) < 0.1);
-    }
+        data.put(INSTALLATION_COST, 100000.0);
+        data.put(ANNUAL_OPERATION_COST, 100.0);
+        data.put(ANNUAL_ELECTRICITY_PRODUCTION, 30000.0);
+        data.put(IMPORTED_ELECTRICITY_PRICE_KWH, 0.3);
 
-    @Test
-    public void testPanelProduction() {
+        data = CalculatorFacade.calculateAll(data);
 
-        SolarPanelProductionInput input;
-        input = new SolarPanelProductionInput();
-        input.setPanelEfficiency(0.5);
-        input.setAverageSolarRadiation(2.5);
-        input.setPanelArea(100);
-        input.setPanelPerformanceRatio(0.75);
-
-        SolarPanelProduction calculator;
-        calculator = new SolarPanelProduction();
-
-        SolarPanelProductionOutput output;
-        output = calculator.calculate(input);
-
-        double result = output.getEnergy();
-
-        assertTrue(result == 93.75);
+        assertTrue(Math.abs(data.get(YEARS_TO_BREAK_EVEN) - 11.23) < 0.1);
     }
 
     @Test
     public void testInstallationCost(){
 
-        InstallationCostInput input;
-        input = new InstallationCostInput(40, 2.3, 4600);
+        HashMap<DataKey, Double> data = new HashMap<>();
 
-        InstallationCost installationCalculator;
-        installationCalculator = new InstallationCost();
+        data.put(AVAILABLE_SPACE, 100.0);
+        data.put(REQUIRED_PANEL_SPACE, 10.0);
+        data.put(PANEL_PRICE, 300.0);
 
-        InstallationCostOutput output;
-        output = installationCalculator.calculate(input);
+        data = CalculatorFacade.calculateAll(data);
 
-        double resultCost                   = output.getInstallationCost();
-        double resultSubventedAmount        = output.getSubventionAmount();
-        double resultSubventedInstallation  = output.getSubventedCost();
-
-        assertTrue(resultCost == 78200);
-        assertTrue(resultSubventedAmount == 15640);
-        assertTrue(resultSubventedInstallation == 62560);
+        assertTrue(data.get(INSTALLATION_COST) == 3000.0);
+        assertTrue(data.get(GOVERNMENT_SUBVENTION) == 600.0);
+        assertTrue(data.get(SUBVENTED_INSTALLATION_COST) == 2400.0);
     }
 
     @Test
     public void testElectricitySurplus() {
 
-        double consumption = 100;
+        HashMap<DataKey, Double> data = new HashMap<>();
 
-        ElectricitySurplusInput lowProduction = new ElectricitySurplusInput(consumption, 20);
-        ElectricitySurplusInput highProduction = new ElectricitySurplusInput(consumption, 110);
 
-        ElectricitySurplus calculator = new ElectricitySurplus();
+        data.put(CONSUMED_ELECTRICITY, 100.0);
+        data.put(PRODUCED_ELECTRICITY, 200.0);
 
-        ElectricitySurplusOutput noSurplus;
-        ElectricitySurplusOutput surplus;
+        data = CalculatorFacade.calculateAll(data);
 
-        noSurplus = calculator.calculate(lowProduction);
-        surplus = calculator.calculate(highProduction);
-
-        assertTrue(noSurplus.getElectricitySurplus() == 0);
-        assertTrue(surplus.getElectricitySurplus() == 10);
-    }*/
+        System.out.println(data.get(SURPLUS));
+        assertTrue(data.get(SURPLUS) == 100.0);
+    }
 }

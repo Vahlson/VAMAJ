@@ -8,19 +8,23 @@ import main.java.model.solarsetup.SolarSetup;
 import main.java.model.user.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
+
+import static main.java.model.calculator.DataKey.*;
 
 //(2)Vegard
 
-class ModelAggregate {
+public class ModelAggregate {
 
     private User currentUser;
     private List<User> users;
     private Double result; //HashMap containing values with a ENUM as key
-    private CalculatorRunner runner = new CalculatorRunner();
-    private CalculatorData localData;
+    //private CalculatorFacade runner = new CalculatorFacade();
+    private HashMap<DataKey, Double> localData;
 
-    ModelAggregate() {
+    public ModelAggregate() {
         users = new ArrayList<>();
         currentUser = new User();
         users.add(currentUser);
@@ -28,25 +32,15 @@ class ModelAggregate {
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
-        CalculatorData data = new CalculatorData();
+        HashMap<DataKey, Double> data = new HashMap<>();
 
-        data.addValue(DataKey.CONSUMED_ELECTRICITY, 3.0);
-        data.addValue(DataKey.PRODUCED_ELECTRICITY, 6.0);
-        data.addValue(DataKey.AVAILABLE_SPACE, 3.0);
-        data.addValue(DataKey.REQUIRED_PANEL_SPACE, 6.0);
-        data.addValue(DataKey.PANEL_PRICE, 3.0);
-        data.addValue(DataKey.EXPECTED_LIFESPAN, 3.0);
-        data.addValue(DataKey.ANNUAL_OPERATION_COST, 6.0);
-        data.addValue(DataKey.ANNUAL_ELECTRICITY_PRODUCTION, 3.0);
-
-        runner.calculateAll(data);
-        localData = data;
+        localData = CalculatorFacade.calculateAll(data);
     }
 
 
     // Getter for results of calculation(s)
     Double getCalculationResult(DataKey key) {
-        return localData.getValue(key);
+        return Objects.requireNonNull(localData.get(key), "no data for " + key.toString());
     }
 
     // Getters
