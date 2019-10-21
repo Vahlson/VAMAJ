@@ -1,6 +1,7 @@
 
 import junit.framework.TestCase;
 import main.java.model.property.Location;
+import main.java.model.contract.Contract;
 import main.java.services.ServiceFacade;
 import org.junit.Test;
 
