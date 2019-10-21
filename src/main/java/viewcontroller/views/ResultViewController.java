@@ -13,6 +13,8 @@ import main.java.viewcontroller.PrimaryController;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static main.java.model.calculator.DataKey.INSTALLATION_COST;
+
 // The controller of the result view, the user ends up here upon calculation.
 public class ResultViewController extends AnchorPane implements Initializable {
 
@@ -45,14 +47,15 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        primaryController.getModelFacade().addCalculationData(DataKey.INSTALLATION_COST,0);
 
+        fillResultView();
         //textArea1.appendText("" + primaryController.getModelFacade().getCalculationResults(DataKey.ANNUAL_ELECTRICITY_PRODUCTION));
 
     }
 
     public void fillResultView(){
-        textArea1.appendText("" + primaryController.getModelFacade().getCalculationResult(DataKey.INSTALLATION_COST));
+        primaryController.getModelFacade().runCalculators();
+        textArea1.appendText("" + primaryController.getModelFacade().getCalculationResult(INSTALLATION_COST));
     }
 
 

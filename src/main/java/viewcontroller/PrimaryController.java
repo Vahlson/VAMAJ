@@ -108,13 +108,17 @@ public class PrimaryController {
 
     public void goToMainView() {
 
-        Scene mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
+        if(mainView == null) {
+            mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
+        }
         setScene(mainView);
 
     }
 
     public void goToResultView() {
-        Scene resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
+        if(resultView == null) {
+            resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
+        }
         setScene(resultView);
     }
 

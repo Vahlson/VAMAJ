@@ -14,6 +14,8 @@ import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 
+import static main.java.model.calculator.DataKey.*;
+
 //Question about wanted type of solar panel.
 public class SolarPanelQuestionViewController extends AnchorPane {
 
@@ -84,19 +86,19 @@ public class SolarPanelQuestionViewController extends AnchorPane {
 
                     if (selected.equals(premiumRadio)) {
                         //Do something with premium selection.
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PANEL_PRICE,9999);
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.REQUIRED_PANEL_SPACE,9999);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PRODUCED_ELECTRICITY,9999);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.SOLAR_PANEL_EFFICIENCY,9999);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(PANEL_PRICE,9999);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(REQUIRED_PANEL_SPACE,9999);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(PRODUCED_ELECTRICITY,9999);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(SOLAR_PANEL_EFFICIENCY,9999);
 
 
 
                     } else{
                         //Do something with standard selection.
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PANEL_PRICE,1);
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.REQUIRED_PANEL_SPACE,9999);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PRODUCED_ELECTRICITY,1);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.SOLAR_PANEL_EFFICIENCY,1);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(PANEL_PRICE,1);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(REQUIRED_PANEL_SPACE,9999);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(PRODUCED_ELECTRICITY,1);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(SOLAR_PANEL_EFFICIENCY,1);
                     }
 
 
