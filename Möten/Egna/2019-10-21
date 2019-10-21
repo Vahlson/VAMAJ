@@ -1,0 +1,74 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-21
+Chair: Alexander LV
+Participants: Jonatan, Mohamad, Alexander LV
+
+1. Vad gör vi på detta möte.
+Planerar skapandet av presentationen, renskrivning av RAD och SDD samt planerar hur vi sak lägga upp arbetet för att slutföra projektet (koden).
+Vi ska även planera skapandet av rapporten.
+Diskutera kodkvalite.
+Diskutera kursens mål/krav.
+Diskutera Jamal.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+
+2.1 Dokumentstatus
+Jonatan har inte skrivit på dokumenten sedan sist, 
+Mohamad har skrivit i SDD och tror att den är i stort sett klar. Han tror att User Storys i RADen är det som huvudsakligen är kvar där.
+Alexander LV har skrivit lite i SDDn och har flyttat tabeller från rad till SDD. Han har också skapat ett talmanus och skrivit en kort introduktion.
+Han har också gjort en powerpoint.
+
+2.2 Projektstatus
+Jonatan har fixat de problem som Jamals push innebar. Han har också lagt till vyer för resultatet i programmet.
+Mohamad har gjort klart sin User Story som handlar om upphämpting och sparning av Data.
+Alexander har inte jobbat något särskilt på koden.
+
+3. Diskussionsrunda.
+Vegard måste uppdatera SDDn och UML:et om sitt ansvarsområde.
+Alexander vill diskutera kodkvaliten, gruppen bestämmer att det krävs rensing av koden, Alexander LV tittar på detta.
+Vi behöver få in primarycontrollern i alla andra controllers, Mohamad och Jonatan tittar på detta.
+
+Gruppen är medveten om att vi har för lite test. Mer fokus kommer att läggas på detta.
+
+Vidare vill alex diskutera kursens mål/krav:
+
+    Domän and design modeller: är det logiskt och välstrukterat?
+  Gruppen finner att designmodellen är otroligt välgenomtänkt och välstrukturerad.
+   "Funktionalitet: antal fungerande User Stories och deras komplexitet."
+   Gruppen känner att vi har ganska många fungerande USer Storys.
+   "Design: föjler ni design principer och använder ni design mönster? Är det en modulär design, kan vi bygga ut applikationen på ett enkelt sätt, är det lätt att underhålla, lätt att testa?"
+   Vi känner att vi har tänkt på moduläritet framförallt när vi jobbat med programmets viktigaste delar.
+   Trots att vi konstant utvecklat med hänsyn till best practices så känner vi inte att vi implementerat nog design patterns.
+   Hur ska vi lösa det? Vi ska träffas varje dag fram till handledarmötet på en av dessa tillfällen (tisdag).
+   "Implementation: vad är den generella teknsika nivån? Använder ni rätt abstraktionsmöjligheter: generiska klasser, interfaces, abstrakta klasser, undantag, design mönster, etc."
+   Gruppen känner att vi gör detta.
+   "Tester: har ni enhetstester för alla viktiga delar av applikationen? Hur mycket täcker testerna (test coverage)?"
+   Nej vi har för lite tester, samtliga i gruppen skall dock arbeta på detta på egen hand INNAN handledarmötet.
+   "Användervänlighet: är GUI:n intuitiv och enkelt att använda?"
+   Förhållandevis, GUIt är utvecklat med de vanliga designprinciperna för GUI enligt Jennifer Tidwells bok "Designing User Interfaces" men har inte varit fokus för denna kurs.
+   "Dokumentation: är slutrapportet, som innehåller RAD, SDD, och peer-review, välskriven? Finns det relevant kommentar för alla klasser? Är Git-commit kommentarerna vettiga?"
+   Commit kommentarerna är vettiga, RAD och SDD skall ses över, Dokumentation i Kod skall också ses över men ska redan nu vara ganska väl dokumenterad.
+   Alexander ska gå igenom koden och se till att lämpliga kommentarer finns då det ingår i hans ansvarsområde gällande kodkvalitet.
+   "Kollegial granskning (peer review): hittar ni design principer och mönster eller avsaknad av dessa? Ger ni lämpligt råd att förbättra designen?"
+   Det gjorde vi.
+   "Mötesanteckningar: hur var processen, har ni arbetet tillsammans på ett konstruktivt sätt?"
+    Ja samtliga i gruppen (förutom Jamal) har varit engagerade på gruppmöten och vi har turats om med arbetsuppgifter.
+    
+Mohamad skapar ett latex dokument för slutrapporten. Rapporten kommer att arbetas på under kommande tillfällen.
+
+Gruppen vill sätta igång med slutspurten direkt.
+
+Angående Jamal, gruppen anser att det inte är lämpligt att Jamal är med på våran presentation då han inte har varit delaktig
+i arbetet och således inte förstår sig på projektets struktur eller process. Den största andledning till detta är Jamals brist
+på kommunikation och förmåga att samarbeta.
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+Vi ska träffas varje dag fram till handledarmötet, dokumenten ska vara klara tills dess.
+Under veckan kommer Alexander LV försöka koppla ihop delarna i programmet,
+resterande i gruppen kommer att framförallt jobba med tester och koddesign såvida inget annat kommer upp.
+Alla gruppmedlemmar kommer samtidigt att arbeta på dokumenten och presentationen.
+
+5. Planera nästkommande möte, boka också.
+Kolla på designmönster och försöka implementera dessa.
+nästa möte hålls 09.00 till vi känner oss färdiga. Mötet kommer att hållas i slutet av vår träff.
+Mötet hålls i KG31 i kemihuset.
