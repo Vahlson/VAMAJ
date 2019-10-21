@@ -31,10 +31,12 @@ final class YearsToBreakEvenCalculator implements Calculator{
         return data;
     }
 
+    @Override
     public Set<DataKey> getKeysOfRequiredInput() {
         return new HashSet<>(Arrays.asList(INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION, IMPORTED_ELECTRICITY_PRICE_KWH));
     }
 
+    @Override
     public Set<DataKey> getKeysOfOutput() {
         return new HashSet<>(Arrays.asList(YEARS_TO_BREAK_EVEN));
     }

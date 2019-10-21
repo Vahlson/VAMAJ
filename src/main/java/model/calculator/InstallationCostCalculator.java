@@ -55,10 +55,12 @@ final class InstallationCostCalculator implements Calculator {
         return installationCost * 0.8;
     }
 
+    @Override
     public Set<DataKey> getKeysOfRequiredInput() {
         return  new HashSet<>(Arrays.asList(AVAILABLE_SPACE, REQUIRED_PANEL_SPACE, PANEL_PRICE));
     }
 
+    @Override
     public Set<DataKey> getKeysOfOutput() {
         return new HashSet<>(Arrays.asList(INSTALLATION_COST, GOVERNMENT_SUBVENTION, SUBVENTED_INSTALLATION_COST));
     }
