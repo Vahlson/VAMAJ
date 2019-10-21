@@ -1,7 +1,6 @@
 package main.java.model.solarsetup;
 
-import java.util.List;
-
+//An implementation of the solarsetup that is roof based.
 public class RoofBasedSolarSetup extends SolarSetup {
 
     private double roofUnit;

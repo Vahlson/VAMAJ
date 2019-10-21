@@ -13,6 +13,7 @@ import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 
+//Question about wanted type of solar panel.
 public class SolarPanelQuestionViewController extends AnchorPane {
 
 
@@ -65,9 +66,11 @@ public class SolarPanelQuestionViewController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-
+        //Match width to parent.
         setLeftAnchor(this, 0.0);
         setRightAnchor(this, 0.0);
+
+        //Initialize togglegroup.
         ToggleGroup tg = new ToggleGroup();
         premiumRadio.setToggleGroup(tg);
         standardRadio.setToggleGroup(tg);
@@ -75,6 +78,7 @@ public class SolarPanelQuestionViewController extends AnchorPane {
         standardImage.setImage(new Image("/icons/images/standard.jpg"));
 
 
+        //Handle selection of item in toggleGroup
         tg.selectedToggleProperty().addListener(new ChangeListener <Toggle>() {
 
             @Override
@@ -84,10 +88,12 @@ public class SolarPanelQuestionViewController extends AnchorPane {
                     RadioButton selected = (RadioButton) tg.getSelectedToggle();
 
                     if (selected.equals(premiumRadio)) {
-
+                        //Do something with premium selection.
                         System.out.println(1);
 
                     } else
+                        //Do something with standard selection.
+
                         System.out.println(2);
                 }
             }

@@ -1,5 +1,6 @@
 package main.java.model.contract;
 
+// Implementaion of a contract that is of the static type.
 public class FixedContract extends Contract {
 
     public FixedContract(String contractCity, int cost, double contractDuration) {

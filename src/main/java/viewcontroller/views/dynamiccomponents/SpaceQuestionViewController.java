@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import main.java.viewcontroller.views.MainViewController;
 import java.io.IOException;
 
-
+//Question about available space of the potential solarinstallation.
 public class SpaceQuestionViewController extends AnchorPane {
 
     MainViewController parentController;
@@ -30,6 +30,7 @@ public class SpaceQuestionViewController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        //Match width to parent.
         setLeftAnchor(this,0.0);
         setRightAnchor(this,0.0);
     }

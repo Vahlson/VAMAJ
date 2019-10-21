@@ -3,6 +3,7 @@ package main.java.model.solarsetup;
 import java.util.ArrayList;
 import java.util.List;
 
+//Object that holds the information about a solar setup.
 public abstract class SolarSetup {
 
     // Member variables

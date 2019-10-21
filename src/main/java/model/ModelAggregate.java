@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //(2)Vegard
-
+//The aggregate object of the model, orchestrates the interactions between the calculator and model data.
 class ModelAggregate {
 
     private User currentUser;

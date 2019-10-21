@@ -17,12 +17,11 @@ import main.java.viewcontroller.views.dynamiccomponents.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//The controller of the main view of the program controls the interaction of the main view.
+//Input and communication with the model is accessed through the primaryController.
 public class MainViewController extends AnchorPane implements Initializable {
     private int state = 0;
     private PrimaryController primaryController;
-
-    @FXML
-    private Button installationButton;
 
     @FXML
     private ScrollPane questionScrollPane;
@@ -53,10 +52,11 @@ public class MainViewController extends AnchorPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        //clearing the list and initializing question indicator.
         questionList.getChildren().clear();
         questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
-        //questionList.getChildren().add(new PersonalQuestionViewController(this));
-        //TESTAR
+
+        //Adding questions to the list
         questionList.getChildren().add(new PersonalQuestionViewController(this));
         questionList.getChildren().add(new PropertyQuestionViewController(this));
         questionList.getChildren().add(new SolarPanelQuestionViewController(this));
@@ -64,47 +64,41 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionList.getChildren().add(new SpaceQuestionViewController(this));
         questionList.getChildren().add(new InstallationCostResultViewController(this)); //Temporary, should be in the results view
 
-        // Temporary add to get mock functionality
-        installationButton.setOnAction(event -> {
-            PrimaryController.setScene("/fxml/installationscene.fxml");
-        });
 
+
+        //EVENTS for nodes of the program
+
+        //go to resultpage and show results.
         calculateButton.setOnAction(event -> {
             PrimaryController.setScene("/fxml/resultscene.fxml");
         });
 
+        //scroll to next question
         upNavigation.setOnAction(event -> {
             if (state > 0) {
                 slowScrollToNode(--state);
-
             }
-
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
-
 
         });
 
+        //scroll to previous question
         downNavigation.setOnAction(event -> {
             if (state < questionList.getChildren().size() - 1) {
                 slowScrollToNode(++state);
             }
-            System.out.println(state);
-
-
             questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         });
 
     }
 
+    //Scrolls the scrollbar to specified node. (doesnt work properly)
     private void slowScrollToNode(int node) {
 
         double scrollPaneHeight = questionList.getHeight();
         double nodeHeight = questionList.getChildren().get(node).getLayoutBounds().getHeight();
         double relativeY = questionList.getChildren().get(node).getBoundsInParent().getMinY() + nodeHeight;
-        System.out.println(relativeY);
-        System.out.println("scrollpaneHeight: " + scrollPaneHeight);
-        System.out.println(questionList.getChildren().get(node));
 
         double scrollProcent = relativeY / scrollPaneHeight;
 
@@ -114,7 +108,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     }
 
-
+// scrolls scrollpane to specified percentage.
     private void slowScrollToPosition(ScrollPane scrollPane, double pos) {
 
         Animation animation = new Timeline(
@@ -123,9 +117,5 @@ public class MainViewController extends AnchorPane implements Initializable {
         animation.play();
     }
 
-    public void progressBarController() {
-
-
-    }
 
 }

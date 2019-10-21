@@ -9,6 +9,7 @@ import main.java.viewcontroller.PrimaryController;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//TODO DELETA DENNA
 public class InstallationViewController implements Initializable {
 
     PrimaryController primaryController;

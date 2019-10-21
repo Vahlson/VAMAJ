@@ -2,6 +2,7 @@ package main.java.services.LocationCreator;
 
 import main.java.model.property.Location;
 
+//TODO MAYBE UNNESSESARY.
 public class LocationCreatorFile implements ILocationCreator{
     @Override
     public Location createLocation() {

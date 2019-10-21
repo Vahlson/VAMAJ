@@ -1,5 +1,6 @@
 package main.java.model.contract;
 
+//An electricity provider contract, holding relevant information about that.
 public abstract class Contract {
     private String contractProvider;
     private String contractCity;

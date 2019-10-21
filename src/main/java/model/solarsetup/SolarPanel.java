@@ -1,5 +1,6 @@
 package main.java.model.solarsetup;
 
+//Representation of a singel solar panel.
 public class SolarPanel {
     private double size;
     private double productionPerHour;
