@@ -8,6 +8,7 @@ import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 
+//Question about the user.
 public class PersonalQuestionViewController extends AnchorPane {
     MainViewController parentController;
 
@@ -39,8 +40,27 @@ public class PersonalQuestionViewController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        //Match width to parent.
         setLeftAnchor(this,0.0);
         setRightAnchor(this,0.0);
+
+
+
+        //EVENTS for nodes of the program
+
+
+        firstnameField.textProperty().addListener((observable, oldValue, newValue) -> {
+            //Set value in user.
+        });
+        lastNameField.textProperty().addListener((observable, oldValue, newValue) -> {
+            //Set value in user.
+        });
+        mailField.textProperty().addListener((observable, oldValue, newValue) -> {
+            //Set value in user.
+        });
+        phoneField.textProperty().addListener((observable, oldValue, newValue) -> {
+            //Set value in user.
+        });
 
     }
 }

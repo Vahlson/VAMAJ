@@ -1,25 +1,22 @@
 package main.java.model.solarsetup;
 
-import java.util.List;
-
+//An implementation of the solarsetup that is roof based.
 public class RoofBasedSolarSetup extends SolarSetup {
 
     private double roofUnit;
 
-    public RoofBasedSolarSetup(List <SolarPanel> solarPanels , double totalEfficiency, double installationCost, double spaceRequired, double squareMeters) {
+    public RoofBasedSolarSetup(double installationCost, double squareMeters, double totalEfficiency) {
+        super();
         super.setInstallationCost(installationCost);
-        super.setSolarPanels(solarPanels);
         super.setSquareMeters(squareMeters);
         super.setTotalEfficiency(totalEfficiency);
-
     }
 
     public double getRoofUnit() {
         return this.roofUnit;
     }
 
-
-
-
-
+    public void setRoofUnit(double roofUnit) {
+        this.roofUnit = roofUnit;
+    }
 }

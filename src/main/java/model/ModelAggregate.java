@@ -16,7 +16,8 @@ import static main.java.model.calculator.DataKey.*;
 
 //(2)Vegard
 
-public class ModelAggregate {
+//The aggregate object of the model, orchestrates the interactions between the calculator and model data.
+class ModelAggregate {
 
     private User currentUser;
     private List<User> users;

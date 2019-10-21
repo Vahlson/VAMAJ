@@ -1,9 +1,10 @@
 package main.java.model.contract;
 
+// Implementaion of a contract that is of the dynamic type.
 public class DynamicContract extends Contract {
 
-    public DynamicContract(String contractProvider, String contractCity, int cost, double contractDuration) {
-        super(contractProvider, contractCity, cost, contractDuration);
+    public DynamicContract(String contractCity, int cost, double contractDuration) {
+        super(contractCity, cost, contractDuration);
     }
 
     public double extraTariffCost() {

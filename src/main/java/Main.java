@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import main.java.model.ModelFacade;
 import main.java.viewcontroller.PrimaryController;
 
+
+//The main class of the program, starts the program and initializes base components.
 public class Main extends Application {
     public static void main(String[] args) {
 

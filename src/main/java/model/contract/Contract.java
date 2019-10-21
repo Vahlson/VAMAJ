@@ -1,13 +1,14 @@
 package main.java.model.contract;
 
+//An electricity provider contract, holding relevant information about that.
 public abstract class Contract {
     private String contractProvider;
     private String contractCity;
     private double contractDuration;
     private int cost;
 
-    public Contract(String contractProvider, String contractCity, int cost, double contractDuration) {
-        this.contractProvider = contractProvider;
+    public Contract(String contractCity, int cost, double contractDuration) {
+        this.contractProvider = "Generic Contract Provider";
         this.contractCity = contractCity;
         this.cost = cost;
         this.contractDuration = contractDuration;

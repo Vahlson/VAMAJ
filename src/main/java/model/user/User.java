@@ -6,6 +6,7 @@ import main.java.model.property.Property;
 import java.util.ArrayList;
 import java.util.List;
 
+//The user of the program, the highest level object in the model.
 public class User {
 
     // Member variables

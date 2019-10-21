@@ -7,6 +7,7 @@ import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
 
 // (3.1) Alexander Ask
+//The primary controller holds the connections between the different view controllers and the model.
 public class PrimaryController {
 
     // Member variables
@@ -14,7 +15,8 @@ public class PrimaryController {
     private ModelFacade modelFacade;
     private ServiceFacade serviceFacade;
 
-    // Hidden constructor
+    //Construcor of the PrimaryController, a model facade and stage is passed as parameters upon creation so that
+    //they are created and "live" in main instead.
     public PrimaryController(ModelFacade modelFacade, Stage stage) {
         this.modelFacade = modelFacade;
         sceneSwitcher = new SceneSwitcher(stage);
@@ -23,10 +25,7 @@ public class PrimaryController {
     }
 
 
-    //TODO ADD MORE FUNCTIONS THAT COMMUNICATE WITH THE REST OF THE PROGRAM
     //These are called from the separate view controllers.
-
-
     // Setters (for API)
     void setLocationFromAPI(double latitude, double longitude) {
         serviceFacade.setLocationCreator(new LocationCreatorAPI());
@@ -38,10 +37,6 @@ public class PrimaryController {
         serviceFacade.setContractCreator(new ContractCreatorAPI());
         modelFacade.setContract(serviceFacade.getContract());
     }
-
-    // Setters
-
-
 
     // Getters
     public ModelFacade getModelFacade() {

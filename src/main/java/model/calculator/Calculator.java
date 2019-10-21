@@ -3,7 +3,6 @@ package main.java.model.calculator;
 //Vegard
 //Common interface for all calculators in package
 
-
 import java.util.HashMap;
 import java.util.Set;
 

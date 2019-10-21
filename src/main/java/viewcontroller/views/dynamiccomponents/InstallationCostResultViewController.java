@@ -8,6 +8,7 @@ import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 
+//TODO IDFK WTF THIS SHIIIIIII IS MANE.
 public class InstallationCostResultViewController extends AnchorPane {
 
     MainViewController parentController;

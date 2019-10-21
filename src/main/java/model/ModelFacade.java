@@ -5,6 +5,7 @@ import main.java.model.contract.Contract;
 import main.java.model.property.Location;
 import main.java.model.solarsetup.SolarSetup;
 
+//The model's face outward towards the rest of the program. Exposes wanted functionality outward.
 public class ModelFacade {
 
     private ModelAggregate modelAggregate;

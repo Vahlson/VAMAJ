@@ -7,7 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-// Scene switcher class
+// Class that functions as a dedicated Scene Switcher of the Javafx Scenes in the program.
+// Deligates such responsibility for code reusage och cleanliness.
 public class SceneSwitcher {
 
     // Parent stage
