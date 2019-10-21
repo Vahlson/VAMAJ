@@ -25,15 +25,9 @@ public class PropertyQuestionViewController extends AnchorPane {
     public PropertyQuestionViewController(MainViewController parentController){
         this.parentController = parentController;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/propertyquestion.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
+        //initialize this controller as a javafx node while coupling it with a fxml.
+        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/propertyquestion.fxml",this);
 
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
 
         //Match width to parent.
         setLeftAnchor(this,0.0);

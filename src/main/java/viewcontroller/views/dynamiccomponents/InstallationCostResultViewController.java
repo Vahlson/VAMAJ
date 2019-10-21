@@ -24,16 +24,10 @@ public class InstallationCostResultViewController extends AnchorPane {
     public InstallationCostResultViewController(MainViewController parentController){
         this.parentController = parentController;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/installationcostresult.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
+        //initialize this controller as a javafx node while coupling it with a fxml.
+        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/installationcostresult.fxml",this);
 
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
+        //Match width to parent.
         setLeftAnchor(this,0.0);
         setRightAnchor(this,0.0);
 

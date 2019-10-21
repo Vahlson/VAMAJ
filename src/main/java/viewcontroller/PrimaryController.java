@@ -65,6 +65,20 @@ public class PrimaryController {
             return null;
         }
     }
+    public void initDynamicComponent(String url, Object controller) {
+
+        // Creating the FXMLLoader and loading the given url
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(url));
+        fxmlLoader.setRoot(controller);
+        fxmlLoader.setController(controller);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
+    }
 
 
     //These are called from the separate view controllers.

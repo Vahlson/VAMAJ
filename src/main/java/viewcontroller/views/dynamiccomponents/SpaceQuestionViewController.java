@@ -20,16 +20,8 @@ public class SpaceQuestionViewController extends AnchorPane {
 
         this.parentController = parentController;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/spacequestion.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
+        //initialize this controller as a javafx node while coupling it with a fxml.
+        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/spacequestion.fxml",this);
         //Match width to parent.
         setLeftAnchor(this,0.0);
         setRightAnchor(this,0.0);

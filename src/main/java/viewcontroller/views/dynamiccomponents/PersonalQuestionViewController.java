@@ -30,15 +30,8 @@ public class PersonalQuestionViewController extends AnchorPane {
     public PersonalQuestionViewController(MainViewController parentController){
         this.parentController = parentController;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/personalquestion.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        //initialize this controller as a javafx node while coupling it with a fxml.
+        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/personalquestion.fxml",this);
 
         //Match width to parent.
         setLeftAnchor(this,0.0);

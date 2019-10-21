@@ -56,16 +56,10 @@ public class SolarPanelQuestionViewController extends AnchorPane {
 
         this.parentController = parentController;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dynamic/SolarPanelQuestion.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
 
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
+        //initialize this controller as a javafx node while coupling it with a fxml.
+        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/SolarPanelQuestion.fxml",this);
+        
         //Match width to parent.
         setLeftAnchor(this, 0.0);
         setRightAnchor(this, 0.0);
