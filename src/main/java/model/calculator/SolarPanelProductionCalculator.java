@@ -10,10 +10,8 @@ import static main.java.model.calculator.DataKey.*;
 // (4.1) arcsak
 final class SolarPanelProductionCalculator implements Calculator {
 
-    private final Set<DataKey> requiredInput = new HashSet<>(Arrays.asList(SOLAR_PANEL_AREA, SOLAR_PANEL_EFFICIENCY, AVERAGE_SOLAR_RADIATION, PANEL_PERFORMANCE_RATIO));
-    private final Set<DataKey> output = new HashSet<>(Arrays.asList(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT));
-
     SolarPanelProductionCalculator() {
+
     }
 
     // Calculate method
@@ -38,13 +36,11 @@ final class SolarPanelProductionCalculator implements Calculator {
         return data;
     }
 
-    @Override
-    public Set<DataKey> getRequiredInput() {
-        return requiredInput;
+    public Set<DataKey> getKeysOfRequiredInput() {
+        return  new HashSet<>(Arrays.asList(SOLAR_PANEL_AREA, SOLAR_PANEL_EFFICIENCY, AVERAGE_SOLAR_RADIATION, PANEL_PERFORMANCE_RATIO));
     }
 
-    @Override
-    public Set<DataKey> getOutput() {
-        return output;
+    public Set<DataKey> getKeysOfOutput() {
+        return new HashSet<>(Arrays.asList(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT));
     }
 }

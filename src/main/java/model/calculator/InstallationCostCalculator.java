@@ -13,10 +13,9 @@ import static main.java.model.calculator.DataKey.*;
 
 final class InstallationCostCalculator implements Calculator {
 
-    private final Set<DataKey> requiredInput = new HashSet<>(Arrays.asList(AVAILABLE_SPACE, REQUIRED_PANEL_SPACE, PANEL_PRICE));
-    private final Set<DataKey> output = new HashSet<>(Arrays.asList(INSTALLATION_COST, GOVERNMENT_SUBVENTION, SUBVENTED_INSTALLATION_COST));
 
     InstallationCostCalculator() {
+
     }
 
 
@@ -29,6 +28,7 @@ final class InstallationCostCalculator implements Calculator {
         double requiredPanelSpace = input.get(REQUIRED_PANEL_SPACE);
         double panelPrice = input.get(PANEL_PRICE);
 
+
         double installationCost = installationCost(availableSpace, requiredPanelSpace, panelPrice);
         double governmentSubvention = subventionAmount(installationCost);
         double subventedInstallationCost = subventedCost(installationCost);
@@ -36,6 +36,7 @@ final class InstallationCostCalculator implements Calculator {
         data.put(INSTALLATION_COST, installationCost);
         data.put(GOVERNMENT_SUBVENTION, governmentSubvention);
         data.put(SUBVENTED_INSTALLATION_COST, subventedInstallationCost);
+
         return data;
     }
 
@@ -54,13 +55,11 @@ final class InstallationCostCalculator implements Calculator {
         return installationCost * 0.8;
     }
 
-    @Override
-    public Set<DataKey> getRequiredInput() {
-        return requiredInput;
+    public Set<DataKey> getKeysOfRequiredInput() {
+        return  new HashSet<>(Arrays.asList(AVAILABLE_SPACE, REQUIRED_PANEL_SPACE, PANEL_PRICE));
     }
 
-    @Override
-    public Set<DataKey> getOutput() {
-        return output;
+    public Set<DataKey> getKeysOfOutput() {
+        return new HashSet<>(Arrays.asList(INSTALLATION_COST, GOVERNMENT_SUBVENTION, SUBVENTED_INSTALLATION_COST));
     }
 }

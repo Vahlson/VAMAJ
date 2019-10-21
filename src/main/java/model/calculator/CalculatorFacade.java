@@ -23,19 +23,21 @@ public final class CalculatorFacade {
 
         while (it.hasNext()){
             Calculator calc = it.next();
-            if(data.keySet().containsAll(calc.getRequiredInput())){
-                data = calc.calculate(data);
+            if(data.keySet().containsAll(calc.getKeysOfRequiredInput())){
+                System.out.println(data + " " + calc.getKeysOfRequiredInput());
+                data = calc.calculate(input);
                 it.remove();
                 it = calculatorList.iterator();
             }
         }
         return data;
     }
-    public static HashMap<DataKey, Double> calculateSpecific(DataKey key, HashMap<DataKey, Double> input){
 
+
+    public static HashMap<DataKey, Double> calculateSpecific(DataKey key, HashMap<DataKey, Double> input){
         for (Calculator calc: calculatorList) {
-            if (calc.getOutput().contains(key)) {
-                if (input.keySet().containsAll((calc.getRequiredInput()))) {
+            if (calc.getKeysOfOutput().contains(key)) {
+                if (input.keySet().containsAll((calc.getKeysOfRequiredInput()))) {
                     return calc.calculate(input);
                 } else {
                     throw new NullPointerException("Insufficient data for meaningful answer");
