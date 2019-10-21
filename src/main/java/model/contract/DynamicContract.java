@@ -2,8 +2,8 @@ package main.java.model.contract;
 
 public class DynamicContract extends Contract {
 
-    public DynamicContract(String contractProvider, String contractCity, int cost, double contractDuration) {
-        super(contractProvider, contractCity, cost, contractDuration);
+    public DynamicContract(String contractCity, int cost, double contractDuration) {
+        super(contractCity, cost, contractDuration);
     }
 
     public double extraTariffCost() {

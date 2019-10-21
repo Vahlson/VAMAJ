@@ -15,15 +15,17 @@ public class SolarPanel {
 
     }
 
-    public SolarPanel(double requiredSpace, double productionPerHour, double lifeExpectancy, double retailPrice, double wattage, String panelName, String panelManufacturer) {
+    public SolarPanel(double requiredSpace, double retailPrice, double wattage) {
         this.size = requiredSpace;
-        this.productionPerHour = productionPerHour;
-        this.lifeExpectancy = lifeExpectancy;
+        this.productionPerHour = 0;
         this.retailPrice = retailPrice;
         this.wattage = wattage;
-        this.panelName = panelName;
-        this.panelManufacturer = panelManufacturer;
+        this.lifeExpectancy = 20;
+        this.panelName = "Generic Panel";
+        this.panelManufacturer = "Generic Panel Manufacturer";
     }
+
+    //Getters
 
     public double getSize() {
         return this.size;
@@ -61,6 +63,33 @@ public class SolarPanel {
     }
 
 
+    //Setter
 
+    public void setSize(double size) {
+        this.size = size;
+    }
 
+    public void setProductionPerHour(double productionPerHour) {
+        this.productionPerHour = productionPerHour;
+    }
+
+    public void setLifeExpectancy(double lifeExpectancy) {
+        this.lifeExpectancy = lifeExpectancy;
+    }
+
+    public void setRetailPrice(double retailPrice) {
+        this.retailPrice = retailPrice;
+    }
+
+    public void setWattage(double wattage) {
+        this.wattage = wattage;
+    }
+
+    public void setPanelName(String panelName) {
+        this.panelName = panelName;
+    }
+
+    public void setPanelManufacturer(String panelManufacturer) {
+        this.panelManufacturer = panelManufacturer;
+    }
 }

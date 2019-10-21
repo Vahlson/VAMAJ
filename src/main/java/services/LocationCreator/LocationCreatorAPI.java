@@ -8,7 +8,6 @@ import java.util.*;
 import main.java.services.ApiJSONParser;
 import main.java.services.ApiParser;
 import org.json.JSONArray;
-//import org.json.JSONException;
 import org.json.JSONObject;
 
 //(3.1) Alex LV och Alex Ask
@@ -80,7 +79,6 @@ public class LocationCreatorAPI implements ILocationCreator{
             JSONObject parameter = (JSONObject) properties.get("parameter");
             return  (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
 
-            //TODO ÄNDRA TILL JSONEXCEPTION
         }catch (Exception e){
             //If object does'nt follow above structure, the api provides an error message.
             //Here we try to get the error message and throw it as a new error.

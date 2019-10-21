@@ -3,7 +3,7 @@ package main.java.model.solarsetup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolarSetup {
+public abstract class SolarSetup {
 
     // Member variables
     private List<SolarPanel> solarPanels;
