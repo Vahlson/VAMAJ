@@ -31,7 +31,7 @@ public final class CalculatorFacade {
 
         while (it.hasNext()){
             Calculator calc = it.next();
-            if(output.keySet().containsAll(calc.getRequiredInput())){
+            if(output.keySet().containsAll(calc.getKeysOfRequiredInput())){
                 System.out.println("Calculations successful for the: " + calc.toString());
                 output = calc.calculate(output);
                 it.remove();
@@ -43,11 +43,12 @@ public final class CalculatorFacade {
         }
         return output;
     }
-    public static HashMap<DataKey, Double> calculateSpecific(DataKey key, HashMap<DataKey, Double> input){
 
+
+    public static HashMap<DataKey, Double> calculateSpecific(DataKey key, HashMap<DataKey, Double> input){
         for (Calculator calc: calculatorList) {
-            if (calc.getOutput().contains(key)) {
-                if (input.keySet().containsAll((calc.getRequiredInput()))) {
+            if (calc.getKeysOfOutput().contains(key)) {
+                if (input.keySet().containsAll((calc.getKeysOfRequiredInput()))) {
                     return calc.calculate(input);
                 } else {
                     throw new NullPointerException("Insufficient data for meaningful answer");

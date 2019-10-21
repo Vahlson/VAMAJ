@@ -11,9 +11,6 @@ import static main.java.model.calculator.DataKey.*;
 
 final class LevelizedCostOfElectricityCalculator implements Calculator{
 
-    private final Set<DataKey> requiredInput = new HashSet<>(Arrays.asList(EXPECTED_LIFESPAN, INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION));
-    private final Set<DataKey> output = new HashSet<>(Arrays.asList(LEVELIZED_ELECTRICITY_COST));
-
     LevelizedCostOfElectricityCalculator() {
     }
 
@@ -35,15 +32,14 @@ final class LevelizedCostOfElectricityCalculator implements Calculator{
         data.put(LEVELIZED_ELECTRICITY_COST, levelizedCost);
         return data;
     }
-
     @Override
-    public Set<DataKey> getRequiredInput() {
-        return requiredInput;
+    public Set<DataKey> getKeysOfRequiredInput() {
+        return new HashSet<>(Arrays.asList(EXPECTED_LIFESPAN, INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION));
     }
 
     @Override
-    public Set<DataKey> getOutput() {
-        return output;
+    public Set<DataKey> getKeysOfOutput() {
+        return new HashSet<>(Arrays.asList(LEVELIZED_ELECTRICITY_COST));
     }
 
     @Override
