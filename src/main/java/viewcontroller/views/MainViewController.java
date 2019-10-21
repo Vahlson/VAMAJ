@@ -83,7 +83,7 @@ public class MainViewController extends AnchorPane implements Initializable {
         //go to resultpage and show results.
         calculateButton.setOnAction(event -> {
             System.out.println("now");
-            primaryController.setScene(primaryController.getResultView());
+            primaryController.goToResultView();
         });
 
         //scroll to next question

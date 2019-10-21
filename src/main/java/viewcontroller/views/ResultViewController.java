@@ -37,6 +37,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     public ResultViewController(PrimaryController primaryController) {
         this.primaryController = primaryController;
+
         // textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
     }
 
@@ -44,17 +45,22 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        textArea1.appendText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
+        primaryController.getModelFacade().addCalculationData(DataKey.INSTALLATION_COST,0);
+
         //textArea1.appendText("" + primaryController.getModelFacade().getCalculationResults(DataKey.ANNUAL_ELECTRICITY_PRODUCTION));
+
     }
 
+    public void fillResultView(){
+        textArea1.appendText("" + primaryController.getModelFacade().getCalculationResult(DataKey.INSTALLATION_COST));
+    }
 
 
     //Goes back to the main view.
     @FXML
     private void toMainView(ActionEvent event) {
 
-        primaryController.setScene("/fxml/mainscene.fxml");
+        primaryController.goToMainView();
     }
 }
 

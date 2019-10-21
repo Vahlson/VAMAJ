@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import main.java.model.calculator.DataKey;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
@@ -59,7 +60,7 @@ public class SolarPanelQuestionViewController extends AnchorPane {
 
         //initialize this controller as a javafx node while coupling it with a fxml.
         parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/SolarPanelQuestion.fxml",this);
-        
+
         //Match width to parent.
         setLeftAnchor(this, 0.0);
         setRightAnchor(this, 0.0);
@@ -83,12 +84,22 @@ public class SolarPanelQuestionViewController extends AnchorPane {
 
                     if (selected.equals(premiumRadio)) {
                         //Do something with premium selection.
-                        System.out.println(1);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PANEL_PRICE,9999);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.REQUIRED_PANEL_SPACE,9999);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PRODUCED_ELECTRICITY,9999);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.SOLAR_PANEL_EFFICIENCY,9999);
 
-                    } else
+
+
+                    } else{
                         //Do something with standard selection.
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PANEL_PRICE,1);
+                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.REQUIRED_PANEL_SPACE,9999);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.PRODUCED_ELECTRICITY,1);
+//                        parentController.getPrimaryController().getModelFacade().addCalculationData(DataKey.SOLAR_PANEL_EFFICIENCY,1);
+                    }
 
-                        System.out.println(2);
+
                 }
             }
         });

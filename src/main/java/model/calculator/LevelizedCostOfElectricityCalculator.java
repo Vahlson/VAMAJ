@@ -45,4 +45,9 @@ final class LevelizedCostOfElectricityCalculator implements Calculator{
     public Set<DataKey> getOutput() {
         return output;
     }
+
+    @Override
+    public String toString(){
+        return "LevelizedCostOfElectricityCalculator";
+    }
 }

@@ -47,4 +47,9 @@ final class SolarPanelProductionCalculator implements Calculator {
     public Set<DataKey> getOutput() {
         return output;
     }
+
+    @Override
+    public String toString(){
+        return "SolarPanelProductionCalculator";
+    }
 }

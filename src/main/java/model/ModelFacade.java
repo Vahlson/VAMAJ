@@ -48,8 +48,13 @@ public class ModelFacade {
         modelAggregate.runCalculators();
     }
 
-    // Getter(s)
-    public Double getCalculationResults(DataKey key) {
+    // Getter for results of calculation(s)
+    public Double getCalculationResult(DataKey key) {
         return modelAggregate.getCalculationResult(key);
+    }
+
+    //Adding data for calculations.
+    public void addCalculationData(DataKey key, double value){
+        modelAggregate.addCalculationData(key, value);
     }
 }

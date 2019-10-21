@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.java.Main;
 import main.java.model.ModelFacade;
@@ -41,10 +42,7 @@ public class PrimaryController {
 
         // MAIN_VIEW = new Scene(new MainViewController(this));
 
-        mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
-        resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
-
-        sceneSwitcher.setScene(mainView);
+        goToMainView();
     }
 
     private Scene initComponent(String url, Object controller) {
@@ -80,6 +78,15 @@ public class PrimaryController {
 
     }
 
+    // Method that configures text field to only accept numbers
+    public void onlyNumbers(TextField tf) {
+        tf.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                tf.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+    }
+
 
     //These are called from the separate view controllers.
     // Setters (for API)
@@ -99,12 +106,16 @@ public class PrimaryController {
         return modelFacade;
     }
 
-    public Scene getMainView() {
-        return mainView;
+    public void goToMainView() {
+
+        Scene mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
+        setScene(mainView);
+
     }
 
-    public Scene getResultView() {
-        return resultView;
+    public void goToResultView() {
+        Scene resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
+        setScene(resultView);
     }
 
     // SceneSwitcher delegation

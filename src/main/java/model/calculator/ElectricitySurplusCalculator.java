@@ -47,4 +47,9 @@ final class ElectricitySurplusCalculator implements Calculator{
     public Set<DataKey> getOutput() {
         return output;
     }
+
+    @Override
+    public String toString(){
+        return "ElectricitySurplusCalculator";
+    }
 }

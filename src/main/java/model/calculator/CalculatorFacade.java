@@ -1,5 +1,6 @@
 package main.java.model.calculator;
 
+import javax.xml.crypto.Data;
 import java.util.*;
 
 public final class CalculatorFacade {
@@ -15,21 +16,25 @@ public final class CalculatorFacade {
 
     private CalculatorFacade(){}
 
-    public static HashMap<DataKey, Double> calculateAll(HashMap<DataKey, Double> input){
+    public static HashMap<DataKey, Double> calculateAll(HashMap<DataKey, Double> wantedOutput){
 
-        HashMap<DataKey, Double> data = new HashMap<>(input);
+        HashMap<DataKey, Double> output = new HashMap<>(wantedOutput);
+
 
         Iterator<Calculator> it = calculatorList.iterator();
 
         while (it.hasNext()){
             Calculator calc = it.next();
-            if(data.keySet().containsAll(calc.getRequiredInput())){
-                data = calc.calculate(data);
+            if(output.keySet().containsAll(calc.getRequiredInput())){
+                output = calc.calculate(output);
                 it.remove();
                 it = calculatorList.iterator();
+            }else{
+                System.out.println("Insufficient Input for the: " + calc.toString());
+
             }
         }
-        return data;
+        return output;
     }
     public static HashMap<DataKey, Double> calculateSpecific(DataKey key, HashMap<DataKey, Double> input){
 
