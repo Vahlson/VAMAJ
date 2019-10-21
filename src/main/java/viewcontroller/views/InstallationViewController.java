@@ -48,7 +48,7 @@ public class InstallationViewController implements Initializable {
         });
 
         // Initializing back button functionality
-        backButton.setOnAction(event -> PrimaryController.setScene("/fxml/mainscene.fxml"));
+        // backButton.setOnAction(event -> PrimaryController.setScene("/fxml/mainscene.fxml"));
     }
 
     // Method that configures text field to only accept numbers

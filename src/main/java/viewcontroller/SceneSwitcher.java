@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 // Class that functions as a dedicated Scene Switcher of the Javafx Scenes in the program.
-// Deligates such responsibility for code reusage och cleanliness.
+// Delegates such responsibility for code reuse och cleanliness.
 public class SceneSwitcher {
 
     // Parent stage
@@ -34,12 +34,18 @@ public class SceneSwitcher {
         }
     }
 
+    // Sets scene to given scene
+    public void setScene(Scene scene) {
+        stage.setScene(scene);
+    }
+
     // Loads FXML-files and returns as parent
     private Parent load(String url) {
         try {
             return FXMLLoader.load(getClass().getResource(url));
         } catch (IOException e) {
-            System.err.println("Failed to load resource in SceneSwitcher: " + e.getMessage());
+            System.err.println("Failed to load resource in SceneSwitcher: " + url);
+            System.err.println("Error message: " + e.getMessage());
             return null;
         }
     }

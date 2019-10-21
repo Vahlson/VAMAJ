@@ -3,7 +3,9 @@ package main.java.viewcontroller.views;
 
 import javafx.animation.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -14,6 +16,7 @@ import javafx.util.Duration;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.dynamiccomponents.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,8 +47,14 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private ProgressBar progressBar;
 
-    public MainViewController() {
+    public MainViewController(PrimaryController controller) {
+        this.primaryController = controller;
+        System.out.println("in here");
 
+    }
+
+    public void setPrimaryController(PrimaryController primaryController) {
+        this.primaryController = primaryController;
     }
 
 
@@ -65,12 +74,12 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionList.getChildren().add(new InstallationCostResultViewController(this)); //Temporary, should be in the results view
 
 
-
         //EVENTS for nodes of the program
 
         //go to resultpage and show results.
         calculateButton.setOnAction(event -> {
-            PrimaryController.setScene("/fxml/resultscene.fxml");
+            System.out.println("now");
+            primaryController.setScene(primaryController.getResultView());
         });
 
         //scroll to next question
@@ -93,6 +102,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     }
 
+
     //Scrolls the scrollbar to specified node. (doesnt work properly)
     private void slowScrollToNode(int node) {
 
@@ -104,11 +114,11 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         System.out.println(scrollProcent);
 
-            slowScrollToPosition(questionScrollPane, scrollProcent);
+        slowScrollToPosition(questionScrollPane, scrollProcent);
 
     }
 
-// scrolls scrollpane to specified percentage.
+    // scrolls scrollpane to specified percentage.
     private void slowScrollToPosition(ScrollPane scrollPane, double pos) {
 
         Animation animation = new Timeline(

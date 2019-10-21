@@ -26,14 +26,18 @@ public class ModelAggregate {
     private HashMap<DataKey, Double> localData;
 
     public ModelAggregate() {
+        localData = new HashMap<>();
         users = new ArrayList<>();
         currentUser = new User();
         users.add(currentUser);
+        runCalculators();
     }
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
         HashMap<DataKey, Double> data = new HashMap<>();
+
+        data.put(INSTALLATION_COST, 1337D);
 
         localData = CalculatorFacade.calculateAll(data);
     }

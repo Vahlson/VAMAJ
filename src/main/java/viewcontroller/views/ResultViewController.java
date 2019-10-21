@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import main.java.model.calculator.DataKey;
 import main.java.viewcontroller.PrimaryController;
 
 import java.net.URL;
@@ -15,8 +16,10 @@ import java.util.ResourceBundle;
 // The controller of the result view, the user ends up here upon calculation.
 public class ResultViewController extends AnchorPane implements Initializable {
 
-    PrimaryController primaryController;
+    // Member variables
+    private PrimaryController primaryController;
 
+    //  FXML-Components
     @FXML
     AnchorPane resultViewRoot;
 
@@ -32,20 +35,25 @@ public class ResultViewController extends AnchorPane implements Initializable {
     @FXML
     private Button exitButton;
 
-    public ResultViewController( ) {
-
+    public ResultViewController(PrimaryController primaryController) {
+        this.primaryController = primaryController;
+        // textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
     }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
+        textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
     }
+
+
 
     //Goes back to the main view.
     @FXML
-    private void toMainView(ActionEvent event)  {
+    private void toMainView(ActionEvent event) {
 
-        PrimaryController.setScene("/fxml/mainscene.fxml");
+        primaryController.setScene("/fxml/mainscene.fxml");
     }
 }
 

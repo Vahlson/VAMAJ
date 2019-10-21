@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
 import main.java.viewcontroller.PrimaryController;
+import main.java.viewcontroller.views.MainViewController;
 
 
 //The main class of the program, starts the program and initializes base components.
@@ -19,8 +20,9 @@ public class Main extends Application {
         launch(args);
     }
 
+    // Start method, launches the application and initializes all model components
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
 
         // Creating the model facade
         ModelFacade modelFacade;
@@ -29,15 +31,7 @@ public class Main extends Application {
         // Creating the primary controller
         new PrimaryController(modelFacade, stage);
 
-        // Loads the parent FXML-File
-        Parent p = FXMLLoader.load(getClass().getResource("/fxml/mainscene.fxml"));
-
-        // Creating the scene (temp)
-        Scene scene;
-        scene = new Scene(p);
-
-        // Creating the stage (temp)
-        stage.setScene(scene);
+        // Initializing an empty stage (window)
         stage.setTitle("Solar Calculation App");
         stage.show();
     }
