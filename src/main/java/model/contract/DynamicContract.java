@@ -10,7 +10,7 @@ public class DynamicContract extends Contract {
     public double extraTariffCost() {
 
         double extraFee = 1.2;
-        return getCost() * extraFee;
+        return getMonthlyCost() * extraFee;
 
     }
 }

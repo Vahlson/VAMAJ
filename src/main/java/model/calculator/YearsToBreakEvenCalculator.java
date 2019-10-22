@@ -22,7 +22,7 @@ final class YearsToBreakEvenCalculator implements Calculator{
         double installationCost         = input.get(INSTALLATION_COST);
         double annualOperationCost      = input.get(ANNUAL_OPERATION_COST);
         double annualProduction         = input.get(ANNUAL_ELECTRICITY_PRODUCTION);
-        double electricityPricePerKWh   = input.get(IMPORTED_ELECTRICITY_PRICE_KWH);
+        double electricityPricePerKWh   = input.get(MONTHLY_ELECTRICITY_PRICE);
 
         double savingsPerYear = annualProduction * electricityPricePerKWh - annualOperationCost;
         double yearsToPayInstallationCost = installationCost/savingsPerYear;
@@ -33,7 +33,7 @@ final class YearsToBreakEvenCalculator implements Calculator{
 
     @Override
     public Set<DataKey> getKeysOfRequiredInput() {
-        return new HashSet<>(Arrays.asList(INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION, IMPORTED_ELECTRICITY_PRICE_KWH));
+        return new HashSet<>(Arrays.asList(INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION, MONTHLY_ELECTRICITY_PRICE));
     }
 
     @Override

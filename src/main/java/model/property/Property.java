@@ -42,6 +42,7 @@ public abstract class Property {
     }
 
     public void setSolarSetup(SolarSetup solarSetup) {
+
         this.solarSetup = solarSetup;
     }
 

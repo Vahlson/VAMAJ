@@ -10,7 +10,7 @@ public class FixedContract extends Contract {
     public double fixedContractBonus() {
 
         double fixedBonus = 0.8;
-        return getCost() * fixedBonus;
+        return getMonthlyCost() * fixedBonus;
 
     }
 }

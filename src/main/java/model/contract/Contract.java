@@ -2,15 +2,16 @@ package main.java.model.contract;
 
 //An electricity provider contract, holding relevant information about that.
 public abstract class Contract {
-    private String contractProvider;
-    private String contractCity;
-    private double contractDuration;
-    private int cost;
 
-    public Contract(String contractCity, int cost, double contractDuration) {
+    private String contractProvider;
+    private double contractDuration;
+    private double consumedElectricity;
+    private double monthlyCost;
+
+    public Contract(String contractCity, int monthlyCost, double contractDuration) {
         this.contractProvider = "Generic Contract Provider";
-        this.contractCity = contractCity;
-        this.cost = cost;
+
+        this.monthlyCost = monthlyCost;
         this.contractDuration = contractDuration;
     }
 
@@ -19,31 +20,33 @@ public abstract class Contract {
         return this.contractProvider;
     }
 
-    public String getContractCity() {
-        return this.contractCity;
-    }
 
-    public int getCost() {
+    public double getMonthlyCost() {
 
-        return this.cost;
+        return this.monthlyCost;
     }
 
     public double getContractDuration() {
         return this.contractDuration;
     }
 
-    // Setter
-    public void setCost(int cost){
-        this.cost = cost;
+    public double getConsumedElectricity() {
+        return consumedElectricity;
+    }
+
+    // Setters
+    public void setConsumedElectricity(double consumedElectricity) {
+        this.consumedElectricity = consumedElectricity;
+    }
+
+    public void setMonthlyCost(double monthlyCost) {
+        this.monthlyCost = monthlyCost;
     }
 
     public void setContractProvider(String contractProvider) {
         this.contractProvider = contractProvider;
     }
 
-    public void setContractCity(String contractCity) {
-        this.contractCity = contractCity;
-    }
 
     public void setContractDuration(double contractDuration) {
         this.contractDuration = contractDuration;

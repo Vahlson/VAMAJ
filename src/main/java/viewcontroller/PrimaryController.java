@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import main.java.Main;
 import main.java.model.ModelFacade;
 import main.java.model.contract.Contract;
+import main.java.model.solarsetup.SolarPanel;
+import main.java.model.solarsetup.SolarSetup;
 import main.java.services.ContractCreator.ContractCreatorAPI;
 import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
@@ -99,6 +101,10 @@ public class PrimaryController {
     void setContractFromAPI() {
         serviceFacade.setContractCreator(new ContractCreatorAPI());
         modelFacade.setContract(serviceFacade.getContract());
+    }
+
+    void setSolarSetup(SolarSetup solarSetup){
+        modelFacade.setSolarSetup( solarSetup);
     }
 
     // Getters
