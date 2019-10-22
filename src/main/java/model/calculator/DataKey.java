@@ -4,8 +4,8 @@ public enum DataKey {
     SOLAR_PANEL_EFFICIENY,
     PRODUCED_ELECTRICITY,
     CONSUMED_ELECTRICITY,
-    SURPLUS,
-    INSTALLATION_COST,
+    SURPLUS("Electricity Surplus"),
+    INSTALLATION_COST ("Installation Cost"),
     GOVERNMENT_SUBVENTION,
     SUBVENTED_INSTALLATION_COST,
     AVAILABLE_SPACE,
@@ -22,4 +22,16 @@ public enum DataKey {
     PANEL_PERFORMANCE_RATIO,
     IMPORTED_ELECTRICITY_PRICE_KWH,
     YEARS_TO_BREAK_EVEN;
+
+    private String description = "Value";
+
+    private DataKey(String description) {
+        this.description = description;
+    }
+    private DataKey() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

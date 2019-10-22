@@ -14,6 +14,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static main.java.model.calculator.DataKey.INSTALLATION_COST;
+import static main.java.model.calculator.DataKey.PANEL_PRICE;
+import static main.java.model.calculator.DataKey.SURPLUS;
 
 // The controller of the result view, the user ends up here upon calculation.
 public class ResultViewController extends AnchorPane implements Initializable {
@@ -55,7 +57,21 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     public void fillResultView(){
         primaryController.getModelFacade().runCalculators();
-        textArea1.appendText("" + primaryController.getModelFacade().getCalculationResult(INSTALLATION_COST));
+
+        try {
+            textArea1.appendText("" + primaryController.getModelFacade().getCalculationResult(INSTALLATION_COST) + "\n");
+        }catch (NullPointerException npe){
+            textArea1.appendText(npe.getMessage());
+        }
+
+        try {
+            textArea1.appendText( primaryController.getModelFacade().getCalculationResult(SURPLUS) + "\n");
+        }catch (NullPointerException npe){
+            textArea1.appendText(npe.getMessage());
+        }
+
+
+
     }
 
 

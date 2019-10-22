@@ -7,6 +7,7 @@ import main.java.model.property.Property;
 import main.java.model.solarsetup.SolarSetup;
 import main.java.model.user.User;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,11 +25,9 @@ public class ModelAggregate {
     private Double result; //HashMap containing values with a ENUM as key
     //private CalculatorFacade runner = new CalculatorFacade();
     private HashMap<DataKey, Double> calculationData;
-    private HashMap<DataKey, Double> calculations;
 
     public ModelAggregate() {
         calculationData = new HashMap<>();
-        calculations = new HashMap<>();
         users = new ArrayList<>();
         currentUser = new User();
         users.add(currentUser);
@@ -37,26 +36,19 @@ public class ModelAggregate {
 
     //Calls calculators and sets results to above HashMap
     void runCalculators() {
-        //Initialize with dummy values.
-        //These represent both the initialized return "variables"/values and the actual calculations that will be performed
-        calculations.put(INSTALLATION_COST, 0.0);
-        calculations.put(SURPLUS,0.0);
-        calculations.put(LEVELIZED_ELECTRICITY_COST,0.0);
-        calculations.put(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT,0.0);
-        calculations.put(YEARS_TO_BREAK_EVEN,0.0);
-
-        calculationData = CalculatorFacade.calculateAll(calculations);
+        //Set the calculated output values in thehashmap.
+        calculationData = CalculatorFacade.calculateAll(calculationData);
 
     }
 
     // Getter for results of calculation(s)
     Double getCalculationResult(DataKey key) {
-        return Objects.requireNonNull(calculationData.get(key), "no data for " + key.toString());
+        return Objects.requireNonNull(calculationData.get(key), "Insufficient data for calculations of: " + key.getDescription());
     }
 
     //Adding data for calculations.
     void addCalculationData(DataKey key, double value){
-        calculations.put(key, value);
+        calculationData.put(key, value);
     }
 
 

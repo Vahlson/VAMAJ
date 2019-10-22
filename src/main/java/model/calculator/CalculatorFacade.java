@@ -20,13 +20,6 @@ public final class CalculatorFacade {
 
         HashMap<DataKey, Double> output = new HashMap<>(wantedOutput);
 
-//        Iterator it2 = output.entrySet().iterator();
-//        while (it2.hasNext()) {
-//            Map.Entry pair = (Map.Entry)it2.next();
-//            System.out.println(pair.getKey() + " = " + pair.getValue());
-//            it2.remove(); // avoids a ConcurrentModificationException
-//        }
-
         Iterator<Calculator> it = calculatorList.iterator();
 
         while (it.hasNext()){
