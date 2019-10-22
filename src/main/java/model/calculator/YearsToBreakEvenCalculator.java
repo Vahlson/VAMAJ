@@ -11,9 +11,6 @@ import static main.java.model.calculator.DataKey.*;
 
 final class YearsToBreakEvenCalculator implements Calculator{
 
-    private final Set<DataKey> requiredInput = new HashSet<>(Arrays.asList(INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION, IMPORTED_ELECTRICITY_PRICE_KWH));
-    private final Set<DataKey> output = new HashSet<>(Arrays.asList(YEARS_TO_BREAK_EVEN));
-
     YearsToBreakEvenCalculator() {
     }
 
@@ -35,13 +32,13 @@ final class YearsToBreakEvenCalculator implements Calculator{
     }
 
     @Override
-    public Set<DataKey> getRequiredInput() {
-        return requiredInput;
+    public Set<DataKey> getKeysOfRequiredInput() {
+        return new HashSet<>(Arrays.asList(INSTALLATION_COST, ANNUAL_OPERATION_COST, ANNUAL_ELECTRICITY_PRODUCTION, IMPORTED_ELECTRICITY_PRICE_KWH));
     }
 
     @Override
-    public Set<DataKey> getOutput() {
-        return output;
+    public Set<DataKey> getKeysOfOutput() {
+        return new HashSet<>(Arrays.asList(YEARS_TO_BREAK_EVEN));
     }
 
     @Override

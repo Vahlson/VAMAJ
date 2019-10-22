@@ -12,11 +12,8 @@ import static main.java.model.calculator.DataKey.*;
 
 final class ElectricitySurplusCalculator implements Calculator{
 
-    private final Set<DataKey> requiredInput = new HashSet<>(Arrays.asList(PRODUCED_ELECTRICITY, CONSUMED_ELECTRICITY));
-    private final Set<DataKey> output = new HashSet<>(Arrays.asList(SURPLUS));
-
-
     ElectricitySurplusCalculator() {
+
     }
 
     // Calculates and returns surplus
@@ -26,8 +23,8 @@ final class ElectricitySurplusCalculator implements Calculator{
 
         double surplus = 0;
 
-        double produced = input.get(PRODUCED_ELECTRICITY);
-        double consumed = input.get(CONSUMED_ELECTRICITY);
+        double produced = data.get(PRODUCED_ELECTRICITY);
+        double consumed = data.get(CONSUMED_ELECTRICITY);
 
         //Checks if there is a surplus and calculates if there is, no negative surplus possible
         if(produced > consumed){
@@ -39,13 +36,13 @@ final class ElectricitySurplusCalculator implements Calculator{
     }
 
     @Override
-    public Set<DataKey> getRequiredInput() {
-        return requiredInput;
+    public Set<DataKey> getKeysOfRequiredInput() {
+        return new HashSet<>(Arrays.asList(PRODUCED_ELECTRICITY, CONSUMED_ELECTRICITY));
     }
 
     @Override
-    public Set<DataKey> getOutput() {
-        return output;
+    public Set<DataKey> getKeysOfOutput() {
+        return new HashSet<>(Arrays.asList(SURPLUS));
     }
 
     @Override
