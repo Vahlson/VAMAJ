@@ -1,8 +1,7 @@
 package main.java.services;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataHandler {
@@ -21,6 +20,30 @@ public class DataHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    //This method will deserialize the serialized data in the .ser file to use it.
+    //Generic methods to accept different types of objects.
+    public <T> List <T> Deserialize(String fileName) throws IOException {
+
+        List <T> deserializedList = new ArrayList();
+        ObjectInputStream inputFile = new ObjectInputStream(new FileInputStream(fileName));
+        try {
+            while (inputFile.available() != -1) {
+                //Read object from file
+                T objectToDeserialize = (T) inputFile.readObject();
+                deserializedList.add(objectToDeserialize);
+            }
+        } catch (EOFException ex) {
+            //ex.printStackTrace();
+
+
+        } catch (IOException i) {
+            i.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Class not found");
+            c.printStackTrace();
+        }
+        return deserializedList;
     }
 
 }
