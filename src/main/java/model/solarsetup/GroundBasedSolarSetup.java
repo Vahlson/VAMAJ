@@ -6,7 +6,7 @@ public class GroundBasedSolarSetup extends SolarSetup {
     public GroundBasedSolarSetup(double installationCost, double squareMeters, double totalEfficiency) {
         super();
         super.setInstallationCost(installationCost);
-        super.setSquareMeters(squareMeters);
+        super.setAvailableSpace(squareMeters);
         super.setTotalEfficiency(totalEfficiency);
     }
 

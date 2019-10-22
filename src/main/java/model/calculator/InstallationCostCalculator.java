@@ -25,11 +25,11 @@ final class InstallationCostCalculator implements Calculator {
         HashMap<DataKey, Double> data = new HashMap<>(input);
 
         double availableSpace = input.get(AVAILABLE_SPACE);
-        double requiredPanelSpace = input.get(REQUIRED_PANEL_SPACE);
+        double panelSize = input.get(PANEL_SIZE);
         double panelPrice = input.get(PANEL_PRICE);
 
 
-        double installationCost = installationCost(availableSpace, requiredPanelSpace, panelPrice);
+        double installationCost = installationCost(availableSpace, panelSize, panelPrice);
         double governmentSubvention = subventionAmount(installationCost);
         double subventedInstallationCost = subventedCost(installationCost);
 
@@ -41,8 +41,8 @@ final class InstallationCostCalculator implements Calculator {
     }
 
     // Calculates installationCost based on how many solar panels there's room for in the availableSpace of a property
-    private double installationCost(double availableSpace, double requiredPanelSpace, double panelPrice) {
-        return Math.floor(availableSpace / requiredPanelSpace) * panelPrice;
+    private double installationCost(double availableSpace, double panelSize, double panelPrice) {
+        return Math.floor(availableSpace / panelSize) * panelPrice;
     }
 
     // Returns the subvented amount based on installationCost
@@ -57,7 +57,7 @@ final class InstallationCostCalculator implements Calculator {
 
     @Override
     public Set<DataKey> getKeysOfRequiredInput() {
-        return  new HashSet<>(Arrays.asList(AVAILABLE_SPACE, REQUIRED_PANEL_SPACE, PANEL_PRICE));
+        return  new HashSet<>(Arrays.asList(AVAILABLE_SPACE, PANEL_SIZE, PANEL_PRICE));
     }
 
     @Override

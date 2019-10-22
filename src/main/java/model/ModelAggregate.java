@@ -8,7 +8,6 @@ import main.java.model.property.Property;
 import main.java.model.solarsetup.*;
 import main.java.model.user.User;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,23 +28,47 @@ public class ModelAggregate {
 
     public ModelAggregate() {
         calculationData = new HashMap<>();
+
         users = new ArrayList<>();
         currentUser = new User();
         users.add(currentUser);
 
     }
 
-    private void getDataFromModel(){
+    // Gathers data from the model so that it can be used in calculations.
+    private void getDataFromModel() {
 
-        calculationData.put(AVAILABLE_SPACE, getSolarSetup().getSquareMeters());
+        //Gather data from the model's Solar Setup.
+        SolarSetup solarSetup = getSolarSetup();
+        calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
+        calculationData.put(INSTALLATION_COST, solarSetup.getInstallationCost());//MÖJLIGEN TA BORT????
+        calculationData.put(PRODUCED_ELECTRICITY,solarSetup.getTotalEProductionPerHour());
+        calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
+        calculationData.put(ANNUAL_ELECTRICITY_PRODUCTION,solarSetup.getAnnualElectricityProduction());
+        calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
 
-        SolarPanel solarPanel = getSolarSetup().getASolarPanel();
-        if(solarPanel != null) {
-            calculationData.put(PANEL_PRICE, solarPanel.getRetailPrice());
-            calculationData.put(REQUIRED_PANEL_SPACE, solarPanel.getSize());
-        }
+        // Get a template panel to gather panel-specific values.
+        SolarPanel templatePanel = getSolarSetup().getASolarPanel();
+        calculationData.put(PANEL_PRICE, templatePanel.getRetailPrice());
+        calculationData.put(PANEL_SIZE, templatePanel.getSize());
+        calculationData.put(EXPECTED_LIFESPAN,templatePanel.getLifeExpectancy());
+        calculationData.put(SOLAR_PANEL_PERFORMANCE_RATIO,templatePanel.getPerformanceRatio());
+        calculationData.put(SOLAR_PANEL_EFFICIENCY,templatePanel.getEfficiency());
+
+
+        // Get data from det model's contract
+        Contract contract = getContract();
+        calculationData.put(CONSUMED_ELECTRICITY,contract.getConsumedElectricity());
+        calculationData.put(MONTHLY_ELECTRICITY_PRICE,contract.getMonthlyCost());
+
+
+        // Get data from det model's location
+        Location location = getLocation();
+        calculationData.put(AVERAGE_SOLAR_RADIATION,location.getSolarInsolation());
+
     }
-    //Calls calculators and sets results to above HashMap
+
+    // Calls calculators and sets results to above HashMap
     void runCalculators() {
         getDataFromModel();
         //Set the calculated output values in thehashmap.
@@ -59,7 +82,7 @@ public class ModelAggregate {
     }
 
     //Adding data for calculations.
-    void addCalculationData(DataKey key, double value){
+    void addCalculationData(DataKey key, double value) {
         calculationData.put(key, value);
     }
 
@@ -69,71 +92,48 @@ public class ModelAggregate {
         return currentUser.getActiveProperty();
     }
 
+    // Lazy instantiation.
     Location getLocation() {
         // If there is no object in the model, create it.
         //Goes against command-query separation principle but makes handling of potential null-objects much easier.
-        if(getProperty().getLocation() == null){
+        if (getProperty().getLocation() == null) {
             Location location = new Location();
             getProperty().setLocation(location);
         }
         return getProperty().getLocation();
     }
-
+    // Lazy instantiation.
     Contract getContract() {
         // If there is no object in the model, create it.
         //Goes against command-query separation principle but makes handling of potential null-objects much easier.
-        if(getProperty().getContract() == null){
-            Contract contract = new DynamicContract("Generic City",0,0);
+        if (getProperty().getContract() == null) {
+            Contract contract = new DynamicContract("Generic City", 0, 0);
             getProperty().setContract(contract);
         }
         return getProperty().getContract();
     }
-
+    // Lazy instantiation.
     SolarSetup getSolarSetup() {
         //If there is no object in the model, create it.
         //Goes against command-query separation principle but makes handling of potential null-objects much easier.
-        if(getProperty().getSolarSetup() == null){
-            SolarSetup solarSetup = new RoofBasedSolarSetup(0,0,0);
+        if (getProperty().getSolarSetup() == null) {
+            SolarSetup solarSetup = new RoofBasedSolarSetup(0, 0, 0);
             getProperty().setSolarSetup(solarSetup);
         }
         return getProperty().getSolarSetup();
     }
 
-    //Fills the solarsetup solarpanel list with the amount of solar panels that fit inthe available space.
+
     // The solar panel typ is
-    public void setSolarPanelsStandard(){
-
-        SolarPanel templateSolarPanel = new StandardSolarPanel();
-        setSolarPanels(templateSolarPanel);
-
-
-    }
-    public void setSolarPanelsPremium(){
-
-        SolarPanel templateSolarPanel = new PremiumSolarPanel();
-        setSolarPanels(templateSolarPanel);
+    public void setSolarPanelsStandard() {
+        getSolarSetup().setSolarPanelsStandard();
 
     }
 
-    private void setSolarPanels(SolarPanel templateSolarPanel){
-        List<SolarPanel> solarPanels = new ArrayList<>();
+    public void setSolarPanelsPremium() {
+        getSolarSetup().setSolarPanelsPremium();
 
-        for(int i = 0; i < getNumberOfSolarPanels(templateSolarPanel);i++){
-            solarPanels.add(new StandardSolarPanel());
 
-        }
-
-        getSolarSetup().setSolarPanels(solarPanels);
-    }
-
-    private int getNumberOfSolarPanels(SolarPanel templateSolarPanel){
-
-        int numberOfSolarPanels = 0;
-
-        if(calculationData.get(AVAILABLE_SPACE) != null) {
-            numberOfSolarPanels = (int) Math.floor(calculationData.get(AVAILABLE_SPACE) / templateSolarPanel.getSize());
-        }
-        return numberOfSolarPanels;
     }
 
 

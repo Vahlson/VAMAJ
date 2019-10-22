@@ -20,10 +20,10 @@ final class SolarPanelProductionCalculator implements Calculator {
         HashMap<DataKey, Double> data = new HashMap<>(input);
 
 
-        double panelArea = input.get(SOLAR_PANEL_AREA);
+        double panelArea = input.get(SOLAR_PANEL_COVERAGE);
         double panelEfficiency = input.get(SOLAR_PANEL_EFFICIENCY);
         double averageRadiation = input.get(AVERAGE_SOLAR_RADIATION);
-        double panelPerformanceRatio = input.get(PANEL_PERFORMANCE_RATIO);
+        double panelPerformanceRatio = input.get(SOLAR_PANEL_PERFORMANCE_RATIO);
 
         // Calculating the result
         double energy = panelArea
@@ -38,7 +38,7 @@ final class SolarPanelProductionCalculator implements Calculator {
 
     @Override
     public Set<DataKey> getKeysOfRequiredInput() {
-        return  new HashSet<>(Arrays.asList(SOLAR_PANEL_AREA, SOLAR_PANEL_EFFICIENCY, AVERAGE_SOLAR_RADIATION, PANEL_PERFORMANCE_RATIO));
+        return new HashSet<>(Arrays.asList(SOLAR_PANEL_COVERAGE, SOLAR_PANEL_EFFICIENCY, AVERAGE_SOLAR_RADIATION, SOLAR_PANEL_PERFORMANCE_RATIO));
     }
 
     @Override
@@ -47,7 +47,7 @@ final class SolarPanelProductionCalculator implements Calculator {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "SolarPanelProductionCalculator";
     }
 }

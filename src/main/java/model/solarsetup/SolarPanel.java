@@ -4,17 +4,15 @@ package main.java.model.solarsetup;
 public abstract class SolarPanel {
     private double size;
     private double productionPerHour;
+    private double annualOperationCost;
     private double lifeExpectancy;
     private double retailPrice;
     private double wattage;
+    private double efficiency;
+    private double performanceRatio;
     private String panelName;
     private String panelManufacturer;
 
-    public SolarPanel()
-    {
-
-
-    }
 
     public SolarPanel(double requiredSpace, double retailPrice, double wattage) {
         this.size = requiredSpace;
@@ -63,8 +61,31 @@ public abstract class SolarPanel {
         return this.panelManufacturer;
     }
 
+    public double getAnnualOperationCost() {
+        return annualOperationCost;
+    }
 
-    //Setter
+    public double getEfficiency() {
+        return efficiency;
+    }
+
+    public double getPerformanceRatio() {
+        return performanceRatio;
+    }
+
+
+//Setter
+
+    public void setPerformanceRatio(double performanceRatio) {
+        this.performanceRatio = performanceRatio;
+    }
+    public void setEfficiency(double efficiency) {
+        this.efficiency = efficiency;
+    }
+
+    public void setAnnualOperationCost(double annualOperationCost) {
+        this.annualOperationCost = annualOperationCost;
+    }
 
     public void setSize(double size) {
         this.size = size;
