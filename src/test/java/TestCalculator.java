@@ -20,15 +20,15 @@ public class TestCalculator extends TestCase{
 
         HashMap<DataKey, Double> data = new HashMap<>();
 
-        data.put(SOLAR_PANEL_AREA, 6.0);
+        data.put(SOLAR_PANEL_COVERAGE, 6.0);
         data.put(SOLAR_PANEL_EFFICIENCY, 6.0);
         data.put(AVERAGE_SOLAR_RADIATION, 2.0);
-        data.put(PANEL_PERFORMANCE_RATIO, 2.0);
+        data.put(SOLAR_PANEL_PERFORMANCE_RATIO, 2.0);
 
         data = CalculatorFacade.calculateAll(data);
-        System.out.println(data.get(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT));
+        System.out.println(data.get(SOLAR_PV_DAILY_ELECTRICITY));
 
-        assertEquals(data.get(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT), 144.0);
+        assertEquals(data.get(SOLAR_PV_DAILY_ELECTRICITY), 144.0);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class TestCalculator extends TestCase{
         data.put(INSTALLATION_COST, 100000.0);
         data.put(ANNUAL_OPERATION_COST, 100.0);
         data.put(ANNUAL_ELECTRICITY_PRODUCTION, 30000.0);
-        data.put(IMPORTED_ELECTRICITY_PRICE_KWH, 0.3);
+        data.put(MONTHLY_ELECTRICITY_PRICE, 0.3);
 
         data = CalculatorFacade.calculateAll(data);
 
@@ -68,7 +68,7 @@ public class TestCalculator extends TestCase{
         HashMap<DataKey, Double> data = new HashMap<>();
 
         data.put(AVAILABLE_SPACE, 100.0);
-        data.put(REQUIRED_PANEL_SPACE, 10.0);
+        data.put(PANEL_SIZE, 10.0);
         data.put(PANEL_PRICE, 300.0);
 
         data = CalculatorFacade.calculateAll(data);
