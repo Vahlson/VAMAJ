@@ -30,10 +30,19 @@ public abstract class SolarSetup {
 
     //Lazy instantiation, gets a solar panel
     public SolarPanel getASolarPanel() {
+        //if there are no solarpanels,
         if (solarPanels.isEmpty()) {
             setSolarPanelsStandard();
         }
-        return solarPanels.get(0);
+
+        //If solarpanels isnt empty anymore return the first solarPanel.
+        if(!solarPanels.isEmpty()){
+            return solarPanels.get(0);
+        }else{
+            //If solarpanels is still empty (due to availablespace not being set)
+            //Default to return a standard solar panel.
+            return new StandardSolarPanel();
+        }
 
     }
 
@@ -118,18 +127,18 @@ public abstract class SolarSetup {
     // The solar panel typ is
     public void setSolarPanelsStandard() {
         SolarPanel templateSolarPanel = new StandardSolarPanel();
-        setSolarPanels(templateSolarPanel);
+        setSolarPanelsFromTemplate(templateSolarPanel);
 
     }
 
     public void setSolarPanelsPremium() {
         SolarPanel templateSolarPanel = new PremiumSolarPanel();
-        setSolarPanels(templateSolarPanel);
+        setSolarPanelsFromTemplate(templateSolarPanel);
 
     }
 
     //Fills the solarsetup solarpanel list with the amount of solar panels that fit in the available space.
-    private void setSolarPanels(SolarPanel templateSolarPanel) {
+    private void setSolarPanelsFromTemplate(SolarPanel templateSolarPanel) {
         List<SolarPanel> solarPanels = new ArrayList<>();
 
         for (int i = 0; i < getNumberOfSolarPanels(templateSolarPanel); i++) {

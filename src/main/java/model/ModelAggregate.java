@@ -117,7 +117,7 @@ public class ModelAggregate {
         //If there is no object in the model, create it.
         //Goes against command-query separation principle but makes handling of potential null-objects much easier.
         if (getProperty().getSolarSetup() == null) {
-            SolarSetup solarSetup = new RoofBasedSolarSetup(0, 0, 0);
+            SolarSetup solarSetup = new RoofBasedSolarSetup(0, 0);
             getProperty().setSolarSetup(solarSetup);
         }
         return getProperty().getSolarSetup();

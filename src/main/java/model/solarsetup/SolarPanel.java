@@ -2,20 +2,20 @@ package main.java.model.solarsetup;
 
 //Representation of a singel solar panel.
 public abstract class SolarPanel {
-    private double size;
+    private final double size;
     private double productionPerHour;
     private double annualOperationCost;
     private double lifeExpectancy;
-    private double retailPrice;
-    private double wattage;
+    private final double retailPrice;
+    private final double wattage;
     private double efficiency;
     private double performanceRatio;
     private String panelName;
     private String panelManufacturer;
 
 
-    public SolarPanel(double requiredSpace, double retailPrice, double wattage) {
-        this.size = requiredSpace;
+    public SolarPanel(double size, double retailPrice, double wattage) {
+        this.size = size;
         this.productionPerHour = 0;
         this.retailPrice = retailPrice;
         this.wattage = wattage;
@@ -31,11 +31,9 @@ public abstract class SolarPanel {
     }
 
 
-
     public double getProductionPerHour() {
         return this.productionPerHour;
     }
-
 
 
     public double getLifeExpectancy() {
@@ -79,6 +77,7 @@ public abstract class SolarPanel {
     public void setPerformanceRatio(double performanceRatio) {
         this.performanceRatio = performanceRatio;
     }
+
     public void setEfficiency(double efficiency) {
         this.efficiency = efficiency;
     }
@@ -87,9 +86,6 @@ public abstract class SolarPanel {
         this.annualOperationCost = annualOperationCost;
     }
 
-    public void setSize(double size) {
-        this.size = size;
-    }
 
     public void setProductionPerHour(double productionPerHour) {
         this.productionPerHour = productionPerHour;
@@ -97,14 +93,6 @@ public abstract class SolarPanel {
 
     public void setLifeExpectancy(double lifeExpectancy) {
         this.lifeExpectancy = lifeExpectancy;
-    }
-
-    public void setRetailPrice(double retailPrice) {
-        this.retailPrice = retailPrice;
-    }
-
-    public void setWattage(double wattage) {
-        this.wattage = wattage;
     }
 
     public void setPanelName(String panelName) {
