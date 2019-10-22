@@ -39,7 +39,7 @@ public class SpaceQuestionViewController extends AnchorPane {
             if (!newV) { // focus lost
                 // Your code
                 double spaceValue = Double.valueOf(availablespace.getText());
-                parentController.getPrimaryController().getModelFacade().addCalculationData(AVAILABLE_SPACE, spaceValue);
+                parentController.getPrimaryController().getModelFacade().getSolarSetup().setSquareMeters(spaceValue);
 
             }
         });

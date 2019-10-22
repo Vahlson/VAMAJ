@@ -57,4 +57,14 @@ public class ModelFacade {
     public void addCalculationData(DataKey key, double value){
         modelAggregate.addCalculationData(key, value);
     }
+
+    public void setSolarPanelsStandard(){
+
+        modelAggregate.setSolarPanelsStandard();
+    }
+    public void setSolarPanelsPremium(){
+
+        modelAggregate.setSolarPanelsPremium();
+    }
+
 }

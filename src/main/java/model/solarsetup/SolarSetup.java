@@ -28,6 +28,13 @@ public abstract class SolarSetup {
     public List<SolarPanel> getSolarPanels() {
         return this.solarPanels;
     }
+
+    public SolarPanel getASolarPanel(){
+        if(!solarPanels.isEmpty()) {
+            return solarPanels.get(0);
+        }
+        return null;
+    }
     public int getAngle() {
         return angle;
     }

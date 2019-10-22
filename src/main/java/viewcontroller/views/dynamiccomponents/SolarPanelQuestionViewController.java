@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.java.model.calculator.DataKey;
+import main.java.model.solarsetup.SolarPanel;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
@@ -57,6 +58,7 @@ public class SolarPanelQuestionViewController extends AnchorPane {
     public SolarPanelQuestionViewController(MainViewController parentController) {
 
 
+
         this.parentController = parentController;
 
 
@@ -86,19 +88,14 @@ public class SolarPanelQuestionViewController extends AnchorPane {
 
                     if (selected.equals(premiumRadio)) {
                         //Do something with premium selection.
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(PANEL_PRICE,9999);
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(REQUIRED_PANEL_SPACE,9999);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(PRODUCED_ELECTRICITY,9999);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(SOLAR_PANEL_EFFICIENCY,9999);
 
+                        parentController.getPrimaryController().getModelFacade().setSolarPanelsPremium();
 
 
                     } else{
                         //Do something with standard selection.
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(PANEL_PRICE,1);
-                        parentController.getPrimaryController().getModelFacade().addCalculationData(REQUIRED_PANEL_SPACE,9999);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(PRODUCED_ELECTRICITY,1);
-//                        parentController.getPrimaryController().getModelFacade().addCalculationData(SOLAR_PANEL_EFFICIENCY,1);
+                        parentController.getPrimaryController().getModelFacade().setSolarPanelsStandard();
+
                     }
 
 

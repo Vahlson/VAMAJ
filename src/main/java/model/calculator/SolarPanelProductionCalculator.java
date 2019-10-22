@@ -32,7 +32,7 @@ final class SolarPanelProductionCalculator implements Calculator {
                 * panelPerformanceRatio;
 
         // Returning the result
-        data.put(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT, energy);
+        data.put(SOLAR_PV_DAILY_ELECTRICITY, energy);
         return data;
     }
 
@@ -43,7 +43,7 @@ final class SolarPanelProductionCalculator implements Calculator {
 
     @Override
     public Set<DataKey> getKeysOfOutput() {
-        return new HashSet<>(Arrays.asList(SOLAR_PV_DAILY_ELECTRICITY_OUTPUT));
+        return new HashSet<>(Arrays.asList(SOLAR_PV_DAILY_ELECTRICITY));
     }
 
     @Override
