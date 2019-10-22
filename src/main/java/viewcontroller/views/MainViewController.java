@@ -75,6 +75,7 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionList.getChildren().add(new SolarPanelQuestionViewController(this));
         questionList.getChildren().add(new PropertyQuestionViewController(this));
         questionList.getChildren().add(new SpaceQuestionViewController(this));
+        questionList.getChildren().add(new FindLocationViewController(this));
         questionList.getChildren().add(new InstallationCostResultViewController(this)); //Temporary, should be in the results view
 
 

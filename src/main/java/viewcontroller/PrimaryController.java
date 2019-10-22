@@ -63,6 +63,7 @@ public class PrimaryController {
             return null;
         }
     }
+
     public void initDynamicComponent(String url, Object controller) {
 
         // Creating the FXMLLoader and loading the given url
@@ -106,9 +107,13 @@ public class PrimaryController {
         return modelFacade;
     }
 
+    public ServiceFacade getServiceFacade() {
+        return serviceFacade;
+    }
+
     public void goToMainView() {
 
-        if(mainView == null) {
+        if (mainView == null) {
             mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
         }
         setScene(mainView);
@@ -116,7 +121,7 @@ public class PrimaryController {
     }
 
     public void goToResultView() {
-        if(resultView == null) {
+        if (resultView == null) {
             resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
         }
         setScene(resultView);
