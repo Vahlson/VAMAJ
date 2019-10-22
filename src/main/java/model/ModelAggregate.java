@@ -3,7 +3,9 @@ package main.java.model;
 import main.java.model.calculator.*;
 import main.java.model.contract.Contract;
 import main.java.model.contract.DynamicContract;
+import main.java.model.property.ConsumingProperty;
 import main.java.model.property.Location;
+import main.java.model.property.NonConsumingProperty;
 import main.java.model.property.Property;
 import main.java.model.solarsetup.*;
 import main.java.model.user.User;
@@ -133,8 +135,32 @@ public class ModelAggregate {
     public void setSolarPanelsPremium() {
         getSolarSetup().setSolarPanelsPremium();
 
-
     }
 
+    //Setting the users property to another type by copying old values.
+    public void setPropertyConsuming(){
+        Property newProperty = new ConsumingProperty();
+        Property oldProperty = getProperty();
+
+        newProperty.setLocation(oldProperty.getLocation());
+        newProperty.setContract(oldProperty.getContract());
+        newProperty.setSolarSetup(oldProperty.getSolarSetup());
+        newProperty.setConsumption(oldProperty.getConsumption());
+
+        currentUser.setProperty(newProperty);
+
+    }
+    //Setting the users property to another type by copying old values.
+    public void setPropertyNonConsuming(){
+        Property newProperty = new NonConsumingProperty();
+        Property oldProperty = getProperty();
+
+        newProperty.setLocation(oldProperty.getLocation());
+        newProperty.setContract(oldProperty.getContract());
+        newProperty.setSolarSetup(oldProperty.getSolarSetup());
+        newProperty.setConsumption(oldProperty.getConsumption());
+
+        currentUser.setProperty(newProperty);
+    }
 
 }

@@ -17,11 +17,15 @@ public class User {
     public User() {
         properties = new ArrayList<>();
         activeProperty = new ConsumingProperty();
-        properties.add(activeProperty);
+        //properties.add(activeProperty); Sparas inte förrän på slutet.
     }
 
     // Getters (do we really want to expose the property to other classes? Maybe it is better to expose its getters/setters)
     public Property getActiveProperty() {
         return activeProperty;
+    }
+
+    public void setProperty(Property property){
+        activeProperty = property;
     }
 }

@@ -49,12 +49,12 @@ public class PropertyQuestionViewController extends AnchorPane {
 
                     if (selected.equals(consumingRB)) {
                         //Do something with consuming property.
-                        System.out.println(1);
+                        parentController.getPrimaryController().getModelFacade().setPropertyConsuming();
 
                     } else{
-                        //Do something with standard property.
+                        //Do something with nonconsuming property.
+                        parentController.getPrimaryController().getModelFacade().setPropertyNonConsuming();
 
-                        System.out.println(2);
                     }
 
                 }

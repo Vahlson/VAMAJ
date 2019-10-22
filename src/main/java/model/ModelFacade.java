@@ -67,4 +67,12 @@ public class ModelFacade {
         modelAggregate.setSolarPanelsPremium();
     }
 
+    public void setPropertyConsuming(){
+        modelAggregate.setPropertyConsuming();
+    }
+    public void setPropertyNonConsuming(){
+        modelAggregate.setPropertyNonConsuming();
+    }
+
+
 }
