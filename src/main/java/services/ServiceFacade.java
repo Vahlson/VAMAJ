@@ -4,6 +4,8 @@ import main.java.model.contract.Contract;
 import main.java.model.property.Location;
 import main.java.services.ContractCreator.ContractCreatorAPI;
 import main.java.services.ContractCreator.IContractCreator;
+import main.java.services.Geolocation.Geolocation;
+import main.java.services.Geolocation.IGeolocation;
 import main.java.services.LocationCreator.ILocationCreator;
 import main.java.services.LocationCreator.LocationCreatorAPI;
 
@@ -14,6 +16,7 @@ public class ServiceFacade {
     // Creation of data grabbers, defaults to getting data from APIs.
     private ILocationCreator locationCreator = new LocationCreatorAPI(); // Initialized to mock class for now
     private IContractCreator contractCreator = new ContractCreatorAPI(); // Initialized to mock class for now
+    private IGeolocation geolocation = new Geolocation();
 
     // Getters
     // Returns a Contract or Location respectively by the method decided by the dynamic class of the
@@ -25,6 +28,18 @@ public class ServiceFacade {
     public Location getLocation() {
         //TODO LÄgg till att den hämtar existerande lat och long?
         return locationCreator.createLocation();
+    }
+
+    public String getCity(){
+        return geolocation.getCity();
+    }
+
+    public double getLatitude(){
+        return geolocation.getLatitude();
+    }
+
+    public  double getLongitude(){
+        return geolocation.getLongitude();
     }
 
     // Setters

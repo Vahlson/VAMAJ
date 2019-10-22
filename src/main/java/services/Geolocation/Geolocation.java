@@ -6,7 +6,7 @@ import com.maxmind.geoip2.model.CityResponse;
 import java.io.IOException;
 
 // Class that holds our geolocation data
-public class Geolocation {
+public class Geolocation implements IGeolocation{
 
     // Member variables
     private GeolocationService service;
@@ -53,18 +53,23 @@ public class Geolocation {
     }
 
     // Getters
-    public String getIpAddress() {
-        return ipAddress;
-    }
+//    public String getIpAddress() {
+//        return ipAddress;
+//    }
 
+
+
+    @Override
     public String getCity() {
         return city;
     }
 
+    @Override
     public double getLatitude() {
         return latitude;
     }
 
+    @Override
     public double getLongitude() {
         return longitude;
     }
