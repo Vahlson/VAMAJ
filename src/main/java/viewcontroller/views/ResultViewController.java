@@ -77,6 +77,17 @@ public class ResultViewController extends AnchorPane implements Initializable {
         }catch (NullPointerException npe){
             textArea1.appendText(npe.getMessage());
         }
+        try {
+            textArea1.appendText(ANNUAL_OPERATION_COST.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(ANNUAL_OPERATION_COST) + "\n");
+        }catch (NullPointerException npe){
+            textArea1.appendText(npe.getMessage());
+        }
+
+        try {
+            textArea1.appendText(ANNUAL_ELECTRICITY_PRODUCTION.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(ANNUAL_ELECTRICITY_PRODUCTION) + "\n");
+        }catch (NullPointerException npe){
+            textArea1.appendText(npe.getMessage());
+        }
 
 
 
@@ -88,6 +99,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
     private void toMainView(ActionEvent event) {
 
         primaryController.goToMainView();
+
     }
 }
 

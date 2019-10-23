@@ -7,7 +7,7 @@ public abstract class SolarPanel {
     private double annualOperationCost;
     private double lifeExpectancy;
     private final double retailPrice;
-    private final double wattage;
+    private final double wattage;  // in KW
     private double efficiency;
     private double performanceRatio;
     private String panelName;

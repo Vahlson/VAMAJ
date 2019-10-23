@@ -9,6 +9,7 @@ import main.java.model.property.NonConsumingProperty;
 import main.java.model.property.Property;
 import main.java.model.solarsetup.*;
 import main.java.model.user.User;
+import main.java.services.ServiceFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +28,7 @@ public class ModelAggregate {
     private Double result; //HashMap containing values with a ENUM as key
     //private CalculatorFacade runner = new CalculatorFacade();
     private HashMap<DataKey, Double> calculationData;
+    private ServiceFacade serviceFacade;
 
     public ModelAggregate() {
         calculationData = new HashMap<>();
@@ -42,11 +44,14 @@ public class ModelAggregate {
 
         //Gather data from the model's Solar Setup.
         SolarSetup solarSetup = getSolarSetup();
+        serviceFacade = new ServiceFacade();
+
         calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
         calculationData.put(PRODUCED_ELECTRICITY,solarSetup.getTotalEProductionPerHour());
         calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
-        calculationData.put(ANNUAL_ELECTRICITY_PRODUCTION,solarSetup.getAnnualElectricityProduction());
         calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
+        calculationData.put(AVERAGE_SOLAR_RADIATION, serviceFacade.getSolarInsolation());
+
 
         // Get a template panel to gather panel-specific values.
         SolarPanel templatePanel = getSolarSetup().getASolarPanel();
@@ -56,7 +61,6 @@ public class ModelAggregate {
         calculationData.put(SOLAR_PANEL_PERFORMANCE_RATIO,templatePanel.getPerformanceRatio());
         calculationData.put(SOLAR_PANEL_EFFICIENCY,templatePanel.getEfficiency());
 
-
         // Get data from det model's contract
         Contract contract = getContract();
         calculationData.put(CONSUMED_ELECTRICITY,contract.getConsumedElectricity());
@@ -64,16 +68,22 @@ public class ModelAggregate {
 
 
         // Get data from det model's location
-        Location location = getLocation();
+     /*   Location location = getLocation();
         calculationData.put(AVERAGE_SOLAR_RADIATION,location.getSolarInsolation());
+
+      */
+
+
 
     }
 
     // Calls calculators and sets results to above HashMap
     void runCalculators() {
+
         getDataFromModel();
         //Set the calculated output values in thehashmap.
         calculationData = CalculatorFacade.calculateAll(calculationData);
+
 
     }
 

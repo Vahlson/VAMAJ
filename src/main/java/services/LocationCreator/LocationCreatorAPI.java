@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 //(3.1) Alex LV och Alex Ask
 // Implementation of ILocationCreator that creates location objects based on input from an API.
-public class LocationCreatorAPI implements ILocationCreator{
+public class LocationCreatorAPI implements ILocationCreator {
 
     //Current year and month
     private int currentYear = Calendar.getInstance().get(Calendar.YEAR);
@@ -29,39 +29,38 @@ public class LocationCreatorAPI implements ILocationCreator{
 
         Location l = new Location();
         l.setSolarInsolation(getSolarInsolation());
-        l.setCoordinate(latitude,longitude);
+        l.setCoordinate(latitude, longitude);
 
         return l;
     }
 
-
-    private double getSolarInsolation(){
+    public double getSolarInsolation() {
         //adjusting
         dataAccuracyInYears -= 1;
 
         //Uses a parser to get the correct objects and collect data throught http.
 
-            ApiParser<JSONObject> parser = new ApiJSONParser();
+        ApiParser <JSONObject> parser = new ApiJSONParser();
 
 
- //https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=2015&endDate=2018&lat=40&lon=10&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous
+        //https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=2015&endDate=2018&lat=40&lon=10&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous
         //Try to read the data from the JsonObject and try to calculate average on it.
-            //Getting the jsonObject from the API using the parser.
+        //Getting the jsonObject from the API using the parser.
 
-            JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
+        JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
 
-            if(!root.isEmpty()) {
-                //the jsonobject is not empty
-                //Try to access JSONData
-                    JSONObject allSkyInsolationIncident = accessJsonData(root);
+        if (!root.isEmpty()) {
+            //the jsonobject is not empty
+            //Try to access JSONData
+            JSONObject allSkyInsolationIncident = accessJsonData(root);
 
-                    if(!allSkyInsolationIncident.isEmpty()) {
-                        //Return average of data
-                        return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
-                    }
-
-
+            if (!allSkyInsolationIncident.isEmpty()) {
+                //Return average of data
+                return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
             }
+
+
+        }
 
         //Default returnvalue
         return 0;
@@ -78,21 +77,21 @@ public class LocationCreatorAPI implements ILocationCreator{
             JSONObject properties = (JSONObject) features.get(0);
             properties = properties.getJSONObject("properties");
             JSONObject parameter = (JSONObject) properties.get("parameter");
-            return  (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
+            return (JSONObject) parameter.getJSONObject("ALLSKY_SFC_SW_DWN");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             //If object does'nt follow above structure, the api provides an error message.
             //Here we try to get the error message and throw it as a new error.
             //This should not need to be exception handled.
 
-                JSONArray messages = (JSONArray) root.get("messages");
-                JSONObject alert = (JSONObject) messages.get(0);
-                alert = alert.getJSONObject("Alert");
-                JSONObject description = (JSONObject) alert.get("Description");
+            JSONArray messages = (JSONArray) root.get("messages");
+            JSONObject alert = (JSONObject) messages.get(0);
+            alert = alert.getJSONObject("Alert");
+            JSONObject description = (JSONObject) alert.get("Description");
 
-                System.out.println(description);
+            System.out.println(description);
 
-                return new JSONObject();
+            return new JSONObject();
 
 
         }
@@ -102,22 +101,22 @@ public class LocationCreatorAPI implements ILocationCreator{
 
     //returns the average kW-hr/m^2/day taking into account specified amount of years.
     //"years" must not exceed the amount of years from which data was gathered.
-    private double getAverageInsolation(JSONObject dataSource, int yearsBack){
+    private double getAverageInsolation(JSONObject dataSource, int yearsBack) {
         double average = 0;
         double sum = 0;
         int months = 0;
         //sum up data averages from the previous years.
-        for(int i = 0 ; i <= yearsBack; i ++) {
+        for (int i = 0; i <= yearsBack; i++) {
             for (String s : dataSource.keySet()) {
                 //The datasource is unsorted so we need to match it.
-                if (s.startsWith(Integer.toString(currentYear - i -1))) {
+                if (s.startsWith(Integer.toString(currentYear - i - 1))) {
                     months++;
                     sum += dataSource.getDouble(s);
                 }
             }
         }
 
-        if(months != 0) {
+        if (months != 0) {
             //Calculate average
             average = sum / months;
         }
