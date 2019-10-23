@@ -37,6 +37,7 @@ public class PropertyQuestionViewController extends AnchorPane {
 
     private double electricity = 0;
     private double cost = 0;
+    private boolean dataIsGathered;
 
     public PropertyQuestionViewController(PrimaryController primaryController){
         this.primaryController = primaryController;
@@ -63,9 +64,11 @@ public class PropertyQuestionViewController extends AnchorPane {
             if (!newV) { // focus lost
                 if(!consumedElectricity.getText().isEmpty()) {
                     electricity = Double.valueOf(consumedElectricity.getText());
+                    dataIsGathered = true;
                 }else{
                     //default to 0.
                     electricity = 0;
+                    dataIsGathered = false;
                 }
                 primaryController.getModelFacade().getContract().setConsumedElectricity(electricity);
 
@@ -75,9 +78,11 @@ public class PropertyQuestionViewController extends AnchorPane {
             if (!newV) { // focus lost
                 if(!monthlyCost.getText().isEmpty()) {
                     cost = Double.valueOf(monthlyCost.getText());
+                    dataIsGathered = true;
                 }else{
                     //default to 0.
                     cost = 0;
+                    dataIsGathered = false;
                 }
                 primaryController.getModelFacade().getContract().setMonthlyCost(cost);
 
@@ -96,7 +101,7 @@ public class PropertyQuestionViewController extends AnchorPane {
 
                     if (selected.equals(consumingRB)) {
                         //Do something with consuming property.
-
+                        dataIsGathered = checkFieldsForData();
                         contractQuestions.setDisable(false);
                         primaryController.getModelFacade().setPropertyConsuming();
                         primaryController.getModelFacade().setContract(new FixedContract(cost,electricity));
@@ -106,6 +111,7 @@ public class PropertyQuestionViewController extends AnchorPane {
                         //Changes the property to nonconsuming which assumes a contract with zero cost and zero consumed electricity.
                         contractQuestions.setDisable(true);
                         primaryController.getModelFacade().setPropertyNonConsuming();
+                        dataIsGathered = true;
 
 
                     }
@@ -114,6 +120,16 @@ public class PropertyQuestionViewController extends AnchorPane {
             }
 
 
+
+
         });
+    }
+
+    public boolean isDataGathered(){
+        return dataIsGathered;
+    }
+
+    private boolean checkFieldsForData() {
+        return (!monthlyCost.getText().isEmpty()) && (!consumedElectricity.getText().isEmpty());
     }
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="backdrop" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutY="216.0" prefHeight="906.0" prefWidth="1914.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -75,7 +75,7 @@
                                     </AnchorPane>
                                 </content>
                               </ScrollPane>
-                              <Button fx:id="calculateButton" alignment="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="BERÄKNA" VBox.vgrow="NEVER">
+                              <Button fx:id="calculateButton" alignment="CENTER" disable="true" mnemonicParsing="false" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="BERÄKNA" VBox.vgrow="NEVER">
                                  <VBox.margin>
                                     <Insets top="40.0" />
                                  </VBox.margin>
@@ -131,7 +131,7 @@
                               <Label layoutX="125.0" layoutY="9.0" styleClass="h2" text="Solkraftskalkylatorn" textFill="WHITE" />
                               <ImageView fitHeight="70.0" fitWidth="106.0" layoutX="43.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Logo.png" />
+                                    <Image url="@../images/LogoBigPurple.png" />
                                  </image>
                               </ImageView>
                            </children>

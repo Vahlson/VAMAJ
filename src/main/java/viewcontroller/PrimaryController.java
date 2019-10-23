@@ -141,4 +141,5 @@ public class PrimaryController {
     public void setScene(Scene scene) {
         sceneSwitcher.setScene(scene);
     }
+
 }

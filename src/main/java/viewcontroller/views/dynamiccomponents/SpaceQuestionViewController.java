@@ -14,6 +14,7 @@ public class SpaceQuestionViewController extends AnchorPane {
     @FXML
     private TextField availablespace;
 
+    private boolean dataIsGathered = false;
 
     public SpaceQuestionViewController(PrimaryController primaryController) {
 
@@ -36,9 +37,11 @@ public class SpaceQuestionViewController extends AnchorPane {
 
                 if(!availablespace.getText().isEmpty()) {
                     spaceValue = Double.valueOf(availablespace.getText());
+                    dataIsGathered = true;
                 }else{
                     //default to 0.
                     spaceValue = 0;
+                    dataIsGathered = false;
                 }
 
                 primaryController.getModelFacade().getSolarSetup().setAvailableSpace(spaceValue);
@@ -47,6 +50,10 @@ public class SpaceQuestionViewController extends AnchorPane {
         });
 
 
+    }
+
+    public boolean isDataGathered(){
+        return dataIsGathered;
     }
 
 }

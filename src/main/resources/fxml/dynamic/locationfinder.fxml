@@ -3,19 +3,43 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="271.0" prefWidth="430.0" styleClass="questionCard" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="379.0" prefWidth="768.0" styleClass="questionCard" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <children>
             <Label alignment="CENTER" layoutX="30.0" layoutY="25.0" prefHeight="33.0" prefWidth="262.0" style="-fx-text-fill: -fx-darkColoredText;" styleClass="h3" text="Var ligger ditt hus?" />
         <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
             <Pane prefHeight="87.0" />
-            <Text fx:id="cityText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -fx-main3;" styleClass="h3" textAlignment="CENTER" wrappingWidth="251.1848907470703" />
+            <AnchorPane prefHeight="75.0" prefWidth="430.0">
+               <children>
+                  <HBox fx:id="loadingAnimation" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Animations/LogoBigPurple.gif" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-text-fill: -fx-main1-darker;" styleClass="h4" text="Gathering solar information...">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text fx:id="cityText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -fx-main3;" styleClass="h3" textAlignment="CENTER" wrappingWidth="251.1848907470703" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
                 <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="67.0" VBox.vgrow="NEVER">
                     <children>
                         <Button fx:id="findlocationButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="144.0" styleClass="ghostButtonPurple" text="Hitta min plats" textAlignment="CENTER" wrapText="true" HBox.hgrow="NEVER">
