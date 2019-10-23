@@ -8,6 +8,7 @@ import javafx.scene.text.Text;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
+//Controller for a question component that gathers the users location
 public class FindLocationViewController extends AnchorPane {
 
     private PrimaryController primaryController;
