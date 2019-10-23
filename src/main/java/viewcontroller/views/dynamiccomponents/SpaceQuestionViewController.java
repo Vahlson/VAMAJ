@@ -31,8 +31,15 @@ public class SpaceQuestionViewController extends AnchorPane {
 
         availablespace.focusedProperty().addListener((ov, oldV, newV) -> {
             if (!newV) { // focus lost
-                // Your code
-                double spaceValue = Double.valueOf(availablespace.getText());
+                double spaceValue;
+
+                if(!availablespace.getText().isEmpty()) {
+                    spaceValue = Double.valueOf(availablespace.getText());
+                }else{
+                    //default to 0.
+                    spaceValue = 0;
+                }
+
                 parentController.getPrimaryController().getModelFacade().getSolarSetup().setAvailableSpace(spaceValue);
 
             }

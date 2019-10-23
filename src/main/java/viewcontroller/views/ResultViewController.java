@@ -29,12 +29,6 @@ public class ResultViewController extends AnchorPane implements Initializable {
     private TextArea textArea1;
 
     @FXML
-    private TextArea textArea2;
-
-    @FXML
-    private TextArea textArea3;
-
-    @FXML
     private Button exitButton;
 
     public ResultViewController(PrimaryController primaryController) {

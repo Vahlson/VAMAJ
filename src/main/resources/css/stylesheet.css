@@ -124,11 +124,53 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
     -fx-font-family: "Segoe UI", sans-serif;
 }
 
-.text-field{
+.radio-button{
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 18pt;
+    -fx-cursor: hand;
+}
+.radio-button .radio{
+    -fx-background-color: -fx-lightGray;
+    -fx-border-color: -fx-main3;
+    -fx-border-radius: 50;
+
+}
+.radio-button:selected .radio{
+    -fx-background-color: white;
+    -fx-border-color: -fx-main3;
+    -fx-border-radius: 50;
+
+}
+.radio-button:selected .dot{
+    -fx-background-color: -fx-main3;
+}
+
+.text-field {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+.text-area{
     -fx-font-family: "Segoe UI", sans-serif;
 }
 
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
 
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.text{
+    -fx-font-family: "Segoe UI", sans-serif;
+
+}
+.text-area *.text {
+    -fx-text-alignment: center;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
     /* 3:, 4: */
     -fx-background-color: -fx-main1;
@@ -208,14 +250,42 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
 .ghostButton{
    /* -fx-background-color: transparent;*/
     -fx-text-fill: -fx-main2;
+    -fx-font-weight: bold;
     -fx-border-color: -fx-main2;
     -fx-border-width: 3 3 3 3;
     -fx-background-radius: 4;
 
 }
+
 .ghostButton:hover{
     -fx-background-color: -fx-main2;
     -fx-text-fill:-fx-darkColoredText;
+}
+.ghostButtonBlue{
+    /* -fx-background-color: transparent;*/
+    -fx-text-fill: -fx-main1;
+    -fx-font-weight: bold;
+    -fx-border-color: -fx-main1;
+    -fx-border-width: 3 3 3 3;
+    -fx-background-radius: 4;
+
+}
+.ghostButtonBlue:hover{
+    -fx-background-color: -fx-main1;
+    -fx-text-fill:white;
+}
+.ghostButtonPurple{
+    /* -fx-background-color: transparent;*/
+    -fx-text-fill: -fx-main3;
+    -fx-font-weight: bold;
+    -fx-border-color: -fx-main3;
+    -fx-border-width: 3 3 3 3;
+    -fx-background-radius: 4;
+
+}
+.ghostButtonPurple:hover{
+    -fx-background-color: -fx-main3;
+    -fx-text-fill:white;
 }
 /*.roundedButton {*/
     /*-fx-effect: dropshadow(two-pass-box, darkgray, 10, 0.0, 4, 5);*/
@@ -304,4 +374,25 @@ EXEMPEL PÅ BYTA IKON VID HOVER
     -fx-background-color :derive(-fx-white,10.0%);
     -fx-background-insets : 2.0, 0.0, 0.0;
     -fx-background-radius : 2.0em;
+}
+
+.questionCard{
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+
+.fancyTextField{
+    -fx-text-fill: -fx-bodyText;
+    -fx-prompt-text-fill: -fx-weakText;
+    -fx-border-color: -fx-main3;
+    -fx-cursor: text;
+}
+
+.fancyTextField:focused {
+    -fx-background-color: -fx-main3;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: transparent;
+
 }

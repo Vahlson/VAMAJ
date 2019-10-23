@@ -4,15 +4,13 @@ package main.java.model.contract;
 public abstract class Contract {
 
     private String contractProvider;
-    private double contractDuration;
     private double consumedElectricity;
     private double monthlyCost;
 
-    public Contract(String contractCity, int monthlyCost, double contractDuration) {
+    public Contract(double monthlyCost, double consumedElectricity) {
         this.contractProvider = "Generic Contract Provider";
-
         this.monthlyCost = monthlyCost;
-        this.contractDuration = contractDuration;
+        this.consumedElectricity = consumedElectricity;
     }
 
     // Getters
@@ -26,9 +24,6 @@ public abstract class Contract {
         return this.monthlyCost;
     }
 
-    public double getContractDuration() {
-        return this.contractDuration;
-    }
 
     public double getConsumedElectricity() {
         return consumedElectricity;
@@ -48,7 +43,4 @@ public abstract class Contract {
     }
 
 
-    public void setContractDuration(double contractDuration) {
-        this.contractDuration = contractDuration;
-    }
 }

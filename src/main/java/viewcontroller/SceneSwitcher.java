@@ -17,6 +17,10 @@ public class SceneSwitcher {
     // Constructor
     SceneSwitcher(Stage stage) {
         this.stage = stage;
+        stage.setMinWidth(1140);
+        stage.setMinHeight(900);
+        stage.setMaximized(true);
+        //stage.setFullScreen(true);
     }
 
     // Sets scene to given parent
