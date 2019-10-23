@@ -128,7 +128,7 @@ public class PrimaryController {
 
     public void goToResultView() {
 
-            resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
+        resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
 
         setScene(resultView);
     }
