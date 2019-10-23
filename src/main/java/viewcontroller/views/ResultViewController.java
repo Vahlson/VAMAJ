@@ -73,18 +73,6 @@ public class ResultViewController extends AnchorPane implements Initializable {
         }
 
         try {
-            textArea1.appendText( LEVELIZED_ELECTRICITY_COST.getDescription() +": "+primaryController.getModelFacade().getCalculationResult(LEVELIZED_ELECTRICITY_COST) + "\n");
-        }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
-        }
-
-        try {
-            textArea1.appendText( SOLAR_PV_DAILY_ELECTRICITY.getDescription() +": "+primaryController.getModelFacade().getCalculationResult(SOLAR_PV_DAILY_ELECTRICITY) + "\n");
-        }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
-        }
-
-        try {
             textArea1.appendText(YEARS_TO_BREAK_EVEN.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN) + "\n");
         }catch (NullPointerException npe){
             textArea1.appendText(npe.getMessage());

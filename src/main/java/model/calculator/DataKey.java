@@ -4,10 +4,10 @@ public enum DataKey {
     SOLAR_PANEL_EFFICIENCY,
     PRODUCED_ELECTRICITY,
     CONSUMED_ELECTRICITY,
-    SURPLUS("Electricity Surplus"),
-    INSTALLATION_COST ("Installation Cost"),
-    GOVERNMENT_SUBVENTION ("Government Subvention"),
-    SUBVENTED_INSTALLATION_COST ("Subvented Installation Cost"),
+    SURPLUS("Överskott av energi"),
+    INSTALLATION_COST ("Installationskostnad"),
+    GOVERNMENT_SUBVENTION ("Statlig subvention"),
+    SUBVENTED_INSTALLATION_COST ("Totalkostnad efter subvention"),
     AVAILABLE_SPACE,
     PANEL_SIZE,
     PANEL_PRICE,
@@ -20,7 +20,7 @@ public enum DataKey {
     AVERAGE_SOLAR_RADIATION,
     SOLAR_PANEL_PERFORMANCE_RATIO,
     MONTHLY_ELECTRICITY_PRICE,
-    YEARS_TO_BREAK_EVEN ("Years to break even");
+    YEARS_TO_BREAK_EVEN ("År till vinst");
 
     private String description = "Value";
 
