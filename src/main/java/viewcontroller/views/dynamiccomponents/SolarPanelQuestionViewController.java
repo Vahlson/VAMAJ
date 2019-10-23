@@ -89,11 +89,14 @@ public class SolarPanelQuestionViewController extends AnchorPane {
                         //Do something with premium selection.
 
                         parentController.getPrimaryController().getModelFacade().setSolarPanelsPremium();
+                        System.out.println(parentController.getPrimaryController().getModelFacade().getSolarSetup().getTotalEProductionPerHour());
 
 
                     } else{
                         //Do something with standard selection.
                         parentController.getPrimaryController().getModelFacade().setSolarPanelsStandard();
+                        System.out.println(parentController.getPrimaryController().getModelFacade().getSolarSetup().getTotalEProductionPerHour());
+
 
                     }
 

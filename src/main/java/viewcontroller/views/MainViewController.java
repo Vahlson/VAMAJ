@@ -70,10 +70,11 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         //Adding questions to the list
-
-        questionList.getChildren().add(new SolarPanelQuestionViewController(this));
-        questionList.getChildren().add(new SpaceQuestionViewController(this));
         questionList.getChildren().add(new FindLocationViewController(this));
+        questionList.getChildren().add(new SpaceQuestionViewController(this));
+        questionList.getChildren().add(new SolarPanelQuestionViewController(this));
+
+
         questionList.getChildren().add(new PropertyQuestionViewController(this));
 
         //EVENTS for nodes of the program
