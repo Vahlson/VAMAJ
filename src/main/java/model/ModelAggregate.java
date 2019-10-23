@@ -109,7 +109,7 @@ public class ModelAggregate {
         // If there is no object in the model, create it.
         //Goes against command-query separation principle but makes handling of potential null-objects much easier.
         if (getProperty().getContract() == null) {
-            Contract contract = new DynamicContract("Generic City", 0, 0);
+            Contract contract = new DynamicContract(0, 0);
             getProperty().setContract(contract);
         }
         return getProperty().getContract();
@@ -145,7 +145,7 @@ public class ModelAggregate {
         newProperty.setLocation(oldProperty.getLocation());
         newProperty.setContract(oldProperty.getContract());
         newProperty.setSolarSetup(oldProperty.getSolarSetup());
-        newProperty.setConsumption(oldProperty.getConsumption());
+
 
         currentUser.setProperty(newProperty);
 
@@ -156,9 +156,8 @@ public class ModelAggregate {
         Property oldProperty = getProperty();
 
         newProperty.setLocation(oldProperty.getLocation());
-        newProperty.setContract(oldProperty.getContract());
         newProperty.setSolarSetup(oldProperty.getSolarSetup());
-        newProperty.setConsumption(oldProperty.getConsumption());
+
 
         currentUser.setProperty(newProperty);
     }

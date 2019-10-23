@@ -5,9 +5,11 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
@@ -22,12 +24,20 @@ public class PropertyQuestionViewController extends AnchorPane {
     @FXML
     private RadioButton nonConsumingRB;
 
+    @FXML
+    private VBox contractQuestions;
+
+    @FXML
+    private TextField consumedElectricity;
+
+    @FXML
+    private TextField monthlyCost;
+
     public PropertyQuestionViewController(MainViewController parentController){
         this.parentController = parentController;
 
         //initialize this controller as a javafx node while coupling it with a fxml.
         parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/propertyquestion.fxml",this);
-
 
         //Match width to parent.
         setLeftAnchor(this,0.0);
@@ -37,6 +47,11 @@ public class PropertyQuestionViewController extends AnchorPane {
         ToggleGroup tg = new ToggleGroup();
         consumingRB.setToggleGroup(tg);
         nonConsumingRB.setToggleGroup(tg);
+
+
+        parentController.getPrimaryController().onlyNumbers(consumedElectricity);
+        parentController.getPrimaryController().onlyNumbers(monthlyCost);
+
 
         //Handle selection of item in toggleGroup
         tg.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -49,11 +64,15 @@ public class PropertyQuestionViewController extends AnchorPane {
 
                     if (selected.equals(consumingRB)) {
                         //Do something with consuming property.
+                        contractQuestions.setDisable(false);
                         parentController.getPrimaryController().getModelFacade().setPropertyConsuming();
+                        parentController.getPrimaryController().getModelFacade().getContract().setConsumedElectricity(Double.valueOf(consumedElectricity.getText()));
+                        parentController.getPrimaryController().getModelFacade().getContract().setMonthlyCost(Double.valueOf(monthlyCost.getText()));
 
                     } else{
                         //Do something with nonconsuming property.
                         parentController.getPrimaryController().getModelFacade().setPropertyNonConsuming();
+                        contractQuestions.setDisable(true);
 
                     }
 

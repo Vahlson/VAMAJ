@@ -9,7 +9,7 @@ public abstract class Property {
     private SolarSetup solarSetup;
     private Location location;
     private Contract contract;
-    private double consumption;
+
 
     // Constructor (empty)
     public Property() {
@@ -28,9 +28,6 @@ public abstract class Property {
         return solarSetup;
     }
 
-    public double getConsumption() {
-        return consumption;
-    }
 
     // Setters
     public void setLocation(Location l) {
@@ -46,7 +43,4 @@ public abstract class Property {
         this.solarSetup = solarSetup;
     }
 
-    public void setConsumption(double consumption) {
-        this.consumption = consumption;
-    }
 }

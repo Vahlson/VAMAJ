@@ -73,8 +73,7 @@ public class SolarPanelQuestionViewController extends AnchorPane {
         ToggleGroup tg = new ToggleGroup();
         premiumRadio.setToggleGroup(tg);
         standardRadio.setToggleGroup(tg);
-        premiumImage.setImage(new Image("/icons/images/premium.jpg"));
-        standardImage.setImage(new Image("/icons/images/standard.jpg"));
+
 
 
         //Handle selection of item in toggleGroup

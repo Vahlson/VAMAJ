@@ -37,7 +37,7 @@
       <AnchorPane prefHeight="192.0" prefWidth="1920.0" styleClass="foreground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1596.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="906.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox alignment="TOP_RIGHT" fillHeight="false" minWidth="-Infinity" prefWidth="0.0" HBox.hgrow="ALWAYS">
                      <children>
@@ -48,8 +48,8 @@
                                     <Font size="96.0" />
                                  </font>
                               </Label>
-                              <Label alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="447.0" styleClass="p4" text="Ta reda på detta och mycket mer på under en minut med vår kalkylator. Svara bara på frågorna till vänster." textFill="#ffffffb2" wrapText="true" />
-                              <Line endX="280.0" startX="-100.0" stroke="WHITE" />
+                              <Label alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="447.0" styleClass="p4" text="Ta reda på detta och mycket mer på under en minut med vår kalkylator. Svara bara på frågorna till höger." textFill="#ffffffb2" wrapText="true" />
+                              <Line endX="280.0" startX="-100.0" stroke="WHITE" VBox.vgrow="ALWAYS" />
                            </children>
                         </VBox>
                      </children>

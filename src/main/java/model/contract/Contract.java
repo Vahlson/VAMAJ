@@ -8,7 +8,7 @@ public abstract class Contract {
     private double consumedElectricity;
     private double monthlyCost;
 
-    public Contract(String contractCity, int monthlyCost, double contractDuration) {
+    public Contract(int monthlyCost, double contractDuration) {
         this.contractProvider = "Generic Contract Provider";
 
         this.monthlyCost = monthlyCost;

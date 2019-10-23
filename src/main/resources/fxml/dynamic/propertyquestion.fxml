@@ -3,25 +3,48 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<fx:root prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: #CDEAF3;" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="288.0" prefWidth="495.0" styleClass="questionCard" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox layoutX="204.0" layoutY="45.0">
+      <HBox layoutX="35.0" layoutY="76.0" prefHeight="171.0" prefWidth="430.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="76.0">
          <children>
-            <Label styleClass="p2" text="typ av egendom" />
+            <VBox prefHeight="102.0" prefWidth="83.0" HBox.hgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="74.0">
+                     <children>
+                        <RadioButton fx:id="consumingRB" mnemonicParsing="false" selected="true" styleClass="p4" />
+                        <Label styleClass="p4" text="Ja" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="74.0">
+                     <children>
+                        <RadioButton fx:id="nonConsumingRB" mnemonicParsing="false" prefHeight="36.0" styleClass="p4" />
+                        <Label styleClass="p4" text="Nej" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="contractQuestions" prefHeight="200.0" prefWidth="335.0">
+               <children>
+                  <Label prefHeight="45.0" prefWidth="232.0" text="Hur mycket ström konsumerar ditt hushåll på en månad?" wrapText="true" />
+                  <TextField fx:id="consumedElectricity" prefHeight="29.0" prefWidth="232.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label prefHeight="45.0" prefWidth="232.0" text="Hur mycket kostar kontraktet per månad?" wrapText="true" />
+                  <TextField fx:id="monthlyCost" prefHeight="29.0" prefWidth="232.0" />
+               </children>
+            </VBox>
          </children>
       </HBox>
-      <HBox layoutX="61.0" layoutY="163.0">
-         <children>
-            <RadioButton fx:id="consumingRB" mnemonicParsing="false" styleClass="p3" text="Consuming" />
-            <RadioButton fx:id="nonConsumingRB" mnemonicParsing="false" styleClass="p3" text="Non-Consuming">
-               <padding>
-                  <Insets left="144.0" />
-               </padding>
-            </RadioButton>
-         </children>
-      </HBox>
+      <Label layoutX="35.0" layoutY="22.0" styleClass="h3" text="Har du ett elkontrakt?" />
    </children>
 </fx:root>

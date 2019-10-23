@@ -1,35 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<fx:root prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: #CDEAF3;" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="350.0" prefWidth="700.0" styleClass="questionCard" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label layoutX="204.0" layoutY="73.0" styleClass="p2" text="välja solarpanel" />
-      <RadioButton fx:id="standardRadio" layoutX="198.0" layoutY="176.0" mnemonicParsing="false" text="Premium Solcell" />
-      <RadioButton fx:id="premiumRadio" layoutX="552.0" layoutY="176.0" mnemonicParsing="false" text="Standard Solcell" />
-      <ImageView fx:id="standardImage" fitHeight="133.0" fitWidth="175.0" layoutX="14.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="premiumImage" fitHeight="133.0" fitWidth="175.0" layoutX="369.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="standardName" layoutX="147.0" layoutY="260.0" prefHeight="23.0" prefWidth="102.0" styleClass="p4" text="10000" />
-      <Label fx:id="standardCost" layoutX="147.0" layoutY="327.0" prefHeight="21.0" prefWidth="102.0" styleClass="p4" text="8" />
-      <Label fx:id="standardWattage" layoutX="147.0" layoutY="293.0" prefHeight="21.0" prefWidth="102.0" styleClass="p4" text="300" />
-      <Label fx:id="premiumName" layoutX="502.0" layoutY="260.0" prefHeight="23.0" prefWidth="95.0" styleClass="p4" text="7000" />
-      <Label fx:id="premiumCost" layoutX="502.0" layoutY="327.0" prefHeight="21.0" prefWidth="95.0" styleClass="p4" text="5" />
-      <Label fx:id="premiumWattage" layoutX="502.0" layoutY="293.0" prefHeight="21.0" prefWidth="95.0" styleClass="p4" text="250" />
-      <Label layoutX="22.0" layoutY="293.0" styleClass="p4" text="Wattage  :" />
-      <Label layoutX="22.0" layoutY="325.0" styleClass="p4" text="Livslängd :" />
-      <Label layoutX="22.0" layoutY="260.0" styleClass="p4" text="Pris          :" />
-      <Label layoutX="379.0" layoutY="294.0" styleClass="p4" text="Wattage  :" />
-      <Label layoutX="379.0" layoutY="326.0" styleClass="p4" text="Livslängd :" />
-      <Label layoutX="379.0" layoutY="261.0" styleClass="p4" text="Pris          :" />
-      <Label layoutX="237.0" layoutY="262.0" text="Kr" />
-      <Label layoutX="237.0" layoutY="296.0" text="W" />
-      <Label layoutX="237.0" layoutY="327.0" text="år" />
-      <Label layoutX="571.0" layoutY="263.0" text="Kr" />
-      <Label layoutX="571.0" layoutY="297.0" text="W" />
-      <Label layoutX="571.0" layoutY="328.0" text="år" />
+        <Label layoutX="34.0" layoutY="27.0" styleClass="h3" text="Välj solpanelspaket" />
+      <HBox alignment="BOTTOM_CENTER" layoutX="139.0" layoutY="74.0" prefHeight="300.0" prefWidth="700.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="350.0" prefWidth="300.0" HBox.hgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <ImageView fx:id="standardImage" fitHeight="133.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/premium.jpg" />
+                           </image>
+                        </ImageView>
+                        <RadioButton fx:id="standardRadio" mnemonicParsing="false" prefHeight="59.0" prefWidth="97.0" text="Premium Solcell" wrapText="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="211.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="standardName" prefHeight="23.0" prefWidth="102.0" styleClass="p4" text="10000" />
+                        <Label styleClass="p4" text="Pris          :" />
+                        <Label text="Kr" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="211.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="standardWattage" prefHeight="21.0" prefWidth="102.0" styleClass="p4" text="300" />
+                        <Label styleClass="p4" text="Wattage  :" />
+                        <Label text="W" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="211.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="standardCost" prefHeight="21.0" prefWidth="102.0" styleClass="p4" text="30" />
+                        <Label styleClass="p4" text="Livslängd :" />
+                        <Label text="år" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="300.0" prefWidth="293.0" HBox.hgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="133.0" prefWidth="311.0" VBox.vgrow="NEVER">
+                     <children>
+                        <ImageView fx:id="premiumImage" fitHeight="133.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/standard.jpg" />
+                           </image>
+                        </ImageView>
+                        <RadioButton fx:id="premiumRadio" mnemonicParsing="false" prefHeight="51.0" prefWidth="120.0" text="Standard Solcell" wrapText="true">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="211.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="premiumName" prefHeight="23.0" prefWidth="95.0" styleClass="p4" text="7000" />
+                        <Label styleClass="p4" text="Pris          :" />
+                        <Label text="Kr" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="211.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="premiumWattage" prefHeight="21.0" prefWidth="95.0" styleClass="p4" text="250" />
+                        <Label styleClass="p4" text="Wattage  :" />
+                        <Label text="W" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="211.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="premiumCost" prefHeight="21.0" prefWidth="95.0" styleClass="p4" text="25" />
+                        <Label styleClass="p4" text="Livslängd :" />
+                        <Label text="år" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
 
     </children>
 </fx:root>
