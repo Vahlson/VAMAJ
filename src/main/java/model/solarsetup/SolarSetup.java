@@ -52,11 +52,11 @@ public abstract class SolarSetup {
 
     //Sums up effeciency of solar panels.
     public double getTotalEProductionPerHour() {
-        double totalEfficiency = 0.0;
+        double totalProduction = 0.0;
         for(SolarPanel p : solarPanels){
-            totalEfficiency += p.getProductionPerHour();
+            totalProduction += p.getProductionPerHour();
         }
-        return totalEfficiency;
+        return totalProduction;
     }
 
     public double getInstallationCost() {
@@ -129,20 +129,21 @@ public abstract class SolarSetup {
         SolarPanel templateSolarPanel = new StandardSolarPanel();
         setSolarPanelsFromTemplate(templateSolarPanel);
 
+
     }
 
     public void setSolarPanelsPremium() {
         SolarPanel templateSolarPanel = new PremiumSolarPanel();
         setSolarPanelsFromTemplate(templateSolarPanel);
+        System.out.println(getNumberOfSolarPanels(templateSolarPanel));
 
     }
 
     //Fills the solarsetup solarpanel list with the amount of solar panels that fit in the available space.
     private void setSolarPanelsFromTemplate(SolarPanel templateSolarPanel) {
-        List<SolarPanel> solarPanels = new ArrayList<>();
 
         for (int i = 0; i < getNumberOfSolarPanels(templateSolarPanel); i++) {
-            solarPanels.add(new StandardSolarPanel());
+            solarPanels.add(templateSolarPanel);
         }
 
         setSolarPanels(solarPanels);
