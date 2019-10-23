@@ -83,9 +83,9 @@ public class MainViewController extends AnchorPane implements Initializable {
         locationQ = new FindLocationViewController(primaryController);
         propertyQ = new PropertyQuestionViewController(primaryController);
 
-        questionList.getChildren().add(solarQ);
-        questionList.getChildren().add(spaceQ);
         questionList.getChildren().add(locationQ);
+        questionList.getChildren().add(spaceQ);
+        questionList.getChildren().add(solarQ);
         questionList.getChildren().add(propertyQ);
 
         //EVENTS for nodes of the program
