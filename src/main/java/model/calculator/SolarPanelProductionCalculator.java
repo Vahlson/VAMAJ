@@ -29,10 +29,11 @@ final class SolarPanelProductionCalculator implements Calculator {
         double energy = panelArea
                 * panelEfficiency
                 * averageRadiation
-                * panelPerformanceRatio;
+                * panelPerformanceRatio
+                *364;
 
         // Returning the result
-        data.put(SOLAR_PV_DAILY_ELECTRICITY, energy);
+        data.put(ANNUAL_ELECTRICITY_PRODUCTION, energy);
         return data;
     }
 
@@ -43,7 +44,7 @@ final class SolarPanelProductionCalculator implements Calculator {
 
     @Override
     public Set<DataKey> getKeysOfOutput() {
-        return new HashSet<>(Arrays.asList(SOLAR_PV_DAILY_ELECTRICITY));
+        return new HashSet<>(Arrays.asList(ANNUAL_ELECTRICITY_PRODUCTION));
     }
 
     @Override

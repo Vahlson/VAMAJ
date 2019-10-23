@@ -2,7 +2,7 @@ package main.java.model.calculator;
 
 public enum DataKey {
     SOLAR_PANEL_EFFICIENCY,
-    PRODUCED_ELECTRICITY,
+    PRODUCED_ELECTRICITY("Produktion i KW"),
     CONSUMED_ELECTRICITY,
     SURPLUS("Överskott av energi"),
     INSTALLATION_COST ("Installationskostnad"),
@@ -12,11 +12,11 @@ public enum DataKey {
     PANEL_SIZE,
     PANEL_PRICE,
     LEVELIZED_ELECTRICITY_COST ("Levelized Electricity Cost"),
-    ANNUAL_ELECTRICITY_PRODUCTION,
-    ANNUAL_OPERATION_COST,
+    ANNUAL_ELECTRICITY_PRODUCTION("El produktion under ett år : "),
+    ANNUAL_OPERATION_COST("Underhållningskostnad per år"),
     EXPECTED_LIFESPAN,
     SOLAR_PV_DAILY_ELECTRICITY("Solar PV Daily Electricity"),
-    SOLAR_PANEL_COVERAGE,
+    SOLAR_PANEL_COVERAGE("coverage : "),
     AVERAGE_SOLAR_RADIATION,
     SOLAR_PANEL_PERFORMANCE_RATIO,
     MONTHLY_ELECTRICITY_PRICE,
