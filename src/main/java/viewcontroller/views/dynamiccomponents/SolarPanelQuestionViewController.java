@@ -21,7 +21,6 @@ import static main.java.model.calculator.DataKey.*;
 public class SolarPanelQuestionViewController extends AnchorPane {
 
 
-    MainViewController parentController;
 
     @FXML
     private RadioButton standardRadio;
@@ -53,17 +52,17 @@ public class SolarPanelQuestionViewController extends AnchorPane {
     @FXML
     private Label premiumWattage;
 
-    PrimaryController controller;
+    PrimaryController primaryController;
 
-    public SolarPanelQuestionViewController(MainViewController parentController) {
+    public SolarPanelQuestionViewController(PrimaryController primaryController) {
 
 
 
-        this.parentController = parentController;
+        this.primaryController = primaryController;
 
 
         //initialize this controller as a javafx node while coupling it with a fxml.
-        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/SolarPanelQuestion.fxml",this);
+        primaryController.initDynamicComponent("/fxml/dynamic/SolarPanelQuestion.fxml",this);
 
         //Match width to parent.
         setLeftAnchor(this, 0.0);
@@ -88,12 +87,12 @@ public class SolarPanelQuestionViewController extends AnchorPane {
                     if (selected.equals(premiumRadio)) {
                         //Do something with premium selection.
 
-                        parentController.getPrimaryController().getModelFacade().setSolarPanelsPremium();
+                        primaryController.getModelFacade().setSolarPanelsPremium();
 
 
                     } else{
                         //Do something with standard selection.
-                        parentController.getPrimaryController().getModelFacade().setSolarPanelsStandard();
+                        primaryController.getModelFacade().setSolarPanelsStandard();
 
                     }
 

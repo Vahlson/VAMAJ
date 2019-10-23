@@ -5,11 +5,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
 public class FindLocationViewController extends AnchorPane {
 
-    private MainViewController parentController;
+    private PrimaryController primaryController;
 
     @FXML
     private Text cityText;
@@ -17,12 +18,12 @@ public class FindLocationViewController extends AnchorPane {
     @FXML
     private Button findlocationButton;
 
-    public FindLocationViewController(MainViewController parentController) {
+    public FindLocationViewController(PrimaryController primaryController) {
 
-        this.parentController = parentController;
+        this.primaryController = primaryController;
 
         //Initialize this controller as a javafx node while coupling it with a fxml
-        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/locationfinder.fxml",this);
+        primaryController.initDynamicComponent("/fxml/dynamic/locationfinder.fxml",this);
 
         //Match width to parent.
         setLeftAnchor(this, 0.0);
@@ -31,14 +32,14 @@ public class FindLocationViewController extends AnchorPane {
         //Shows updates location and shows location in gui
         findlocationButton.setOnAction(event -> {
             String city;
-            city = parentController.getPrimaryController().getServiceFacade().getCity();
+            city = primaryController.getServiceFacade().getCity();
             cityText.setText(city);
 
 
-            double latitude = parentController.getPrimaryController().getServiceFacade().getLatitude();
-            double longitude = parentController.getPrimaryController().getServiceFacade().getLongitude();
+            double latitude = primaryController.getServiceFacade().getLatitude();
+            double longitude = primaryController.getServiceFacade().getLongitude();
 
-            parentController.getPrimaryController().getModelFacade().getLocation().setCoordinate(latitude, longitude);
+            primaryController.getModelFacade().getLocation().setCoordinate(latitude, longitude);
 
         });
     }

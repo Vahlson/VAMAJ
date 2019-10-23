@@ -11,13 +11,14 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import main.java.model.contract.FixedContract;
+import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
 
 //Question about the users property.
 public class PropertyQuestionViewController extends AnchorPane {
-    MainViewController parentController;
+    PrimaryController primaryController;
 
     @FXML
     private RadioButton consumingRB;
@@ -37,11 +38,11 @@ public class PropertyQuestionViewController extends AnchorPane {
     private double electricity = 0;
     private double cost = 0;
 
-    public PropertyQuestionViewController(MainViewController parentController){
-        this.parentController = parentController;
+    public PropertyQuestionViewController(PrimaryController primaryController){
+        this.primaryController = primaryController;
 
         //initialize this controller as a javafx node while coupling it with a fxml.
-        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/propertyquestion.fxml",this);
+        primaryController.initDynamicComponent("/fxml/dynamic/propertyquestion.fxml",this);
 
         //Match width to parent.
         setLeftAnchor(this,0.0);
@@ -53,8 +54,8 @@ public class PropertyQuestionViewController extends AnchorPane {
         nonConsumingRB.setToggleGroup(tg);
 
 
-        parentController.getPrimaryController().onlyNumbers(consumedElectricity);
-        parentController.getPrimaryController().onlyNumbers(monthlyCost);
+        primaryController.onlyNumbers(consumedElectricity);
+        primaryController.onlyNumbers(monthlyCost);
 
 
         //Set values in model upon losing of focus of text field.
@@ -66,7 +67,7 @@ public class PropertyQuestionViewController extends AnchorPane {
                     //default to 0.
                     electricity = 0;
                 }
-                parentController.getPrimaryController().getModelFacade().getContract().setConsumedElectricity(electricity);
+                primaryController.getModelFacade().getContract().setConsumedElectricity(electricity);
 
             }
         });
@@ -78,7 +79,7 @@ public class PropertyQuestionViewController extends AnchorPane {
                     //default to 0.
                     cost = 0;
                 }
-                parentController.getPrimaryController().getModelFacade().getContract().setMonthlyCost(cost);
+                primaryController.getModelFacade().getContract().setMonthlyCost(cost);
 
             }
         });
@@ -97,14 +98,14 @@ public class PropertyQuestionViewController extends AnchorPane {
                         //Do something with consuming property.
 
                         contractQuestions.setDisable(false);
-                        parentController.getPrimaryController().getModelFacade().setPropertyConsuming();
-                        parentController.getPrimaryController().getModelFacade().setContract(new FixedContract(cost,electricity));
+                        primaryController.getModelFacade().setPropertyConsuming();
+                        primaryController.getModelFacade().setContract(new FixedContract(cost,electricity));
 
 
                     } else{
                         //Changes the property to nonconsuming which assumes a contract with zero cost and zero consumed electricity.
                         contractQuestions.setDisable(true);
-                        parentController.getPrimaryController().getModelFacade().setPropertyNonConsuming();
+                        primaryController.getModelFacade().setPropertyNonConsuming();
 
 
                     }

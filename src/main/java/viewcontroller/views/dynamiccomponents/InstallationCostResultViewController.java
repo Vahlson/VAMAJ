@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.io.IOException;
 //TODO IDFK WTF THIS SHIIIIIII IS MANE.
 public class InstallationCostResultViewController extends AnchorPane {
 
-    MainViewController parentController;
+    PrimaryController primaryController;
 
     @FXML
     private Label installationCostLabel;
@@ -21,11 +22,11 @@ public class InstallationCostResultViewController extends AnchorPane {
     private Label subventedCostLabel;
 
     
-    public InstallationCostResultViewController(MainViewController parentController){
-        this.parentController = parentController;
+    public InstallationCostResultViewController(PrimaryController primaryController){
+        this.primaryController = primaryController;
 
         //initialize this controller as a javafx node while coupling it with a fxml.
-        parentController.getPrimaryController().initDynamicComponent("/fxml/dynamic/installationcostresult.fxml",this);
+        primaryController.initDynamicComponent("/fxml/dynamic/installationcostresult.fxml",this);
 
         //Match width to parent.
         setLeftAnchor(this,0.0);
