@@ -1,9 +1,12 @@
 package main.java.viewcontroller.views.dynamiccomponents;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.MainViewController;
@@ -19,6 +22,12 @@ public class FindLocationViewController extends AnchorPane {
     @FXML
     private Button findlocationButton;
 
+    @FXML
+    private HBox loadingAnimation;
+
+    private boolean dataGathering;
+    private boolean dataIsGathered = false;
+
     public FindLocationViewController(PrimaryController primaryController) {
 
         this.primaryController = primaryController;
@@ -30,20 +39,54 @@ public class FindLocationViewController extends AnchorPane {
         setLeftAnchor(this, 0.0);
         setRightAnchor(this, 0.0);
 
+
+
+
         //Shows updates location and shows location in gui
-        findlocationButton.setOnAction(event -> {
+        findlocationButton.setOnMouseClicked(event -> {
+
+            dataGathering = true;
+            loadingAnimation.setVisible(true);
+
+            LocationGatheringThread lgt = new LocationGatheringThread();
+            lgt.start();
+
+
+        });
+
+
+    }
+
+
+
+    //Thread for location gathering.
+    public class LocationGatheringThread extends Thread {
+
+        public void run(){
+            //Get the city name from API.
             String city;
             city = primaryController.getServiceFacade().getCity();
-            cityText.setText(city);
 
-
+            //get latitude and longitude from the model
             double latitude = primaryController.getServiceFacade().getLatitude();
             double longitude = primaryController.getServiceFacade().getLongitude();
 
             //primaryController.getModelFacade().getLocation().setCoordinate(latitude, longitude);
             primaryController.setLocationFromAPI(latitude,longitude);
 
+            //display the result
+            cityText.setText(city);
+            //Hide loading animation.
+            dataIsGathered = true;
+            dataGathering = false;
+            loadingAnimation.setVisible(false);
+        }
+    }
 
-        });
+    public boolean isGatheringData(){
+        return dataGathering;
+    }
+    public boolean isDataGathered(){
+        return dataIsGathered;
     }
 }

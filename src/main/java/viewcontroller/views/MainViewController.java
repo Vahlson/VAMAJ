@@ -19,6 +19,8 @@ import main.java.viewcontroller.views.dynamiccomponents.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 //The controller of the main view of the program controls the interaction of the main view.
 //Input and communication with the model is accessed through the primaryController.
@@ -47,6 +49,9 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private ProgressBar progressBar;
 
+    @FXML
+    private AnchorPane root;
+
     public MainViewController(PrimaryController controller) {
         this.primaryController = controller;
         System.out.println("in here");
@@ -61,7 +66,10 @@ public class MainViewController extends AnchorPane implements Initializable {
         this.primaryController = primaryController;
     }
 
-
+    SolarPanelQuestionViewController solarQ;
+    SpaceQuestionViewController spaceQ;
+    FindLocationViewController locationQ;
+    PropertyQuestionViewController propertyQ;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -70,17 +78,29 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         //Adding questions to the list
+        solarQ = new SolarPanelQuestionViewController(primaryController);
+        spaceQ = new SpaceQuestionViewController(primaryController);
+        locationQ = new FindLocationViewController(primaryController);
+        propertyQ = new PropertyQuestionViewController(primaryController);
 
-        questionList.getChildren().add(new SolarPanelQuestionViewController(primaryController));
-        questionList.getChildren().add(new SpaceQuestionViewController(primaryController));
-        questionList.getChildren().add(new FindLocationViewController(primaryController));
-        questionList.getChildren().add(new PropertyQuestionViewController(primaryController));
+        questionList.getChildren().add(solarQ);
+        questionList.getChildren().add(spaceQ);
+        questionList.getChildren().add(locationQ);
+        questionList.getChildren().add(propertyQ);
 
         //EVENTS for nodes of the program
+        root.setOnKeyPressed(event -> {
+            checkIfReadyForCalculation();
+
+        });
+        root.setOnMouseClicked(event -> {
+            checkIfReadyForCalculation();
+
+        });
+
 
         //go to resultpage and show results.
         calculateButton.setOnAction(event -> {
-            System.out.println("now");
             primaryController.goToResultView();
         });
 
@@ -129,5 +149,19 @@ public class MainViewController extends AnchorPane implements Initializable {
         animation.play();
     }
 
+    //Checks each question for input.
+    private void checkIfReadyForCalculation(){
+        boolean spaceQready = spaceQ.isDataGathered();
+        boolean propertyQReady = propertyQ.isDataGathered();
+
+        //Also checks that data isnt currently being gathered from an API.
+        boolean locationQReady = (!locationQ.isGatheringData()) && locationQ.isDataGathered();
+
+        if(spaceQready && propertyQReady && locationQReady){
+            calculateButton.setDisable(false);
+        }else{
+            calculateButton.setDisable(true);
+        }
+    }
 
 }
