@@ -40,7 +40,9 @@ public class FindLocationViewController extends AnchorPane {
             double latitude = primaryController.getServiceFacade().getLatitude();
             double longitude = primaryController.getServiceFacade().getLongitude();
 
-            primaryController.getModelFacade().getLocation().setCoordinate(latitude, longitude);
+            //primaryController.getModelFacade().getLocation().setCoordinate(latitude, longitude);
+            primaryController.setLocationFromAPI(latitude,longitude);
+
 
         });
     }

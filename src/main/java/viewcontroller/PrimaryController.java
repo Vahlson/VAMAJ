@@ -93,16 +93,12 @@ public class PrimaryController {
 
     //These are called from the separate view controllers.
     // Setters (for API)
-    void setLocationFromAPI(double latitude, double longitude) {
+    public void setLocationFromAPI(double latitude, double longitude) {
         serviceFacade.setLocationCreator(new LocationCreatorAPI());
         serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
-    void setContractFromAPI() {
-        serviceFacade.setContractCreator(new ContractCreatorAPI());
-        modelFacade.setContract(serviceFacade.getContract());
-    }
 
     void setSolarSetup(SolarSetup solarSetup){
         modelFacade.setSolarSetup( solarSetup);

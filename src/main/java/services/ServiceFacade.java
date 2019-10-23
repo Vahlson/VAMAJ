@@ -55,4 +55,6 @@ public class ServiceFacade {
         locationCreator.setLatitude(latitude);
         locationCreator.setLongitude(longitude);
     }
+
+
 }
