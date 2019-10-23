@@ -25,7 +25,10 @@ public class SceneSwitcher {
 
     // Sets scene to given parent
     public void setScene(Parent parent) {
+        boolean wasMax = stage.isMaximized();
         stage.setScene(new Scene(parent));
+        stage.setMaximized(wasMax);
+
     }
 
     // Sets scene to given url
@@ -40,7 +43,9 @@ public class SceneSwitcher {
 
     // Sets scene to given scene
     public void setScene(Scene scene) {
+        boolean wasMax = stage.isMaximized();
         stage.setScene(scene);
+        stage.setMaximized(wasMax);
     }
 
     // Loads FXML-files and returns as parent
