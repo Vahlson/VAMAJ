@@ -1,0 +1,35 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-23
+Chair: Jonatan Bunis
+Participants: Samtliga förutom Jamal
+
+1. Vad gör vi på detta möte.
+Planera sista arbetet för att se till att vi har ett fungerande och testat program tills imorgon.
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+
+2.1 Dokumentstatus
+Alex Ask har skrivit om Geolocationpaketet.
+Jonatan förde över User Storys till RADen.
+Alexander L har inte skrivit sen i måndags.
+Vegard har skrivit om calculator classerna i SDDn och börjat lägga till userStorys i RADen.
+Mohamad har skapat den slutgiltiga rapporten (om det missats i förra mötesprotokollet).
+
+2.2 Projektstatus
+Alex Ask har jobbat med file management och har fixat controllers.
+Jonatan kopplade ihop geolocationpaketet applikationen programmet. Påbörjat förbättring av testet för paketet.
+Alexanderr har gjort stora förändringar i främsta modelaggreagate, modelfaceade lite funktionalitet överallt. 
+Har sett till så att saker kan beräknas via input och ge output.
+Vegard har gjort om testerna i calculator refaktoriserat calculators.
+Mohamad har skrivit tester för modelpaketet.
+
+3. Diskussionsrunda.
+Alla håller med om att vi har tydliga uppgifter att avklara för att slutföra projektet och behöver sätta igång med det.
+Gruppen antar att Jamal inte är med i gruppen längre då han inte varit med på de senaste mötena.
+
+4. målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+Tills imorgon ska alla beräkningar fungera (de ska ta rätt input), tester på det viktigaste, RADen SDD och UMLen ska hänga ihop med koden. 
+Hela programmet ska vara klart och fungerande.
+
+5. Planera nästkommande möte, boka också.
+Nästa möte blir handledarmötet imorgon torsdag (24/10).
