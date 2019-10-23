@@ -9,27 +9,29 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="250.0" prefWidth="700.0" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="271.0" prefWidth="430.0" styleClass="questionCard" stylesheets="@../../css/stylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="700.0" style="-fx-background-color: midnightblue;">
+            <Label alignment="CENTER" layoutX="30.0" layoutY="25.0" prefHeight="33.0" prefWidth="262.0" style="-fx-text-fill: -fx-darkColoredText;" styleClass="h3" text="Var ligger ditt hus?" />
+        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <VBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="703.0">
+            <Pane prefHeight="87.0" />
+            <Text fx:id="cityText" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -fx-main3;" styleClass="h3" textAlignment="CENTER" wrappingWidth="251.1848907470703" />
+                <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="67.0" VBox.vgrow="NEVER">
                     <children>
-                        <Label alignment="CENTER" prefHeight="33.0" prefWidth="262.0" styleClass="h3" text="Var ligger ditt hus?" textFill="WHITE" />
-                  <Pane prefHeight="44.0" prefWidth="700.0" />
-                  <Text fx:id="cityText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" textAlignment="CENTER" wrappingWidth="500.1848907470703" />
+                        <Button fx:id="findlocationButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="144.0" styleClass="ghostButtonPurple" text="Hitta min plats" textAlignment="CENTER" wrapText="true" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
                     </children>
-                </VBox>
-                <HBox alignment="CENTER" prefHeight="46.0" prefWidth="700.0" spacing="20.0">
-                    <children>
-                        <Button fx:id="findlocationButton" mnemonicParsing="false" prefHeight="44.0" prefWidth="94.0" styleClass="ghostButton" text="Hitta min plats" textAlignment="CENTER" wrapText="true" />
-                    </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
                 </HBox>
-                <Label prefHeight="51.0" prefWidth="375.0" styleClass="p4" text="Tryck &quot;hitta min plats&quot; för att hitta din stad" textFill="#ffffffb2" />
+                <Label prefHeight="51.0" style="-fx-text-fill: -fx-weakText;" styleClass="p4" text="Tryck &quot;hitta min plats&quot; för att hitta din stad" textFill="#000000b2" VBox.vgrow="NEVER">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></Label>
             </children>
-            <padding>
-                <Insets top="10.0" />
-            </padding>
         </VBox>
     </children>
 </fx:root>
