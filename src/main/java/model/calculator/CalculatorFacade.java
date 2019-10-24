@@ -16,33 +16,34 @@ public final class CalculatorFacade {
 
     private CalculatorFacade(){}
 
+    //Checks which calculators have values from the input parameter as required values for running the calculation
+    //Rechecks all calculators again after one calculation has run to see if the output from it matches the input to
+    //another calculator
     public static HashMap<DataKey, Double> calculateAll(HashMap<DataKey, Double> wantedOutput){
 
         HashMap<DataKey, Double> output = new HashMap<>(wantedOutput);
 
-        Iterator<Calculator> it = calculatorList.iterator();
+        Iterator<Calculator> iterateCalculator = calculatorList.iterator();
 
-        while (it.hasNext()){
-            Calculator calc = it.next();
-            if(output.keySet().containsAll(calc.getKeysOfRequiredInput())){
-                System.out.println("Calculations successful for the: " + calc.toString());
-                output = calc.calculate(output);
-                it.remove();
-                it = calculatorList.iterator();
-            }else{
-                System.out.println("Insufficient Input for the: " + calc.toString());
-
+        while (calculatorIterator.hasNext()){
+            Calculator currentCalc = calculatorIterator.next();
+            if(output.keySet().containsAll(currentCalc.getKeysOfRequiredInput())){
+                output = currentCalc.calculate(output);
+                calculatorIterator.remove();                    //Remove used calculator from calculatorList
+                calculatorIterator = calculatorList.iterator(); //Reset iterator to first in calculatorList
             }
         }
         return output;
     }
 
+    //Checks all available calculators for specific output key
+    //If a calculator is found it then checks if the input has the required values for running the calculation
+    public static HashMap<DataKey, Double> calculateSpecificValue(DataKey key, HashMap<DataKey, Double> input){
 
-    public static HashMap<DataKey, Double> calculateSpecific(DataKey key, HashMap<DataKey, Double> input){
-        for (Calculator calc: calculatorList) {
-            if (calc.getKeysOfOutput().contains(key)) {
-                if (input.keySet().containsAll((calc.getKeysOfRequiredInput()))) {
-                    return calc.calculate(input);
+        for (Calculator currentCalc: calculatorList) {
+            if (currentCalc.getKeysOfOutput().contains(key)) {
+                if (input.keySet().containsAll((currentCalc.getKeysOfRequiredInput()))) {
+                    return currentCalc.calculate(input);
                 } else {
                     throw new NullPointerException("Insufficient data for meaningful answer");
                 }
