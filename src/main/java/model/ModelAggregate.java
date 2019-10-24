@@ -50,8 +50,7 @@ public class ModelAggregate {
         calculationData.put(PRODUCED_ELECTRICITY,solarSetup.getTotalEProductionPerHour());
         calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
         calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
-        calculationData.put(AVERAGE_SOLAR_RADIATION, serviceFacade.getSolarInsolation());
-
+        calculationData.put(AVERAGE_SOLAR_RADIATION, getLocation().getSolarInsolation());
 
         // Get a template panel to gather panel-specific values.
         SolarPanel templatePanel = getSolarSetup().getASolarPanel();

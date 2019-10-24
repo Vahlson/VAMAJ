@@ -14,7 +14,7 @@ import main.java.services.LocationCreator.LocationCreatorAPI;
 public class ServiceFacade {
 
     // Creation of data grabbers, defaults to getting data from APIs.
-    private LocationCreatorAPI locationCreator = new LocationCreatorAPI(); // Initialized to mock class for now
+    private ILocationCreator locationCreator = new LocationCreatorAPI(); // Initialized to mock class for now
     private IContractCreator contractCreator = new ContractCreatorAPI(); // Initialized to mock class for now
     private IGeolocation geolocation = new Geolocation();
 
@@ -55,7 +55,5 @@ public class ServiceFacade {
         locationCreator.setLatitude(latitude);
         locationCreator.setLongitude(longitude);
     }
-    public double getSolarInsolation(){
-        return locationCreator.getSolarInsolation();
-    }
+
 }

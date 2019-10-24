@@ -34,7 +34,7 @@ public class LocationCreatorAPI implements ILocationCreator {
         return l;
     }
 
-    public double getSolarInsolation() {
+    private double getSolarInsolation() {
         //adjusting
         dataAccuracyInYears -= 1;
 
