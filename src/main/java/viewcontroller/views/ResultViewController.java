@@ -41,7 +41,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        textArea1.clear();
         fillResultView();
         //textArea1.appendText("" + primaryController.getModelFacade().getCalculationResults(DataKey.ANNUAL_ELECTRICITY_PRODUCTION));
 
