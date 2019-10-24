@@ -44,7 +44,6 @@ public class ModelAggregate {
 
         //Gather data from the model's Solar Setup.
         SolarSetup solarSetup = getSolarSetup();
-        serviceFacade = new ServiceFacade();
 
         calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
         calculationData.put(PRODUCED_ELECTRICITY,solarSetup.getTotalEProductionPerHour());
@@ -80,6 +79,7 @@ public class ModelAggregate {
     void runCalculators() {
 
         getDataFromModel();
+
         //Set the calculated output values in thehashmap.
         calculationData = CalculatorFacade.calculateAll(calculationData);
 
