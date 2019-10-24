@@ -26,9 +26,9 @@ public class TestCalculator extends TestCase{
         data.put(SOLAR_PANEL_PERFORMANCE_RATIO, 2.0);
 
         data = CalculatorFacade.calculateAll(data);
-        System.out.println(data.get(SOLAR_PV_DAILY_ELECTRICITY));
+        System.out.println(data.get(ANNUAL_ELECTRICITY_PRODUCTION));
 
-        assertEquals(data.get(SOLAR_PV_DAILY_ELECTRICITY), 144.0);
+        assertEquals(data.get(ANNUAL_ELECTRICITY_PRODUCTION), 144.0*364);
     }
 
     @Test
@@ -84,12 +84,12 @@ public class TestCalculator extends TestCase{
         HashMap<DataKey, Double> data = new HashMap<>();
 
 
-        data.put(CONSUMED_ELECTRICITY, 100.0);
-        data.put(PRODUCED_ELECTRICITY, 200.0);
+        data.put(MONTHLY_ELECTRICITY_CONSUMPTION, 100.0);
+        data.put(ANNUAL_ELECTRICITY_PRODUCTION, 2000.0);
 
         data = CalculatorFacade.calculateAll(data);
 
         System.out.println(data.get(SURPLUS));
-        assertTrue(data.get(SURPLUS) == 100.0);
+        assertTrue(data.get(SURPLUS) == 800.0);
     }
 }

@@ -23,7 +23,7 @@ public final class CalculatorFacade {
 
         HashMap<DataKey, Double> output = new HashMap<>(wantedOutput);
 
-        Iterator<Calculator> iterateCalculator = calculatorList.iterator();
+        Iterator<Calculator> calculatorIterator = calculatorList.iterator();
 
         while (calculatorIterator.hasNext()){
             Calculator currentCalc = calculatorIterator.next();
