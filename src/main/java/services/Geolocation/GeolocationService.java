@@ -3,12 +3,11 @@ package main.java.services.Geolocation;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;
+import main.java.Main;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.InetAddress;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
@@ -19,18 +18,20 @@ class GeolocationService {
     private DatabaseReader dbReader;
 
     // Constructor (empty)
-    GeolocationService() throws IOException {
+    GeolocationService() {
 
         try {
-            URL res = getClass().getClassLoader().getResource("databases/geolocation/GeoLite2-City.mmdb");
 
-            // Loading the database
-            File database;
-            database = Paths.get(Objects.requireNonNull(res).toURI()).toFile();
+            // Finds the directory of the database
+            File f = new File(System.getProperty("java.class.path"));
+            File dir = f.getAbsoluteFile().getParentFile();
+            String path = dir.toString();
+            path += "\\classes\\databases\\geolocation\\GeoLite2-City.mmdb";
 
             // Instantiating the database reader
-            dbReader = new DatabaseReader.Builder(database).build();
-        } catch (URISyntaxException e) {
+            dbReader = new DatabaseReader.Builder(new File(path)).build();
+
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
     }
