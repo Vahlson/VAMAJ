@@ -46,7 +46,7 @@ public class ModelAggregate {
         SolarSetup solarSetup = getSolarSetup();
 
         calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
-        calculationData.put(PRODUCED_ELECTRICITY,solarSetup.getTotalEProductionPerHour());
+        calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY,solarSetup.getTotalEProductionPerHour());
         calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
         calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
         calculationData.put(AVERAGE_SOLAR_RADIATION, getLocation().getSolarInsolation());
@@ -61,7 +61,7 @@ public class ModelAggregate {
 
         // Get data from det model's contract
         Contract contract = getContract();
-        calculationData.put(CONSUMED_ELECTRICITY,contract.getConsumedElectricity());
+        calculationData.put(MONTHLY_ELECTRICITY_CONSUMPTION,contract.getConsumedElectricity());
         calculationData.put(MONTHLY_ELECTRICITY_PRICE,contract.getMonthlyCost());
 
 

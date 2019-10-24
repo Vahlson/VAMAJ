@@ -24,7 +24,7 @@ final class ElectricitySurplusCalculator implements Calculator{
         double surplus = 0;
 
         double produced = data.get(ANNUAL_ELECTRICITY_PRODUCTION);
-        double consumed = data.get(CONSUMED_ELECTRICITY)*12;
+        double consumed = data.get(MONTHLY_ELECTRICITY_CONSUMPTION)*12;
 
         //Checks if there is a surplus and calculates if there is, no negative surplus possible
         if(produced > consumed){
@@ -37,7 +37,7 @@ final class ElectricitySurplusCalculator implements Calculator{
 
     @Override
     public Set<DataKey> getKeysOfRequiredInput() {
-        return new HashSet<>(Arrays.asList(ANNUAL_ELECTRICITY_PRODUCTION, CONSUMED_ELECTRICITY));
+        return new HashSet<>(Arrays.asList(ANNUAL_ELECTRICITY_PRODUCTION, MONTHLY_ELECTRICITY_CONSUMPTION));
     }
 
     @Override
