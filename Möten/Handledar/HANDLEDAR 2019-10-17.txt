@@ -1,0 +1,43 @@
+Group: VAMAJ - Grupp 14
+Date: 2019-10-17
+Chair: Alexander Ask
+Participants: All
+
+1. Vad gör vi på detta möte.
+
+Kolla peer-review, och möjligtvis skicka in.
+
+
+2. Status: ta reda på vad folk gör och vad folk har gjort och gå igenom vår scrumboard.
+2.1 Dokumentstatus
+
+Dokumenten böjar bli klara.
+
+2.2 Projektstatus
+
+Kommit en bra bit, vi behöver 'koppla ihop' allt och se till att vi har ett 
+sammanhängande, fungerade program.
+
+3. Diskussionsrunda.
+
+Vi skulle kunna genomföra en övningspresentation nästa handledarmöte (2019-10-24).
+Vi skall ha en (nästan) färdig version av presentationen till detta tillfälle.
+Innehållet i vår presentation skall matcha det vi har gjort själva (kod och annat).
+Börja bli klara med RAD/SDD så snart som möjligt, alla diagram skall stämma med vår kod.
+överens med den senaste versionen av vår kod.
+Access control and security behöver vi inte tänka på, då det inte ingår i vårt program.
+Det är inte obligatoriskt att ha quality control.
+Innehållet i presentationen/dokumenten är viktigare än presentationsteknik.
+Det är viktigt att läsa igenom dokumenten högt, för att hitta otydligheter i texten.
+Vi måste se till att vårt program kan fungera utan att APIerna fungerar, i nuläget
+kraschar programmet då API inte fungerar.
+Kan vara bra att försöka bli klara med koden lite tidigare, så att eventuella problem
+kan lösas i tid.
+
+4. Målsättning inför nästa möte och inför slut på sprint (och tidsplanering).
+
+Ha en relativt färdig version av vår presentationen (alla dokument/vår kod). Detta
+skall helst vara klart tills på tisdag. Kolla igenom våra beroenden så att allt är som
+vi vill ha det.
+
+5. Planera nästkommande möte, boka också.
