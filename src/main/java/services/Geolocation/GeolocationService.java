@@ -26,7 +26,7 @@ class GeolocationService {
             File f = new File(System.getProperty("java.class.path"));
             File dir = f.getAbsoluteFile().getParentFile();
             String path = dir.toString();
-            path += "\\classes\\databases\\geolocation\\GeoLite2-City.mmdb";
+            path += "/classes/databases/geolocation/GeoLite2-City.mmdb";
 
             // Instantiating the database reader
             dbReader = new DatabaseReader.Builder(new File(path)).build();
