@@ -150,7 +150,7 @@ public abstract class SolarSetup {
     }
 
     // Gets the amount of solarPanels that fit in the available space.
-    private int getNumberOfSolarPanels(SolarPanel templateSolarPanel) {
+    public int getNumberOfSolarPanels(SolarPanel templateSolarPanel) {
 
         int numberOfSolarPanels = 0;
         numberOfSolarPanels = (int) Math.floor(availableSpace / templateSolarPanel.getSize());
