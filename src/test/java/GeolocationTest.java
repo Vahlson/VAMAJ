@@ -9,7 +9,7 @@ public class GeolocationTest extends TestCase {
     public void testGeolocation() {
 
         Geolocation location;
-        location = new Geolocation();
+        location = new Geolocation(getClass().getResource("/databases/geolocation/GeoLite2-City.mmdb").getPath());
 
         assertEquals(location.getCity(), "Gothenburg");
     }

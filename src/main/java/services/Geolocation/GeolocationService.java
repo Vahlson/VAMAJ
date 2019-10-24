@@ -18,18 +18,12 @@ class GeolocationService {
     private DatabaseReader dbReader;
 
     // Constructor (empty)
-    GeolocationService() {
+    GeolocationService(String url) {
 
         try {
 
-            // Finds the directory of the database
-            File f = new File(System.getProperty("java.class.path"));
-            File dir = f.getAbsoluteFile().getParentFile();
-            String path = dir.toString();
-            path += "/classes/databases/geolocation/GeoLite2-City.mmdb";
-
             // Instantiating the database reader
-            dbReader = new DatabaseReader.Builder(new File(path)).build();
+            dbReader = new DatabaseReader.Builder(new File(url)).build();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -42,6 +36,10 @@ class GeolocationService {
         // Creating the ip address
         InetAddress ipAddress;
         ipAddress = InetAddress.getByName(ip);
+
+        if (dbReader == null){
+            return null;
+        }
 
         // Creating the CityResponse
         CityResponse response;

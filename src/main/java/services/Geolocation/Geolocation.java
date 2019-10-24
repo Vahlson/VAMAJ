@@ -16,7 +16,7 @@ public class Geolocation implements IGeolocation {
     private double longitude;
 
     // Constructor (empty)
-    public Geolocation() {
+    public Geolocation(String url) {
 
         // Getting the ip address
         String ip = null;
@@ -29,10 +29,15 @@ public class Geolocation implements IGeolocation {
         // Getting the location data from the service
         try {
             // Tries to load the database
-            service = new GeolocationService();
+            service = new GeolocationService(url);
 
             CityResponse data;
             data = service.getData(ip);
+
+            if (data == null) {
+                this.city = "Error loading city!";
+                return;
+            }
 
             // Fetching the data
             this.city = data.getCity().getName();

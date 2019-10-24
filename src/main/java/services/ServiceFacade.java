@@ -9,6 +9,8 @@ import main.java.services.Geolocation.IGeolocation;
 import main.java.services.LocationCreator.ILocationCreator;
 import main.java.services.LocationCreator.LocationCreatorAPI;
 
+import java.io.File;
+
 //(3.1) Alex LV och Alex Ask
 //The service package facade, meaning interface that exposes wanted functionality outward from the service package.
 public class ServiceFacade {
@@ -16,7 +18,18 @@ public class ServiceFacade {
     // Creation of data grabbers, defaults to getting data from APIs.
     private ILocationCreator locationCreator = new LocationCreatorAPI(); // Initialized to mock class for now
     private IContractCreator contractCreator = new ContractCreatorAPI(); // Initialized to mock class for now
-    private IGeolocation geolocation = new Geolocation();
+    private IGeolocation geolocation = new Geolocation(findResourcePath());
+
+    // Method that finds the path to the database file
+    private String findResourcePath() {
+
+        File f = new File(System.getProperty("java.class.path"));
+        File dir = f.getAbsoluteFile().getParentFile();
+        String path = dir.toString();
+        path += "/classes/databases/geolocation/GeoLite2-City.mmdb";
+
+        return path;
+    }
 
     // Getters
     // Returns a Contract or Location respectively by the method decided by the dynamic class of the
@@ -30,15 +43,15 @@ public class ServiceFacade {
         return locationCreator.createLocation();
     }
 
-    public String getCity(){
+    public String getCity() {
         return geolocation.getCity();
     }
 
-    public double getLatitude(){
+    public double getLatitude() {
         return geolocation.getLatitude();
     }
 
-    public  double getLongitude(){
+    public double getLongitude() {
         return geolocation.getLongitude();
     }
 
@@ -51,7 +64,7 @@ public class ServiceFacade {
         this.contractCreator = creator;
     }
 
-    public void setLocationCreatorCoordinates(double latitude, double longitude){
+    public void setLocationCreatorCoordinates(double latitude, double longitude) {
         locationCreator.setLatitude(latitude);
         locationCreator.setLongitude(longitude);
     }
