@@ -61,7 +61,6 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         //clearing the list and initializing question indicator.
         questionList.getChildren().clear();
-        questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         //Adding questions to the list
         solarQ = new SolarPanelQuestionViewController(primaryController);
@@ -73,6 +72,8 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionList.getChildren().add(spaceQ);
         questionList.getChildren().add(solarQ);
         questionList.getChildren().add(propertyQ);
+
+        questionNumber.setText(state + 1 + "/" + questionList.getChildren().size());
 
         // For each node is list of question, add change listener to update calculate button
         for (Node n : questionList.getChildren()) {
