@@ -14,9 +14,6 @@ public abstract class SolarPanel {
     private double lifeExpectancy;
     private double efficiency;
     private double performanceRatio;
-    private String panelName;
-    private String panelManufacturer;
-
 
     public SolarPanel(double size, double retailPrice, double wattage) {
         this.size = size;
@@ -24,31 +21,20 @@ public abstract class SolarPanel {
         this.retailPrice = retailPrice;
         this.wattage = wattage;
         this.lifeExpectancy = 20;
-        this.panelName = "Generic Panel";
-        this.panelManufacturer = "Generic Panel Manufacturer";
+
     }
 
     //Getters
-
     public double getSize() {
         return this.size;
     }
-
 
     public double getProductionPerHour() {
         return this.productionPerHour;
     }
 
-    public void setProductionPerHour(double productionPerHour) {
-        this.productionPerHour = productionPerHour;
-    }
-
     public double getLifeExpectancy() {
         return this.lifeExpectancy;
-    }
-
-    public void setLifeExpectancy(double lifeExpectancy) {
-        this.lifeExpectancy = lifeExpectancy;
     }
 
     public double getRetailPrice() {
@@ -59,43 +45,34 @@ public abstract class SolarPanel {
         return this.wattage;
     }
 
-    public String getPanelName() {
-        return this.panelName;
-    }
-
-    public void setPanelName(String panelName) {
-        this.panelName = panelName;
-    }
-
-    public String getPanelManufacturer() {
-        return this.panelManufacturer;
-    }
-
-
-//Setter
-
-    public void setPanelManufacturer(String panelManufacturer) {
-        this.panelManufacturer = panelManufacturer;
+    public double getEfficiency() {
+        return efficiency;
     }
 
     public double getAnnualOperationCost() {
         return annualOperationCost;
     }
 
+    public double getPerformanceRatio() {
+        return performanceRatio;
+    }
+
+
+    //Setters
     public void setAnnualOperationCost(double annualOperationCost) {
         this.annualOperationCost = annualOperationCost;
     }
 
-    public double getEfficiency() {
-        return efficiency;
+    public void setProductionPerHour(double productionPerHour) {
+        this.productionPerHour = productionPerHour;
     }
 
     public void setEfficiency(double efficiency) {
         this.efficiency = efficiency;
     }
 
-    public double getPerformanceRatio() {
-        return performanceRatio;
+    public void setLifeExpectancy(double lifeExpectancy) {
+        this.lifeExpectancy = lifeExpectancy;
     }
 
     public void setPerformanceRatio(double performanceRatio) {

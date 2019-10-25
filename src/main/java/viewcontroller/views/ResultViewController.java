@@ -13,11 +13,11 @@ import java.util.ResourceBundle;
 
 import static main.java.model.calculator.DataKey.*;
 
-
 // Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
 // Responsibility: The controller of the result view.
 // Used by: The MainController calls the Primary Controller when data has been gathered.
 // Uses: The user ends up here upon calculation. Displays calculated data to the user.
+
 public class ResultViewController extends AnchorPane implements Initializable {
 
     //  FXML-Components

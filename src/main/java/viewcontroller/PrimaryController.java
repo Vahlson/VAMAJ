@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
-import main.java.model.solarsetup.SolarSetup;
 import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
 import main.java.viewcontroller.views.MainViewController;
@@ -84,8 +83,7 @@ public class PrimaryController {
             }
         });
     }
-
-
+    
     // These are called from the separate view controllers.
     // Sets a location in the model with data gathered from an api and the lat,long from the parameters.
     // The api uses the latitude and longitude.
@@ -95,10 +93,6 @@ public class PrimaryController {
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
-
-    void setSolarSetup(SolarSetup solarSetup) {
-        modelFacade.setSolarSetup(solarSetup);
-    }
 
     // Getters
     public ModelFacade getModelFacade() {

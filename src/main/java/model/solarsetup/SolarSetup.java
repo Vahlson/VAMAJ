@@ -13,29 +13,45 @@ public abstract class SolarSetup {
 
     // Member variables
     private List<SolarPanel> solarPanels;
-
-    private double installationCost;
     private double availableSpace;
-    private int orientation;
-    private int angle;
-
+    private double installationCost;
 
     public SolarSetup() {
-        this.solarPanels = new ArrayList<>();
-        this.installationCost = 0;
-        this.availableSpace = 0;
-        this.orientation = 0;
-        this.angle = 0;
-    }
 
-    //Getters
-    public List<SolarPanel> getSolarPanels() {
-        return this.solarPanels;
+        this.solarPanels = new ArrayList<>();
+        this.availableSpace = 0;
+
     }
 
     //Setters
     public void setSolarPanels(List<SolarPanel> solarPanels) {
         this.solarPanels = solarPanels;
+    }
+
+    public void setAvailableSpace(double availableSpace) {
+        this.availableSpace = availableSpace;
+    }
+
+    // The solar panel typ is
+    public void setSolarPanelsStandard() {
+        SolarPanel templateSolarPanel = new StandardSolarPanel();
+        setSolarPanelsFromTemplate(templateSolarPanel);
+    }
+
+    public void setSolarPanelsPremium() {
+        SolarPanel templateSolarPanel = new PremiumSolarPanel();
+        setSolarPanelsFromTemplate(templateSolarPanel);
+        System.out.println(getNumberOfSolarPanels(templateSolarPanel));
+    }
+
+    //Fills the solarsetup solarpanel list with the amount of solar panels that fit in the available space.
+    private void setSolarPanelsFromTemplate(SolarPanel templateSolarPanel) {
+
+        for (int i = 0; i < getNumberOfSolarPanels(templateSolarPanel); i++) {
+            solarPanels.add(templateSolarPanel);
+        }
+
+        setSolarPanels(solarPanels);
     }
 
     //Lazy instantiation, gets a solar panel
@@ -56,14 +72,12 @@ public abstract class SolarSetup {
 
     }
 
-    public int getAngle() {
-        return angle;
+    public void setInstallationCost(double installationCost) {
+        this.installationCost = installationCost;
     }
 
-    public void setAngle(int angle) {
-        this.angle = angle;
-    }
 
+    //Getters
     //Sums up effeciency of solar panels.
     public double getTotalEProductionPerHour() {
         double totalProduction = 0.0;
@@ -73,32 +87,8 @@ public abstract class SolarSetup {
         return totalProduction;
     }
 
-    public double getInstallationCost() {
-        return this.installationCost;
-    }
-
-    public void setInstallationCost(double installationCost) {
-        this.installationCost = installationCost;
-    }
-
     public double getAvailableSpace() {
         return availableSpace;
-    }
-
-    public void setAvailableSpace(double availableSpace) {
-        this.availableSpace = availableSpace;
-    }
-
-    public int getOrientation() {
-        return orientation;
-    }
-
-    public void setOrientation(int orientation) {
-        this.orientation = orientation;
-    }
-
-    public int getPanelAngle() {
-        return angle;
     }
 
     // Returns the sum of each solar panel's annualoperationCost.
@@ -110,15 +100,6 @@ public abstract class SolarSetup {
         return totalAnnualOperationCost;
     }
 
-    //Returns the sum of each solar panel's productionperhour times hours in a year.
-    public double getAnnualElectricityProduction() {
-        double annualElectricityProduction = 0.0;
-        for (SolarPanel p : solarPanels) {
-            annualElectricityProduction += p.getProductionPerHour();
-        }
-        annualElectricityProduction *= 8766;
-        return annualElectricityProduction;
-    }
 
     // Returns the sum of each solar panels area.
     public double getSolarPanelCoverage() {
@@ -129,30 +110,6 @@ public abstract class SolarSetup {
         return solarPanelCoverage;
     }
 
-    // The solar panel typ is
-    public void setSolarPanelsStandard() {
-        SolarPanel templateSolarPanel = new StandardSolarPanel();
-        setSolarPanelsFromTemplate(templateSolarPanel);
-
-
-    }
-
-    public void setSolarPanelsPremium() {
-        SolarPanel templateSolarPanel = new PremiumSolarPanel();
-        setSolarPanelsFromTemplate(templateSolarPanel);
-        System.out.println(getNumberOfSolarPanels(templateSolarPanel));
-
-    }
-
-    //Fills the solarsetup solarpanel list with the amount of solar panels that fit in the available space.
-    private void setSolarPanelsFromTemplate(SolarPanel templateSolarPanel) {
-
-        for (int i = 0; i < getNumberOfSolarPanels(templateSolarPanel); i++) {
-            solarPanels.add(templateSolarPanel);
-        }
-
-        setSolarPanels(solarPanels);
-    }
 
     // Gets the amount of solarPanels that fit in the available space.
     public int getNumberOfSolarPanels(SolarPanel templateSolarPanel) {

@@ -9,8 +9,6 @@ package main.java.model.solarsetup;
 
 public class RoofBasedSolarSetup extends SolarSetup {
 
-    private double roofUnit;
-
     public RoofBasedSolarSetup(double installationCost, double squareMeters) {
         super();
         super.setInstallationCost(installationCost);
@@ -18,11 +16,4 @@ public class RoofBasedSolarSetup extends SolarSetup {
 
     }
 
-    public double getRoofUnit() {
-        return this.roofUnit;
-    }
-
-    public void setRoofUnit(double roofUnit) {
-        this.roofUnit = roofUnit;
-    }
 }

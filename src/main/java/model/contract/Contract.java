@@ -18,30 +18,23 @@ public abstract class Contract {
     }
 
     // Getters
-    public String getContractProvider() {
-        return this.contractProvider;
-    }
-
-    public void setContractProvider(String contractProvider) {
-        this.contractProvider = contractProvider;
-    }
 
     public double getMonthlyCost() {
-
         return this.monthlyCost;
-    }
-
-    public void setMonthlyCost(double monthlyCost) {
-        this.monthlyCost = monthlyCost;
     }
 
     public double getConsumedElectricity() {
         return consumedElectricity;
     }
 
+
     // Setters
     public void setConsumedElectricity(double consumedElectricity) {
         this.consumedElectricity = consumedElectricity;
+    }
+
+    public void setMonthlyCost(double monthlyCost) {
+        this.monthlyCost = monthlyCost;
     }
 
 

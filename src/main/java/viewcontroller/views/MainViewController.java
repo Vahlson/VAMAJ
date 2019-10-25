@@ -58,14 +58,6 @@ public class MainViewController extends AnchorPane implements Initializable {
 
     }
 
-    public PrimaryController getPrimaryController() {
-        return primaryController;
-    }
-
-    public void setPrimaryController(PrimaryController primaryController) {
-        this.primaryController = primaryController;
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

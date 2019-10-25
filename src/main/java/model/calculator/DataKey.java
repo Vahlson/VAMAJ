@@ -28,10 +28,10 @@ public enum DataKey {
 
     private String description = "Value";
 
-    private DataKey(String description) {
+    DataKey(String description) {
         this.description = description;
     }
-    private DataKey() {
+    DataKey() {
     }
 
     public String getDescription() {

@@ -10,11 +10,10 @@ import java.net.InetAddress;
 
 
 // Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
-// Responsibility:
-// Used by:
+// Responsibility: A sort of adapter toward the geolocation database.
+// Used by: Geolocation.
 // Uses: Creates a connection to the API database so that geolocation data can be gathered.
 
-// Class that fetches geolocation data using our API:s
 class GeolocationService {
 
     // Creating the database reader

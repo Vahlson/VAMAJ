@@ -55,10 +55,6 @@ public class ModelFacade {
         return modelAggregate.getCalculationResult(key);
     }
 
-    //Adding data for calculations.
-    public void addCalculationData(DataKey key, double value) {
-        modelAggregate.addCalculationData(key, value);
-    }
 
     public void setSolarPanelsStandard() {
 

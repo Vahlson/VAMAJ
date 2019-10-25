@@ -5,7 +5,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import main.java.viewcontroller.PrimaryController;
 
-
 // Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
 // Responsibility: Question about available space of the potential solarinstallation.
 // Used by: MainViewController.

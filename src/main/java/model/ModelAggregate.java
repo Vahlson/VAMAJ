@@ -82,11 +82,6 @@ public class ModelAggregate {
         return Objects.requireNonNull(calculationData.get(key), "Insufficient data for calculations of: " + key.getDescription());
     }
 
-    //Adding data for calculations.
-    void addCalculationData(DataKey key, double value) {
-        calculationData.put(key, value);
-    }
-
 
     // Getters
     Property getProperty() {

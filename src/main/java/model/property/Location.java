@@ -25,15 +25,11 @@ public class Location {
         return solarInsolation;
     }
 
-    public Coordinate getCoordinate() {
-        return coordinate;
-    }
 
     // Setters
     public void setCoordinate(double latitude, double longitude) {
         this.coordinate = new Coordinate(latitude, longitude);
     }
-
 
     public void setSolarInsolation(double solarInsolation) {
         this.solarInsolation = solarInsolation;
