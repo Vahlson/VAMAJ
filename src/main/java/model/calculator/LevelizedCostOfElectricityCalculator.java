@@ -1,13 +1,16 @@
 package main.java.model.calculator;
 
-//(4.2) Vegard
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 import static main.java.model.calculator.DataKey.*;
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Calculator implementation.
+// Used by: CalculatorFacade.
+// Uses: Handles all calculations related to a solar setup's levelized cost of electricity. (Kr/kWh)
 
 final class LevelizedCostOfElectricityCalculator implements Calculator{
 

@@ -1,6 +1,12 @@
 package main.java.model.contract;
 
-// Implementaion of a contract that is of the dynamic type.
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Implementaion of a contract that is of the dynamic type.
+// Used by: ModelAggregate.
+// Uses: Holds data specific to a fixed contract type.
+// (extensibility possibilities) Useful for storing specific properties of a dynamic contract, for more specific calculations.
+//  Ex: cost calculation for a dynamic value.
+
 public class DynamicContract extends Contract {
 
     public DynamicContract(double cost, double consumedElectricity) {

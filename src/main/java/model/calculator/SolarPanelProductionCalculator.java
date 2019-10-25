@@ -7,7 +7,11 @@ import java.util.Set;
 
 import static main.java.model.calculator.DataKey.*;
 
-// (4.1) arcsak
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Calculator implementation.
+// Used by: CalculatorFacade.
+// Uses: Handles all calculations related to a solar setup's electricity production.
+
 final class SolarPanelProductionCalculator implements Calculator {
 
     SolarPanelProductionCalculator() {
@@ -30,7 +34,7 @@ final class SolarPanelProductionCalculator implements Calculator {
                 * panelEfficiency
                 * averageRadiation
                 * panelPerformanceRatio
-                *364;
+                * 364;
 
         // Returning the result
         data.put(ANNUAL_ELECTRICITY_PRODUCTION, energy);
