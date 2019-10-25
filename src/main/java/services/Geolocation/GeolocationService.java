@@ -28,7 +28,7 @@ class GeolocationService {
             dbReader = new DatabaseReader.Builder(new File(url)).build();
 
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println("Error loading geoip2 database: " + e.getMessage());
         }
     }
 

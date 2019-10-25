@@ -4,6 +4,7 @@ package main.java.viewcontroller.views;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -47,15 +48,12 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private Button downNavigation;
     @FXML
-    private ProgressBar progressBar;
-    @FXML
     private AnchorPane root;
 
 
     public MainViewController(PrimaryController controller) {
         this.primaryController = controller;
         System.out.println("in here");
-
     }
 
     @Override
@@ -76,15 +74,10 @@ public class MainViewController extends AnchorPane implements Initializable {
         questionList.getChildren().add(solarQ);
         questionList.getChildren().add(propertyQ);
 
-        //EVENTS for nodes of the program
-        root.setOnKeyPressed(event -> {
-            checkIfReadyForCalculation();
-
-        });
-        root.setOnMouseClicked(event -> {
-            checkIfReadyForCalculation();
-
-        });
+        // For each node is list of question, add change listener to update calculate button
+        for (Node n : questionList.getChildren()) {
+            n.setOnMouseExited(event -> checkIfReadyForCalculation());
+        }
 
 
         //go to resultpage and show results.
