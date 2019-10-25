@@ -110,7 +110,7 @@ public class PrimaryController {
             mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
         }
         setScene(mainView);
-
+        modelFacade.clearData();
     }
 
     //Switch scenes to the result view, using the sceneswitcher.
