@@ -47,7 +47,7 @@ public class ModelAggregate {
         //Gather data from the model's Solar Setup.
         SolarSetup solarSetup = getSolarSetup();
         calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
-        calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY,solarSetup.getTotalEProductionPerHour());
+        calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY,solarSetup.getTotalWattage());
         calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
         calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
 

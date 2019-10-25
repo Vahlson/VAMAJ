@@ -78,13 +78,13 @@ public abstract class SolarSetup {
 
 
     //Getters
-    //Sums up effeciency of solar panels.
-    public double getTotalEProductionPerHour() {
-        double totalProduction = 0.0;
+    //Sums up efficiency of solar panels.
+    public double getTotalWattage() {
+        double totalWattage = 0.0;
         for (SolarPanel p : solarPanels) {
-            totalProduction += p.getProductionPerHour();
+            totalWattage += p.getWattage();
         }
-        return totalProduction;
+        return totalWattage;
     }
 
     public double getAvailableSpace() {

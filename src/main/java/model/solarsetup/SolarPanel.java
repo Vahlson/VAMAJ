@@ -9,7 +9,6 @@ public abstract class SolarPanel {
     private final double size;
     private final double retailPrice;
     private final double wattage;  // in KW
-    private double productionPerHour;
     private double annualOperationCost;
     private double lifeExpectancy;
     private double efficiency;
@@ -17,20 +16,14 @@ public abstract class SolarPanel {
 
     public SolarPanel(double size, double retailPrice, double wattage) {
         this.size = size;
-        this.productionPerHour = 0;
         this.retailPrice = retailPrice;
         this.wattage = wattage;
         this.lifeExpectancy = 20;
-
     }
 
     //Getters
     public double getSize() {
         return this.size;
-    }
-
-    public double getProductionPerHour() {
-        return this.productionPerHour;
     }
 
     public double getLifeExpectancy() {
@@ -61,10 +54,6 @@ public abstract class SolarPanel {
     //Setters
     public void setAnnualOperationCost(double annualOperationCost) {
         this.annualOperationCost = annualOperationCost;
-    }
-
-    public void setProductionPerHour(double productionPerHour) {
-        this.productionPerHour = productionPerHour;
     }
 
     public void setEfficiency(double efficiency) {
