@@ -56,55 +56,61 @@ public class ResultViewController extends AnchorPane implements Initializable {
         try {
             textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(INSTALLATION_COST)) + " kr\n");
         } catch (NullPointerException npe) {
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
         textArea1.appendText(GOVERNMENT_SUBVENTION.getDescription() + "\n");
         try {
             textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(GOVERNMENT_SUBVENTION)) + " kr\n");
         } catch (NullPointerException npe) {
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
         textArea1.appendText(SUBVENTED_INSTALLATION_COST.getDescription() + "\n");
         try {
             textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(SUBVENTED_INSTALLATION_COST)) + " kr\n");
         } catch (NullPointerException npe) {
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
         textArea1.appendText(SURPLUS.getDescription() + "\n");
         try {
             textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(SURPLUS)) + " kWh\n");
         } catch (NullPointerException npe) {
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
         textArea1.appendText(YEARS_TO_BREAK_EVEN.getDescription() + "\n");
         try {
             if (primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN) < 0) {
-                textArea2.appendText("It will never pay for itself");
+                textArea2.appendText("Det kommer aldrig att betala för sig själv\n");
             } else {
                 textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN)) + " år\n");
             }
         }catch (NullPointerException npe){
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
         textArea1.appendText(ANNUAL_OPERATION_COST.getDescription() + "\n");
         try {
             textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(ANNUAL_OPERATION_COST)) + " kr\n");
         } catch (NullPointerException npe) {
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
         textArea1.appendText(ANNUAL_ELECTRICITY_PRODUCTION.getDescription() + "\n");
         try {
             textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(ANNUAL_ELECTRICITY_PRODUCTION)) + " kWh\n");
         } catch (NullPointerException npe) {
-            textArea2.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage() + "\n");
         }
 
+        textArea1.appendText(LEVELIZED_ELECTRICITY_COST.getDescription() + "\n");
+        try {
+            textArea2.appendText(readableFormatOneDecimal(primaryController.getModelFacade().getCalculationResult(LEVELIZED_ELECTRICITY_COST)) + " SEK / kWh\n");
+        } catch (NullPointerException npe) {
+            textArea2.appendText(npe.getMessage() + "\n");
+        }
 
     }
 
@@ -124,6 +130,17 @@ public class ResultViewController extends AnchorPane implements Initializable {
         String readableString = String.format("%,d", unReadableInt);
 
         return readableString;
+    }
+
+    // Returns the received double as a readable String with one decimal precision
+    private String readableFormatOneDecimal(double unReadableDouble) {
+
+        int unReadableInt = (int) (unReadableDouble * 10);
+
+        StringBuilder stringBuilder = new StringBuilder(String.format("%,d", unReadableInt));
+        stringBuilder.insert(Character.charCount(unReadableInt),'.');
+
+        return stringBuilder.toString();
     }
 }
 
