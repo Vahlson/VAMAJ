@@ -257,6 +257,9 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
     -fx-background-radius: 4;
 
 }
+.ghostButton:disabled, .ghostButton:disabled > * {
+    -fx-opacity: 1.0 ;
+}
 
 .ghostButton:hover{
     -fx-background-color: -fx-main2;
