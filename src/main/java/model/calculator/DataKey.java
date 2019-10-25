@@ -17,7 +17,7 @@ public enum DataKey {
     ELECTRICITY_SELL_PRICE,
     PANEL_SIZE,
     PANEL_PRICE,
-    LEVELIZED_ELECTRICITY_COST ("Utjämnad energikostnad"),
+    LEVELIZED_ELECTRICITY_COST ("Utjämnad energikostnad:"),
     ANNUAL_ELECTRICITY_PRODUCTION("Årlig elproduktion:"),
     ANNUAL_OPERATION_COST("Underhållskostnad per år:"),
     EXPECTED_LIFESPAN,
