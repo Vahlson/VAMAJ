@@ -16,16 +16,30 @@ final class YearsToBreakEvenCalculator implements Calculator{
 
     //Returns approximate time to break-even on costs for a electricity generation setup
     @Override
-    public HashMap<DataKey, Double> calculate(HashMap<DataKey, Double> input){
+    public HashMap<DataKey, Double> calculate(HashMap<DataKey, Double> input) {
         HashMap<DataKey, Double> data = new HashMap<>(input);
 
-        double installationCost         = input.get(INSTALLATION_COST);
-        double annualOperationCost      = input.get(ANNUAL_OPERATION_COST);
-        double annualProduction         = input.get(ANNUAL_ELECTRICITY_PRODUCTION);
-        double electricityPricePerKWh   = input.get(MONTHLY_ELECTRICITY_PRICE)/input.get(MONTHLY_ELECTRICITY_CONSUMPTION);
+        double installationCost = input.get(INSTALLATION_COST);
+        double annualOperationCost = input.get(ANNUAL_OPERATION_COST);
+        double annualProduction = input.get(ANNUAL_ELECTRICITY_PRODUCTION);
+        double annualPayments = input.get(MONTHLY_ELECTRICITY_PRICE) * 12;
+        double annualConsumption = input.get(MONTHLY_ELECTRICITY_CONSUMPTION) * 12;
+        double sellPriceOfElectricity = input.get(ELECTRICITY_SELL_PRICE);
 
-        double savingsPerYear = annualProduction * electricityPricePerKWh - annualOperationCost;
-        double yearsToPayInstallationCost = installationCost/savingsPerYear;
+        double electricityPricePerKWh = annualPayments / annualConsumption;
+        double surplusProduction;
+        double savingsPerYear;
+
+        if (annualProduction < annualConsumption){
+            savingsPerYear = annualProduction * electricityPricePerKWh - annualOperationCost;
+            surplusProduction = 0;
+        } else{
+            savingsPerYear = annualPayments - annualOperationCost;
+            surplusProduction = annualProduction - annualConsumption;
+        }
+        savingsPerYear = savingsPerYear + sellPriceOfElectricity * surplusProduction;
+
+        double yearsToPayInstallationCost = installationCost / savingsPerYear;
 
         data.put(YEARS_TO_BREAK_EVEN, yearsToPayInstallationCost);
         return data;

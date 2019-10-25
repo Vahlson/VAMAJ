@@ -9,6 +9,7 @@ public enum DataKey {
     GOVERNMENT_SUBVENTION ("Statlig subvention:"),
     SUBVENTED_INSTALLATION_COST ("Totalkostnad efter subvention:"),
     AVAILABLE_SPACE,
+    ELECTRICITY_SELL_PRICE,
     PANEL_SIZE,
     PANEL_PRICE,
     LEVELIZED_ELECTRICITY_COST ("Levelized Electricity Cost"),
