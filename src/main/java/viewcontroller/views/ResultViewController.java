@@ -2,12 +2,10 @@ package main.java.viewcontroller.views;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
-import main.java.model.calculator.DataKey;
 import main.java.viewcontroller.PrimaryController;
 
 import java.net.URL;
@@ -83,7 +81,11 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
         textArea1.appendText(YEARS_TO_BREAK_EVEN.getDescription() + "\n");
         try {
-            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN)) + " år\n");
+            if (primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN) < 0) {
+                textArea2.appendText("It will never pay for itself");
+            } else {
+                textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN)) + " år\n");
+            }
         }catch (NullPointerException npe){
             textArea2.appendText(npe.getMessage());
         }
