@@ -107,7 +107,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
         textArea1.appendText(LEVELIZED_ELECTRICITY_COST.getDescription() + "\n");
         try {
-            textArea2.appendText(readableFormatOneDecimal(primaryController.getModelFacade().getCalculationResult(LEVELIZED_ELECTRICITY_COST)) + " SEK / kWh\n");
+            textArea2.appendText(readableFormatOneDecimal(primaryController.getModelFacade().getCalculationResult(LEVELIZED_ELECTRICITY_COST)) + " kr / kWh\n");
         } catch (NullPointerException npe) {
             textArea2.appendText(npe.getMessage() + "\n");
         }
@@ -138,7 +138,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
         int unReadableInt = (int) (unReadableDouble * 10);
 
         StringBuilder stringBuilder = new StringBuilder(String.format("%,d", unReadableInt));
-        stringBuilder.insert(Character.charCount(unReadableInt),'.');
+        stringBuilder.insert(Character.charCount(unReadableInt),',');
 
         return stringBuilder.toString();
     }
