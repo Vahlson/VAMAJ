@@ -50,6 +50,11 @@ public class ModelFacade {
         modelAggregate.runCalculators();
     }
 
+    // Clear previous data
+    public void clearData(){
+        modelAggregate.clearCalculatioResults();
+    }
+
     // Getter for results of calculation(s)
     public Double getCalculationResult(DataKey key) {
         return modelAggregate.getCalculationResult(key);
