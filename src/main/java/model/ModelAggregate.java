@@ -9,7 +9,6 @@ import main.java.model.property.NonConsumingProperty;
 import main.java.model.property.Property;
 import main.java.model.solarsetup.*;
 import main.java.model.user.User;
-import main.java.services.ServiceFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +27,6 @@ public class ModelAggregate {
     private Double result; //HashMap containing values with a ENUM as key
     //private CalculatorFacade runner = new CalculatorFacade();
     private HashMap<DataKey, Double> calculationData;
-    private ServiceFacade serviceFacade;
 
     public ModelAggregate() {
         calculationData = new HashMap<>();
@@ -49,7 +47,7 @@ public class ModelAggregate {
         calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY,solarSetup.getTotalEProductionPerHour());
         calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
         calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
-        calculationData.put(AVERAGE_SOLAR_RADIATION, getLocation().getSolarInsolation());
+
 
         // Get a template panel to gather panel-specific values.
         SolarPanel templatePanel = getSolarSetup().getASolarPanel();
@@ -61,15 +59,14 @@ public class ModelAggregate {
 
         // Get data from det model's contract
         Contract contract = getContract();
-        calculationData.put(MONTHLY_ELECTRICITY_CONSUMPTION,contract.getConsumedElectricity());
-        calculationData.put(MONTHLY_ELECTRICITY_PRICE,contract.getMonthlyCost());
+        calculationData.put(MONTHLY_ELECTRICITY_CONSUMPTION, contract.getConsumedElectricity());
+        calculationData.put(MONTHLY_ELECTRICITY_PRICE, contract.getMonthlyCost());
+        calculationData.put(ELECTRICITY_SELL_PRICE, contract.getSellbackElectrictyPrice());
 
 
         // Get data from det model's location
-     /*   Location location = getLocation();
-        calculationData.put(AVERAGE_SOLAR_RADIATION,location.getSolarInsolation());
+        calculationData.put(AVERAGE_SOLAR_RADIATION, getLocation().getSolarInsolation());
 
-      */
 
 
 
@@ -135,18 +132,18 @@ public class ModelAggregate {
 
 
     // The solar panel typ is
-    public void setSolarPanelsStandard() {
+    void setSolarPanelsStandard() {
         getSolarSetup().setSolarPanelsStandard();
 
     }
 
-    public void setSolarPanelsPremium() {
+    void setSolarPanelsPremium() {
         getSolarSetup().setSolarPanelsPremium();
 
     }
 
     //Setting the users property to another type by copying old values.
-    public void setPropertyConsuming(){
+    void setPropertyConsuming(){
         Property newProperty = new ConsumingProperty();
         Property oldProperty = getProperty();
 
@@ -159,7 +156,7 @@ public class ModelAggregate {
 
     }
     //Setting the users property to another type by copying old values.
-    public void setPropertyNonConsuming(){
+    void setPropertyNonConsuming(){
         Property newProperty = new NonConsumingProperty();
         Property oldProperty = getProperty();
 
@@ -168,6 +165,10 @@ public class ModelAggregate {
 
 
         currentUser.setProperty(newProperty);
+    }
+
+    void clearCalculatioResults(){
+        calculationData.clear();
     }
 
 }
