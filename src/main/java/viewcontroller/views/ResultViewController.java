@@ -23,6 +23,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     //  FXML-Components
     @FXML
+    private
     AnchorPane resultViewRoot;
     // Member variables
     private PrimaryController primaryController;
@@ -37,8 +38,6 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
     public ResultViewController(PrimaryController primaryController) {
         this.primaryController = primaryController;
-
-        // textArea1.setText("" + primaryController.getModelFacade().getCalculationResults(DataKey.INSTALLATION_COST));
     }
 
 
@@ -46,11 +45,13 @@ public class ResultViewController extends AnchorPane implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         textArea1.clear();
         fillResultView();
-        //textArea1.appendText("" + primaryController.getModelFacade().getCalculationResults(DataKey.ANNUAL_ELECTRICITY_PRODUCTION));
 
+        exitButton.setOnAction(event -> {
+            primaryController.goToMainView(resultViewRoot, Direction.TOP);
+        });
     }
 
-    public void fillResultView() {
+    private void fillResultView() {
         primaryController.getModelFacade().runCalculators();
 
         textArea1.appendText(INSTALLATION_COST.getDescription() + "\n");
@@ -88,7 +89,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
             } else {
                 textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN)) + " år\n");
             }
-        }catch (NullPointerException npe){
+        } catch (NullPointerException npe) {
             textArea2.appendText(npe.getMessage() + "\n");
         }
 
@@ -120,9 +121,6 @@ public class ResultViewController extends AnchorPane implements Initializable {
     @FXML
     private void toMainView(ActionEvent event) {
 
-        System.out.println("saldkfj");
-
-        primaryController.goToMainView(resultViewRoot, Direction.TOP);
 
     }
 
@@ -130,9 +128,8 @@ public class ResultViewController extends AnchorPane implements Initializable {
     private String readableFormat(double unReadableDouble) {
 
         int unReadableInt = (int) unReadableDouble;
-        String readableString = String.format("%,d", unReadableInt);
 
-        return readableString;
+        return String.format("%,d", unReadableInt);
     }
 
     // Returns the received double as a readable String with one decimal precision
@@ -141,7 +138,7 @@ public class ResultViewController extends AnchorPane implements Initializable {
         int unReadableInt = (int) (unReadableDouble * 10);
 
         StringBuilder stringBuilder = new StringBuilder(String.format("%,d", unReadableInt));
-        stringBuilder.insert(Character.charCount(unReadableInt),',');
+        stringBuilder.insert(Character.charCount(unReadableInt), ',');
 
         return stringBuilder.toString();
     }

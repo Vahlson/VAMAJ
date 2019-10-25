@@ -20,7 +20,7 @@
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="768.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Button fx:id="exitButton" minHeight="-Infinity" mnemonicParsing="false" onAction="#toMainView" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="Back to Calculator" VBox.vgrow="NEVER">
+                        <Button fx:id="exitButton" minHeight="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="235.0" styleClass="ghostButton" text="Back to Calculator" VBox.vgrow="NEVER">
                            <VBox.margin>
                               <Insets bottom="50.0" top="50.0" />
                            </VBox.margin>

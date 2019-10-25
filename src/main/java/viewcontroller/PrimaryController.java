@@ -113,8 +113,6 @@ public class PrimaryController {
         p = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
 
         if (mainView == null) {
-
-
             mainView = new Scene(Objects.requireNonNull(p));
         }
 
@@ -133,15 +131,7 @@ public class PrimaryController {
             resultView = new Scene(Objects.requireNonNull(p));
         }
 
-        System.out.println();
-        System.out.println(p);
-        System.out.println(root);
-        System.out.println(d);
-        System.out.println();
-
         sceneSwitcher.loadAndTransition(p, root, d);
-
-        // sceneSwitcher.setScene(resultView);
     }
 
     // SceneSwitcher delegation
@@ -155,9 +145,5 @@ public class PrimaryController {
 
     public void setScene(Scene scene) {
         sceneSwitcher.setScene(scene);
-    }
-
-    public void loadAndTransition(Parent p, AnchorPane root, Direction direction) {
-        sceneSwitcher.loadAndTransition(p, root, direction);
     }
 }
