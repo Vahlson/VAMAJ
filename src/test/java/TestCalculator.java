@@ -55,7 +55,8 @@ public class TestCalculator extends TestCase{
         data.put(INSTALLATION_COST, 100000.0);
         data.put(ANNUAL_OPERATION_COST, 100.0);
         data.put(ANNUAL_ELECTRICITY_PRODUCTION, 30000.0);
-        data.put(MONTHLY_ELECTRICITY_PRICE, 0.3);
+        data.put(MONTHLY_ELECTRICITY_PRICE, 300.0);
+        data.put(MONTHLY_ELECTRICITY_CONSUMPTION, 1000.0);
 
         data = CalculatorFacade.calculateAll(data);
 
