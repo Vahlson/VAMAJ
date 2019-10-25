@@ -3,7 +3,7 @@
 
 The use of solar power for both commercial and private uses is a growing trend. This project aims to adopt that trend by providing value to the user through information about their potential gains with solar power. The user can through the program see whether solar power would be a viable investment economically as well as if there would be a future possibility of profit. The comparisons are made based on the users current electricity provider. Furthermore a major part of the aim of the program is to highlight environmental effect through comparison of ecological footprint before and after the potential switch. This is meant to further incentivize the user towards investing in solar power. The user should also be assisted in his or her choice of solar panel so that a good balance between cost and environmental benefits can be achieved. The program aims to help private residents as well as businesses to help with the decision process concerning the acquirement and use of solar power.
 
-If you have issues running the application:
+# If you have issues running the application:
 The application should start fine, even if the database file cannot be found, or if internet connection is missing.
 If you get the error message "Error loading database! Path to database may be incorrect.", it means that the program cannot find the path to the database file, and therefore cannot get your location data. To fix this issue, follow these steps:
 
