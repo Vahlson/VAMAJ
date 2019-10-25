@@ -52,15 +52,18 @@ public class TestCalculator extends TestCase{
         HashMap<DataKey, Double> data = new HashMap<>();
 
 
-        data.put(INSTALLATION_COST, 100000.0);
+        data.put(INSTALLATION_COST, 200000.0);
         data.put(ANNUAL_OPERATION_COST, 100.0);
-        data.put(ANNUAL_ELECTRICITY_PRODUCTION, 30000.0);
-        data.put(MONTHLY_ELECTRICITY_PRICE, 300.0);
+        data.put(ANNUAL_ELECTRICITY_PRODUCTION, 15000.0);
+        data.put(MONTHLY_ELECTRICITY_PRICE, 1200.0);
         data.put(MONTHLY_ELECTRICITY_CONSUMPTION, 1000.0);
+        data.put(ELECTRICITY_SELL_PRICE, 0.3);
 
         data = CalculatorFacade.calculateAll(data);
 
         assertTrue(Math.abs(data.get(YEARS_TO_BREAK_EVEN) - 11.23) < 0.1);
+
+        assertTrue(Math.abs(data.get(YEARS_TO_BREAK_EVEN) - 13.15) < 0.1);
     }
 
     @Test
