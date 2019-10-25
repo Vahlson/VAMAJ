@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
 import main.java.services.LocationCreator.LocationCreatorAPI;
@@ -12,6 +13,7 @@ import main.java.viewcontroller.views.MainViewController;
 import main.java.viewcontroller.views.ResultViewController;
 
 import java.io.IOException;
+import java.util.Objects;
 
 // Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
 // Responsibility: Holds the connections between the different view controllers and the model.
@@ -36,11 +38,12 @@ public class PrimaryController {
         this.sceneSwitcher = new SceneSwitcher(stage);
         this.serviceFacade = new ServiceFacade();
 
-        goToMainView();
+        // Sets scene to main view when first loading the program
+        setScene(new Scene(Objects.requireNonNull(initComponent("/fxml/mainscene.fxml", new MainViewController(this)))));
     }
 
     //Initializes a component as the primary scene of the window.
-    private Scene initComponent(String url, Object controller) {
+    private Parent initComponent(String url, Object controller) {
 
         // Creating the FXMLLoader and loading the given url
         FXMLLoader loader;
@@ -51,7 +54,7 @@ public class PrimaryController {
         try {
             Parent parent;
             parent = loader.load();
-            return new Scene(parent);
+            return parent;
         } catch (IOException e) {
             System.err.println("Error in initComponent method (PrimaryController): " + e.getMessage());
             e.printStackTrace();
@@ -83,7 +86,7 @@ public class PrimaryController {
             }
         });
     }
-    
+
     // These are called from the separate view controllers.
     // Sets a location in the model with data gathered from an api and the lat,long from the parameters.
     // The api uses the latitude and longitude.
@@ -104,21 +107,41 @@ public class PrimaryController {
     }
 
     //Switch scenes to the main view, using the sceneswitcher.
-    public void goToMainView() {
+    public void goToMainView(AnchorPane root, Direction d) {
+
+        Parent p;
+        p = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
 
         if (mainView == null) {
-            mainView = initComponent("/fxml/mainscene.fxml", new MainViewController(this));
+
+
+            mainView = new Scene(Objects.requireNonNull(p));
         }
-        setScene(mainView);
+
+        sceneSwitcher.loadAndTransition(p, root, d);
+
         modelFacade.clearData();
     }
 
     //Switch scenes to the result view, using the sceneswitcher.
-    public void goToResultView() {
+    public void goToResultView(AnchorPane root, Direction d) {
 
-        resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
+        Parent p;
+        p = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));
 
-        setScene(resultView);
+        if (resultView == null) {
+            resultView = new Scene(Objects.requireNonNull(p));
+        }
+
+        System.out.println();
+        System.out.println(p);
+        System.out.println(root);
+        System.out.println(d);
+        System.out.println();
+
+        sceneSwitcher.loadAndTransition(p, root, d);
+
+        // sceneSwitcher.setScene(resultView);
     }
 
     // SceneSwitcher delegation
@@ -134,4 +157,7 @@ public class PrimaryController {
         sceneSwitcher.setScene(scene);
     }
 
+    public void loadAndTransition(Parent p, AnchorPane root, Direction direction) {
+        sceneSwitcher.loadAndTransition(p, root, direction);
+    }
 }

@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import main.java.viewcontroller.Direction;
 import main.java.viewcontroller.PrimaryController;
 
 import java.net.URL;
@@ -119,7 +120,9 @@ public class ResultViewController extends AnchorPane implements Initializable {
     @FXML
     private void toMainView(ActionEvent event) {
 
-        primaryController.goToMainView();
+        System.out.println("saldkfj");
+
+        primaryController.goToMainView(resultViewRoot, Direction.TOP);
 
     }
 

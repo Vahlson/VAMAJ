@@ -1,9 +1,16 @@
 package main.java.viewcontroller;
 
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 // Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
@@ -59,5 +66,53 @@ public class SceneSwitcher {
             System.err.println("Error message: " + e.getMessage());
             return null;
         }
+    }
+
+    // Method that loads a new scene and transitions to it
+    void loadAndTransition(Parent newParent, AnchorPane root, Direction direction) {
+
+        // Getting source scene
+        Scene source;
+        source = root.getScene();
+
+        // Height of source
+        double h = source.getHeight();
+
+        // Creating the KeyValue
+        KeyValue kv = null;
+
+        // Interpolator value
+        Interpolator interpolator;
+        interpolator = Interpolator.EASE_BOTH;
+
+        // Translating the newParent, based on direction
+        if (direction == Direction.TOP) { // If top
+            newParent.translateYProperty().set(-h);
+            kv = new KeyValue(newParent.translateYProperty(), 0, interpolator);
+        }
+        if (direction == Direction.BOTTOM) { // If bottom
+            newParent.translateYProperty().set(h);
+            kv = new KeyValue(newParent.translateYProperty(), 0, interpolator);
+        }
+
+        // Adding the newParent to source stack pane
+        StackPane sp;
+        sp = (StackPane) root.getParent();
+        sp.getChildren().add(newParent);
+
+        // Creating the KeyFrame object
+        KeyFrame kf;
+        kf = new KeyFrame(Duration.seconds(0.2), kv);
+
+        // Creating the TimeLine object
+        Timeline timeline;
+        timeline = new Timeline();
+        timeline.getKeyFrames().add(kf);
+        timeline.setOnFinished(event -> {
+            sp.getChildren().remove(root);
+        });
+
+        // Playing the animation
+        timeline.play();
     }
 }

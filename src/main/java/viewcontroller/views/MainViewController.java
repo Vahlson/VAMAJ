@@ -12,6 +12,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+import main.java.viewcontroller.Direction;
 import main.java.viewcontroller.PrimaryController;
 import main.java.viewcontroller.views.dynamiccomponents.FindLocationViewController;
 import main.java.viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
@@ -83,7 +84,7 @@ public class MainViewController extends AnchorPane implements Initializable {
 
         //go to resultpage and show results.
         calculateButton.setOnAction(event -> {
-            primaryController.goToResultView();
+            primaryController.goToResultView(root, Direction.BOTTOM);
         });
 
         //scroll to next question
