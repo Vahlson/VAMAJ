@@ -25,29 +25,6 @@ public class SolarPanelQuestionViewController extends AnchorPane {
     @FXML
     private RadioButton premiumRadio;
 
-    @FXML
-    private ImageView standardImage;
-
-    @FXML
-    private ImageView premiumImage;
-
-    @FXML
-    private Label standardName;
-
-    @FXML
-    private Label standardCost;
-
-    @FXML
-    private Label standardWattage;
-
-    @FXML
-    private Label premiumName;
-
-    @FXML
-    private Label premiumCost;
-
-    @FXML
-    private Label premiumWattage;
 
     PrimaryController primaryController;
 

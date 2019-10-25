@@ -48,8 +48,6 @@ public class MainViewController extends AnchorPane implements Initializable {
     @FXML
     private Button downNavigation;
     @FXML
-    private ProgressBar progressBar;
-    @FXML
     private AnchorPane root;
 
 
