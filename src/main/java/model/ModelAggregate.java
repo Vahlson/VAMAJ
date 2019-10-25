@@ -1,13 +1,16 @@
 package main.java.model;
 
-import main.java.model.calculator.*;
+import main.java.model.calculator.CalculatorFacade;
+import main.java.model.calculator.DataKey;
 import main.java.model.contract.Contract;
 import main.java.model.contract.DynamicContract;
 import main.java.model.property.ConsumingProperty;
 import main.java.model.property.Location;
 import main.java.model.property.NonConsumingProperty;
 import main.java.model.property.Property;
-import main.java.model.solarsetup.*;
+import main.java.model.solarsetup.RoofBasedSolarSetup;
+import main.java.model.solarsetup.SolarPanel;
+import main.java.model.solarsetup.SolarSetup;
 import main.java.model.user.User;
 
 import java.util.ArrayList;
@@ -17,16 +20,17 @@ import java.util.Objects;
 
 import static main.java.model.calculator.DataKey.*;
 
-//(2)Vegard
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: The aggregate object of the model.
+// Used by: ModelFacade.
+// Uses: Orchestrates the interactions between the calculator and model data.
 
-//The aggregate object of the model, orchestrates the interactions between the calculator and model data.
 public class ModelAggregate {
 
     private User currentUser;
     private List<User> users;
-    private Double result; //HashMap containing values with a ENUM as key
-    //private CalculatorFacade runner = new CalculatorFacade();
     private HashMap<DataKey, Double> calculationData;
+
 
     public ModelAggregate() {
         calculationData = new HashMap<>();
@@ -42,7 +46,6 @@ public class ModelAggregate {
 
         //Gather data from the model's Solar Setup.
         SolarSetup solarSetup = getSolarSetup();
-
         calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
         calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY,solarSetup.getTotalEProductionPerHour());
         calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
@@ -53,9 +56,9 @@ public class ModelAggregate {
         SolarPanel templatePanel = getSolarSetup().getASolarPanel();
         calculationData.put(PANEL_PRICE, templatePanel.getRetailPrice());
         calculationData.put(PANEL_SIZE, templatePanel.getSize());
-        calculationData.put(EXPECTED_LIFESPAN,templatePanel.getLifeExpectancy());
-        calculationData.put(SOLAR_PANEL_PERFORMANCE_RATIO,templatePanel.getPerformanceRatio());
-        calculationData.put(SOLAR_PANEL_EFFICIENCY,templatePanel.getEfficiency());
+        calculationData.put(EXPECTED_LIFESPAN, templatePanel.getLifeExpectancy());
+        calculationData.put(SOLAR_PANEL_PERFORMANCE_RATIO, templatePanel.getPerformanceRatio());
+        calculationData.put(SOLAR_PANEL_EFFICIENCY, templatePanel.getEfficiency());
 
         // Get data from det model's contract
         Contract contract = getContract();
@@ -76,21 +79,14 @@ public class ModelAggregate {
     void runCalculators() {
 
         getDataFromModel();
-
         //Set the calculated output values in thehashmap.
         calculationData = CalculatorFacade.calculateAll(calculationData);
-
 
     }
 
     // Getter for results of calculation(s)
     Double getCalculationResult(DataKey key) {
         return Objects.requireNonNull(calculationData.get(key), "Insufficient data for calculations of: " + key.getDescription());
-    }
-
-    //Adding data for calculations.
-    void addCalculationData(DataKey key, double value) {
-        calculationData.put(key, value);
     }
 
 
@@ -109,6 +105,7 @@ public class ModelAggregate {
         }
         return getProperty().getLocation();
     }
+
     // Lazy instantiation.
     Contract getContract() {
         // If there is no object in the model, create it.
@@ -119,6 +116,7 @@ public class ModelAggregate {
         }
         return getProperty().getContract();
     }
+
     // Lazy instantiation.
     SolarSetup getSolarSetup() {
         //If there is no object in the model, create it.
@@ -151,10 +149,10 @@ public class ModelAggregate {
         newProperty.setContract(oldProperty.getContract());
         newProperty.setSolarSetup(oldProperty.getSolarSetup());
 
-
         currentUser.setProperty(newProperty);
 
     }
+
     //Setting the users property to another type by copying old values.
     void setPropertyNonConsuming(){
         Property newProperty = new NonConsumingProperty();
@@ -162,7 +160,6 @@ public class ModelAggregate {
 
         newProperty.setLocation(oldProperty.getLocation());
         newProperty.setSolarSetup(oldProperty.getSolarSetup());
-
 
         currentUser.setProperty(newProperty);
     }

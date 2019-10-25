@@ -1,10 +1,12 @@
-
 import main.java.model.ModelAggregate;
 import main.java.model.calculator.*;
 import static main.java.model.calculator.DataKey.*;
 import main.java.model.property.*;
 import org.junit.Test;
 import junit.framework.TestCase;
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Test class for the Calculator Package.
 
 
 import java.util.HashMap;

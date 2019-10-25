@@ -1,13 +1,17 @@
 package main.java.model.calculator;
 
-//(1.1) Vegard
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 import static main.java.model.calculator.DataKey.*;
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Calculator implementation.
+// Used by: CalculatorFacade.
+// Uses: Handles calculations of years until economical ("break even") gain.
+
 
 final class YearsToBreakEvenCalculator implements Calculator{
 

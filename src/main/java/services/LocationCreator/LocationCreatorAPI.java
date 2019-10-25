@@ -1,29 +1,32 @@
 package main.java.services.LocationCreator;
 
 import main.java.model.property.Location;
-
-import java.util.*;
-
-
 import main.java.services.ApiJSONParser;
 import main.java.services.ApiParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-//(3.1) Alex LV och Alex Ask
-// Implementation of ILocationCreator that creates location objects based on input from an API.
+import java.util.Calendar;
+
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Implementation of ILocationCreator.
+// Used by: (Lives in) ServiceFacade, PrimaryController.
+// Uses: Creates location objects based on input from an API.
+
 public class LocationCreatorAPI implements ILocationCreator {
 
     //Current year and month
     private int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
     //Variables needed for dataCollection
+    //Predefined latitude and longitude if they are not set.
     private double latitude = 63.825848;
     private double longitude = 20.263035;
     private int dataAccuracyInYears = 5;
 
 
-    //Creates a location from an API
+    //Creates a location from an API using the LocationCreatorAPI's latitude and longitude
     @Override
     public Location createLocation() {
 
@@ -34,23 +37,20 @@ public class LocationCreatorAPI implements ILocationCreator {
         return l;
     }
 
+    // Gathers the solar insolation from an API.
     private double getSolarInsolation() {
         //adjusting
         dataAccuracyInYears -= 1;
 
-        //Uses a parser to get the correct objects and collect data throught http.
+        //Uses a parser to get the correct objects and collect data through http.
+        ApiParser<JSONObject> parser = new ApiJSONParser();
 
-        ApiParser <JSONObject> parser = new ApiJSONParser();
 
-
-        //https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=2015&endDate=2018&lat=40&lon=10&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous
         //Try to read the data from the JsonObject and try to calculate average on it.
         //Getting the jsonObject from the API using the parser.
-
         JSONObject root = parser.readAPI("https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN&startDate=" + (currentYear - dataAccuracyInYears - 1) + "&endDate=" + (currentYear - 1) + "&lat=" + latitude + "&lon=" + longitude + "&userCommunity=SSE&tempAverage=INTERANNUAL&outputList=JSON&user=anonymous");
 
         if (!root.isEmpty()) {
-            //the jsonobject is not empty
             //Try to access JSONData
             JSONObject allSkyInsolationIncident = accessJsonData(root);
 
@@ -59,9 +59,7 @@ public class LocationCreatorAPI implements ILocationCreator {
                 return getAverageInsolation(allSkyInsolationIncident, dataAccuracyInYears);
             }
 
-
         }
-
         //Default returnvalue
         return 0;
     }

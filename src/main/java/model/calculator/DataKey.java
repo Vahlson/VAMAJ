@@ -1,5 +1,10 @@
 package main.java.model.calculator;
 
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Datastructure for the input and output of the calculators.
+// Used by: ModelFacade, ModelAggregate, CalculatorFacade, ResultViewController, [Each Calculator implementation].
+// Uses: Provides a datastructure for calculations with multiple parameters and outputs.
+
 public enum DataKey {
     SOLAR_PANEL_EFFICIENCY,
     ELECTRICITY_PRODUCTION_CAPACITY("Produktion i KW"),
@@ -24,10 +29,10 @@ public enum DataKey {
 
     private String description = "Value";
 
-    private DataKey(String description) {
+    DataKey(String description) {
         this.description = description;
     }
-    private DataKey() {
+    DataKey() {
     }
 
     public String getDescription() {

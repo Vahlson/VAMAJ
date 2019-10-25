@@ -5,8 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Representation of an IP-address.
+// Used by: Geolocation.
+// Uses: Gathers the users public IP-address.
+
 class IPAddress {
 
+    //Gathers IP address from the webb.
     static String getIp() throws Exception {
 
         // Using web service to fetch public IP address (for geolocation database)

@@ -1,7 +1,11 @@
 package main.java.model.calculator;
 
-import javax.xml.crypto.Data;
 import java.util.*;
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: The calculator's face outward towards the rest of the program.
+// Used by: ModelAggregate.
+// Uses: Exposes wanted functionality from the calculator outward.
 
 public final class CalculatorFacade {
 
@@ -18,7 +22,7 @@ public final class CalculatorFacade {
     //Checks which calculators have values from the input parameter as required values for running the calculation
     //Rechecks all calculators again after one calculation has run to see if the output from it matches the input to
     //another calculator
-    public static HashMap<DataKey, Double> calculateAll(HashMap<DataKey, Double> wantedOutput){
+    public static HashMap<DataKey, Double> calculateAll(HashMap<DataKey, Double> wantedOutput) {
 
         HashMap<DataKey, Double> output = new HashMap<>(wantedOutput);
 
@@ -26,9 +30,9 @@ public final class CalculatorFacade {
 
         Iterator<Calculator> calculatorIterator = calculatorList.iterator();
 
-        while (calculatorIterator.hasNext()){
+        while (calculatorIterator.hasNext()) {
             Calculator currentCalc = calculatorIterator.next();
-            if(output.keySet().containsAll(currentCalc.getKeysOfRequiredInput())){
+            if (output.keySet().containsAll(currentCalc.getKeysOfRequiredInput())) {
                 output = currentCalc.calculate(output);
                 calculatorIterator.remove();                    //Remove used calculator from calculatorList
                 calculatorIterator = calculatorList.iterator(); //Reset iterator to first in calculatorList
@@ -39,7 +43,7 @@ public final class CalculatorFacade {
 
     //Checks all available calculators for specific output key
     //If a calculator is found it then checks if the input has the required values for running the calculation
-    public static HashMap<DataKey, Double> calculateSpecificValue(DataKey key, HashMap<DataKey, Double> input){
+    public static HashMap<DataKey, Double> calculateSpecificValue(DataKey key, HashMap<DataKey, Double> input) {
 
         List<Calculator> calculatorList = new ArrayList<>(Arrays.asList(surplus, installationCost, LCOE, panelProd, breakEven));
 

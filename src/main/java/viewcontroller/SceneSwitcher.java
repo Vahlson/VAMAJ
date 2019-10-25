@@ -6,9 +6,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Class that functions as a dedicated Scene Switcher of the Javafx Scenes in the program.
+// Used by: PrimaryController
+// Uses: Delegates such responsibility for code reuse och cleanliness.
 
-// Class that functions as a dedicated Scene Switcher of the Javafx Scenes in the program.
-// Delegates such responsibility for code reuse och cleanliness.
 public class SceneSwitcher {
 
     // Parent stage
