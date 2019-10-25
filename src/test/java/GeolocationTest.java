@@ -2,6 +2,9 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import main.java.services.Geolocation.Geolocation;
 
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Test class for the geolocation package.
+
 
 public class GeolocationTest extends TestCase {
 

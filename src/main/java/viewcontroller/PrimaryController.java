@@ -3,27 +3,21 @@ package main.java.viewcontroller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.Main;
 import main.java.model.ModelFacade;
-import main.java.model.contract.Contract;
-import main.java.model.solarsetup.SolarPanel;
-import main.java.model.solarsetup.SolarSetup;
-import main.java.services.ContractCreator.ContractCreatorAPI;
 import main.java.services.LocationCreator.LocationCreatorAPI;
 import main.java.services.ServiceFacade;
 import main.java.viewcontroller.views.MainViewController;
 import main.java.viewcontroller.views.ResultViewController;
-import org.omg.CORBA.MARSHAL;
 
-import javax.xml.transform.Result;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 
-// (3.1) Alexander Ask
-//The primary controller holds the connections between the different view controllers and the model.
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Holds the connections between the different view controllers and the model.
+// Used by: Every class in the "views" package. Created at the start of the program, in main.
+// Uses: To provide communication from the viewcontrollers to the model.
+
 public class PrimaryController {
 
     // Member variables
@@ -42,11 +36,10 @@ public class PrimaryController {
         this.sceneSwitcher = new SceneSwitcher(stage);
         this.serviceFacade = new ServiceFacade();
 
-        // MAIN_VIEW = new Scene(new MainViewController(this));
-
         goToMainView();
     }
 
+    //Initializes a component as the primary scene of the window.
     private Scene initComponent(String url, Object controller) {
 
         // Creating the FXMLLoader and loading the given url
@@ -66,6 +59,7 @@ public class PrimaryController {
         }
     }
 
+    //Initializes a dynamic component with a controller.
     public void initDynamicComponent(String url, Object controller) {
 
         // Creating the FXMLLoader and loading the given url
@@ -89,20 +83,16 @@ public class PrimaryController {
             }
         });
     }
-
-
-    //These are called from the separate view controllers.
-    // Setters (for API)
+    
+    // These are called from the separate view controllers.
+    // Sets a location in the model with data gathered from an api and the lat,long from the parameters.
+    // The api uses the latitude and longitude.
     public void setLocationFromAPI(double latitude, double longitude) {
         serviceFacade.setLocationCreator(new LocationCreatorAPI());
         serviceFacade.setLocationCreatorCoordinates(latitude, longitude);
         modelFacade.setLocation(serviceFacade.getLocation());
     }
 
-
-    void setSolarSetup(SolarSetup solarSetup){
-        modelFacade.setSolarSetup( solarSetup);
-    }
 
     // Getters
     public ModelFacade getModelFacade() {
@@ -113,6 +103,7 @@ public class PrimaryController {
         return serviceFacade;
     }
 
+    //Switch scenes to the main view, using the sceneswitcher.
     public void goToMainView() {
 
         if (mainView == null) {
@@ -122,6 +113,7 @@ public class PrimaryController {
 
     }
 
+    //Switch scenes to the result view, using the sceneswitcher.
     public void goToResultView() {
 
         resultView = initComponent("/fxml/resultscene.fxml", new ResultViewController(this));

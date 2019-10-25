@@ -1,6 +1,10 @@
 package main.java.model.property;
 
-//Representation of a coordinate, holds a latitude and a longitude.
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Representation of a coordinate
+// Used by: Location.
+// Uses: holds a latitude and a longitude.
+
 public class Coordinate {
     private final Double latitude;
     private final Double longitude;
