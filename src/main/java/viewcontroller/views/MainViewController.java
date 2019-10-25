@@ -3,9 +3,7 @@ package main.java.viewcontroller.views;
 
 import javafx.animation.*;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -14,43 +12,45 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.views.dynamiccomponents.*;
+import main.java.viewcontroller.views.dynamiccomponents.FindLocationViewController;
+import main.java.viewcontroller.views.dynamiccomponents.PropertyQuestionViewController;
+import main.java.viewcontroller.views.dynamiccomponents.SolarPanelQuestionViewController;
+import main.java.viewcontroller.views.dynamiccomponents.SpaceQuestionViewController;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
-//The controller of the main view of the program controls the interaction of the main view.
-//Input and communication with the model is accessed through the primaryController.
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: The controller of the main view of the program.
+// Used by: Initialized in the primaryController and set as the current stage in the sceneSwitcher.
+// Uses: Controls the interaction of the main view and communicates with the model through the primarycontroller.
+
 public class MainViewController extends AnchorPane implements Initializable {
+    SolarPanelQuestionViewController solarQ;
+    SpaceQuestionViewController spaceQ;
+    FindLocationViewController locationQ;
+    PropertyQuestionViewController propertyQ;
+
     private int state = 0;
     private PrimaryController primaryController;
 
     @FXML
     private ScrollPane questionScrollPane;
-
     @FXML
     private VBox questionList;
-
     @FXML
     private Button calculateButton;
-
     @FXML
     private Button upNavigation;
-
     @FXML
     private Label questionNumber;
-
     @FXML
     private Button downNavigation;
-
     @FXML
     private ProgressBar progressBar;
-
     @FXML
     private AnchorPane root;
+
 
     public MainViewController(PrimaryController controller) {
         this.primaryController = controller;
@@ -66,10 +66,6 @@ public class MainViewController extends AnchorPane implements Initializable {
         this.primaryController = primaryController;
     }
 
-    SolarPanelQuestionViewController solarQ;
-    SpaceQuestionViewController spaceQ;
-    FindLocationViewController locationQ;
-    PropertyQuestionViewController propertyQ;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -150,16 +146,16 @@ public class MainViewController extends AnchorPane implements Initializable {
     }
 
     //Checks each question for input.
-    private void checkIfReadyForCalculation(){
+    private void checkIfReadyForCalculation() {
         boolean spaceQready = spaceQ.isDataGathered();
         boolean propertyQReady = propertyQ.isDataGathered();
 
         //Also checks that data isnt currently being gathered from an API.
         boolean locationQReady = (!locationQ.isGatheringData()) && locationQ.isDataGathered();
 
-        if(spaceQready && propertyQReady && locationQReady){
+        if (spaceQready && propertyQReady && locationQReady) {
             calculateButton.setDisable(false);
-        }else{
+        } else {
             calculateButton.setDisable(true);
         }
     }

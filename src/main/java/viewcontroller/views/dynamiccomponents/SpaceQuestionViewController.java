@@ -4,9 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.views.MainViewController;
 
-//Question about available space of the potential solarinstallation.
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Question about available space of the potential solarinstallation.
+// Used by: MainViewController.
+// Uses: Gathers information about the users available space.
+
 public class SpaceQuestionViewController extends AnchorPane {
 
     PrimaryController primaryController;
@@ -27,23 +31,23 @@ public class SpaceQuestionViewController extends AnchorPane {
         setLeftAnchor(this, 0.0);
         setRightAnchor(this, 0.0);
 
-
+        //Require that input is of only numbers.
         primaryController.onlyNumbers(availablespace);
 
-
+        //Set values in model upon losing of focus of text field.
         availablespace.focusedProperty().addListener((ov, oldV, newV) -> {
             if (!newV) { // focus lost
                 double spaceValue;
 
-                if(!availablespace.getText().isEmpty()) {
+                if (!availablespace.getText().isEmpty()) {
                     spaceValue = Double.valueOf(availablespace.getText());
                     dataIsGathered = true;
-                }else{
+                } else {
                     //default to 0.
                     spaceValue = 0;
                     dataIsGathered = false;
                 }
-
+                //Set the available space value in the model.
                 primaryController.getModelFacade().getSolarSetup().setAvailableSpace(spaceValue);
 
             }
@@ -52,7 +56,8 @@ public class SpaceQuestionViewController extends AnchorPane {
 
     }
 
-    public boolean isDataGathered(){
+    //Returns true if all required data has been gathered.
+    public boolean isDataGathered() {
         return dataIsGathered;
     }
 

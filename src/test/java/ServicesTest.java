@@ -26,15 +26,4 @@ public class ServicesTest extends TestCase {
 
 
 
-    @Test
-    public void testContractCreationFromAPI(){
-        ServiceFacade sf = new ServiceFacade();
-        Contract c = sf.getContract();
-        
-
-
-    }
-
-
-
 }

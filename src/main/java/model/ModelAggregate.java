@@ -9,7 +9,6 @@ import main.java.model.property.NonConsumingProperty;
 import main.java.model.property.Property;
 import main.java.model.solarsetup.*;
 import main.java.model.user.User;
-import main.java.services.ServiceFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +24,8 @@ public class ModelAggregate {
 
     private User currentUser;
     private List<User> users;
-    private Double result; //HashMap containing values with a ENUM as key
-    //private CalculatorFacade runner = new CalculatorFacade();
     private HashMap<DataKey, Double> calculationData;
-    private ServiceFacade serviceFacade;
+
 
     public ModelAggregate() {
         calculationData = new HashMap<>();

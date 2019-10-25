@@ -3,13 +3,16 @@ package main.java.services.Geolocation;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;
-import main.java.Main;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.net.InetAddress;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Objects;
+
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility:
+// Used by:
+// Uses: Creates a connection to the API database so that geolocation data can be gathered.
 
 // Class that fetches geolocation data using our API:s
 class GeolocationService {
@@ -37,7 +40,7 @@ class GeolocationService {
         InetAddress ipAddress;
         ipAddress = InetAddress.getByName(ip);
 
-        if (dbReader == null){
+        if (dbReader == null) {
             return null;
         }
 

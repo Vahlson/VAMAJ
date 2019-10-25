@@ -1,17 +1,17 @@
 package main.java.viewcontroller.views.dynamiccomponents;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.views.MainViewController;
 
-//Controller for a question component that gathers the users location
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Controller for a question component that gathers the users location.
+// Used by: MainViewController.
+// Uses: Gathers information about the users location.
+
 public class FindLocationViewController extends AnchorPane {
 
     private PrimaryController primaryController;
@@ -33,13 +33,11 @@ public class FindLocationViewController extends AnchorPane {
         this.primaryController = primaryController;
 
         //Initialize this controller as a javafx node while coupling it with a fxml
-        primaryController.initDynamicComponent("/fxml/dynamic/locationfinder.fxml",this);
+        primaryController.initDynamicComponent("/fxml/dynamic/locationfinder.fxml", this);
 
         //Match width to parent.
         setLeftAnchor(this, 0.0);
         setRightAnchor(this, 0.0);
-
-
 
 
         //Shows updates location and shows location in gui
@@ -57,12 +55,20 @@ public class FindLocationViewController extends AnchorPane {
 
     }
 
+    //Returns true if data is currently being gathered.
+    public boolean isGatheringData() {
+        return dataGathering;
+    }
 
+    //Returns true if all required data has been gathered.
+    public boolean isDataGathered() {
+        return dataIsGathered;
+    }
 
     //Thread for location gathering.
     public class LocationGatheringThread extends Thread {
 
-        public void run(){
+        public void run() {
             //Get the city name from API.
             String city;
             city = primaryController.getServiceFacade().getCity();
@@ -72,7 +78,7 @@ public class FindLocationViewController extends AnchorPane {
             double longitude = primaryController.getServiceFacade().getLongitude();
 
             //primaryController.getModelFacade().getLocation().setCoordinate(latitude, longitude);
-            primaryController.setLocationFromAPI(latitude,longitude);
+            primaryController.setLocationFromAPI(latitude, longitude);
 
             //display the result
             cityText.setText(city);
@@ -81,12 +87,5 @@ public class FindLocationViewController extends AnchorPane {
             dataGathering = false;
             loadingAnimation.setVisible(false);
         }
-    }
-
-    public boolean isGatheringData(){
-        return dataGathering;
-    }
-    public boolean isDataGathered(){
-        return dataIsGathered;
     }
 }

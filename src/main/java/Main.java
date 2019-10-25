@@ -1,16 +1,18 @@
 package main.java;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.model.ModelFacade;
 import main.java.viewcontroller.PrimaryController;
-import main.java.viewcontroller.views.MainViewController;
 
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility:
+// Used by:
+// Uses:
 
-//The main class of the program, starts the program and initializes base components.
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: The main class of the program.
+// Uses: starts the program and initializes base components.
 public class Main extends Application {
     public static void main(String[] args) {
 

@@ -5,7 +5,13 @@ import com.maxmind.geoip2.model.CityResponse;
 
 import java.io.IOException;
 
-// Class that holds our geolocation data
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Holds geolocation data of the user.
+// Used by: ServiceFacade.
+// Uses: Holds/gathers the address,latitude and longitude of a user from their IP-address using the GeolocationService.
+// Parses the response from the geolocation database.
+
 public class Geolocation implements IGeolocation {
 
     // Member variables
@@ -48,11 +54,6 @@ public class Geolocation implements IGeolocation {
             e.printStackTrace();
         }
     }
-
-    // Getters
-//    public String getIpAddress() {
-//        return ipAddress;
-//    }
 
 
     @Override
