@@ -14,12 +14,10 @@ public final class CalculatorFacade {
     private static final Calculator LCOE = new LevelizedCostOfElectricityCalculator();
     private static final Calculator panelProd = new SolarPanelProductionCalculator();
     private static final Calculator breakEven = new YearsToBreakEvenCalculator();
-    private static final List<Calculator> calculatorList = new ArrayList<>(Arrays.asList(
-            surplus, installationCost, LCOE, panelProd, breakEven));
 
 
-    private CalculatorFacade() {
-    }
+
+    private CalculatorFacade(){}
 
     //Checks which calculators have values from the input parameter as required values for running the calculation
     //Rechecks all calculators again after one calculation has run to see if the output from it matches the input to
@@ -27,6 +25,8 @@ public final class CalculatorFacade {
     public static HashMap<DataKey, Double> calculateAll(HashMap<DataKey, Double> wantedOutput) {
 
         HashMap<DataKey, Double> output = new HashMap<>(wantedOutput);
+
+        List<Calculator> calculatorList = new ArrayList<>(Arrays.asList(surplus, installationCost, LCOE, panelProd, breakEven));
 
         Iterator<Calculator> calculatorIterator = calculatorList.iterator();
 
@@ -45,7 +45,9 @@ public final class CalculatorFacade {
     //If a calculator is found it then checks if the input has the required values for running the calculation
     public static HashMap<DataKey, Double> calculateSpecificValue(DataKey key, HashMap<DataKey, Double> input) {
 
-        for (Calculator currentCalc : calculatorList) {
+        List<Calculator> calculatorList = new ArrayList<>(Arrays.asList(surplus, installationCost, LCOE, panelProd, breakEven));
+
+        for (Calculator currentCalc: calculatorList) {
             if (currentCalc.getKeysOfOutput().contains(key)) {
                 if (input.keySet().containsAll((currentCalc.getKeysOfRequiredInput()))) {
                     return currentCalc.calculate(input);

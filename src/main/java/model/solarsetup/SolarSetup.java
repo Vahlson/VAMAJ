@@ -41,17 +41,16 @@ public abstract class SolarSetup {
     public void setSolarPanelsPremium() {
         SolarPanel templateSolarPanel = new PremiumSolarPanel();
         setSolarPanelsFromTemplate(templateSolarPanel);
-        System.out.println(getNumberOfSolarPanels(templateSolarPanel));
     }
 
     //Fills the solarsetup solarpanel list with the amount of solar panels that fit in the available space.
     private void setSolarPanelsFromTemplate(SolarPanel templateSolarPanel) {
 
+        List<SolarPanel> tempPanelList = new ArrayList<>();
         for (int i = 0; i < getNumberOfSolarPanels(templateSolarPanel); i++) {
-            solarPanels.add(templateSolarPanel);
+            tempPanelList.add(templateSolarPanel);
         }
-
-        setSolarPanels(solarPanels);
+        setSolarPanels(tempPanelList);
     }
 
     //Lazy instantiation, gets a solar panel
@@ -78,13 +77,13 @@ public abstract class SolarSetup {
 
 
     //Getters
-    //Sums up effeciency of solar panels.
-    public double getTotalEProductionPerHour() {
-        double totalProduction = 0.0;
+    //Sums up efficiency of solar panels.
+    public double getTotalWattage() {
+        double totalWattage = 0.0;
         for (SolarPanel p : solarPanels) {
-            totalProduction += p.getProductionPerHour();
+            totalWattage += p.getWattage();
         }
-        return totalProduction;
+        return totalWattage;
     }
 
     public double getAvailableSpace() {

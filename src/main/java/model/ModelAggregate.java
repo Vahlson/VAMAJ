@@ -47,10 +47,10 @@ public class ModelAggregate {
         //Gather data from the model's Solar Setup.
         SolarSetup solarSetup = getSolarSetup();
         calculationData.put(AVAILABLE_SPACE, solarSetup.getAvailableSpace());
-        calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY, solarSetup.getTotalEProductionPerHour());
-        calculationData.put(ANNUAL_OPERATION_COST, solarSetup.getAnnualOperationCost());
-        calculationData.put(SOLAR_PANEL_COVERAGE, solarSetup.getSolarPanelCoverage());
-        calculationData.put(AVERAGE_SOLAR_RADIATION, getLocation().getSolarInsolation());
+        calculationData.put(ELECTRICITY_PRODUCTION_CAPACITY,solarSetup.getTotalWattage());
+        calculationData.put(ANNUAL_OPERATION_COST,solarSetup.getAnnualOperationCost());
+        calculationData.put(SOLAR_PANEL_COVERAGE,solarSetup.getSolarPanelCoverage());
+
 
         // Get a template panel to gather panel-specific values.
         SolarPanel templatePanel = getSolarSetup().getASolarPanel();
@@ -64,6 +64,13 @@ public class ModelAggregate {
         Contract contract = getContract();
         calculationData.put(MONTHLY_ELECTRICITY_CONSUMPTION, contract.getConsumedElectricity());
         calculationData.put(MONTHLY_ELECTRICITY_PRICE, contract.getMonthlyCost());
+        calculationData.put(ELECTRICITY_SELL_PRICE, contract.getSellbackElectrictyPrice());
+
+
+        // Get data from det model's location
+        calculationData.put(AVERAGE_SOLAR_RADIATION, getLocation().getSolarInsolation());
+
+
 
 
     }
@@ -122,19 +129,19 @@ public class ModelAggregate {
     }
 
 
-    // The solar panel type is
-    public void setSolarPanelsStandard() {
+    // The solar panel typ is
+    void setSolarPanelsStandard() {
         getSolarSetup().setSolarPanelsStandard();
 
     }
 
-    public void setSolarPanelsPremium() {
+    void setSolarPanelsPremium() {
         getSolarSetup().setSolarPanelsPremium();
 
     }
 
     //Setting the users property to another type by copying old values.
-    public void setPropertyConsuming() {
+    void setPropertyConsuming(){
         Property newProperty = new ConsumingProperty();
         Property oldProperty = getProperty();
 
@@ -147,7 +154,7 @@ public class ModelAggregate {
     }
 
     //Setting the users property to another type by copying old values.
-    public void setPropertyNonConsuming() {
+    void setPropertyNonConsuming(){
         Property newProperty = new NonConsumingProperty();
         Property oldProperty = getProperty();
 
@@ -155,6 +162,10 @@ public class ModelAggregate {
         newProperty.setSolarSetup(oldProperty.getSolarSetup());
 
         currentUser.setProperty(newProperty);
+    }
+
+    void clearCalculatioResults(){
+        calculationData.clear();
     }
 
 }

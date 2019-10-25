@@ -10,14 +10,20 @@ public abstract class Contract {
     private String contractProvider;
     private double consumedElectricity;
     private double monthlyCost;
+    private double sellbackPriceFraction;
 
     public Contract(double monthlyCost, double consumedElectricity) {
         this.contractProvider = "Generic Contract Provider";
         this.monthlyCost = monthlyCost;
         this.consumedElectricity = consumedElectricity;
+        this.sellbackPriceFraction = 0.3;
     }
 
     // Getters
+
+    public double getSellbackElectrictyPrice() {
+        return sellbackPriceFraction * (monthlyCost / consumedElectricity);
+    }
 
     public double getMonthlyCost() {
         return this.monthlyCost;

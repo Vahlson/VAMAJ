@@ -17,16 +17,14 @@ public class SolarSetupTest {
 
 
     @Test
-    public void getTotalEProductionPerHourTest() {
-        double totalEfficiency = 0.0;
-        solarPanel1.setProductionPerHour(500);
-        solarPanel2.setProductionPerHour(500);
+    public void getTotalWattageTest() {
+        double totalWattage = 0.0;
         solarPanels.add(solarPanel1);
         solarPanels.add(solarPanel2);
         for (SolarPanel p : solarPanels) {
-            totalEfficiency += p.getProductionPerHour();
+            totalWattage += p.getWattage();
         }
-        assertEquals(1000, totalEfficiency, 0.0);
+        assertEquals(0.5, totalWattage, 0.0);
 
 
     }
@@ -60,19 +58,6 @@ public class SolarSetupTest {
     }
 
     @Test
-    public void getAnnualElectricityProductionTest() {
-        double annualElectricityProduction = 0.0;
-        solarPanel1.setProductionPerHour(500);
-        solarPanel2.setProductionPerHour(500);
-        solarPanels.add(solarPanel1);
-        solarPanels.add(solarPanel2);
-        for (SolarPanel p : solarPanels) {
-            annualElectricityProduction += p.getProductionPerHour();
-        }
-        annualElectricityProduction *= 8766;
-        assertEquals(8766000, annualElectricityProduction, 0.0);
-    }
-    @Test
     public void getNumberOfSolarPanels() {
         int numberOfSolarPanels = 0;
         StandardSolarPanel solarPanel = new StandardSolarPanel();
@@ -80,6 +65,7 @@ public class SolarSetupTest {
         numberOfSolarPanels = (int) Math.floor(solarSetup.getAvailableSpace() / solarPanel.getSize());
         assertEquals(10, numberOfSolarPanels, 0.0);
     }
+
     @Test
     public void setSolarPanelsFromTemplateTest() {
         StandardSolarPanel solarPanel = new StandardSolarPanel();
