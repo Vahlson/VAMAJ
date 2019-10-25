@@ -25,6 +25,9 @@ public class Location {
         return solarInsolation;
     }
 
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
 
     // Setters
     public void setCoordinate(double latitude, double longitude) {

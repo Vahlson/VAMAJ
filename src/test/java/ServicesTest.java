@@ -1,9 +1,12 @@
-
 import junit.framework.TestCase;
 import main.java.model.property.Location;
 import main.java.model.contract.Contract;
 import main.java.services.ServiceFacade;
 import org.junit.Test;
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Test class for the Services package.
+
 
 public class ServicesTest extends TestCase {
 
