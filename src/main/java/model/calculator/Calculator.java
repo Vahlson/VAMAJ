@@ -1,7 +1,12 @@
 package main.java.model.calculator;
 
 //Vegard
-//Common interface for all calculators in package
+//
+
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Common interface for all calculators.
+// Used by: CalculatorFacade
+// Uses: Defines expected behaviour of a calculator. For abstraction and extensibility.
 
 import java.util.HashMap;
 import java.util.HashSet;

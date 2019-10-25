@@ -5,7 +5,11 @@ import main.java.model.contract.Contract;
 import main.java.model.property.Location;
 import main.java.model.solarsetup.SolarSetup;
 
-//The model's face outward towards the rest of the program. Exposes wanted functionality outward.
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: The model's face outward towards the rest of the program.
+// Used by: (lives in) Main, PrimaryController.
+// Uses: Exposes wanted functionality from the model outward.
+
 public class ModelFacade {
 
     private ModelAggregate modelAggregate;
@@ -15,33 +19,31 @@ public class ModelFacade {
         modelAggregate = new ModelAggregate();
     }
 
-    // Setters
-    public void setLocation(Location location) {
-        modelAggregate.getProperty().setLocation(location);
+    // Getters
+    public Contract getContract() {
+        return modelAggregate.getContract();
     }
 
     public void setContract(Contract contract) {
         modelAggregate.getProperty().setContract(contract);
     }
 
-    public void setSolarSetup(SolarSetup solarSetup) {
-        modelAggregate.getProperty().setSolarSetup(solarSetup);
-    }
-
-    // Getters
-    public Contract getContract() {
-        return modelAggregate.getContract();
-    }
-
     public SolarSetup getSolarSetup() {
         return modelAggregate.getSolarSetup();
+    }
+
+    public void setSolarSetup(SolarSetup solarSetup) {
+        modelAggregate.getProperty().setSolarSetup(solarSetup);
     }
 
     public Location getLocation() {
         return modelAggregate.getLocation();
     }
 
-
+    // Setters
+    public void setLocation(Location location) {
+        modelAggregate.getProperty().setLocation(location);
+    }
 
     // Run calculations
     public void runCalculators() {
@@ -54,23 +56,25 @@ public class ModelFacade {
     }
 
     //Adding data for calculations.
-    public void addCalculationData(DataKey key, double value){
+    public void addCalculationData(DataKey key, double value) {
         modelAggregate.addCalculationData(key, value);
     }
 
-    public void setSolarPanelsStandard(){
+    public void setSolarPanelsStandard() {
 
         modelAggregate.setSolarPanelsStandard();
     }
-    public void setSolarPanelsPremium(){
+
+    public void setSolarPanelsPremium() {
 
         modelAggregate.setSolarPanelsPremium();
     }
 
-    public void setPropertyConsuming(){
+    public void setPropertyConsuming() {
         modelAggregate.setPropertyConsuming();
     }
-    public void setPropertyNonConsuming(){
+
+    public void setPropertyNonConsuming() {
         modelAggregate.setPropertyNonConsuming();
     }
 

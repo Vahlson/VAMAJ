@@ -13,6 +13,7 @@ import main.java.viewcontroller.PrimaryController;
 // Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
 // Responsibility: The main class of the program.
 // Uses: starts the program and initializes base components.
+
 public class Main extends Application {
     public static void main(String[] args) {
 

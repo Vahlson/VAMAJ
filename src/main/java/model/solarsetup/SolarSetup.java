@@ -3,6 +3,11 @@ package main.java.model.solarsetup;
 import java.util.ArrayList;
 import java.util.List;
 
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Abstract representation of a single solar setup.
+// Used by: ModelFacade, ModelAggregate, PrimaryController, Property. (Yes that's alot...)
+// Uses: Holds data common to a solarsetup. Implementations have more specific data. Holds each solarpanel.
+
 //Object that holds the information about a solar setup.
 public abstract class SolarSetup {
 
@@ -28,6 +33,11 @@ public abstract class SolarSetup {
         return this.solarPanels;
     }
 
+    //Setters
+    public void setSolarPanels(List<SolarPanel> solarPanels) {
+        this.solarPanels = solarPanels;
+    }
+
     //Lazy instantiation, gets a solar panel
     public SolarPanel getASolarPanel() {
         //if there are no solarpanels,
@@ -36,9 +46,9 @@ public abstract class SolarSetup {
         }
 
         //If solarpanels isnt empty anymore return the first solarPanel.
-        if(!solarPanels.isEmpty()){
+        if (!solarPanels.isEmpty()) {
             return solarPanels.get(0);
-        }else{
+        } else {
             //If solarpanels is still empty (due to availablespace not being set)
             //Default to return a standard solar panel.
             return new StandardSolarPanel();
@@ -50,10 +60,14 @@ public abstract class SolarSetup {
         return angle;
     }
 
+    public void setAngle(int angle) {
+        this.angle = angle;
+    }
+
     //Sums up effeciency of solar panels.
     public double getTotalEProductionPerHour() {
         double totalProduction = 0.0;
-        for(SolarPanel p : solarPanels){
+        for (SolarPanel p : solarPanels) {
             totalProduction += p.getProductionPerHour();
         }
         return totalProduction;
@@ -63,12 +77,24 @@ public abstract class SolarSetup {
         return this.installationCost;
     }
 
+    public void setInstallationCost(double installationCost) {
+        this.installationCost = installationCost;
+    }
+
     public double getAvailableSpace() {
         return availableSpace;
     }
 
+    public void setAvailableSpace(double availableSpace) {
+        this.availableSpace = availableSpace;
+    }
+
     public int getOrientation() {
         return orientation;
+    }
+
+    public void setOrientation(int orientation) {
+        this.orientation = orientation;
     }
 
     public int getPanelAngle() {
@@ -78,15 +104,16 @@ public abstract class SolarSetup {
     // Returns the sum of each solar panel's annualoperationCost.
     public double getAnnualOperationCost() {
         double totalAnnualOperationCost = 0.0;
-        for(SolarPanel p : solarPanels){
+        for (SolarPanel p : solarPanels) {
             totalAnnualOperationCost += p.getAnnualOperationCost();
         }
         return totalAnnualOperationCost;
     }
+
     //Returns the sum of each solar panel's productionperhour times hours in a year.
     public double getAnnualElectricityProduction() {
         double annualElectricityProduction = 0.0;
-        for(SolarPanel p : solarPanels){
+        for (SolarPanel p : solarPanels) {
             annualElectricityProduction += p.getProductionPerHour();
         }
         annualElectricityProduction *= 8766;
@@ -96,33 +123,11 @@ public abstract class SolarSetup {
     // Returns the sum of each solar panels area.
     public double getSolarPanelCoverage() {
         double solarPanelCoverage = 0.0;
-        for(SolarPanel p : solarPanels){
+        for (SolarPanel p : solarPanels) {
             solarPanelCoverage += p.getSize();
         }
         return solarPanelCoverage;
     }
-
-    //Setters
-    public void setSolarPanels(List<SolarPanel> solarPanels) {
-        this.solarPanels = solarPanels;
-    }
-
-    public void setInstallationCost(double installationCost) {
-        this.installationCost = installationCost;
-    }
-
-    public void setAvailableSpace(double availableSpace) {
-        this.availableSpace = availableSpace;
-    }
-
-    public void setOrientation(int orientation) {
-        this.orientation = orientation;
-    }
-
-    public void setAngle(int angle) {
-        this.angle = angle;
-    }
-
 
     // The solar panel typ is
     public void setSolarPanelsStandard() {

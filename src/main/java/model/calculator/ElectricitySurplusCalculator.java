@@ -1,8 +1,5 @@
 package main.java.model.calculator;
 
-// (4.1) Jonatan
-// Class for calculating surplus energy (consumed and produced). Unit of time to be specified
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -10,7 +7,12 @@ import java.util.Set;
 
 import static main.java.model.calculator.DataKey.*;
 
-final class ElectricitySurplusCalculator implements Calculator{
+// Author: Alexander Larnemo Ask, Jonatan Bunis, Vegard Landrö, Mohamad Melhem, Alexander Larsson Vahlberg
+// Responsibility: Calculator implementation.
+// Used by: CalculatorFacade.
+// Uses: Handles all calculations related to surplus energy (consumed and produced).
+
+final class ElectricitySurplusCalculator implements Calculator {
 
     ElectricitySurplusCalculator() {
 
@@ -24,10 +26,10 @@ final class ElectricitySurplusCalculator implements Calculator{
         double surplus = 0;
 
         double produced = data.get(ANNUAL_ELECTRICITY_PRODUCTION);
-        double consumed = data.get(MONTHLY_ELECTRICITY_CONSUMPTION)*12;
+        double consumed = data.get(MONTHLY_ELECTRICITY_CONSUMPTION) * 12;
 
         //Checks if there is a surplus and calculates if there is, no negative surplus possible
-        if(produced > consumed){
+        if (produced > consumed) {
             surplus = produced - consumed;
         }
 
@@ -46,7 +48,7 @@ final class ElectricitySurplusCalculator implements Calculator{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "ElectricitySurplusCalculator";
     }
 }
