@@ -29,6 +29,9 @@ public class ResultViewController extends AnchorPane implements Initializable {
     private TextArea textArea1;
 
     @FXML
+    private TextArea textArea2;
+
+    @FXML
     private Button exitButton;
 
     public ResultViewController(PrimaryController primaryController) {
@@ -50,43 +53,53 @@ public class ResultViewController extends AnchorPane implements Initializable {
     public void fillResultView(){
         primaryController.getModelFacade().runCalculators();
 
+        textArea1.appendText(INSTALLATION_COST.getDescription() +"\n");
         try {
-            textArea1.appendText(INSTALLATION_COST.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(INSTALLATION_COST) + "\n");
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(INSTALLATION_COST)) + " kr\n");
         }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
-        }
-        try {
-            textArea1.appendText(GOVERNMENT_SUBVENTION.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(GOVERNMENT_SUBVENTION) + "\n");
-        }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
-        }
-        try {
-            textArea1.appendText(SUBVENTED_INSTALLATION_COST.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(SUBVENTED_INSTALLATION_COST) + "\n");
-        }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage());
         }
 
+        textArea1.appendText(GOVERNMENT_SUBVENTION.getDescription() + "\n");
         try {
-            textArea1.appendText(SURPLUS.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(SURPLUS) + "\n");
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(GOVERNMENT_SUBVENTION)) + " kr\n");
         }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage());
         }
 
+        textArea1.appendText(SUBVENTED_INSTALLATION_COST.getDescription() + "\n");
         try {
-            textArea1.appendText(YEARS_TO_BREAK_EVEN.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN) + "\n");
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(SUBVENTED_INSTALLATION_COST)) + " kr\n");
         }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
-        }
-        try {
-            textArea1.appendText(ANNUAL_OPERATION_COST.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(ANNUAL_OPERATION_COST) + "\n");
-        }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage());
         }
 
+        textArea1.appendText(SURPLUS.getDescription() + "\n");
         try {
-            textArea1.appendText(ANNUAL_ELECTRICITY_PRODUCTION.getDescription() +": "+ primaryController.getModelFacade().getCalculationResult(ANNUAL_ELECTRICITY_PRODUCTION) + "\n");
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(SURPLUS)) + " kWh\n");
         }catch (NullPointerException npe){
-            textArea1.appendText(npe.getMessage());
+            textArea2.appendText(npe.getMessage());
+        }
+
+        textArea1.appendText(YEARS_TO_BREAK_EVEN.getDescription() + "\n");
+        try {
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(YEARS_TO_BREAK_EVEN)) + " år\n");
+        }catch (NullPointerException npe){
+            textArea2.appendText(npe.getMessage());
+        }
+
+        textArea1.appendText(ANNUAL_OPERATION_COST.getDescription() + "\n");
+        try {
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(ANNUAL_OPERATION_COST)) + " kr\n");
+        }catch (NullPointerException npe){
+            textArea2.appendText(npe.getMessage());
+        }
+
+        textArea1.appendText(ANNUAL_ELECTRICITY_PRODUCTION.getDescription() + "\n");
+        try {
+            textArea2.appendText(readableFormat(primaryController.getModelFacade().getCalculationResult(ANNUAL_ELECTRICITY_PRODUCTION)) + " kWh\n");
+        }catch (NullPointerException npe){
+            textArea2.appendText(npe.getMessage());
         }
 
 
@@ -100,6 +113,15 @@ public class ResultViewController extends AnchorPane implements Initializable {
 
         primaryController.goToMainView();
 
+    }
+
+    // Returns the received double as a readable String
+    private String readableFormat(double unReadableDouble){
+
+        int unReadableInt = (int) unReadableDouble;
+        String readableString = String.format("%,d", unReadableInt);
+
+        return readableString;
     }
 }
 

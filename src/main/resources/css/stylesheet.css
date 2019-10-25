@@ -164,9 +164,10 @@ som finns på olika ställen. Detta är för att man lätt ska kunna justera mar
     -fx-font-family: "Segoe UI", sans-serif;
 
 }
+/*
 .text-area *.text {
     -fx-text-alignment: center;
-}
+}*/
 
 .text-area .scroll-pane .content{
     -fx-background-color: transparent;
