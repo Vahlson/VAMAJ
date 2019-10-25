@@ -41,17 +41,16 @@ public abstract class SolarSetup {
     public void setSolarPanelsPremium() {
         SolarPanel templateSolarPanel = new PremiumSolarPanel();
         setSolarPanelsFromTemplate(templateSolarPanel);
-        System.out.println(getNumberOfSolarPanels(templateSolarPanel));
     }
 
     //Fills the solarsetup solarpanel list with the amount of solar panels that fit in the available space.
     private void setSolarPanelsFromTemplate(SolarPanel templateSolarPanel) {
 
+        List<SolarPanel> tempPanelList = new ArrayList<>();
         for (int i = 0; i < getNumberOfSolarPanels(templateSolarPanel); i++) {
-            solarPanels.add(templateSolarPanel);
+            tempPanelList.add(templateSolarPanel);
         }
-
-        setSolarPanels(solarPanels);
+        setSolarPanels(tempPanelList);
     }
 
     //Lazy instantiation, gets a solar panel
