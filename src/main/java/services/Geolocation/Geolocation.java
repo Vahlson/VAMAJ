@@ -22,6 +22,10 @@ public class Geolocation implements IGeolocation {
         String ip = null;
         try {
             ip = IPAddress.getIp();
+            if (ip == null){
+                this.city = "Could not retrieve IP";
+                return;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -31,11 +35,12 @@ public class Geolocation implements IGeolocation {
             // Tries to load the database
             service = new GeolocationService(url);
 
+
             CityResponse data;
             data = service.getData(ip);
 
             if (data == null) {
-                this.city = "Error loading city!";
+                this.city = "Error loading database! \n Path to database may be incorrect.";
                 return;
             }
 
